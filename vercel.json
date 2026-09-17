@@ -1,11 +1,3 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.smartcomms.co.nz" }],
-      "destination": "https://smartcomms.co.nz/:path*",
-      "permanent": true
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }

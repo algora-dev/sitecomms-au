@@ -12,7 +12,9 @@ export function buildMetadata(opts: {
     title: opts.title,
     description: opts.description,
     alternates: { canonical: url },
-    robots: opts.noindex ? { index: false, follow: false } : undefined,
+    robots: opts.noindex
+      ? { index: false, follow: false }
+      : { index: false, follow: false, googleBot: { index: false, follow: false } }, // PREVIEW MODE: site-wide noindex until launch
     openGraph: {
       title: opts.title,
       description: opts.description,
