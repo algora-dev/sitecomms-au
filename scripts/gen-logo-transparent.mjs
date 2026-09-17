@@ -1,11 +1,11 @@
 // Makes the colour logo background transparent (white -> alpha) and trims it.
-// Source: public/brand/scnz-logo-colour.png (dark/coloured bars on white, no alpha)
+// Source: public/brand/SCAU-logo-colour.png (dark/coloured bars on white, no alpha)
 import sharp from "sharp";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const src = path.join(root, "public/brand/scnz-logo-colour.png");
+const src = path.join(root, "public/brand/SCAU-logo-colour.png");
 
 const { width, height } = await sharp(src).metadata();
 const { data, info } = await sharp(src).raw().toBuffer({ resolveWithObject: true });
@@ -25,6 +25,6 @@ for (let i = 0; i < width * height; i++) {
 const trimmed = await sharp(out, { raw: { width, height, channels: 4 } })
   .trim({ threshold: 12 })
   .png()
-  .toFile(path.join(root, "public/brand/scnz-logo-colour-trans.png"));
+  .toFile(path.join(root, "public/brand/SCAU-logo-colour-trans.png"));
 
-console.log(`scnz-logo-colour-trans.png: ${trimmed.width}x${trimmed.height} (from ${width}x${height})`);
+console.log(`SCAU-logo-colour-trans.png: ${trimmed.width}x${trimmed.height} (from ${width}x${height})`);

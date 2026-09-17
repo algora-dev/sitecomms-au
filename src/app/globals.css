@@ -113,7 +113,7 @@ a:hover {
 
 .sc-card:hover {
   border-color: var(--sc-blue-500);
-  box-shadow: 0 4px 16px rgba(37, 99, 168, 0.10);
+  box-shadow: 0 4px 16px rgba(232, 107, 45, 0.10);
 }
 
 .sc-btn-primary {
@@ -132,7 +132,7 @@ a:hover {
 .sc-btn-primary:hover {
   background: var(--sc-accent-hover); /* #2a5286: white text passes WCAG AA on hover */
   color: #fff;
-  box-shadow: 0 0 0 1px rgba(44, 177, 165, 0.45), 0 6px 22px rgba(44, 177, 165, 0.5);
+  box-shadow: 0 0 0 1px rgba(244, 164, 0, 0.45), 0 6px 22px rgba(244, 164, 0, 0.5);
 }
 
 .sc-btn-secondary {
@@ -151,7 +151,7 @@ a:hover {
 .sc-btn-secondary:hover {
   background: var(--sc-blue-50);
   border-color: var(--sc-teal-accent);
-  box-shadow: 0 0 0 1px rgba(44, 177, 165, 0.3), 0 4px 18px rgba(44, 177, 165, 0.4);
+  box-shadow: 0 0 0 1px rgba(244, 164, 0, 0.3), 0 4px 18px rgba(244, 164, 0, 0.4);
 }
 
 /* Hero schematic: subtle signal-flow pulse on connector lines */

@@ -94,9 +94,9 @@ export function SiteCommsHero() {
       });
       systems.forEach((term) => {
         term.style.opacity = String(reduced.matches ? 1 : reveal * fade);
-        term.style.backgroundColor = `rgba(44,177,165,${reduced.matches ? 0.08 : pulse * 0.14})`;
-        term.style.borderColor = `rgba(44,177,165,${reduced.matches ? 0.5 : 0.18 + pulse * 0.7})`;
-        term.style.boxShadow = `0 0 20px rgba(44,177,165,${reduced.matches ? 0 : pulse * 0.12})`;
+        term.style.backgroundColor = `rgba(244,164,0,${reduced.matches ? 0.08 : pulse * 0.14})`;
+        term.style.borderColor = `rgba(244,164,0,${reduced.matches ? 0.5 : 0.18 + pulse * 0.7})`;
+        term.style.boxShadow = `0 0 20px rgba(244,164,0,${reduced.matches ? 0 : pulse * 0.12})`;
       });
       // Reveal solid paths spatially. Normalised dashes with non-scaling strokes
       // can leave gaps when this SVG stretches to fit different viewport sizes.
@@ -199,7 +199,7 @@ export function SiteCommsHero() {
     <section className="sc-hero" ref={heroRef} aria-labelledby="sc-heading">
       <div className="sc-main">
         <div className="sc-copy">
-          <p className="sc-eyebrow">IP PAGING · SCHOOL BELLS · PA · INTERCOM · NEW ZEALAND</p>
+          <p className="sc-eyebrow">IP PAGING · SCHOOL BELLS · PA · INTERCOM · AUSTRALIA</p>
           <div className="sc-headline-space">
             <h1 id="sc-heading" className="sc-stable-heading">
               Plan the right IP paging, PA, bell or intercom <span>system.</span>
@@ -214,7 +214,7 @@ export function SiteCommsHero() {
             </div>
           </div>
           <p className="sc-description">
-            New Zealand guidance, comparisons and planning tools for IP paging, school bell, PA,
+            AUSTRALIA guidance, comparisons and planning tools for IP paging, school bell, PA,
             intercom and integrated communication systems.
           </p>
           <div className="sc-actions">
@@ -232,7 +232,7 @@ export function SiteCommsHero() {
         >
           <div className="sc-diagram-heading">
             <span>ONE CONNECTED SYSTEM</span>
-            <span className="sc-diagram-number">01 / NZ</span>
+            <span className="sc-diagram-number">01 / AU</span>
           </div>
           <div className="sc-map" aria-hidden="true">
             <svg className="sc-wires" viewBox="0 0 480 440" preserveAspectRatio="none">
@@ -332,7 +332,7 @@ export function SiteCommsHero() {
         <div></div>
       </div>
       <p className="sc-sr-only">
-        SiteComms New Zealand covers IP paging, school bell systems, PA systems, intercom,
+        SiteComms AUSTRALIA covers IP paging, school bell systems, PA systems, intercom,
         emergency communication and connected communication systems for schools, hospitals, aged
         care facilities, corrections and large facilities. Resources include planning, comparisons,
         pricing and cost estimation.

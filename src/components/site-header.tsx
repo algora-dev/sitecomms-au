@@ -20,17 +20,16 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--sc-border)] bg-white/95 backdrop-blur">
-      <div className="sc-container flex h-20 items-center justify-between gap-6">
-        <Link href="/" className="flex shrink-0 items-center gap-3" aria-label="SiteComms Australia home">
+      <div className="sc-container flex h-28 items-center justify-between gap-6">
+        <Link href="/" className="flex shrink-0 items-center" aria-label="SiteComms Australia home">
           <Image
             src="/brand/SCAU-logo-colour-trans.png"
-            alt="SiteComms New Zealand"
-            width={43}
-            height={60}
-            className="h-[3.75rem] w-auto cursor-pointer transition-all duration-200 ease-out hover:scale-[1.05] hover:drop-shadow-[0_6px_22px_rgba(44,177,165,0.55)]"
+            alt="SiteComms Australia"
+            width={86}
+            height={120}
+            className="h-[7.5rem] w-auto cursor-pointer transition-all duration-200 ease-out hover:scale-[1.05] hover:drop-shadow-[0_6px_22px_rgba(244,164,0,0.55)]"
             priority
           />
-          <span className="hidden cursor-pointer text-xl font-bold tracking-tight text-[var(--sc-blue-900)] transition-all duration-200 ease-out hover:scale-[1.08] hover:drop-shadow-[0_8px_30px_rgba(44,177,165,0.95)] xl:inline-block">SCAU</span>
         </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-5 lg:flex">
@@ -38,7 +37,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="inline-block origin-left text-sm font-medium text-[var(--sc-slate)] transition-all duration-200 ease-out hover:scale-[1.06] hover:text-[var(--sc-blue-900)] hover:drop-shadow-[0_4px_14px_rgba(44,177,165,0.5)]"
+              className="inline-block origin-left text-sm font-medium text-[var(--sc-slate)] transition-all duration-200 ease-out hover:scale-[1.06] hover:text-[var(--sc-blue-900)] hover:drop-shadow-[0_4px_14px_rgba(244,164,0,0.5)]"
             >
               {item.label}
             </Link>
