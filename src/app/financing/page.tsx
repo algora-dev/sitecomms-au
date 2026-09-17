@@ -7,7 +7,7 @@ import { publishedDate, reviewedDate, reviewedLabel } from "@/lib/content-meta";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "PA, Paging & Intercom Finance & Leasing Australian",
+  title: "PA, Paging & Intercom Finance & Leasing Australia",
   description:
     "Explore equipment finance, leasing and lease-to-own options for Australian paging, PA, school bell, intercom and communications-system projects, then run a quick finance check.",
   path: "/financing",
@@ -16,7 +16,7 @@ export const metadata: Metadata = buildMetadata({
 const faqs = [
   {
     q: "Can a paging, PA, bell or intercom system be financed in Australia?",
-    a: "Potentially. Australia commercial equipment-finance providers publicly finance technology, AV, security and other business equipment. Whether a particular communications project is accepted depends on the organisation, equipment, transaction and finance provider.",
+    a: "Potentially. Australian commercial equipment-finance providers publicly finance technology, AV, security and other business equipment. Whether a particular communications project is accepted depends on the organisation, equipment, transaction and finance provider.",
   },
   {
     q: "What finance structures may be available?",
@@ -24,11 +24,11 @@ const faqs = [
   },
   {
     q: "Do I need a deposit?",
-    a: "Not always. Some Australia equipment-finance providers advertise structures that can finance up to 100% of an equipment invoice, subject to their normal assessment and approval criteria. Other transactions may benefit from or require an upfront contribution.",
+    a: "Not always. Some equipment-finance transactions may fund most or all of an eligible equipment invoice, subject to provider assessment and approval. Other transactions may require or benefit from an upfront contribution.",
   },
   {
     q: "Can schools explore equipment finance or leasing?",
-    a: "Yes, some Australian equipment-finance providers specifically work with schools and education organisations. State and state-integrated schools can also have governance, accounting, borrowing or property requirements that need to be checked before entering an agreement.",
+    a: "Potentially. Schools should check sector-specific governance, accounting, borrowing and property requirements before entering any finance arrangement, as well as the finance provider’s eligibility and approval criteria.",
   },
   {
     q: "What if I do not know the project price yet?",
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "Can a school bell and PA upgrade be financed?",
-    a: "Potentially. Some Australian equipment-finance providers work with education organisations, but schools may also have governance, borrowing and property requirements that need to be considered.",
+    a: "Potentially. Schools may be able to explore commercial equipment finance, but governance, borrowing, accounting and property requirements should be checked for the relevant school sector before proceeding.",
   },
   {
     q: "Does the SiteComms finance checker approve finance?",
@@ -143,7 +143,7 @@ export default function FinancingPage() {
 
         <h2>Schools: funding and finance are different questions</h2>
         <p>
-          Australia state schools may have property or capital-funding pathways for eligible projects, while finance or leasing is a separate commercial arrangement. School boards can also have specific governance, accounting and borrowing requirements. A school should therefore check the relevant Ministry/property position and the proposed finance structure rather than treating finance as a substitute for a funding approval.
+          Australian government schools may have property or capital pathways that vary by state or territory, while finance or leasing is a separate commercial arrangement. Governance, accounting and borrowing requirements can also differ by school sector and jurisdiction. A school should therefore check the relevant education-authority and governance position before treating commercial finance as an available alternative to capital funding.
         </p>
 
         <h2>What parts of a PA, paging or intercom project may be financed?</h2>
@@ -197,7 +197,7 @@ export default function FinancingPage() {
         </ol>
 
         <p>
-          Useful companions along the way: estimate the project first with the <Link href="/pricing-tool">pricing calculator</Link> or the <Link href="/pricing">pricing guide</Link>, check the <Link href="/tools/funding-check">school funding checker</Link> if a funding pathway may apply, compare equipment options in the <Link href="/compare">platform comparison</Link>, or revisit the <Link href="/systems/ip-paging-pa">IP paging architecture guide</Link>.
+          Useful companions along the way: estimate the project first with the <Link href="/pricing-tool">pricing calculator</Link> or the <Link href="/pricing">pricing guide</Link>, review the <Link href="/tools/funding-check">school funding pathways page</Link> where a capital pathway may apply, compare equipment options in the <Link href="/compare">platform comparison</Link>, or revisit the <Link href="/systems/ip-paging-pa">IP paging architecture guide</Link>.
         </p>
 
         <div className="not-prose mt-10 rounded-2xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-6">
@@ -213,10 +213,7 @@ export default function FinancingPage() {
           The descriptions above are based on publicly available Australia equipment-finance information. They establish that these kinds of commercial structures exist; they do not mean SiteComms has a commercial relationship with every provider referenced.
         </p>
         <ul>
-          <li><a href="https://www.eleasing.co.Australian/customers/">eLeasing — Australian commercial equipment finance and leasing options</a></li>
-          <li><a href="https://www.westpac.co.Australian/business/loans-and-finance/equipment-finance/">Westpac Australian — business equipment finance</a></li>
-          <li><a href="https://mtlfinance.co.Australian/">MTL Finance — equipment leasing for Australian schools and businesses</a></li>
-          <li><a href="https://www.education.gov.au/school-funding">Australian Government Department of Education — school financial management and borrowing guidance</a></li>
+          <li><a href="https://www.education.gov.au/school-funding">Australian Government Department of Education — school funding context</a></li>
         </ul>
 
         <div className="not-prose mt-8 rounded-xl border border-[var(--sc-border)] bg-white p-5 text-sm leading-relaxed text-[var(--sc-slate)]">

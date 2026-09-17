@@ -35,7 +35,7 @@ export default function MethodologyPage() {
       </p>
       <h2>Funding methodology</h2>
       <p>
-        The funding checker identifies whether the nature of a proposed communications project appears consistent with publicly available education authority guidance. It does not determine eligibility or approval. Final funding decisions remain with the school and the relevant property/funding process.
+        SiteComms is rebuilding its Australian funding guidance around current government and non-government school pathways. Until that work is complete, the site does not present an automated funding-eligibility result. Any future guidance will remain indicative and will not determine approval.
       </p>
       <h2>Finance-check methodology</h2>
       <p>

@@ -17,7 +17,7 @@ export function SiteFooter() {
             <li><Link href="/compare">Compare systems</Link></li>
             <li><Link href="/pricing">Pricing guide</Link></li>
             <li><Link href="/pricing-tool">Ballpark cost calculator</Link></li>
-            <li><Link href="/tools/funding-check">School funding check</Link></li>
+            <li><Link href="/tools/funding-check">School funding pathways</Link></li>
             <li><Link href="/financing">Finance & leasing guide</Link></li>
             <li><Link href="/tools/finance-check">Finance & leasing check</Link></li>
             <li><Link href="/guides">Guides</Link></li>

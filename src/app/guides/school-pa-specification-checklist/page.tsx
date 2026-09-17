@@ -109,7 +109,7 @@ export default function SpecificationChecklistPage() {
         description="A good specification makes competing quotes easier to compare and reduces the risk of missing important coverage, emergency, network or operational requirements. Use this checklist to define what a school actually needs before requesting a formal system design or supplier quote."
         tags={["PA specification", "Paging checklist", "School bells", "Emergency coverage", "Quote comparison"]}
         primaryCta={{ label: "Estimate project cost", href: "/pricing-tool" }}
-        secondaryCta={{ label: "Check school funding", href: "/tools/funding-check" }}
+        secondaryCta={{ label: "View funding pathways", href: "/tools/funding-check" }}
         reviewed={reviewedLabel("/guides/school-pa-specification-checklist")}
         note="Attach to tender documents"
         breadcrumb={[{ name: "Guides", href: "/guides" }, { name: "School PA Specification Checklist" }]}
@@ -146,8 +146,7 @@ export default function SpecificationChecklistPage() {
       <p>
         A clear specification is also what a school property funding case needs: documented
         need, defined scope and evidence of value for money. See the{" "}
-        <Link href="/tools/funding-check">funding guide</Link> and run the{" "}
-        <Link href="/tools/funding-check">funding checker</Link> for an indicative read.
+        <Link href="/tools/funding-check">funding pathways page</Link> for the current Australian guidance status.
       </p>
       <ContinuePlanning
         items={[

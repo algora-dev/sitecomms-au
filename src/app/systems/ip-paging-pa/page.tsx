@@ -139,7 +139,7 @@ export default function IpPagingPaPage() {
         </li>
         <li>
           Get an indicative cost with the <Link href="/pricing-tool">ballpark calculator</Link>, or{" "}
-          <Link href="/tools/funding-check">check potential school funding</Link>
+          <Link href="/tools/funding-check">review school funding pathways</Link>
         </li>
       </ul>
       <ContinuePlanning

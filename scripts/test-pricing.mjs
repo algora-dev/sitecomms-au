@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { calculateEstimate } from "../src/lib/pricing/calculate.ts";
 import { defaultState } from "../src/lib/pricing/presets.ts";
-import { formatNZD, pricingConfig } from "../src/lib/pricing/config.ts";
+import { formatAUD, pricingConfig } from "../src/lib/pricing/config.ts";
 
 const t = (over) => {
   const s = { ...defaultState(), ...over };
@@ -9,28 +9,28 @@ const t = (over) => {
   return s;
 };
 
-// Test A: Tier B, 10 rooms, Essential (headend 5995 + 10 x 685 = 12845; low = 80%)
+// Test A: Tier B, 10 rooms, Essential (headend 4895 + 10 x 555 = 10445; low = 80%)
 let r = calculateEstimate(t({ tier: "B", areas: { ...defaultState().areas, standardIndoor: 10 } }));
-assert.equal(r.low, 10276, `A low expected 10276, got ${r.low}`);
-assert.equal(r.high, 12845, `A high expected 12845, got ${r.high}`);
+assert.equal(r.low, 8356, `A low expected 8356, got ${r.low}`);
+assert.equal(r.high, 10445, `A high expected 10445, got ${r.high}`);
 
 // Test B: Tier C prices identically to B (site-wide cabling excluded, no uplift)
 r = calculateEstimate(t({ tier: "C", areas: { ...defaultState().areas, standardIndoor: 10 } }));
-assert.equal(r.low, 10276, `B low expected 10276 (no cabling uplift), got ${r.low}`);
+assert.equal(r.low, 8356, `B low expected 8356 (no cabling uplift), got ${r.low}`);
 
-// Test C: Tier B safety (5995 + 6850 + 1895 = 14740; low = 11792)
+// Test C: Tier B safety (4895 + 5550 + 1535 = 11980; low = 9584)
 r = calculateEstimate(t({ tier: "B", featurePackage: "safety", areas: { ...defaultState().areas, standardIndoor: 10 } }));
-assert.equal(r.low, 11792, `C low expected 11792, got ${r.low}`);
+assert.equal(r.low, 9584, `C low expected 9584, got ${r.low}`);
 
-// Test D: Tier B interactive (5995 + 6850 + 1895 + 10*285 = 17590; low = 14072)
+// Test D: Tier B interactive (4895 + 5550 + 1535 + 10*230 = 14280; low = 11424)
 r = calculateEstimate(t({ tier: "B", featurePackage: "interactive", areas: { ...defaultState().areas, standardIndoor: 10 } }));
-assert.equal(r.low, 14072, `D low expected 14072, got ${r.low}`);
+assert.equal(r.low, 11424, `D low expected 11424, got ${r.low}`);
 assert.equal(r.twoWayRooms, 10, "interactive package should default two-way buttons to all standard rooms");
 
 // Test E: unsure (B basis, same 80-100% range)
 r = calculateEstimate(t({ tier: "unsure", areas: { ...defaultState().areas, standardIndoor: 10 } }));
-assert.equal(r.low, 10276, `E low expected 10276, got ${r.low}`);
-assert.equal(r.high, 12845, `E high expected 12845, got ${r.high}`);
+assert.equal(r.low, 8356, `E low expected 8356, got ${r.low}`);
+assert.equal(r.high, 10445, `E high expected 10445, got ${r.high}`);
 
 // Endpoints + large-system threshold
 r = calculateEstimate(t({ tier: "B", areas: { standardIndoor: 20, largeIndoor: 2, outdoor: 1, largeOutdoor: 1, entry: 2 } }));
@@ -51,5 +51,5 @@ assert.equal(r.monitoringAnnual, pricingConfig.monitoringAnnualPrice);
 assert.equal(r.monitoringIncludedMonths, 0, "no free-monitoring period in the generic model");
 
 console.log("pricing tests: all assertions passed");
-console.log(`  A: ${formatNZD(10276)} - ${formatNZD(12845)}`);
-console.log(`  safety: ${formatNZD(11792)} | interactive: ${formatNZD(14072)} | endpoints: 34`);
+console.log(`  A: ${formatAUD(8356)} - ${formatAUD(10445)}`);
+console.log(`  safety: ${formatAUD(9584)} | interactive: ${formatAUD(11424)} | endpoints: 34`);

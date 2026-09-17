@@ -1,32 +1,32 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 import { buildMetadata } from "@/lib/seo";
-import { FundingCheckTool } from "./FundingCheckTool";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Australian School Communications Funding Check",
+  title: "Australian School Communications Funding Pathways",
   description:
-    "Free Australian school funding check: see which parts of a paging, PA, bell, intercom or communications project may have a school funding pathway.",
+    "Australian school communications funding guidance is being rebuilt around current state, territory and non-government pathways.",
   path: "/tools/funding-check",
 });
 
 export default function FundingCheckPage() {
   return (
-    <div className="sc-container max-w-3xl py-12">
-      <div className="mb-9">
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australian state schools</p>
-        <h1 className="mt-2 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)] sm:text-4xl">School communications funding check</h1>
-        <p className="mt-3 text-[var(--sc-slate)]">
-          Answer a few simple questions to see whether parts of a proposed paging, PA, bell, intercom or communications project appear worth investigating through their education authority&#39;s school funding pathway.
+    <div className="sc-container max-w-3xl py-14">
+      <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australian schools</p>
+      <h1 className="mt-2 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)] sm:text-4xl">School communications funding pathways</h1>
+      <div className="sc-card mt-6 bg-white p-6">
+        <h2 className="text-xl font-semibold text-[var(--sc-blue-900)]">Australian funding guidance is being rebuilt</h2>
+        <p className="mt-3 leading-relaxed text-[var(--sc-slate)]">
+          SiteComms is rebuilding this guidance around current Australian pathways. The replacement will distinguish government and non-government schools and use current state, territory and Commonwealth sources before presenting any project-specific guidance.
         </p>
-        <p className="mt-2 text-xs text-[var(--sc-slate)]">
-          Indicative only. This tool does not approve funding. <Link href="/tools/funding-check" className="underline">Read how the funding pathway works</Link>.
+        <p className="mt-3 leading-relaxed text-[var(--sc-slate)]">
+          Funding eligibility depends on the school sector, jurisdiction, project scope and the current program rules. A paging, bell or intercom project is not automatically eligible simply because it is fixed infrastructure.
         </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Link href="/pricing-tool" className="sc-btn-primary">Estimate project cost</Link>
+          <Link href="/schools" className="sc-btn-secondary">Back to school planning</Link>
+        </div>
       </div>
-      <Suspense fallback={<div className="sc-card p-6 text-sm text-[var(--sc-slate)]">Loading funding checker…</div>}>
-        <FundingCheckTool />
-      </Suspense>
     </div>
   );
 }

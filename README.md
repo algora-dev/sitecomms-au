@@ -1,19 +1,32 @@
-# SmartComms NZ
+# SiteComms Australia
 
-New Zealand resource for IP paging, PA, bell, intercom and integrated communication systems.
+Australian research, education, planning and enquiry resource for IP paging, PA, bell, intercom and integrated communication systems.
 
-Next.js 16 (App Router) - TypeScript - Tailwind CSS 4 - Vercel
+## Core routes
 
-## Live tools
+- `/pricing-tool` — indicative installed pricing in AUD
+- `/pricing` — crawlable pricing guidance
+- `/compare` — platform comparison
+- `/schools` — Australian school communications planning
+- `/tools/funding-check` — holding page pending dedicated Australian funding rebuild
+- `/tools/finance-check` — preliminary finance/leasing fit check
+- `/industries/aged-care-retirement-villages` — aged-care and retirement-village communications guidance
 
-- `/pricing-tool` - ballpark installed pricing calculator
-- `/tools/funding-check` - NZ school communications funding check
+## Local development
 
-## Key authority pages
+```bash
+npm install
+npm run dev
+```
 
-- `/pricing` - crawlable NZ pricing guide
-- `/funding` - crawlable NZ 5YA / 10YPP school funding guide
-- `/systems` - system architectures
-- `/guides` - published resource hub
+Useful checks:
 
-See `AUDIT_IMPLEMENTATION.md` for the September 2026 audit changes, Vercel environment variables and deployment checks.
+```bash
+npm run lint
+npm run test:pricing
+npm run test:finance
+npm run test:aged-care
+npm run build
+```
+
+Set `NEXT_PUBLIC_SITE_URL=https://sitecomms.com.au` for production builds.

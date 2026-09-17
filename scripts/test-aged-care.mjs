@@ -34,8 +34,8 @@ assert.ok(spon, "SPON profile must exist");
 for (const required of ["spon-audio-intercom", "spon-video-intercom", "spon-outdoor-video", "spon-video-master"]) {
   assert.ok(spon.sources.includes(required), `SPON sources must include ${required}`);
 }
-for (const required of ["spon-nz-video", "spon-nz-outdoor-video"]) {
-  assert.ok(spon.nzSources.includes(required), `SPON NZ sources must include ${required}`);
+for (const required of ["spon-Australian-video", "spon-Australian-outdoor-video"]) {
+  assert.ok(spon.auSources.includes(required), `SPON sources must include ${required}`);
 }
 assert.ok(spon.summary.toLowerCase().includes("video intercom"), "SPON summary must reflect the broader family.");
 
@@ -48,7 +48,7 @@ for (const platform of carePlatforms) {
 }
 
 for (const item of [...carePlatforms, ...careUseCases, ...careQuestions]) {
-  for (const id of [...item.sources, ...(item.nzSources ?? [])]) assert.ok(careSources[id], `Unknown source ${id}`);
+  for (const id of [...item.sources, ...(item.auSources ?? [])]) assert.ok(careSources[id], `Unknown source ${id}`);
 }
 for (const source of Object.values(careSources)) assert.equal(new URL(source.href).protocol, "https:");
 assert.equal(AGED_CARE_PATH, "/industries/aged-care-retirement-villages");
@@ -79,12 +79,12 @@ assert.ok(estimate.low > 0 && estimate.high >= estimate.low);
 assert.equal(estimate.fireInterface, false);
 assert.equal(estimate.twoWayRooms, 0);
 assert.equal(estimate.monitoringAnnual, null);
-const pricingUrl = new URL(careExamplePricingHref(), "https://smartcomms.co.nz");
+const pricingUrl = new URL(careExamplePricingHref(), "https://sitecomms.com.au");
 const state = JSON.parse(decodeURIComponent(pricingUrl.searchParams.get("cfg")));
 assert.deepEqual(state, CARE_PRICING_EXAMPLE, "Must roundtrip through current PricingTool decoder.");
 assert.deepEqual(calculateEstimate(state), estimate);
 assert.equal(pricingUrl.searchParams.get("industry"), "aged-care");
-const financeUrl = new URL(buildIndustryToolHref("/tools/finance-check", { industry: "aged-care", source: "pricing", estimate }), "https://smartcomms.co.nz");
+const financeUrl = new URL(buildIndustryToolHref("/tools/finance-check", { industry: "aged-care", source: "pricing", estimate }), "https://sitecomms.com.au");
 assert.equal(financeUrl.searchParams.get("estimateLow"), String(estimate.low));
 assert.equal(financeUrl.searchParams.get("estimateHigh"), String(estimate.high));
 assert.equal(financeUrl.searchParams.has("cfg"), false);
@@ -92,4 +92,4 @@ assert.equal(financeUrl.searchParams.has("fundingResult"), false);
 assert.equal(buildIndustryToolHref("/pricing-tool"), "/pricing-tool");
 assert.equal(buildIndustryToolHref("/tools/finance-check", { estimate: { low: 100, high: 50 } }), "/tools/finance-check");
 console.log(`Aged-care compare-refresh assertions passed: ${carePlatforms.length} profiles, ${careUseCases.length} use-case rows, ${Object.keys(careSources).length} sources.`);
-console.log(`Illustrative scope, current engine: NZ$${estimate.low}–$${estimate.high} ex GST; ${estimate.endpoints} endpoints under current defaults.`);
+console.log(`Illustrative scope, current engine: A$${estimate.low}–$${estimate.high} ex GST; ${estimate.endpoints} endpoints under current defaults.`);

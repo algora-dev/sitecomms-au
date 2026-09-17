@@ -102,7 +102,7 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
     reasons.push("You came from the school funding pathway, so finance may be useful as an alternative or complementary option if capital funding does not cover the project.");
   }
 
-  const isSchool = answers.organisationType === "state_school" || answers.organisationType === "state_integrated_school";
+  const isSchool = answers.organisationType === "government_school" || answers.organisationType === "catholic_school" || answers.organisationType === "independent_school";
   if (isSchool) {
     reasons.push("School finance arrangements can have additional governance, accounting or approval requirements, so the exact structure should be checked with the school and finance provider.");
   }

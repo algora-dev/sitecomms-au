@@ -30,7 +30,7 @@ export default function SchoolBellPage() {
         description="Modern school bell systems can combine scheduled bells, live paging, emergency announcements and zoned audio across classrooms, halls and outdoor areas. This guide explains how they work, what schools should specify, and how bell requirements connect to pricing, funding and wider communications planning."
         tags={["School bells", "Scheduled announcements", "Zoned paging", "Emergency messaging", "Outdoor coverage"]}
         primaryCta={{ label: "Estimate project cost", href: "/pricing-tool" }}
-        secondaryCta={{ label: "Check school funding", href: "/tools/funding-check" }}
+        secondaryCta={{ label: "View funding pathways", href: "/tools/funding-check" }}
         reviewed={reviewedLabel("/systems/school-bell-announcements")}
         note="Australian-focused guidance"
         breadcrumb={[{ name: "Systems", href: "/systems" }, { name: "School Bells & Announcements" }]}
@@ -40,7 +40,7 @@ export default function SchoolBellPage() {
           { label: "Typical use", value: "Scheduled bells, announcements and day-to-day school communication" },
           { label: "Best fit", value: "Schools replacing standalone bells or combining bells and paging into one platform" },
           { label: "Works with", value: "IP speakers, existing PA infrastructure and hybrid systems" },
-          { label: "Next step", value: "Estimate cost or check potential funding" },
+          { label: "Next step", value: "Estimate cost or review funding pathways" },
         ]}
       />
       <article className="sc-container max-w-[800px] py-8 sc-prose">
@@ -116,8 +116,7 @@ export default function SchoolBellPage() {
         Bell functionality is usually a feature of the platform rather than a separate purchase, so
         cost is driven by endpoint count, zones and cabling state. Use the{" "}
         <Link href="/pricing-tool">ballpark cost calculator</Link> for indicative figures, and the{" "}
-        <Link href="/tools/funding-check">funding checker</Link> to see whether a project might fit
-        a school funding property funding route. No tool on this site can promise funding outcomes.
+        <Link href="/tools/funding-check">funding pathways page</Link> to review the current Australian guidance status. Funding depends on sector, jurisdiction, project scope and current program rules.
       </p>
       <h2 id="specifying">Specifying the system</h2>
       <p>
@@ -134,7 +133,7 @@ export default function SchoolBellPage() {
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">
-        Last reviewed {reviewedLabel("/systems/school-bell-announcements")}. General information for Australian schools — not Ministry policy advice.
+        Last reviewed {reviewedLabel("/systems/school-bell-announcements")}. General information for Australian schools — not education-authority policy advice.
       </p>
       <script
         type="application/ld+json"

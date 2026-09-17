@@ -360,7 +360,7 @@ export function ProjectEnquiryModal({
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block text-sm">
                   <span className="font-medium text-[var(--sc-charcoal)]">Email *</span>
-                  <input required name="email" type="email" className={inputClass} placeholder="you@example.co.Australian" autoComplete="email" />
+                  <input required name="email" type="email" className={inputClass} placeholder="you@example.com.au" autoComplete="email" />
                 </label>
                 {isProject ? (
                   <label className="block text-sm">

@@ -1,6 +1,6 @@
 # Partner School Case Study Intake
 
-Use this for each completed NZ school project before publishing a case study.
+Use this for each completed Australian school project before publishing a case study.
 
 ## Required facts
 
@@ -25,4 +25,4 @@ Use this for each completed NZ school project before publishing a case study.
 
 ## Important
 
-Do not imply a project received Ministry funding unless that fact is confirmed. Projects that were self-funded are still valuable case studies because they provide real cost, scope and design evidence.
+Do not imply a project received education-authority or government funding unless that fact is confirmed. Projects that were self-funded are still valuable case studies because they provide real cost, scope and design evidence.

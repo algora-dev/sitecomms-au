@@ -6,9 +6,9 @@ import { presetSummaries } from "@/lib/pricing/presets";
 import { pricingConfig } from "@/lib/pricing/config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "PA & Intercom System Cost Calculator Australian",
+  title: "PA & Intercom System Cost Calculator Australia",
   description:
-    "Get an indicative installed price for an IP paging, PA, bell or intercom system in Australian in under a minute. No technical knowledge required.",
+    "Get an indicative installed price for an IP paging, PA, bell or intercom system in Australia in under a minute. No technical knowledge required.",
   path: "/pricing-tool",
 });
 

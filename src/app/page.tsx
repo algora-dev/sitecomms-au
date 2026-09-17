@@ -9,7 +9,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "IP Paging, PA, Bell & Intercom Systems Australia | SiteComms Australia",
   description:
-    "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in Australia. Free pricing, school funding and finance/leasing tools.",
+    "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in Australia. Pricing, school funding pathway and finance/leasing guidance.",
   alternates: { canonical: site.url },
   openGraph: {
     title: "IP Paging, PA, Bell & Intercom Systems Australia | SiteComms Australia",
@@ -45,8 +45,8 @@ const INTENT_CARDS = [
   },
   {
     href: "/tools/funding-check",
-    title: "Check school funding potential",
-    desc: "Australian schools can quickly see whether a proposed project may be eligible for state-based funding support.",
+    title: "Review school funding pathways",
+    desc: "See the status of SiteComms funding guidance and the Australian sector and jurisdiction factors that shape the relevant pathway.",
   },
   {
     href: "/tools/finance-check",
@@ -56,7 +56,7 @@ const INTENT_CARDS = [
   {
     href: "/industries/aged-care-retirement-villages",
     title: "Aged care & retirement village systems",
-    desc: "PA, paging, entrance intercom and staff communication guidance for rest homes and villages, with use-case shortlists and indicative costs.",
+    desc: "PA, paging, entrance intercom and staff communication guidance for aged care homes and retirement villages, with use-case shortlists and indicative costs.",
   },
   {
     href: "/contact",
@@ -73,7 +73,7 @@ const UTILITY_LINKS = [
   },
   {
     href: "/tools/funding-check",
-    label: "School funding check",
+    label: "School funding pathways",
     event: "funding_check_cta_clicked",
   },
   {
@@ -88,7 +88,7 @@ const UTILITY_LINKS = [
   },
   {
     href: "/tools/funding-check",
-    label: "Funding checker",
+    label: "Funding pathways",
     event: "homepage_funding_tool_clicked",
   },
   {
@@ -149,12 +149,12 @@ export default function HomePage() {
             </div>
             <div className="sc-card p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--sc-blue-700)]">Australian schools</p>
-              <h3 className="mt-2 text-xl font-semibold text-[var(--sc-blue-900)]">School Funding Check</h3>
+              <h3 className="mt-2 text-xl font-semibold text-[var(--sc-blue-900)]">School Funding Pathways</h3>
               <p className="mt-2 text-[var(--sc-slate)]">
-                See whether fixed paging, bells, emergency communication, intercoms or cabling may be eligible for school funding support.
+                Review the Australian school-sector and jurisdiction factors that will shape the relevant funding pathway.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
-                <Link href="/tools/funding-check" className="sc-btn-primary">Check potential funding</Link>
+                <Link href="/tools/funding-check" className="sc-btn-primary">View funding pathways</Link>
               </div>
             </div>
             <div className="sc-card p-6">

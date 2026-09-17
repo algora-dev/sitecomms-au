@@ -209,7 +209,7 @@ export function FinanceCheckTool() {
       ...(answers.fundingResult ? { "Funding-tool result": answers.fundingResult } : {}),
     };
 
-    const isStateSchool = answers.organisationType === "state_school" || answers.organisationType === "state_integrated_school";
+    const isSchool = answers.organisationType === "government_school" || answers.organisationType === "catholic_school" || answers.organisationType === "independent_school";
 
     const answerSummary: [string, string][] = [
       ["Organisation", result.organisationLabel],
@@ -264,11 +264,11 @@ export function FinanceCheckTool() {
           </ul>
         </div>
 
-        {isStateSchool && (
+        {isSchool && (
           <div className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
-            <h3 className="font-semibold text-[var(--sc-blue-900)]">Also a Australia school?</h3>
+            <h3 className="font-semibold text-[var(--sc-blue-900)]">Also planning a school project?</h3>
             <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
-              Depending on the project, a state or state-integrated school may also have a separate property/funding pathway worth checking. Finance and school funding are different questions.
+              Depending on the school sector, state or territory and project scope, a separate capital-funding pathway may also be worth checking. Finance and school funding are different questions.
             </p>
             <Link
               href={`/tools/funding-check${hasCarriedEstimate ? `?source=finance&estimateLow=${carriedLow}&estimateHigh=${carriedHigh}` : ""}`}

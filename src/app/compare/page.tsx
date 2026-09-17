@@ -14,10 +14,10 @@ import { ProjectHelpLauncher } from "@/components/enquiry/ProjectHelpLauncher";
  */
 const REVIEW_DATE = reviewedDate("/compare");
 const REVIEW_LABEL = reviewedLabel("/compare");
-const PAGE_TITLE = "Compare School PA & IP Paging Systems Australian (2026 Guide)";
+const PAGE_TITLE = "Compare School PA & IP Paging Systems Australia (2026 Guide)";
 const ARTICLE_HEADLINE = "Compare school PA, IP paging, bell & intercom systems in Australia (2026)";
 const PAGE_DESCRIPTION =
-  "Compare SPON, FrontRow, Algo, Bosch PROSPERO, ITC, Axis and TOA for Australian school PA, paging, bells and intercom: features, support and trade-offs.";
+  "Compare SPON, FrontRow, Algo, Bosch PROSPERO, Axis and TOA for Australian school PA, paging, bells and intercom, with ITC treated separately pending current Australian supply verification.";
 const pageUrl = `${site.url.replace(/\/$/, "")}/compare`;
 
 export const metadata: Metadata = buildMetadata({
@@ -38,14 +38,14 @@ const evidence = {
     "kind": "Manufacturer"
   },
   "spon-Australian": {
-    "label": "Sound Choice Pro Audio Australian — SPON range",
-    "href": "https://www.scpaudio.co.Australian/brand/spon/",
-    "kind": "Australian supply evidence"
+    "label": "SPON manufacturer — school PA solution (Australian supply route not verified)",
+    "href": "https://sponcomm.com/solution-detail/smart-pa-solution-for-schools",
+    "kind": "Manufacturer; Australian supply/support not verified"
   },
   "spon-intercom": {
-    "label": "Australian-listed NAS-8523CV intercom",
-    "href": "https://www.scpaudio.co.Australian/shop/ip-paging/intercoms/nas-8523cv/",
-    "kind": "Australian product listing"
+    "label": "SPON NAS-8523CV/DV video intercom — manufacturer",
+    "href": "https://sponcomm.com/products/ip-video-intercom-panel",
+    "kind": "Manufacturer; Australian supply/support not verified"
   },
   "frontrow": {
     "label": "FrontRow Conductor",
@@ -58,19 +58,19 @@ const evidence = {
     "kind": "Manufacturer"
   },
   "frontrow-Australian": {
-    "label": "Pacific AV — FrontRow and named Australian schools",
-    "href": "https://www.pacificav.co.Australian/brands/frontrow/",
-    "kind": "Australian integrator evidence"
+    "label": "FrontRow Australia — campus communication",
+    "href": "https://www.gofrontrow.com.au/",
+    "kind": "Official Australian site"
   },
   "frontrow-devices": {
-    "label": "Pacific AV — CM900 and CM800 interfaces",
-    "href": "https://www.pacificav.co.Australian/product/frontrow-networked-audio-devices/",
-    "kind": "Australian product / integration evidence"
+    "label": "FrontRow Australia — products",
+    "href": "https://www.gofrontrow.com.au/products/",
+    "kind": "Official Australian product information"
   },
   "frontrow-server": {
-    "label": "Pacific AV — Conductor administrative station",
-    "href": "https://www.pacificav.co.Australian/product/conductor-administrative-station/",
-    "kind": "Australian product listing"
+    "label": "FrontRow Australia — Conductor",
+    "href": "https://www.gofrontrow.com.au/products/conductor/",
+    "kind": "Official Australian product information"
   },
   "frontrow-visual": {
     "label": "FrontRow Conductor display integration",
@@ -98,14 +98,14 @@ const evidence = {
     "kind": "Manufacturer documentation"
   },
   "algo-Australian": {
-    "label": "Everlea Australian — Algo paging and scheduling",
-    "href": "https://www.everlea.co.Australian/ip-paging-solutions/voip-paging/algo-8301-paging-adapter-and-scheduler/",
-    "kind": "Australian supply evidence"
+    "label": "advanceNET Australia — education IP paging and bell solutions",
+    "href": "https://www.advance-net.com.au/product-category/solutions/education/",
+    "kind": "Australian distributor / integrator evidence"
   },
   "algo-training": {
-    "label": "Everlea — Algo configuration training",
-    "href": "https://www.everlea.co.Australian/everlea-training/",
-    "kind": "Australian support / training evidence"
+    "label": "advanceNET Australia — Algo solutions",
+    "href": "https://www.advance-net.com.au/product-category/algo/",
+    "kind": "Australian distributor evidence"
   },
   "itc-system": {
     "label": "itc manufacturer — 78-series system architecture",
@@ -113,19 +113,19 @@ const evidence = {
     "kind": "Manufacturer; overseas installation"
   },
   "itc-Australian": {
-    "label": "Sound Choice Pro Audio Australian — ITC range",
-    "href": "https://www.scpaudio.co.Australian/brand/itc/",
-    "kind": "Australian product listings"
+    "label": "ITC manufacturer — 78-series architecture",
+    "href": "https://www.itctech.com.cn/case/index/art/1914.html",
+    "kind": "Manufacturer; Australian supply/support not verified"
   },
   "itc-server": {
-    "label": "Australian-listed ITC T-7800A / Luna server",
-    "href": "https://www.scpaudio.co.Australian/shop/commercial/t-7800a-ip-intercom-pa-system-server/",
-    "kind": "Australian product / integration evidence"
+    "label": "ITC manufacturer — product family information",
+    "href": "https://www.itctech.com.cn/",
+    "kind": "Manufacturer; Australian supply/support not verified"
   },
   "itc-edwards": {
-    "label": "Edwards Australian — ITC PA systems",
-    "href": "https://www.edwardsnz.co.Australian/itc",
-    "kind": "Australian supply evidence"
+    "label": "ITC manufacturer — current supply requires verification",
+    "href": "https://www.itctech.com.cn/",
+    "kind": "Manufacturer; no Australian supply claim"
   },
   "axis-edge": {
     "label": "AXIS Audio Manager Edge",
@@ -143,9 +143,9 @@ const evidence = {
     "kind": "Manufacturer"
   },
   "axis-Australian": {
-    "label": "JD Security Australian — Axis audio management",
-    "href": "https://www.jdsecurity.co.Australian/axis/axis-ip-audio/axis-audio-manager-edge/",
-    "kind": "Australian integrator evidence"
+    "label": "Axis Australia — Audio Manager Edge",
+    "href": "https://www.axis.com/en-au/products/axis-audio-manager-edge",
+    "kind": "Manufacturer Australian site"
   },
   "bosch-prospero": {
     "label": "Bosch PROSPERO configuration manual",
@@ -153,9 +153,9 @@ const evidence = {
     "kind": "Manufacturer documentation"
   },
   "bosch-prospero-Australian": {
-    "label": "Pacific AV Australian — Bosch PROSPERO school paging and bells",
-    "href": "https://www.pacificav.co.Australian/product/bosch-prospero-ip-based-paging-and-bell-system/",
-    "kind": "Australian integrator / product evidence"
+    "label": "Keenfinity Australia — Bosch PROSPERO",
+    "href": "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/",
+    "kind": "Manufacturer Australian site"
   },
   "toa-ip": {
     "label": "TOA IP-A1 speakers, interfaces and intercom options",
@@ -173,9 +173,9 @@ const evidence = {
     "kind": "Manufacturer"
   },
   "toa-Australian": {
-    "label": "Australis Music Australian — TOA",
-    "href": "https://www.australismusic.co.Australian/brands/toa",
-    "kind": "Australian brand / channel evidence"
+    "label": "TOA — Australia authorised dealers",
+    "href": "https://toa.com.sg/dealers/29",
+    "kind": "Manufacturer dealer listing"
   },
   "2n-current": {
     "label": "2N IP Verso 2.0 product support",
@@ -183,9 +183,9 @@ const evidence = {
     "kind": "Manufacturer documentation"
   },
   "2n-Australian": {
-    "label": "Sektor Australian — IP Verso 2.0 listing",
-    "href": "https://www.sektor.co.Australian/Product/SEAX02907001",
-    "kind": "Australian product listing"
+    "label": "advanceNET Australia — 2N products and education solutions",
+    "href": "https://www.advance-net.com.au/product-category/solutions/education/",
+    "kind": "Australian distributor / integrator evidence"
   },
   "2n-legacy": {
     "label": "2N — discontinued Net Audio Systems",
@@ -198,9 +198,9 @@ const evidence = {
     "kind": "Manufacturer lifecycle notice"
   },
   "2n-school": {
-    "label": "Edwards — Three Kings Primary project, March 2024",
-    "href": "https://www.edwardsnz.co.Australian/school-uses-paging-system-for-tighter-lockdown-procedures",
-    "kind": "Historical Australian school installation"
+    "label": "2N — discontinued Net Audio Systems lifecycle information",
+    "href": "https://www.2n.com/en-GB/products/discontinued/2n-net-audio-systems/",
+    "kind": "Manufacturer lifecycle information; no Australian school case claimed"
   },
   "atlas": {
     "label": "AtlasIED GLOBALCOM announcement platform",
@@ -208,9 +208,9 @@ const evidence = {
     "kind": "Manufacturer"
   },
   "atlas-Australian": {
-    "label": "NAS — AtlasIED distribution in Australia and Australian",
-    "href": "https://Australian.nas.solutions/atlas-ied-now-distributed-by-nas",
-    "kind": "Australian distribution evidence"
+    "label": "AtlasIED — National Audio Systems distributor in Australia",
+    "href": "https://www.atlasied.com/news/national-audio-systems-named-distributor-for-atlasied-in-australia",
+    "kind": "Manufacturer distribution announcement"
   },
   "bosch-praesensa": {
     "label": "Bosch PRAESENSA public address and voice alarm system",
@@ -257,9 +257,9 @@ type Platform = {
   core: string;
   audio: string;
   call: string;
-  Australian: string;
+  australianMarket: string;
   sources: readonly EvidenceId[];
-  nzSources: readonly EvidenceId[];
+  auSources: readonly EvidenceId[];
 };
 type Question = {
   id: string;
@@ -296,13 +296,13 @@ const platforms: readonly Platform[] = [
     ],
     "core": "XC-9000 management licence and the required host / controller for the quoted design.",
     "audio": "Compatible indoor speaker, plus separately sized outdoor endpoints or amplifier-fed zones.",
-    "call": "A supported room intercom; NAS-8523CV is one Australian-listed example, subject to controller compatibility.",
-    "Australian": "Sound Choice Pro Audio Australian lists SPON speakers, interfaces and intercoms. This demonstrates a local product channel, not nationwide stock or a measured market share.",
+    "call": "A supported room intercom; NAS-8523CV/DV is one manufacturer-documented example; Australian supply and controller compatibility require confirmation.",
+    "australianMarket": "SPON remains technically relevant, but this pass did not establish a strong current Australian distributor/support route. Require the proposed provider to identify supply, warranty and support arrangements before specifying it.",
     "sources": [
       "spon-school",
       "spon-control"
     ],
-    "nzSources": [
+    "auSources": [
       "spon-Australian",
       "spon-intercom"
     ]
@@ -326,7 +326,7 @@ const platforms: readonly Platform[] = [
     "costWatch": "Separate classroom voice amplification / AV control from the essential campus PA price.",
     "strengths": [
       "A coherent education workflow joins room audio, bells, announcements and intercom.",
-      "Pacific AV publishes named Australian school installations, giving buyers a concrete local implementation trail."
+      "FrontRow maintains an Australian site and Australian contact route for Conductor and its wider school communications range."
     ],
     "tradeoffs": [
       "A classroom audio package and a simple PoE paging speaker are different purchases; compare the same required functions.",
@@ -335,13 +335,13 @@ const platforms: readonly Platform[] = [
     "core": "Conductor server, licences and administrative station; confirm the current supplied hardware.",
     "audio": "CM900 / compatible classroom audio; CM800 plus suitable amplifier for 100V speaker zones.",
     "call": "Compatible room microphone and call interface; quote teacher microphone functions separately where required.",
-    "Australian": "Pacific AV lists FrontRow installations including Ormiston Junior High and Waterview Primary. Its device page identifies CM900 as the replacement for CM3000 and documents CM800 integration with standard 100V amplifiers.",
+    "australianMarket": "FrontRow maintains an Australian site and contact route for Conductor and its wider school communications range. Confirm the current locally supplied room interfaces and amplifier integration in the proposal.",
     "sources": [
       "frontrow",
       "frontrow-classroom",
       "frontrow-visual"
     ],
-    "nzSources": [
+    "auSources": [
       "frontrow-Australian",
       "frontrow-devices",
       "frontrow-server"
@@ -375,14 +375,14 @@ const platforms: readonly Platform[] = [
     "core": "8301 scheduler / adapter; add console and management only where the brief requires them.",
     "audio": "8188 indoor PoE speaker, appropriate outdoor horn and any amplifier interfaces.",
     "call": "8188 talkback with a compatible 1202 / 1203 call accessory, or a dedicated intercom design.",
-    "Australian": "Everlea Australian publishes Algo paging products and configuration training covering provisioning, SIP, multicast and scheduling. Obtain local support, lead-time and replacement terms with the quote.",
+    "australianMarket": "advanceNET publishes Australian education solutions that include Algo IP bell and PA products. Obtain support, lead-time and replacement terms with the quote.",
     "sources": [
       "algo-scheduler",
       "algo-speaker",
       "algo-display",
       "algo-management"
     ],
-    "nzSources": [
+    "auSources": [
       "algo-Australian",
       "algo-training"
     ]
@@ -415,27 +415,27 @@ const platforms: readonly Platform[] = [
     "core": "PROSPERO system software licence on the required Windows host, with PRP-CST call station(s).",
     "audio": "PRP-UC15L-IP classroom speaker and/or PRP-IM1A / PRP-IM2C1A interfaces feeding suitable amplifiers and passive speakers.",
     "call": "PRP-CST provides operator paging and zone monitoring. Quote a separate documented room-calling / intercom solution if classroom call-back is required.",
-    "Australian": "Pacific AV Australian lists Bosch PROSPERO as a school-focused IP paging and bells system and links the current system documentation. This establishes a local enquiry route; it does not establish Australian market share or stock levels.",
+    "australianMarket": "Pacific AV Australian lists Bosch PROSPERO as a school-focused IP paging and bells system and links the current system documentation. This establishes a local enquiry route; it does not establish Australian market share or stock levels.",
     "sources": [
       "bosch-prospero"
     ],
-    "nzSources": [
+    "auSources": [
       "bosch-prospero-Australian"
     ]
   },
   {
     "id": "itc",
     "name": "ITC",
-    "family": "Australian-listed 78-series / Luna IP PA and intercom",
+    "family": "78-series / Luna IP PA and intercom (Australian supply to verify)",
     "category": "Server-managed IP / hybrid PA",
     "fit": "A relevant integrated alternative to quote",
     "verdict": "Worth a like-for-like proposal for centrally managed PA and intercom, with the exact local product revision confirmed.",
-    "summary": "The relevant ITC here is the itc audio manufacturer, not an unrelated IT company. Australian listings identify a T-7800A / Luna IP PA and intercom system, network speakers and amplifiers. The manufacturer also documents a 78-series architecture combining server control, paging microphones, IP speakers and amplifier-fed zones. This makes it a meaningful alternative, provided the supplied product family and support are confirmed.",
+    "summary": "The relevant ITC here is the itc audio manufacturer, not an unrelated IT company. Manufacturer material documents a 78-series architecture combining server control, paging microphones, IP speakers and amplifier-fed zones. Current Australian supply/support for the relevant family was not verified in this pass, so ITC is not treated as a main Australian shortlist option.",
     "bells": "T-7800A / Luna listing documents central management, scheduling and IP intercom.",
     "talkback": "Specified 78-series intercom terminals; do not treat a paging-only speaker as a room intercom.",
     "integration": "Confirm SIP, APIs, security and firmware for the actual model; IP alone proves none of these.",
     "coverage": "T-7807-type IP speakers and network amplifiers feeding suitable passive indoor/outdoor speakers.",
-    "visual": "Not established for the Australian-listed package reviewed; request a documented solution if required.",
+    "visual": "Not established for a current Australian-supported package; request a documented solution if required.",
     "operations": "Server-based scheduling and paging controls; request a demo of the locally supplied software.",
     "setup": "Check model generation, endpoint power, licences, network requirements and ongoing software support.",
     "value": "An IP / amplifier hybrid may suit a mixed site without requiring a powered network speaker everywhere.",
@@ -451,11 +451,11 @@ const platforms: readonly Platform[] = [
     "core": "T-7800A / Luna or its supplier-confirmed current replacement, with software and paging station.",
     "audio": "T-7807-type indoor endpoint; a network amplifier such as T-78120 with suitable passive speakers where appropriate.",
     "call": "A compatible T-7803-series terminal or current equivalent, explicitly included and demonstrated.",
-    "Australian": "Sound Choice Pro Audio Australian lists the ITC range and T-7800A server; Edwards also presents ITC PA systems. These are local supply signals, not evidence of current stock or the number of school installations.",
+    "australianMarket": "Sound Choice Pro Audio Australian lists the ITC range and T-7800A server; Edwards also presents ITC PA systems. These are local supply signals, not evidence of current stock or the number of school installations.",
     "sources": [
       "itc-system"
     ],
-    "nzSources": [
+    "auSources": [
       "itc-Australian",
       "itc-server",
       "itc-edwards"
@@ -468,7 +468,7 @@ const platforms: readonly Platform[] = [
     "category": "Browser management and security integration",
     "fit": "Strong for administration and security convergence",
     "verdict": "Retain on the shortlist where browser-based operation and existing Axis security systems matter.",
-    "summary": "Axis remains relevant to a Australian school comparison. Audio Manager Edge is built into compatible audio devices and provides browser-based zones, scheduling and health monitoring without a separate management server for that tier. The C6110 console also supports two-way communication with compatible devices; it should not be reduced to a one-way security speaker system.",
+    "summary": "Axis remains relevant to an Australian school comparison. Audio Manager Edge is built into compatible audio devices and provides browser-based zones, scheduling and health monitoring without a separate management server for that tier. The C6110 console also supports two-way communication with compatible devices; it should not be reduced to a one-way security speaker system.",
     "bells": "Edge provides schedules and paging management; plan around its 200-speaker / 20-zone limit.",
     "talkback": "C6110 with compatible microphone-equipped speakers or intercoms; configure the receiving device.",
     "integration": "SIP and Axis integration tools; validate the chosen camera, access-control and audio workflow.",
@@ -489,13 +489,13 @@ const platforms: readonly Platform[] = [
     "core": "Included Audio Manager Edge on compatible devices; assess other management tiers only when required.",
     "audio": "Selected indoor and outdoor Axis speakers; C8110 bridge and existing amplifier for retained 100V lines.",
     "call": "C6110 console plus compatible two-way speaker / intercom, with the microphone and calling path configured.",
-    "Australian": "JD Security’s Australian site documents Axis Audio Manager Edge and network-audio integration. Local relevance is sufficient to retain Axis; this is not a claim that it is the most widely installed school platform.",
+    "australianMarket": "JD Security’s Australian site documents Axis Audio Manager Edge and network-audio integration. Local relevance is sufficient to retain Axis; this is not a claim that it is the most widely installed school platform.",
     "sources": [
       "axis-edge",
       "axis-console",
       "axis-bridge"
     ],
-    "nzSources": [
+    "auSources": [
       "axis-Australian"
     ]
   },
@@ -527,13 +527,13 @@ const platforms: readonly Platform[] = [
     "core": "IP-A1PG for the illustrated IP-A1 scheduling design; a separate N-8000 design only when needed.",
     "audio": "IP-A1PC238 indoor speaker and IP-A1SC15 outdoor horn, subject to Australian supply confirmation.",
     "call": "IP-A1AF + IP-A1MP and a suitable speaker/calling station, or specified N-8000 stations.",
-    "Australian": "Australis Music’s Australian site lists TOA. That establishes a Australian-facing channel; ask the integrator to confirm supply and support for the exact IP-A1 or N-8000 parts, not just the brand.",
+    "australianMarket": "TOA’s authorised-dealer information includes an Australian route. Ask the integrator to confirm supply and support for the exact IP-A1 or N-8000 parts, not just the brand.",
     "sources": [
       "toa-ip",
       "toa-scheduler",
       "toa-intercom"
     ],
-    "nzSources": [
+    "auSources": [
       "toa-Australian"
     ]
   }
@@ -542,8 +542,8 @@ const platforms: readonly Platform[] = [
 const faqs: readonly Question[] = [
   {
     "id": "best-school-system",
-    "question": "Which IP paging system is best for a Australia school?",
-    "answer": "There is no single best system for every school. For an integrated bells + paging + optional intercom brief, SPON is one strong starting point. FrontRow becomes particularly relevant when classroom audio is part of the project; Algo is strong for SIP and staged migration; Bosch PROSPERO is a school-specific Bosch alternative; Axis, TOA and ITC suit other architectures and priorities. This is an editorial fit shortlist, not a market-share ranking.",
+    "question": "Which IP paging system is best for an Australian school?",
+    "answer": "There is no single best system for every school. For an integrated bells + paging + optional intercom brief, SPON is one strong starting point. FrontRow becomes particularly relevant when classroom audio is part of the project; Algo is strong for SIP and staged migration; Bosch PROSPERO is a school-specific Bosch alternative; Axis and TOA suit other architectures and priorities; ITC requires current Australian supply/support verification before joining the main shortlist. This is an editorial fit shortlist, not a market-share ranking.",
     "sources": [
       "spon-school",
       "frontrow",
@@ -574,7 +574,7 @@ const faqs: readonly Question[] = [
   {
     "id": "itc-for-schools",
     "question": "Is ITC a relevant school PA option in Australia?",
-    "answer": "Yes. Australian suppliers publish ITC PA products, including a T-7800A / Luna IP PA and intercom system. It belongs in a local comparison, but the installer should identify the currently supplied generation, supported software, endpoint power and telephone integration. The absence of a verified feature in this guide means “check the exact package”, not “the manufacturer cannot do it”.",
+    "answer": "ITC has relevant manufacturer-documented IP PA and intercom architecture, but this pass did not verify a current Australian supply/support route for the relevant family. Treat it as a verify-first option rather than a main shortlist choice until a provider can identify the current generation, software, endpoint power and support arrangements.",
     "sources": [
       "itc-server",
       "itc-edwards"
@@ -583,7 +583,7 @@ const faqs: readonly Question[] = [
   {
     "id": "2n-for-schools",
     "question": "Should 2N still be considered for a school paging project?",
-    "answer": "Yes for relevant intercom requirements and existing installations, but distinguish current products from legacy Net Audio equipment. Edwards documents a 2N school project at Three Kings Primary. Separately, 2N marks its Net Audio family discontinued, and its APAC SIP Mic notice closed orders on 31 January 2025. A current IP Verso 2.0 intercom is not by itself a school-wide bell scheduler.",
+    "answer": "Yes for relevant intercom requirements and existing installations, but distinguish current products from legacy Net Audio equipment. 2N remains relevant for current entrance intercom and access requirements, while its Net Audio family is discontinued and the APAC SIP Mic reached end of ordering in 2025. A current IP Verso 2.0 intercom is not by itself a school-wide bell scheduler, and no Australian school case study is claimed here.",
     "sources": [
       "2n-school",
       "2n-legacy",
@@ -600,7 +600,7 @@ const faqs: readonly Question[] = [
   {
     "id": "easiest-system",
     "question": "Which system is easiest for school staff to use?",
-    "answer": "Axis provides a well-documented browser interface; FrontRow is designed around school and classroom operation. Algo provides browser scheduling, while SPON and the Australian-listed ITC system offer central controls. None has been given a hands-on usability score here. Ask an administrator—not just the installer—to change a timetable, make a zoned page and manage a room call before accepting the system.",
+    "answer": "Axis provides a well-documented browser interface; FrontRow is designed around school and classroom operation. Algo provides browser scheduling, while SPON and the manufacturer-documented ITC system offer central controls. None has been given a hands-on usability score here. Ask an administrator—not just the installer—to change a timetable, make a zoned page and manage a room call before accepting the system.",
     "sources": [
       "axis-edge",
       "frontrow",
@@ -649,8 +649,8 @@ const USE_CASES: { id: string; whatMatters: string; startingPoints: string[]; wh
   {
     id: "uc-hybrid-reuse",
     whatMatters: "Reuse of suitable existing PA / hybrid migration",
-    startingPoints: ["algo", "toa", "itc"],
-    why: "Documented interfaces and amplifiers that feed retained 100V speaker lines alongside new IP endpoints.",
+    startingPoints: ["algo", "toa", "axis"],
+    why: "Documented interfaces and amplifiers that can feed retained 100V speaker lines alongside new IP endpoints.",
   },
   {
     id: "uc-browser-security",
@@ -891,7 +891,7 @@ export default function ComparePage() {
 
       <section id="platforms" aria-labelledby="platforms-title" className="scroll-mt-24 border-y border-[var(--sc-border)] bg-[var(--sc-blue-50)] py-12">
         <div className="sc-container max-w-5xl">
-          <SectionHeading id="platforms-title" eyebrow="The system behind the brand" description="The profiles pair documented capability with local evidence. A Australian listing shows an available route for enquiry; it does not prove stock, school-market share or guaranteed support.">
+          <SectionHeading id="platforms-title" eyebrow="The system behind the brand" description="The profiles pair documented capability with local evidence. An Australian listing shows an available route for enquiry; it does not prove stock, school-market share or guaranteed support.">
             Detailed platform comparison and Australian market fit
           </SectionHeading>
           <div className="mt-7 space-y-5">
@@ -913,8 +913,8 @@ export default function ComparePage() {
                 </div>
                 <div className="mt-5 rounded-lg border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-4">
                   <h4 className="text-sm font-semibold text-[var(--sc-blue-900)]">Australian market fit / local ecosystem</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">{platform.Australian}</p>
-                  <Sources ids={platform.nzSources} label="Local evidence" />
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">{platform.australianMarket}</p>
+                  <Sources ids={platform.auSources} label="Local evidence" />
                 </div>
                 <details className="mt-5 border-t border-[var(--sc-border)] pt-4">
                   <summary className="cursor-pointer rounded font-semibold text-[var(--sc-blue-700)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Design detail: endpoints, controls and quote scope</summary>
@@ -931,7 +931,7 @@ export default function ComparePage() {
                     ].map(([title, text]) => <div key={title}><dt className="font-semibold text-[var(--sc-blue-900)]">{title}</dt><dd className="mt-1 text-[var(--sc-slate)]">{text}</dd></div>)}
                   </dl>
                   <p className="mt-4 text-xs leading-relaxed text-[var(--sc-slate)]">These are a quoting framework and component examples, not a complete bill of materials or an assurance of cross-family compatibility.</p>
-                  <Sources ids={[...platform.sources, ...platform.nzSources]} />
+                  <Sources ids={[...platform.sources, ...platform.auSources]} />
                 </details>
               </article>
             ))}
@@ -944,14 +944,14 @@ export default function ComparePage() {
           2N: current IP intercom and legacy school paging
         </SectionHeading>
         <p className="mt-4 leading-relaxed text-[var(--sc-slate)]">
-          <strong>2N has genuine Australian school-paging history.</strong> Edwards describes a Three Kings Primary installation using 2N network speakers, outdoor zones, paging microphones, scheduled bells and lockdown messages in a project article dated 1 March 2024. That is useful local evidence—but it does not establish that the same equipment remains a current new-build platform.
+          <strong>2N is relevant primarily as a current intercom/access option and for lifecycle review of legacy paging installations.</strong> The Net Audio family is discontinued, so a new school-wide design should not assume that legacy 2N paging components remain a current platform.
         </p>
         <Sources ids={["2n-school"]} label="Historical Australian project" />
         <div className="mt-5 grid gap-5 md:grid-cols-2">
           <div className="sc-card p-5">
             <Badge>Current intercom shortlist</Badge>
             <h3 className="mt-3 text-lg font-semibold text-[var(--sc-blue-900)]">IP Verso 2.0 and the specified calling system</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">2N maintains IP Verso 2.0 documentation, and Sektor Australian lists the product. It is relevant to SIP-based entrance communication and access workflows. Quote the intercom, modules, receiving station / calling service and any required licences. A door intercom alone does not provide a campus bell schedule.</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">2N maintains current IP Verso 2.0 documentation, and advanceNET publishes an Australian education/product route that includes 2N. It is relevant to SIP-based entrance communication and access workflows. Quote the intercom, modules, receiving station / calling service and any required licences. A door intercom alone does not provide a campus bell schedule.</p>
             <Sources ids={["2n-current", "2n-Australian"]} />
           </div>
           <div className="sc-card p-5">
@@ -977,7 +977,7 @@ export default function ComparePage() {
             </div>
             <div>
               <h3 className="font-semibold text-[var(--sc-blue-900)]">AtlasIED</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Consider a specified GLOBALCOM / IP endpoint solution for a wider campus-notification brief. AtlasIED has an ANZ distribution route through NAS; its shorter treatment here reflects scope, not an absence from Australian or a finding of inferior school suitability.</p>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Consider a specified GLOBALCOM / IP endpoint solution for a wider campus-notification brief. AtlasIED has an ANZ distribution route through NAS; its shorter treatment here reflects scope, not an absence from Australia or a finding of inferior school suitability.</p>
               <Sources ids={["atlas", "atlas-Australian"]} />
             </div>
             <div>
@@ -1072,8 +1072,8 @@ export default function ComparePage() {
             </section>
           ))}
           <section className="py-5" aria-labelledby="funding-question">
-            <h3 id="funding-question" className="text-lg font-semibold text-[var(--sc-blue-900)]">Where should a Australian school check funding options?</h3>
-            <p className="mt-2 leading-relaxed text-[var(--sc-slate)]">Use the <Link href="/tools/funding-check" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">school communications funding guide</Link> or the <Link href="/tools/funding-check" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">funding checker</Link> alongside a defined project scope. A recommendation in this comparison is not an eligibility decision, funding approval or promise that an entire project will be covered.</p>
+            <h3 id="funding-question" className="text-lg font-semibold text-[var(--sc-blue-900)]">Where should an Australian school check funding options?</h3>
+            <p className="mt-2 leading-relaxed text-[var(--sc-slate)]">Use the <Link href="/tools/funding-check" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">school communications funding pathways page</Link> alongside a defined project scope. A recommendation in this comparison is not an eligibility decision, funding approval or promise that an entire project will be covered.</p>
           </section>
         </div>
       </section>
@@ -1090,7 +1090,7 @@ export default function ComparePage() {
               buttonLabel="Not sure which shortlist fits your site?"
               className="inline-flex items-center justify-center rounded-lg border border-white/40 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10 cursor-pointer"
             />
-            <Link href="/tools/funding-check" className="inline-flex items-center justify-center rounded-lg border border-white/40 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">Check funding pathways</Link>
+            <Link href="/tools/funding-check" className="inline-flex items-center justify-center rounded-lg border border-white/40 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10">View funding pathways</Link>
           </div>
         </div>
       </section>

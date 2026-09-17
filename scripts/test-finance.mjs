@@ -25,7 +25,7 @@ assert.equal(r.level, "tailored");
 assert.doesNotMatch(r.headline, /reject|ineligible|declin/i);
 
 r = assessFinanceFit({
-  organisationType: "state_school",
+  organisationType: "government_school",
   paymentFrequency: "weekly",
   projectValueBand: "unsure",
   siteSizeBand: "21_40",

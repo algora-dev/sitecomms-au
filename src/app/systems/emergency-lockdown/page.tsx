@@ -32,7 +32,7 @@ export default function EmergencyLockdownPage() {
             className="sc-btn-primary"
           />
         }
-        secondaryCta={{ label: "Check school funding", href: "/tools/funding-check" }}
+        secondaryCta={{ label: "View funding pathways", href: "/tools/funding-check" }}
         reviewed={reviewedLabel("/systems/emergency-lockdown")}
         note="Planning guidance, not procedure advice"
         breadcrumb={[{ name: "Systems", href: "/systems" }, { name: "Emergency & Lockdown Communication" }]}
@@ -125,8 +125,8 @@ export default function EmergencyLockdownPage() {
         Emergency features range from included platform features to significant uplifts when
         redundancy, dedicated hardware and integration are added. Use the{" "}
         <Link href="/pricing-tool">ballpark calculator</Link> to see how emergency functionality
-        affects indicative cost, and the <Link href="/tools/funding-check">funding checker</Link> to
-        explore whether a safety-motivated upgrade might fit a property funding route.
+        affects indicative cost, and the <Link href="/tools/funding-check">funding pathways page</Link> to
+        review the current guidance for school-sector and jurisdiction-specific capital pathways.
       </p>
       <h2 id="more">Related resources</h2>
       <ul>
@@ -136,7 +136,7 @@ export default function EmergencyLockdownPage() {
       </ul>
       <ContinuePlanning
         items={[
-          { title: "Australian school PA requirements", desc: "Ministry design, cabling, funding and procurement context for school communications.", href: "/guides/school-pa-paging-requirements" },
+          { title: "Australian school PA requirements", desc: "Education-authority design, cabling, funding and procurement context for school communications.", href: "/guides/school-pa-paging-requirements" },
           { title: "School systems overview", desc: "Features, indicative costs and upgrade decisions for school communications.", href: "/schools" },
           { title: "school funding guide", desc: "How safety-motivated communications upgrades may fit the property funding process.", href: "/tools/funding-check" },
         ]}

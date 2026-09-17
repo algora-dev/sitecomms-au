@@ -1,11 +1,11 @@
-// Generates favicon assets: white SmartComms logo on a black rounded square.
-// Source: public/brand/scnz-logo-mono.png (black bars on white)
+// Generates favicon assets: white SiteComms logo on a black rounded square.
+// Source: public/brand/SCAU-logo-mono.png (black bars on white)
 import sharp from "sharp";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
-const mono = path.join(root, "public/brand/scnz-logo-mono.png");
+const mono = path.join(root, "public/brand/SCAU-logo-mono.png");
 
 // 1. Build a white logo with alpha from the mono mark (bars opaque, rest transparent)
 // Manual raw RGBA build: negate makes bars white (alpha 255) and background black (alpha 0)

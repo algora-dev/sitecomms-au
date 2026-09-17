@@ -3,16 +3,16 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Guides: IP Paging, PA, Bells & Funding Australian",
+  title: "Guides: IP Paging, PA, Bells & Funding Australia",
   description:
-    "Practical Australia guides to paging system architecture, replacing old PA systems, installed pricing and school communications funding.",
+    "Practical Australian guides to paging system architecture, replacing old PA systems, installed pricing and school communications funding pathways.",
   path: "/guides",
 });
 
 const GUIDES = [
   {
     title: "Aged Care & Retirement Village PA/Intercom Guide",
-    desc: "PA, paging, entrance intercom and staff communication for Australian rest homes and retirement villages, with use-case shortlists and indicative costs.",
+    desc: "PA, paging, entrance intercom and staff communication for Australian aged care homes and retirement villages, with use-case shortlists and indicative costs.",
     href: "/industries/aged-care-retirement-villages",
   },
   {
@@ -56,8 +56,8 @@ const GUIDES = [
     href: "/pricing",
   },
   {
-    title: "school funding for Australian School Communications",
-    desc: "How fixed paging, bells, emergency communication, intercoms and cabling may fit the school funding property process.",
+    title: "School Funding for Australian School Communications",
+    desc: "Current SiteComms guidance status for Australian school communications funding pathways.",
     href: "/tools/funding-check",
   },
 ];
@@ -81,7 +81,7 @@ export default function GuidesPage() {
       </div>
       <div className="mt-10 flex flex-wrap gap-3">
         <Link href="/pricing-tool" className="sc-btn-primary">Get a ballpark price</Link>
-        <Link href="/tools/funding-check" className="sc-btn-secondary">Check school funding</Link>
+        <Link href="/tools/funding-check" className="sc-btn-secondary">View funding pathways</Link>
       </div>
     </div>
   );

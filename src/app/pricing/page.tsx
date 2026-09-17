@@ -8,7 +8,7 @@ import { pricingConfig, formatAUD } from "@/lib/pricing/config";
 import { schoolBandSummaries } from "@/lib/pricing/school-bands";
 
 export const metadata: Metadata = buildMetadata({
-  title: "IP Paging, PA & Intercom System Costs Australian",
+  title: "IP Paging, PA & Intercom System Costs Australia",
   description:
     "Indicative installed price ranges for IP paging, PA, bell and intercom systems in Australia, plus the main factors that affect project cost.",
   path: "/pricing",
@@ -51,7 +51,7 @@ export default function PricingPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/pricing-tool" className="sc-btn-primary">Calculate your site</Link>
-            <Link href="/tools/funding-check" className="sc-btn-secondary">Check school funding potential</Link>
+            <Link href="/tools/funding-check" className="sc-btn-secondary">View school funding pathways</Link>
             <Link href="/financing" className="sc-btn-secondary">Explore finance / leasing</Link>
           </div>
           <p className="mt-4 text-xs text-[var(--sc-slate)]">Indicative only, ex GST. SiteComms pricing is a planning model informed by supplier pricing, product information and installation/project information available to us - it shows a realistic order of magnitude for the modelled scope, not a market average or a quote from every brand. Assumptions last reviewed {pricingConfig.reviewedAtLabel}. See <Link href="/about/methodology">how we get our pricing</Link>.</p>
@@ -141,7 +141,7 @@ export default function PricingPage() {
             The next question is how the project will be paid for. Australian schools can investigate relevant funding pathways, while schools and other organisations may also want to explore equipment finance or leasing.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
-            <Link href="/tools/funding-check" className="sc-btn-secondary">Check school funding</Link>
+            <Link href="/tools/funding-check" className="sc-btn-secondary">View school funding pathways</Link>
             <Link href="/tools/finance-check" className="sc-btn-primary">Check finance options</Link>
           </div>
         </div>
