@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* SiteComms Australia design tokens — SCAU brand package (2026-09-17) */
+:root {
+  --sc-navy: #263238;        /* trust / primary (charcoal) */
+  --sc-slate: #4f5b62;        /* muted body text */
+  --sc-slate-brand: #e86b2d;  /* brand burnt orange */
+  --sc-teal: #f4b400;        /* connection / accent (amber gold) */
+  --sc-charcoal: #1f2937;    /* body text */
+  --sc-grey: #e7e2d8;        /* borders / soft fills */
+
+  --sc-blue-900: #263238;
+  --sc-blue-700: #455a64;
+  --sc-blue-600: #c2571b;
+  --sc-blue-500: #e86b2d;
+  --sc-blue-100: #f6e3d3;
+  --sc-blue-50: #f4f1ea;
+  --sc-slate-text: #4f5b62;
+  --sc-border: #e7e2d8;
+  --sc-accent: #c2571b;
+  --sc-accent-hover: #a4480f;
+  --sc-teal-accent: #f4b400;
+  --sc-teal-hover: #d89e00;
+  --sc-teal-strong: #c64b3c;   /* accessible background for white text (terracotta) */
+  --sc-teal-strong-hover: #a93c30;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--sc-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--sc-blue-600);
+}
+
+a:hover {
+  color: var(--sc-accent-hover);
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid rgba(232, 107, 45, 0.35);
+  outline-offset: 2px;
+}
+
+.sc-container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.5rem;
+}
+
+.sc-prose {
+  line-height: 1.75;
+}
+
+.sc-prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sc-blue-900);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.sc-prose h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--sc-blue-900);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sc-prose p {
+  margin-bottom: 1rem;
+}
+
+.sc-prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sc-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.925rem;
+}
+
+.sc-prose th {
+  text-align: left;
+  background: var(--sc-blue-50);
+  color: var(--sc-blue-900);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--sc-border);
+}
+
+.sc-prose td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--sc-border);
+}
+
+.sc-card {
+  border: 1px solid var(--sc-border);
+  border-radius: 0.75rem;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sc-card:hover {
+  border-color: var(--sc-blue-500);
+  box-shadow: 0 4px 16px rgba(37, 99, 168, 0.10);
+}
+
+.sc-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--sc-accent);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.625rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.sc-btn-primary:hover {
+  background: var(--sc-accent-hover); /* #2a5286: white text passes WCAG AA on hover */
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(44, 177, 165, 0.45), 0 6px 22px rgba(44, 177, 165, 0.5);
+}
+
+.sc-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--sc-blue-600);
+  color: var(--sc-blue-700);
+  border-radius: 9999px;
+  padding: 0.625rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.sc-btn-secondary:hover {
+  background: var(--sc-blue-50);
+  border-color: var(--sc-teal-accent);
+  box-shadow: 0 0 0 1px rgba(44, 177, 165, 0.3), 0 4px 18px rgba(44, 177, 165, 0.4);
+}
+
+/* Hero schematic: subtle signal-flow pulse on connector lines */
+@keyframes sc-flow-pulse {
+  0%, 100% { stroke-dasharray: 0 200; stroke-opacity: 1; }
+  50% { stroke-dasharray: 8 8; stroke-opacity: 0.75; }
+}
+
+.sc-flow {
+  animation: sc-flow-pulse 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-flow { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* v2026-09-06b rebuild */
