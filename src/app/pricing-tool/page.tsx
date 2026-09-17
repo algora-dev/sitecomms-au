@@ -6,9 +6,9 @@ import { presetSummaries } from "@/lib/pricing/presets";
 import { pricingConfig } from "@/lib/pricing/config";
 
 export const metadata: Metadata = buildMetadata({
-  title: "PA & Intercom System Cost Calculator NZ",
+  title: "PA & Intercom System Cost Calculator Australian",
   description:
-    "Get an indicative installed price for an IP paging, PA, bell or intercom system in NZ in under a minute. No technical knowledge required.",
+    "Get an indicative installed price for an IP paging, PA, bell or intercom system in Australian in under a minute. No technical knowledge required.",
   path: "/pricing-tool",
 });
 
@@ -18,7 +18,7 @@ const mediumExample = exampleSummaries[1];
 
 const faqs = [
   {
-    q: "How much does an IP paging system cost in New Zealand?",
+    q: "How much does an IP paging system cost in Australia?",
     a: `Installed cost depends mainly on the number of areas, available network cabling and the required emergency or intercom functions. As configuration examples, the current calculator produces ${smallExample.range} for the small-site preset and ${mediumExample.range} for the medium multi-zone preset. These are indicative configurations rather than market averages or formal quotes.`,
   },
   {
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Is network cabling included?",
-    a: "No. The calculator excludes site-wide structured cabling. It assumes only limited local connection work around device locations where suitable cabling already exists. Where wider cabling is required, that work needs to be scoped separately by an appropriate ICT/cabling contractor. For NZ state-school projects, confirm the current Ministry requirements for approved ICT installation contractors with the school property / IT team.",
+    a: "No. The calculator excludes site-wide structured cabling. It assumes only limited local connection work around device locations where suitable cabling already exists. Where wider cabling is required, that work needs to be scoped separately by an appropriate ICT/cabling contractor. For Australian state-school projects, confirm the current education authority requirements for approved ICT installation contractors with the school property / IT team.",
   },
   {
     q: "Where does this pricing come from?",
@@ -57,7 +57,7 @@ export default function PricingToolPage() {
 
       <section className="border-t border-[var(--sc-border)] bg-[var(--sc-blue-50)] py-14">
         <div className="sc-container max-w-3xl">
-          <h2 className="text-2xl font-bold text-[var(--sc-navy)]">Indicative installed system examples in New Zealand</h2>
+          <h2 className="text-2xl font-bold text-[var(--sc-navy)]">Indicative installed system examples in Australia</h2>
           <p className="mt-3 text-sm text-[var(--sc-slate)]">
             The main cost drivers are the number of areas to cover, speaker quantities, existing network cabling and the emergency/intercom functionality required. Every example includes a central control/platform allowance for the modelled system (a SiteComms planning assumption; other architectures distribute these costs differently). These examples use the same pricing config as the calculator and are not presented as market averages.
           </p>

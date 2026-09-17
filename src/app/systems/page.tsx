@@ -76,7 +76,7 @@ const RESOURCES = [
   {
     href: "/compare",
     title: "Compare platforms",
-    desc: "Side-by-side comparison of leading paging and PA platforms sold in New Zealand.",
+    desc: "Side-by-side comparison of leading paging and PA platforms sold in Australia.",
   },
   {
     href: "/guides/ip-paging-network-readiness",
@@ -91,12 +91,12 @@ const RESOURCES = [
   {
     href: "/pricing",
     title: "Pricing",
-    desc: "How NZ paging and PA projects are priced, with indicative planning ranges.",
+    desc: "How Australian paging and PA projects are priced, with indicative planning ranges.",
   },
   {
-    href: "/funding",
+    href: "/tools/funding-check",
     title: "School funding",
-    desc: "Whether fixed communications work may fit a 5YA / 10YPP property pathway.",
+    desc: "Whether fixed communications work may fit a school funding property pathway.",
   },
 ];
 

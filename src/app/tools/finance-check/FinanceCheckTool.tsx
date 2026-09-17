@@ -266,9 +266,9 @@ export function FinanceCheckTool() {
 
         {isStateSchool && (
           <div className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
-            <h3 className="font-semibold text-[var(--sc-blue-900)]">Also a New Zealand school?</h3>
+            <h3 className="font-semibold text-[var(--sc-blue-900)]">Also a Australia school?</h3>
             <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
-              Depending on the project, a state or state-integrated school may also have a separate property/funding pathway worth checking. Finance and Ministry funding are different questions.
+              Depending on the project, a state or state-integrated school may also have a separate property/funding pathway worth checking. Finance and school funding are different questions.
             </p>
             <Link
               href={`/tools/funding-check${hasCarriedEstimate ? `?source=finance&estimateLow=${carriedLow}&estimateHigh=${carriedHigh}` : ""}`}
@@ -302,7 +302,7 @@ export function FinanceCheckTool() {
     <div ref={toolTopRef} className="scroll-mt-6">
       {!resultReady && (
         <div className="mb-9">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">New Zealand equipment finance</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia equipment finance</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)] sm:text-4xl">
             Is finance or leasing worth exploring for your communications project?
           </h1>
@@ -360,7 +360,7 @@ export function FinanceCheckTool() {
           {hasCarriedEstimate && (
             <div className="mt-5">
               <OptionCard
-                label={`Use my SiteComms estimate: $${carriedLow!.toLocaleString("en-NZ")}–$${carriedHigh!.toLocaleString("en-NZ")}`}
+                label={`Use my SiteComms estimate: $${carriedLow!.toLocaleString("en-AU")}–$${carriedHigh!.toLocaleString("en-AU")}`}
                 hint="Carried across from the pricing calculator so you do not need to enter it again."
                 selected={answers.projectValueBand === "SiteComms_estimate"}
                 onClick={() => setAnswers((prev) => ({ ...prev, projectValueBand: "SiteComms_estimate" }))}

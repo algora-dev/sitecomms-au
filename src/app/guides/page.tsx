@@ -3,21 +3,21 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Guides: IP Paging, PA, Bells & Funding NZ",
+  title: "Guides: IP Paging, PA, Bells & Funding Australian",
   description:
-    "Practical New Zealand guides to paging system architecture, replacing old PA systems, installed pricing and school communications funding.",
+    "Practical Australia guides to paging system architecture, replacing old PA systems, installed pricing and school communications funding.",
   path: "/guides",
 });
 
 const GUIDES = [
   {
     title: "Aged Care & Retirement Village PA/Intercom Guide",
-    desc: "PA, paging, entrance intercom and staff communication for NZ rest homes and retirement villages, with use-case shortlists and indicative costs.",
+    desc: "PA, paging, entrance intercom and staff communication for Australian rest homes and retirement villages, with use-case shortlists and indicative costs.",
     href: "/industries/aged-care-retirement-villages",
   },
   {
-    title: "NZ School PA & Paging Requirements",
-    desc: "What Ministry design, cabling, funding and procurement guidance means for school PA, bells, intercom and emergency communications.",
+    title: "Australian School PA & Paging Requirements",
+    desc: "What education authority design, cabling, funding and procurement guidance means for school PA, bells, intercom and emergency communications.",
     href: "/guides/school-pa-paging-requirements",
   },
   {
@@ -32,12 +32,12 @@ const GUIDES = [
   },
   {
     title: "IP Paging & PA Systems: 2026 Buyer’s Guide",
-    desc: "Compare integrated school platforms, SIP-first options, browser-managed audio, hybrid approaches and specialist architectures for NZ buyers.",
+    desc: "Compare integrated school platforms, SIP-first options, browser-managed audio, hybrid approaches and specialist architectures for Australian buyers.",
     href: "/compare",
   },
   {
     title: "School PA, Paging, Bell & Intercom Systems",
-    desc: "A single guide to school communication features, indicative costs, upgrade decisions and potential 5YA funding.",
+    desc: "A single guide to school communication features, indicative costs, upgrade decisions and potential school funding.",
     href: "/schools",
   },
   {
@@ -52,13 +52,13 @@ const GUIDES = [
   },
   {
     title: "What Do Paging and Intercom Systems Cost?",
-    desc: "Indicative NZ installed ranges, the main cost drivers and a calculator for your own site.",
+    desc: "Indicative Australian installed ranges, the main cost drivers and a calculator for your own site.",
     href: "/pricing",
   },
   {
-    title: "5YA Funding for NZ School Communications",
-    desc: "How fixed paging, bells, emergency communication, intercoms and cabling may fit the 5YA / 10YPP property process.",
-    href: "/funding",
+    title: "school funding for Australian School Communications",
+    desc: "How fixed paging, bells, emergency communication, intercoms and cabling may fit the school funding property process.",
+    href: "/tools/funding-check",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function GuidesPage() {
     <div className="sc-container max-w-4xl py-16">
       <h1 className="text-4xl font-bold tracking-tight text-[var(--sc-blue-900)]">Practical guides</h1>
       <p className="mt-4 max-w-3xl text-lg text-[var(--sc-slate)]">
-        Plain-language resources for planning, pricing and reviewing paging, PA, bell, intercom and emergency communication systems in New Zealand.
+        Plain-language resources for planning, pricing and reviewing paging, PA, bell, intercom and emergency communication systems in Australia.
       </p>
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
         {GUIDES.map((guide) => (

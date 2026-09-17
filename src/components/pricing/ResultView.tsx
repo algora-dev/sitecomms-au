@@ -91,7 +91,7 @@ export function ResultView({
     y += 18;
     doc.setFontSize(10);
     doc.setTextColor(110);
-    doc.text(new Date().toLocaleDateString("en-NZ", { day: "numeric", month: "long", year: "numeric" }), W / 2, y, { align: "center" });
+    doc.text(new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" }), W / 2, y, { align: "center" });
     y += 30;
     doc.setTextColor(20);
 

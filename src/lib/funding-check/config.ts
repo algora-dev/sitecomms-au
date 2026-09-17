@@ -1,5 +1,5 @@
 /**
- * NZ School Communications Funding Check - V2 configuration.
+ * Australian School Communications Funding Check - V2 configuration.
  *
  * V2 is intentionally short and outcome-focused. The public tool asks only
  * what is needed to identify a plausible funding pathway and a useful next
@@ -20,7 +20,7 @@ export interface OptionDef {
   tooltip?: string;
 }
 
-/** Screen 1A - official NZ school type, with plain-English wording. */
+/** Screen 1A - official Australian school type, with plain-English wording. */
 export const SCHOOL_TYPES: OptionDef[] = [
   { id: "state", label: "State school (public school)" },
   {
@@ -155,7 +155,7 @@ export const CABLING_TOOLTIP =
   "Network cabling means Ethernet/data cabling such as Cat5e or Cat6 used by modern IP systems. If you are unsure, choose 'Not sure'.";
 
 export const DISCLAIMER =
-  "This is an indicative funding check based on publicly available Ministry guidance and the information supplied. It does not determine formal eligibility or guarantee funding. Final funding depends on the school's property circumstances, priorities, available budget and the relevant Ministry/property approval process.";
+  "This is an indicative funding check based on publicly available education authority guidance and the information supplied. It does not determine formal eligibility or guarantee funding. Final funding depends on the school's property circumstances, priorities, available budget and the relevant Ministry/property approval process.";
 
 export const SUPPORTING_ITEM_NOTE =
   "Some supporting items such as movable IT hardware, software/licensing, training or ongoing support may need separate budget treatment.";
@@ -166,9 +166,9 @@ export const RESULT_COPY = {
     partialStrong: "Parts of your project show strong funding potential",
     investigate: "A funding pathway appears worth investigating",
   } as const,
-  pathway5ya: "Ministry 5YA capital funding through your 10 Year Property Plan (10YPP)",
+  pathway5ya: "Capital funding for school infrastructure through your state or territory education authority",
   pathway5yaBody:
-    "Based on your answers, the fixed communications parts of this project appear consistent with the types of capital infrastructure worth putting through the school's 5YA / 10YPP property process.",
+    "Based on your answers, the fixed communications parts of this project appear consistent with the types of capital infrastructure worth putting through the school's school funding property process.",
   stateIntegrated: {
     headline: "Potential property-funding opportunity",
     heading: "Different property-funding pathway identified",
@@ -177,37 +177,37 @@ export const RESULT_COPY = {
   },
   private: {
     headline: "Project funding options worth exploring",
-    heading: "Standard 5YA funding does not apply",
-    body: "The project may still be a strong capital upgrade, but it will need to use the school's own capital budget or another grant/funding route rather than the standard state-school 5YA pathway.",
+    heading: "Standard school funding does not apply",
+    body: "The project may still be a strong capital upgrade, but it will need to use the school's own capital budget or another grant/funding route rather than the standard state-school school funding pathway.",
     cta: "Explore project and funding options",
   },
   newBuild: {
     headline: "Strong capital-project opportunity",
     heading: "New Build / Capital Project Pathway",
-    body: "For a new state-school or major new-building project, the communications system is better addressed inside the wider project design and specification rather than treated as a normal existing-school 5YA upgrade.",
+    body: "For a new state-school or major new-building project, the communications system is better addressed inside the wider project design and specification rather than treated as a normal existing-school school funding upgrade.",
     cta: "Get the communications scope reviewed",
   },
   unknownSchool: {
     headline: "A funding pathway may be available",
     heading: "School type needs confirming",
-    body: "The fixed communications scope is worth reviewing. If this is a state school, 5YA / 10YPP may be the relevant pathway. If it is state-integrated or private, a different property or capital funding route will apply.",
+    body: "The fixed communications scope is worth reviewing. If this is a state school, school funding may be the relevant pathway. If it is state-integrated or private, a different property or capital funding route will apply.",
     cta: "Request a funding pathway review",
   },
   maintenanceOnly: {
-    headline: "Maintenance-only work is not a 5YA project",
-    heading: "Maintenance-only work cannot be paid from 5YA",
+    headline: "Maintenance-only work is not a school funding project",
+    heading: "Maintenance-only work cannot be paid from school funding",
     body:
-      "Ministry guidance is explicit: 5YA projects are capital projects and you cannot use 5YA funding for maintenance. Ordinary repairs and maintenance need to be handled through the school's normal operational budget.",
+      "Education authority guidance is generally explicit: school funding projects are capital projects and you cannot use school funding for maintenance. Ordinary repairs and maintenance need to be handled through the school's normal operational budget.",
     cta: "Review the project scope",
   },
   positiveOverride:
     "We found fixed communications elements with a strong potential funding fit. The overall case may simply need better supporting evidence before it is put forward.",
   maintenanceNote:
-    "Maintenance-only work cannot be paid from 5YA funding - 5YA is for capital projects. Do not relabel ordinary maintenance as a capital project to make it fit.",
+    "Maintenance-only work cannot be paid from school funding - school funding is for capital projects. Do not relabel ordinary maintenance as a capital project to make it fit.",
   maintenanceUpgradeExtension:
-    "Your answers suggest the scope may extend beyond routine maintenance (failing / end-of-life equipment or full replacement). If a separate replacement or substantial-upgrade project is defined, review that capital project on its own merits through the 5YA / 10YPP process, subject to the school's property circumstances and Ministry rules.",
+    "Your answers suggest the scope may extend beyond routine maintenance (failing / end-of-life equipment or full replacement). If a separate replacement or substantial-upgrade project is defined, review that capital project on its own merits through the school funding process, subject to the school's property circumstances and education authority rules.",
   ctaPrimary: "Review the project scope",
   ctaPrimaryBody:
-    "A provider can help document the existing system, technical scope and indicative budget. The school, Property Advisor / 10YPP process and Ministry requirements determine the funding pathway and approval.",
+    "A provider can help document the existing system, technical scope and indicative budget. The school, Property Advisor / school planning process and Ministry requirements determine the funding pathway and approval.",
   ctaSecondary: "Ask about an indicative system quote",
 } as const;

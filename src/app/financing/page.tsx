@@ -7,16 +7,16 @@ import { publishedDate, reviewedDate, reviewedLabel } from "@/lib/content-meta";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
-  title: "PA, Paging & Intercom Finance & Leasing NZ",
+  title: "PA, Paging & Intercom Finance & Leasing Australian",
   description:
-    "Explore equipment finance, leasing and lease-to-own options for NZ paging, PA, school bell, intercom and communications-system projects, then run a quick finance check.",
+    "Explore equipment finance, leasing and lease-to-own options for Australian paging, PA, school bell, intercom and communications-system projects, then run a quick finance check.",
   path: "/financing",
 });
 
 const faqs = [
   {
-    q: "Can a paging, PA, bell or intercom system be financed in New Zealand?",
-    a: "Potentially. New Zealand commercial equipment-finance providers publicly finance technology, AV, security and other business equipment. Whether a particular communications project is accepted depends on the organisation, equipment, transaction and finance provider.",
+    q: "Can a paging, PA, bell or intercom system be financed in Australia?",
+    a: "Potentially. Australia commercial equipment-finance providers publicly finance technology, AV, security and other business equipment. Whether a particular communications project is accepted depends on the organisation, equipment, transaction and finance provider.",
   },
   {
     q: "What finance structures may be available?",
@@ -24,11 +24,11 @@ const faqs = [
   },
   {
     q: "Do I need a deposit?",
-    a: "Not always. Some New Zealand equipment-finance providers advertise structures that can finance up to 100% of an equipment invoice, subject to their normal assessment and approval criteria. Other transactions may benefit from or require an upfront contribution.",
+    a: "Not always. Some Australia equipment-finance providers advertise structures that can finance up to 100% of an equipment invoice, subject to their normal assessment and approval criteria. Other transactions may benefit from or require an upfront contribution.",
   },
   {
     q: "Can schools explore equipment finance or leasing?",
-    a: "Yes, some NZ equipment-finance providers specifically work with schools and education organisations. State and state-integrated schools can also have governance, accounting, borrowing or property requirements that need to be checked before entering an agreement.",
+    a: "Yes, some Australian equipment-finance providers specifically work with schools and education organisations. State and state-integrated schools can also have governance, accounting, borrowing or property requirements that need to be checked before entering an agreement.",
   },
   {
     q: "What if I do not know the project price yet?",
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "Can a school bell and PA upgrade be financed?",
-    a: "Potentially. Some NZ equipment-finance providers work with education organisations, but schools may also have governance, borrowing and property requirements that need to be considered.",
+    a: "Potentially. Some Australian equipment-finance providers work with education organisations, but schools may also have governance, borrowing and property requirements that need to be considered.",
   },
   {
     q: "Does the SiteComms finance checker approve finance?",
@@ -61,8 +61,8 @@ export default function FinancingPage() {
   return (
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
-        headline: "Finance and leasing options for paging, PA, bell and intercom systems in New Zealand",
-        description: "Equipment finance, leasing and lease-to-own options for NZ communications-system projects, plus a quick SiteComms finance check.",
+        headline: "Finance and leasing options for paging, PA, bell and intercom systems in Australia",
+        description: "Equipment finance, leasing and lease-to-own options for Australian communications-system projects, plus a quick SiteComms finance check.",
         url: `${site.url}/financing`,
         datePublished: publishedDate("/financing"),
         dateModified: reviewedDate("/financing"),
@@ -83,7 +83,7 @@ export default function FinancingPage() {
 
       <header className="sc-container max-w-4xl py-16">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">New Zealand project payment options</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia project payment options</p>
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-[var(--sc-blue-900)]">
             Finance and leasing for paging, PA, bell and intercom systems
           </h1>
@@ -123,27 +123,27 @@ export default function FinancingPage() {
       <article className="sc-container max-w-3xl py-14 sc-prose">
         <h2>What can equipment finance help with?</h2>
         <p>
-          Commercial equipment finance is used to spread the cost of business and organisational assets over time. In New Zealand, finance providers publicly offer finance and leasing for technology, audio-visual equipment, security systems, medical equipment and other commercial assets. A paging or intercom project may include a mixture of hardware, software, installation and related work, so the exact financeable scope needs to be confirmed with the provider.
+          Commercial equipment finance is used to spread the cost of business and organisational assets over time. In Australia, finance providers publicly offer finance and leasing for technology, audio-visual equipment, security systems, medical equipment and other commercial assets. A paging or intercom project may include a mixture of hardware, software, installation and related work, so the exact financeable scope needs to be confirmed with the provider.
         </p>
 
         <h2>Finance lease, rental or equipment loan?</h2>
         <p>
-          Different providers use different structures. Common NZ commercial-equipment options include finance leases, business rentals and commercial equipment loans. “Lease to own” is also used in the market for some finance-lease arrangements where ownership transfers at the end of the agreed term. The right structure depends on the organisation and transaction, so SiteComms does not attempt to choose the contract type inside the checker.
+          Different providers use different structures. Common Australian commercial-equipment options include finance leases, business rentals and commercial equipment loans. “Lease to own” is also used in the market for some finance-lease arrangements where ownership transfers at the end of the agreed term. The right structure depends on the organisation and transaction, so SiteComms does not attempt to choose the contract type inside the checker.
         </p>
 
         <h2>Who might explore finance?</h2>
         <p>
-          Equipment-finance providers in New Zealand publicly work with businesses, schools and education organisations, healthcare providers, government and local-government organisations, charities and other commercial entities. Provider appetite and approval criteria differ, which is why the SiteComms tool focuses on whether there is a useful conversation to have rather than trying to approve or reject an application.
+          Equipment-finance providers in Australia publicly work with businesses, schools and education organisations, healthcare providers, government and local-government organisations, charities and other commercial entities. Provider appetite and approval criteria differ, which is why the SiteComms tool focuses on whether there is a useful conversation to have rather than trying to approve or reject an application.
         </p>
 
         <h2>What if the project cannot be paid upfront?</h2>
         <p>
-          That is one of the main reasons to investigate finance or leasing. An organisation may want to preserve cash, spread the project cost, stage an upgrade or compare finance against another capital pathway. A low upfront contribution does not automatically mean there is no option: some NZ providers advertise up to 100% equipment finance for qualifying transactions, while other providers or structures may require different terms.
+          That is one of the main reasons to investigate finance or leasing. An organisation may want to preserve cash, spread the project cost, stage an upgrade or compare finance against another capital pathway. A low upfront contribution does not automatically mean there is no option: some Australian providers advertise up to 100% equipment finance for qualifying transactions, while other providers or structures may require different terms.
         </p>
 
         <h2>Schools: funding and finance are different questions</h2>
         <p>
-          New Zealand state schools may have property or capital-funding pathways for eligible projects, while finance or leasing is a separate commercial arrangement. School boards can also have specific governance, accounting and borrowing requirements. A school should therefore check the relevant Ministry/property position and the proposed finance structure rather than treating finance as a substitute for a funding approval.
+          Australia state schools may have property or capital-funding pathways for eligible projects, while finance or leasing is a separate commercial arrangement. School boards can also have specific governance, accounting and borrowing requirements. A school should therefore check the relevant Ministry/property position and the proposed finance structure rather than treating finance as a substitute for a funding approval.
         </p>
 
         <h2>What parts of a PA, paging or intercom project may be financed?</h2>
@@ -159,7 +159,7 @@ export default function FinancingPage() {
           </div>
           <div className="sc-card bg-white p-5">
             <h3 className="font-semibold text-[var(--sc-blue-900)]">Funding</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Relevant mainly where a genuine funding or capital pathway applies — particularly the <Link href="/funding">school property pathways</Link> covered elsewhere on SiteComms.</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Relevant mainly where a genuine funding or capital pathway applies — particularly the <Link href="/tools/funding-check">school property pathways</Link> covered elsewhere on SiteComms.</p>
           </div>
           <div className="sc-card bg-white p-5">
             <h3 className="font-semibold text-[var(--sc-blue-900)]">Finance / leasing</h3>
@@ -210,13 +210,13 @@ export default function FinancingPage() {
 
         <h2>Sources and market context</h2>
         <p>
-          The descriptions above are based on publicly available New Zealand equipment-finance information. They establish that these kinds of commercial structures exist; they do not mean SiteComms has a commercial relationship with every provider referenced.
+          The descriptions above are based on publicly available Australia equipment-finance information. They establish that these kinds of commercial structures exist; they do not mean SiteComms has a commercial relationship with every provider referenced.
         </p>
         <ul>
-          <li><a href="https://www.eleasing.co.nz/customers/">eLeasing — NZ commercial equipment finance and leasing options</a></li>
-          <li><a href="https://www.westpac.co.nz/business/loans-and-finance/equipment-finance/">Westpac NZ — business equipment finance</a></li>
-          <li><a href="https://mtlfinance.co.nz/">MTL Finance — equipment leasing for NZ schools and businesses</a></li>
-          <li><a href="https://www.education.govt.nz/education-professionals/schools-year-0-13/funding-and-financials/day-day-financial-management">Ministry of Education — school financial management and borrowing guidance</a></li>
+          <li><a href="https://www.eleasing.co.Australian/customers/">eLeasing — Australian commercial equipment finance and leasing options</a></li>
+          <li><a href="https://www.westpac.co.Australian/business/loans-and-finance/equipment-finance/">Westpac Australian — business equipment finance</a></li>
+          <li><a href="https://mtlfinance.co.Australian/">MTL Finance — equipment leasing for Australian schools and businesses</a></li>
+          <li><a href="https://www.education.gov.au/school-funding">Australian Government Department of Education — school financial management and borrowing guidance</a></li>
         </ul>
 
         <div className="not-prose mt-8 rounded-xl border border-[var(--sc-border)] bg-white p-5 text-sm leading-relaxed text-[var(--sc-slate)]">

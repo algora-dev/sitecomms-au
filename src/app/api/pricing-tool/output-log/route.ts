@@ -74,7 +74,7 @@ const PACKAGE_LABEL: Record<string, string> = {
   safety: "Safety & Control",
   interactive: "Interactive",
 };
-const money = (n: number) => `$${Math.round(n).toLocaleString("en-NZ")}`;
+const money = (n: number) => `$${Math.round(n).toLocaleString("en-AU")}`;
 
 function buildPdf(args: {
   tier: string; featurePackage: string; breakdown: BreakdownLineIn[];
@@ -89,7 +89,7 @@ function buildPdf(args: {
   doc.text("SiteComms Australia - pricing tool output record", 40, y);
   y += 18;
   doc.setFontSize(9);
-  doc.text(`Created: ${created.toISOString()} / NZ: ${createdNz}`, 40, y);
+  doc.text(`Created: ${created.toISOString()} / Australian: ${createdNz}`, 40, y);
   y += 14;
   doc.text(`Site situation: ${TIER_LABEL[tier] ?? tier}`, 40, y); y += 12;
   doc.text(`Feature package: ${PACKAGE_LABEL[featurePackage] ?? featurePackage}`, 40, y); y += 22;
@@ -169,7 +169,7 @@ export async function POST(req: NextRequest) {
     }
 
     const created = new Date();
-    const createdNz = new Intl.DateTimeFormat("en-NZ", {
+    const createdNz = new Intl.DateTimeFormat("en-AU", {
       timeZone: "Pacific/Auckland", dateStyle: "medium", timeStyle: "short",
     }).format(created);
 

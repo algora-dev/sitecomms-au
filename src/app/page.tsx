@@ -7,14 +7,14 @@ import { ProjectHelpLauncher } from "@/components/enquiry/ProjectHelpLauncher";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "IP Paging, PA, Bell & Intercom Systems NZ | SiteComms",
+  title: "IP Paging, PA, Bell & Intercom Systems Australia | SiteComms Australia",
   description:
-    "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in New Zealand. Free pricing, school funding and finance/leasing tools.",
+    "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in Australia. Free pricing, school funding and finance/leasing tools.",
   alternates: { canonical: site.url },
   openGraph: {
-    title: "IP Paging, PA, Bell & Intercom Systems NZ | SiteComms",
+    title: "IP Paging, PA, Bell & Intercom Systems Australia | SiteComms Australia",
     description:
-      "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in New Zealand.",
+      "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in Australia.",
     url: site.url,
     siteName: site.name,
     locale: site.locale,
@@ -46,17 +46,12 @@ const INTENT_CARDS = [
   {
     href: "/tools/funding-check",
     title: "Check school funding potential",
-    desc: "NZ state schools can quickly see whether parts of a proposed project may have a 5YA / 10YPP pathway.",
+    desc: "Australian schools can quickly see whether a proposed project may be eligible for state-based funding support.",
   },
   {
     href: "/tools/finance-check",
     title: "Explore finance or leasing",
     desc: "See whether spreading the project cost through equipment finance or leasing looks worth discussing.",
-  },
-  {
-    href: "/funding",
-    title: "Understand 5YA / 10YPP funding",
-    desc: "See why fixed school communications infrastructure may fit and what the school needs to do next.",
   },
   {
     href: "/industries/aged-care-retirement-villages",
@@ -73,13 +68,13 @@ const INTENT_CARDS = [
 const UTILITY_LINKS = [
   {
     href: "/pricing",
-    label: "Indicative NZ pricing ranges",
+    label: "Indicative pricing ranges",
     event: "pricing_guide_cta_clicked",
   },
   {
-    href: "/funding",
-    label: "Documented school funding examples",
-    event: "funding_guide_cta_clicked",
+    href: "/tools/funding-check",
+    label: "School funding check",
+    event: "funding_check_cta_clicked",
   },
   {
     href: "/compare",
@@ -153,14 +148,13 @@ export default function HomePage() {
               </div>
             </div>
             <div className="sc-card p-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--sc-blue-700)]">NZ schools</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--sc-blue-700)]">Australian schools</p>
               <h3 className="mt-2 text-xl font-semibold text-[var(--sc-blue-900)]">School Funding Check</h3>
               <p className="mt-2 text-[var(--sc-slate)]">
-                See whether fixed paging, bells, emergency communication, intercoms or cabling may have a potential Ministry 5YA / 10YPP funding pathway.
+                See whether fixed paging, bells, emergency communication, intercoms or cabling may be eligible for school funding support.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link href="/tools/funding-check" className="sc-btn-primary">Check potential funding</Link>
-                <Link href="/funding" className="sc-btn-secondary">Read the funding guide</Link>
               </div>
             </div>
             <div className="sc-card p-6">
@@ -204,10 +198,10 @@ export default function HomePage() {
       <section className="sc-container py-16">
         <Reveal>
           <div className="rounded-2xl border border-[var(--sc-border)] bg-white p-7 sm:p-9">
-            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">For New Zealand schools</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">For Australian schools</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)]">Cost, system design and funding in one place</h2>
             <p className="mt-3 max-w-3xl text-lg text-[var(--sc-slate)]">
-              The school guide brings together the questions schools usually research separately: what a modern paging and bell system can do, what a small, medium or large project may cost, and whether fixed communications work has a potential 5YA pathway.
+              The school guide brings together the questions schools usually research separately: what a modern paging and bell system can do, what a small, medium or large project may cost, and whether fixed communications work has potential funding pathways.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <TrackedLink href="/schools" event="school_guide_cta_clicked" payload={{ source: "homepage_school_band" }} className="sc-btn-primary">Explore school systems</TrackedLink>

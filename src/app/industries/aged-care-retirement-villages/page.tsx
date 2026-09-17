@@ -81,7 +81,7 @@ export default function AgedCareRetirementVillagesPage() {
   const article = {
     ...articleSchema({ headline: AGED_CARE_HEADLINE, description: AGED_CARE_DESCRIPTION, url: pageUrl,
       datePublished: publishedDate(AGED_CARE_PATH), dateModified: reviewedDate(AGED_CARE_PATH) }),
-    "@id": `${pageUrl}#article`, inLanguage: "en-NZ",
+    "@id": `${pageUrl}#article`, inLanguage: "en-AU",
     about: [
       { "@type": "Thing", name: "Aged-care and retirement-village public address systems" },
       { "@type": "Thing", name: "IP paging and entrance intercom" },
@@ -93,7 +93,7 @@ export default function AgedCareRetirementVillagesPage() {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "@id": `${pageUrl}#shortlist`,
-    name: "NZ aged-care and retirement-village communications comparison shortlist",
+    name: "Australian aged-care and retirement-village communications comparison shortlist",
     itemListOrder: "https://schema.org/ItemListUnordered",
     numberOfItems: mainPlatforms.length,
     itemListElement: mainPlatforms.map((platform, index) => ({
@@ -107,7 +107,7 @@ export default function AgedCareRetirementVillagesPage() {
   return (
     <article aria-labelledby="care-title">
       <header className="sc-container max-w-5xl py-12 md:py-16">
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">New Zealand · Aged care & retirement villages</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia · Aged care & retirement villages</p>
         <h1 id="care-title" className="mt-3 max-w-4xl text-4xl font-bold tracking-tight text-[var(--sc-blue-900)] md:text-5xl">{AGED_CARE_HEADLINE}</h1>
         <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[var(--sc-slate)]">
           Planning a rest-home PA upgrade, retirement-village announcement system or entrance intercom? Compare the systems against the job you need done: reaching the right areas, answering visitors, supporting staff and keeping everyday communication easy to manage.
@@ -224,13 +224,13 @@ export default function AgedCareRetirementVillagesPage() {
             ].map(([title, text]) => <div key={title} className="sc-card p-5"><h3 className="font-bold text-[var(--sc-blue-900)]">{title}</h3><p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">{text}</p></div>)}
           </div>
           <div className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
-            <h3 className="font-bold text-[var(--sc-blue-900)]">A useful NZ example: quieter staff notification</h3>
+            <h3 className="font-bold text-[var(--sc-blue-900)]">A useful Australian example: quieter staff notification</h3>
             <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">In its September 2017 account of a Levin memory-care centre, Summerset describes silent nurse-call paging carried by staff. It illustrates why more overhead announcements are not always the right answer. This is a historical operator-published example, not an audit of the current installation or an endorsement of any PA brand in this guide.</p>
             <Sources ids={["summerset"]} />
           </div>
           <details className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
             <summary className={`cursor-pointer ${linkClass}`}>Independent village, residential care or a mixed site?</summary>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">Health New Zealand distinguishes retirement-village living from aged residential care. Our planning recommendation is to reflect that distinction in the communications brief: an independent-living village may prioritise entrances and shared spaces; a care facility needs its care-response systems scoped alongside general PA; a mixed village should identify where the systems connect and where they remain separate.</p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">Health Australia distinguishes retirement-village living from aged residential care. Our planning recommendation is to reflect that distinction in the communications brief: an independent-living village may prioritise entrances and shared spaces; a care facility needs its care-response systems scoped alongside general PA; a mixed village should identify where the systems connect and where they remain separate.</p>
             <Sources ids={["care-scope"]} />
           </details>
           <p className="mt-5 text-sm leading-relaxed text-[var(--sc-slate)]">An emergency-announcement function is also not proof that a product meets a required fire/evacuation specification. Keep that engineered scope separate. Unsure which system you are asking for? <Help useCase="Distinguish PA, intercom, nurse call or specialist alerts" label="Tell us what needs to happen" className={`${linkClass} cursor-pointer bg-transparent`} />.</p>
@@ -238,8 +238,8 @@ export default function AgedCareRetirementVillagesPage() {
       </section>
 
       <section id="care-platforms" aria-labelledby="care-platforms-title" className="sc-container max-w-5xl scroll-mt-24 py-12">
-        <SectionHeading id="care-platforms-title" eyebrow="The system behind the brand" description="Compare the actual product family and the supported design. A NZ listing establishes a route for enquiry, not guaranteed stock, nationwide service or a care-sector market share.">
-          Detailed platform comparison and New Zealand support evidence
+        <SectionHeading id="care-platforms-title" eyebrow="The system behind the brand" description="Compare the actual product family and the supported design. A Australian listing establishes a route for enquiry, not guaranteed stock, nationwide service or a care-sector market share.">
+          Detailed platform comparison and Australia support evidence
         </SectionHeading>
         <div className="mt-7 space-y-5">
           {carePlatforms.map((platform) => (
@@ -259,8 +259,8 @@ export default function AgedCareRetirementVillagesPage() {
                 <div><h4 className="font-semibold text-[var(--sc-blue-900)]">Trade-offs to check</h4><ul className="mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--sc-slate)]">{platform.tradeoffs.map((text) => <li key={text}>{text}</li>)}</ul></div>
               </div>
               <div className="mt-5 rounded-lg border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-4">
-                <h4 className="text-sm font-semibold text-[var(--sc-blue-900)]">NZ market fit / local ecosystem</h4>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">{platform.nz}</p>
+                <h4 className="text-sm font-semibold text-[var(--sc-blue-900)]">Australian market fit / local ecosystem</h4>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">{platform.Australian}</p>
                 <Sources ids={platform.nzSources} />
               </div>
               <details className="mt-5 border-t border-[var(--sc-border)] pt-4">
@@ -296,8 +296,8 @@ export default function AgedCareRetirementVillagesPage() {
             </div>
             <div>
               <h3 className="font-semibold text-[var(--sc-blue-900)]">AtlasIED</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Consider a specified GLOBALCOM campus-notification platform for a larger multi-building estate where its capabilities justify it. AtlasIED has an ANZ route through NAS; shorter treatment here is about scope, not absence from NZ.</p>
-              <Sources ids={["atlas-system", "atlas-nz"]} />
+              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Consider a specified GLOBALCOM campus-notification platform for a larger multi-building estate where its capabilities justify it. AtlasIED has an ANZ route through NAS; shorter treatment here is about scope, not absence from Australian.</p>
+              <Sources ids={["atlas-system", "atlas-Australian"]} />
             </div>
             <div>
               <h3 className="font-semibold text-[var(--sc-blue-900)]">Bosch PRAESENSA</h3>
@@ -307,7 +307,7 @@ export default function AgedCareRetirementVillagesPage() {
             <div>
               <h3 className="font-semibold text-[var(--sc-blue-900)]">FrontRow</h3>
               <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Conditional where an existing FrontRow room-audio environment or a specialised activity/training-room audio requirement makes its ecosystem relevant to the wider project.</p>
-              <Sources ids={["frontrow-system", "frontrow-nz"]} />
+              <Sources ids={["frontrow-system", "frontrow-Australian"]} />
             </div>
           </div>
         </div>
@@ -351,7 +351,7 @@ export default function AgedCareRetirementVillagesPage() {
 
       <section id="care-finance" aria-labelledby="care-finance-title" className="sc-container max-w-5xl scroll-mt-24 py-12">
         <SectionHeading id="care-finance-title" eyebrow="Payment options">Finance and leasing for a village communications upgrade</SectionHeading>
-        <p className="mt-4 leading-relaxed text-[var(--sc-slate)]">An equipment-finance conversation may be useful when the organisation prefers to spread a project’s cost. NZ providers publish technology/AV and healthcare equipment-finance offerings. The actual borrower, equipment, installation costs, security and ownership terms still need assessment by the provider.</p>
+        <p className="mt-4 leading-relaxed text-[var(--sc-slate)]">An equipment-finance conversation may be useful when the organisation prefers to spread a project’s cost. Australian providers publish technology/AV and healthcare equipment-finance offerings. The actual borrower, equipment, installation costs, security and ownership terms still need assessment by the provider.</p>
         <Sources ids={["finance-market"]} />
         <p className="mt-4 leading-relaxed text-[var(--sc-slate)]">The SiteComms check asks for a little project and budget context; it does not approve finance, quote repayments or reject an enquiry because the deposit or budget is uncertain. You can request the next step at every result level.</p>
         <div className="mt-5 flex flex-wrap gap-3">
@@ -389,7 +389,7 @@ export default function AgedCareRetirementVillagesPage() {
 
       <section id="care-methodology" aria-labelledby="care-methodology-title" className="sc-container max-w-5xl scroll-mt-24 py-10">
         <h2 id="care-methodology-title" className="text-xl font-bold text-[var(--sc-blue-900)]">How we reached these recommendations</h2>
-        <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">We matched documented product functions to six defined care/village communications briefs, then checked for a NZ-facing supply or integration route. The order favours a direct fit with the stated task; different integration needs can reverse it. We have not conducted a hands-on group test, measured market share or compared complete competitive tenders.</p>
+        <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">We matched documented product functions to six defined care/village communications briefs, then checked for a Australian-facing supply or integration route. The order favours a direct fit with the stated task; different integration needs can reverse it. We have not conducted a hands-on group test, measured market share or compared complete competitive tenders.</p>
         <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">Manufacturer documents support capability, not universal superiority. Local listings and overseas case studies have their limits labelled. Editorial coverage is separate from SiteComms’ selected provider network, which does not cover the entire market. No business named here is being represented as a partner or endorser merely because it is cited. Clinical nurse call is outside the compared scope. See our <Link href="/about/editorial-policy" className={linkClass}>editorial policy</Link> and <Link href="/about/disclosure" className={linkClass}>commercial disclosure</Link>.</p>
         <details id="care-sources" className="mt-6 scroll-mt-24 rounded-xl border border-[var(--sc-border)] p-5 md:p-6">
           <summary className={`cursor-pointer ${linkClass}`}>Sources and evidence register ({evidenceEntries.length})</summary>

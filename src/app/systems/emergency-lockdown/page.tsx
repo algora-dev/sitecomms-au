@@ -58,7 +58,7 @@ export default function EmergencyLockdownPage() {
         detached building at once is usually the existing speaker system. Unlike emails, apps or
         phone trees, paging reaches rooms instantly and works for visitors and students without any
         device. That is why emergency capability has become a standard part of school paging
-        specifications in New Zealand.
+        specifications in Australia.
       </p>
       <h2 id="capabilities">Common emergency capabilities on modern platforms</h2>
       <ul>
@@ -132,27 +132,27 @@ export default function EmergencyLockdownPage() {
       <ul>
         <li><Link href="/systems/school-bell-announcements">School bells and announcements</Link></li>
         <li><Link href="/systems/ip-intercom">IP intercom and two-way paging</Link></li>
-        <li><Link href="/guides/school-pa-paging-requirements">NZ school PA and paging requirements</Link></li>
+        <li><Link href="/guides/school-pa-paging-requirements">Australian school PA and paging requirements</Link></li>
       </ul>
       <ContinuePlanning
         items={[
-          { title: "NZ school PA requirements", desc: "Ministry design, cabling, funding and procurement context for school communications.", href: "/guides/school-pa-paging-requirements" },
+          { title: "Australian school PA requirements", desc: "Ministry design, cabling, funding and procurement context for school communications.", href: "/guides/school-pa-paging-requirements" },
           { title: "School systems overview", desc: "Features, indicative costs and upgrade decisions for school communications.", href: "/schools" },
-          { title: "5YA funding guide", desc: "How safety-motivated communications upgrades may fit the property funding process.", href: "/funding" },
+          { title: "school funding guide", desc: "How safety-motivated communications upgrades may fit the property funding process.", href: "/tools/funding-check" },
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">
         Last reviewed {reviewedLabel("/systems/emergency-lockdown")}. System-planning information only — not emergency procedure advice.
-        Follow your school&apos;s emergency management plan and official Ministry/NZ Police guidance.
+        Follow your school&apos;s emergency management plan and official state education authority / Australian Police guidance.
       </p>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             articleSchema({
-              headline: "Emergency & Lockdown Communication Systems for NZ Schools",
+              headline: "Emergency & Lockdown Communication Systems for Australian Schools",
               description:
-                "Planning guidance for school emergency paging, lockdown and evacuation communication in New Zealand: capabilities, activation methods, redundancy and specification.",
+                "Planning guidance for school emergency paging, lockdown and evacuation communication in Australia: capabilities, activation methods, redundancy and specification.",
               url: `${site.url}/systems/emergency-lockdown`,
               datePublished: publishedDate("/systems/emergency-lockdown"),
               dateModified: reviewedDate("/systems/emergency-lockdown"),

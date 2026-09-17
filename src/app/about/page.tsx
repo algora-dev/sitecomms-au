@@ -6,7 +6,7 @@ import { site, authors } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "About SiteComms Australia",
   description:
-    "SiteComms Australia provides New Zealand guidance and planning tools for paging, bell, PA, intercom and integrated communication systems. Operated by T3 Labs.",
+    "SiteComms Australia provides Australia guidance and planning tools for paging, bell, PA, intercom and integrated communication systems. Operated by T3 Labs.",
   path: "/about",
 });
 
@@ -15,12 +15,12 @@ export default function AboutPage() {
     <div className="sc-container max-w-3xl py-16 sc-prose">
       <h1 className="text-4xl font-bold tracking-tight text-[var(--sc-blue-900)]">About SiteComms Australia</h1>
       <p className="mt-4 text-lg text-[var(--sc-slate)]">
-        SiteComms Australia is a New Zealand information and planning resource for paging, PA, bell, intercom and integrated communication systems. It is designed to make the early project decisions easier: what the system should do, what it may cost, what funding or finance options may be worth exploring and what to resolve before requesting a final quote.
+        SiteComms Australia is a Australia information and planning resource for paging, PA, bell, intercom and integrated communication systems. It is designed to make the early project decisions easier: what the system should do, what it may cost, what funding or finance options may be worth exploring and what to resolve before requesting a final quote.
       </p>
       <h2>What we do</h2>
       <ul>
         <li>Plain-language explanations of system architectures and features</li>
-        <li>Indicative NZ pricing examples with disclosed assumptions</li>
+        <li>Indicative Australian pricing examples with disclosed assumptions</li>
         <li>Interactive planning, pricing, school-funding and finance/leasing tools</li>
         <li>Guidance for reviewing a proposed system, upgrade or quote</li>
         <li>Help identifying suitable installation, technology or finance providers to contact when a user wants to progress a project</li>
@@ -33,7 +33,7 @@ export default function AboutPage() {
         <li><strong>Get the right next step.</strong> The SiteComms team reviews the enquiry and, where specialist help is appropriate, replies with the provider or providers we think are most suitable to contact.</li>
       </ol>
       <p>
-        SiteComms does not manufacture or install the systems it researches. Our selected provider network does not include every provider in New Zealand.
+        SiteComms does not manufacture or install the systems it researches. Our selected provider network does not include every provider in Australia.
       </p>
       <h2>Who is behind SiteComms</h2>
       <p>

@@ -18,7 +18,7 @@ export default function MethodologyPage() {
       <h2>Technical and funding research</h2>
       <ul>
         <li>Published manufacturer and provider documentation</li>
-        <li>Official New Zealand government guidance and property/funding information</li>
+        <li>Official Australia government guidance and property/funding information</li>
         <li>Practical input from people involved in communication-system projects</li>
         <li>Project examples and completed-job data as they become available and can be verified</li>
       </ul>
@@ -35,7 +35,7 @@ export default function MethodologyPage() {
       </p>
       <h2>Funding methodology</h2>
       <p>
-        The funding checker identifies whether the nature of a proposed communications project appears consistent with publicly available Ministry guidance. It does not determine eligibility or approval. Final funding decisions remain with the school and the relevant property/funding process.
+        The funding checker identifies whether the nature of a proposed communications project appears consistent with publicly available education authority guidance. It does not determine eligibility or approval. Final funding decisions remain with the school and the relevant property/funding process.
       </p>
       <h2>Finance-check methodology</h2>
       <p>

@@ -15,9 +15,8 @@ export function SiteFooter() {
             <li><Link href="/schools">School communications</Link></li>
             <li><Link href="/systems">System types</Link></li>
             <li><Link href="/compare">Compare systems</Link></li>
-            <li><Link href="/pricing">NZ pricing guide</Link></li>
+            <li><Link href="/pricing">Pricing guide</Link></li>
             <li><Link href="/pricing-tool">Ballpark cost calculator</Link></li>
-            <li><Link href="/funding">School funding guide</Link></li>
             <li><Link href="/tools/funding-check">School funding check</Link></li>
             <li><Link href="/financing">Finance & leasing guide</Link></li>
             <li><Link href="/tools/finance-check">Finance & leasing check</Link></li>

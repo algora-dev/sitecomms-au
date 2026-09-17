@@ -4,9 +4,9 @@ import { buildMetadata } from "@/lib/seo";
 import { FinanceCheckTool } from "./FinanceCheckTool";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Equipment Finance & Leasing Check NZ | SiteComms",
+  title: "Equipment Finance & Leasing Check Australian | SiteComms",
   description:
-    "Quick NZ finance check for paging, PA, bell, intercom and communications systems. See whether equipment finance or leasing is worth discussing and what to do next.",
+    "Quick Australian finance check for paging, PA, bell, intercom and communications systems. See whether equipment finance or leasing is worth discussing and what to do next.",
   path: "/tools/finance-check",
 });
 

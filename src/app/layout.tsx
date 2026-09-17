@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "SiteComms Australia | IP paging, bell & PA system guidance for New Zealand",
+    default: "SiteComms Australia | IP paging, bell & PA system guidance for Australia",
     template: "%s | SiteComms Australia",
   },
   description: site.description,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: site.locale,
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SiteComms Australia - IP paging, PA, bell and intercom planning for New Zealand" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SiteComms Australia - IP paging, PA, bell and intercom planning for Australia" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-NZ" className={inter.variable}>
+    <html lang="en-AU" className={inter.variable}>
       <body className="flex min-h-screen flex-col" style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}>
         <script
           type="application/ld+json"

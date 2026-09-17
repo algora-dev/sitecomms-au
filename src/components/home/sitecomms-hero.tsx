@@ -214,7 +214,7 @@ export function SiteCommsHero() {
             </div>
           </div>
           <p className="sc-description">
-            AUSTRALIA guidance, comparisons and planning tools for IP paging, school bell, PA,
+            Australian guidance, comparisons and planning tools for IP paging, school bell, PA,
             intercom and integrated communication systems.
           </p>
           <div className="sc-actions">
@@ -332,7 +332,7 @@ export function SiteCommsHero() {
         <div></div>
       </div>
       <p className="sc-sr-only">
-        SiteComms AUSTRALIA covers IP paging, school bell systems, PA systems, intercom,
+        SiteComms Australia covers IP paging, school bell systems, PA systems, intercom,
         emergency communication and connected communication systems for schools, hospitals, aged
         care facilities, corrections and large facilities. Resources include planning, comparisons,
         pricing and cost estimation.

@@ -8,7 +8,7 @@ import AuthorityHero from "@/components/content/AuthorityHero";
 export const metadata: Metadata = buildMetadata({
   title: "Traditional PA vs IP Paging Systems",
   description:
-    "Compare traditional 100V PA, full IP and hybrid paging systems: what to reuse, when each architecture wins, and network and cost considerations for NZ sites.",
+    "Compare traditional 100V PA, full IP and hybrid paging systems: what to reuse, when each architecture wins, and network and cost considerations for Australian sites.",
   path: "/systems/traditional-vs-ip",
 });
 
@@ -44,7 +44,7 @@ export default function TraditionalVsIpPage() {
         primaryCta={{ label: "Estimate project cost", href: "/pricing-tool" }}
         secondaryCta={{ label: "Compare platforms", href: "/compare" }}
         reviewed={reviewedLabel("/systems/traditional-vs-ip")}
-        note="NZ-focused guidance"
+        note="Australian-focused guidance"
         breadcrumb={[{ name: "Systems", href: "/systems" }, { name: "Traditional vs IP" }]}
       />
 
@@ -165,7 +165,7 @@ export default function TraditionalVsIpPage() {
           __html: JSON.stringify(
             articleSchema({
               headline: "Traditional PA vs IP Paging: Which Should You Use?",
-              description: "Compare traditional 100V PA, full IP and hybrid paging systems for NZ sites.",
+              description: "Compare traditional 100V PA, full IP and hybrid paging systems for Australian sites.",
               url: `${site.url}/systems/traditional-vs-ip`,
               datePublished: publishedDate("/systems/traditional-vs-ip"),
               dateModified: reviewedDate("/systems/traditional-vs-ip"),

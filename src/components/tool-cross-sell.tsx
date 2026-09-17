@@ -34,7 +34,7 @@ export function ToolCrossSell({
   industry?: IndustryContext;
 }) {
   if (variant === "pricing-to-funding") {
-    // Known aged-care context: never offer school 5YA on a care journey.
+    // Known aged-care context: never offer school school funding on a care journey.
     if (industry === "aged-care") {
       const financeHref = buildIndustryToolHref("/tools/finance-check", {
         industry,
@@ -83,7 +83,7 @@ export function ToolCrossSell({
           How might the project be paid for?
         </h3>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
-          If this is a New Zealand school project, a property/funding pathway may be worth checking. Schools and other organisations can also explore equipment finance or leasing if they want to spread the project cost.
+          If this is a Australia school project, a property/funding pathway may be worth checking. Schools and other organisations can also explore equipment finance or leasing if they want to spread the project cost.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link

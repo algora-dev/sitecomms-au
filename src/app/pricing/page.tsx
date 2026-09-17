@@ -8,9 +8,9 @@ import { pricingConfig, formatAUD } from "@/lib/pricing/config";
 import { schoolBandSummaries } from "@/lib/pricing/school-bands";
 
 export const metadata: Metadata = buildMetadata({
-  title: "IP Paging, PA & Intercom System Costs NZ",
+  title: "IP Paging, PA & Intercom System Costs Australian",
   description:
-    "Indicative installed price ranges for IP paging, PA, bell and intercom systems in New Zealand, plus the main factors that affect project cost.",
+    "Indicative installed price ranges for IP paging, PA, bell and intercom systems in Australia, plus the main factors that affect project cost.",
   path: "/pricing",
 });
 
@@ -30,8 +30,8 @@ export default function PricingPage() {
   return (
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
-        headline: "IP Paging, PA & Intercom System Costs NZ",
-        description: "Indicative installed price ranges for IP paging, PA, bell and intercom systems in New Zealand, plus the main factors that affect project cost.",
+        headline: "IP Paging, PA & Intercom System Costs Australian",
+        description: "Indicative installed price ranges for IP paging, PA, bell and intercom systems in Australia, plus the main factors that affect project cost.",
         url: `${site.url}/pricing`,
         datePublished: publishedDate("/pricing"),
         dateModified: reviewedDate("/pricing"),
@@ -42,7 +42,7 @@ export default function PricingPage() {
       ])) }} />
       <div className="sc-container max-w-4xl py-16">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">New Zealand pricing guide</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia pricing guide</p>
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-[var(--sc-blue-900)]">
             What does an IP paging, PA or intercom system cost?
           </h1>
@@ -130,7 +130,7 @@ export default function PricingPage() {
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/pricing-tool" className="sc-btn-primary">Get a ballpark price</Link>
-            <Link href="/funding" className="sc-btn-secondary">School funding guide</Link>
+            <Link href="/tools/funding-check" className="sc-btn-secondary">School funding guide</Link>
             <Link href="/financing" className="sc-btn-secondary">Finance & leasing guide</Link>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function PricingPage() {
         <div className="mt-6 rounded-2xl border border-[var(--sc-border)] bg-white p-6">
           <h2 className="text-xl font-semibold text-[var(--sc-blue-900)]">Once you know the likely cost</h2>
           <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
-            The next question is how the project will be paid for. NZ schools can investigate relevant funding pathways, while schools and other organisations may also want to explore equipment finance or leasing.
+            The next question is how the project will be paid for. Australian schools can investigate relevant funding pathways, while schools and other organisations may also want to explore equipment finance or leasing.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <Link href="/tools/funding-check" className="sc-btn-secondary">Check school funding</Link>

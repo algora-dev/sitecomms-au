@@ -9,7 +9,6 @@ const NAV = [
   { href: "/systems", label: "Systems" },
   { href: "/compare", label: "Compare" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/funding", label: "Funding" },
   { href: "/tools", label: "Tools" },
   { href: "/guides", label: "Guides" },
   { href: "/about", label: "About" },
@@ -20,14 +19,14 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--sc-border)] bg-white/95 backdrop-blur">
-      <div className="sc-container flex h-28 items-center justify-between gap-6">
+      <div className="sc-container flex h-20 items-center justify-between gap-6">
         <Link href="/" className="flex shrink-0 items-center" aria-label="SiteComms Australia home">
           <Image
             src="/brand/SCAU-logo-colour-trans.png"
             alt="SiteComms Australia"
-            width={86}
-            height={120}
-            className="h-[7.5rem] w-auto cursor-pointer transition-all duration-200 ease-out hover:scale-[1.05] hover:drop-shadow-[0_6px_22px_rgba(244,164,0,0.55)]"
+            width={34}
+            height={48}
+            className="h-[3rem] w-auto cursor-pointer transition-all duration-200 ease-out hover:scale-[1.05] hover:drop-shadow-[0_6px_22px_rgba(244,164,0,0.55)]"
             priority
           />
         </Link>

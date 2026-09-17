@@ -60,25 +60,25 @@ const MODE_COPY: Record<EnquiryMode, { title: string; blurb: string; submit: str
   project_help: {
     title: "Help me take the next step",
     blurb:
-      "Tell us a little about the site and what you need the system to do. We'll review it and suggest the most useful next step, or a suitable provider from our selected New Zealand network.",
+      "Tell us a little about the site and what you need the system to do. We'll review it and suggest the most useful next step, or a suitable provider from our selected Australia network.",
     submit: "Send enquiry",
   },
   quote_help: {
     title: "Get help with a formal quote",
     blurb:
-      "Send us enough information to understand the project and we can suggest suitable providers from our selected New Zealand network for a formal quote.",
+      "Send us enough information to understand the project and we can suggest suitable providers from our selected Australia network for a formal quote.",
     submit: "Send enquiry",
   },
   funding_help: {
     title: "Discuss the technical scope and budget",
     blurb:
-      "A provider can help document the existing system, technical scope and indicative budget. The school, Property Advisor / 10YPP process and Ministry requirements determine the funding pathway and approval.",
+      "A provider can help document the existing system, technical scope and indicative budget. The school, its property planning process and education authority requirements determine the funding pathway and approval.",
     submit: "Send enquiry",
   },
   finance_help: {
     title: "Discuss finance or leasing options",
     blurb:
-      "Tell us a little about the project. We'll review the information and, where appropriate, suggest a finance specialist or next step from our selected New Zealand network.",
+      "Tell us a little about the project. We'll review the information and, where appropriate, suggest a finance specialist or next step from our selected Australia network.",
     submit: "Send finance enquiry",
   },
   site_assessment: {
@@ -360,7 +360,7 @@ export function ProjectEnquiryModal({
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block text-sm">
                   <span className="font-medium text-[var(--sc-charcoal)]">Email *</span>
-                  <input required name="email" type="email" className={inputClass} placeholder="you@example.co.nz" autoComplete="email" />
+                  <input required name="email" type="email" className={inputClass} placeholder="you@example.co.Australian" autoComplete="email" />
                 </label>
                 {isProject ? (
                   <label className="block text-sm">

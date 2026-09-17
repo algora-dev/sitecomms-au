@@ -1,5 +1,5 @@
 /**
- * NZ School Communications Funding Check - V2 rules engine.
+ * Australian School Communications Funding Check - V2 rules engine.
  *
  * Deliberately deterministic and positive-path focused. The tool identifies
  * legitimate funding angles without representing that funding is approved.
@@ -46,7 +46,7 @@ export interface AssessmentResult {
   pathwayLabel: string | null;
   positiveOverride: boolean;
   positiveOverrideMessage: string | null;
-  /** Set when the project is described as maintenance only: 5YA is a capital fund and cannot pay for maintenance. */
+  /** Set when the project is described as maintenance only: school funding is a capital fund and cannot pay for maintenance. */
   maintenanceNote: string | null;
   components: ComponentBreakdown;
   hasStrongComponents: boolean;
@@ -127,7 +127,7 @@ export function caseTierFor(score: number): CaseTier {
 
 /**
  * Maintenance-only projects must never be presented as an unqualified strong
- * 5YA project case. Strong fixed-component classifications are kept, but the
+ * school funding project case. Strong fixed-component classifications are kept, but the
  * overall case is capped at Moderate (when answers suggest the work may in
  * fact be replacement/substantial upgrade) or Weak otherwise.
  */
@@ -173,13 +173,13 @@ function confirmationsNeeded(pathway: PathwayKind): string[] {
   if (pathway === "maintenance_only") {
     return [
       "Whether the real scope is routine maintenance or a separate replacement / substantial-upgrade project",
-      "Current 10YPP priorities and available 5YA budget (only if a separate capital project is defined)",
+      "Current school planning priorities and available capital funding budget (only if a separate capital project is defined)",
     ];
   }
   if (pathway === "five_ya") {
     return [
-      "Current 10YPP priorities and available 5YA budget",
-      "Ministry ownership / property treatment for the affected areas",
+      "Current school planning priorities and available capital funding budget",
+      "Education authority ownership / property treatment for the affected areas",
       "Final technical scope and indicative project cost",
     ];
   }
@@ -201,8 +201,8 @@ export function runAssessment(answers: AssessmentAnswers): AssessmentResult {
   else if (answers.schoolType === "private") pathway = "private";
   else if (answers.projectStatus === "new_build") pathway = "new_build";
   else if (answers.schoolType === "unsure_school") pathway = "unknown";
-  // Ministry guidance: "You cannot use 5YA funding for maintenance." A
-  // maintenance-only project at a state school is NOT a current 5YA pathway.
+  // Ministry guidance: "You cannot use school funding for maintenance." A
+  // maintenance-only project at a state school is NOT a current school funding pathway.
   else if (answers.projectStatus === "maintenance_only") pathway = "maintenance_only";
   else pathway = "five_ya";
 

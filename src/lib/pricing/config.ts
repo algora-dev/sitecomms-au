@@ -23,7 +23,7 @@ export const pricingConfig = {
   cablingDisclaimer:
     "Site-wide structured cabling is excluded from your estimate and must be scoped separately by an appropriate ICT / cabling contractor. If suitable cabling already exists near each device location, the estimates apply as shown.",
   cablingDisclaimerSchool:
-    "For NZ state-school projects, confirm the current Ministry requirements for approved ICT installation contractors with the school property / IT team.",
+    "For Australian state-school projects, confirm the current education authority requirements for approved ICT installation contractors with the school property / IT team.",
 
   areas: {
     standardIndoor: {
@@ -83,7 +83,7 @@ export function unitPrice(priceA: number, priceB: number, tier: Tier): number {
 }
 
 export function formatAUD(n: number): string {
-  return "$" + Math.round(n).toLocaleString("en-NZ");
+  return "$" + Math.round(n).toLocaleString("en-AU");
 }
 
 /** Rounded display for the sticky footer, e.g. 14585 -> $14.5k */

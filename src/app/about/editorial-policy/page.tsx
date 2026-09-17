@@ -30,7 +30,7 @@ export default function EditorialPolicyPage() {
       <h2>Comparison principles</h2>
       <ul>
         <li>Recommendation criteria are use-case specific: a product may appear prominently in one use case and not another.</li>
-        <li>Manufacturer evidence and New Zealand local evidence (availability, support, project precedent) are distinguished and labelled.</li>
+        <li>Manufacturer evidence and Australia local evidence (availability, support, project precedent) are distinguished and labelled.</li>
         <li>Lack of a referral partnership does not exclude a legitimate competitor from fair editorial coverage.</li>
         <li>Commercial participation does not entitle a provider to a positive ranking or guaranteed placement.</li>
         <li>Corrections can be submitted by any manufacturer or provider through the <Link href="/contact">contact page</Link>.</li>

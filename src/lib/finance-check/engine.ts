@@ -41,7 +41,7 @@ function organisationLabel(value?: OrganisationType): string {
 
 function projectValueLabel(answers: FinanceAnswers): string {
   if (answers.projectValueBand === "SiteComms_estimate" && answers.carriedEstimateLow && answers.carriedEstimateHigh) {
-    return `$${answers.carriedEstimateLow.toLocaleString("en-NZ")}–$${answers.carriedEstimateHigh.toLocaleString("en-NZ")}`;
+    return `$${answers.carriedEstimateLow.toLocaleString("en-AU")}–$${answers.carriedEstimateHigh.toLocaleString("en-AU")}`;
   }
   return PROJECT_VALUE_BANDS.find((item) => item.value === answers.projectValueBand)?.label ?? "Project value not yet known";
 }
@@ -93,7 +93,7 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
   }
 
   if (answers.upfrontBand === "none") {
-    reasons.push("No upfront contribution has been assumed. Some NZ equipment-finance structures can be offered without a deposit, subject to provider approval.");
+    reasons.push("No upfront contribution has been assumed. Some Australian equipment-finance structures can be offered without a deposit, subject to provider approval.");
   } else if (upfrontKnown(answers)) {
     reasons.push("You have indicated that an upfront contribution may be available if it helps structure the transaction.");
   }
@@ -114,7 +114,7 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
     headline: copy.headline,
     body: copy.body,
     reasons,
-    nextStep: "Tell SiteComms a little more about the project and we can suggest an appropriate finance specialist or next step from our selected New Zealand network.",
+    nextStep: "Tell SiteComms a little more about the project and we can suggest an appropriate finance specialist or next step from our selected Australia network.",
     organisationLabel: organisationLabel(answers.organisationType),
     projectValueLabel: projectValueLabel(answers),
   };

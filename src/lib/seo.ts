@@ -34,7 +34,7 @@ export function organizationSchema() {
     url: site.url,
     logo: `${site.url}/brand/SCAU-logo-colour.png`,
     description: site.description,
-    areaServed: { "@type": "Country", name: "New Zealand" },
+    areaServed: { "@type": "Country", name: "Australia" },
     // sameAs is intentionally omitted: no genuine SiteComms social profiles
     // exist yet. Only add sameAs entries for profiles that actually exist.
   };

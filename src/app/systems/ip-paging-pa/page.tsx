@@ -25,7 +25,7 @@ export default function IpPagingPaPage() {
         primaryCta={{ label: "Estimate project cost", href: "/pricing-tool" }}
         secondaryCta={{ label: "Compare paging platforms", href: "/compare" }}
         reviewed={reviewedLabel("/systems/ip-paging-pa")}
-        note="NZ-focused guidance"
+        note="Australian-focused guidance"
         breadcrumb={[{ name: "Systems", href: "/systems" }, { name: "IP Paging & Network PA" }]}
       />
       <AtAGlance
@@ -114,16 +114,16 @@ export default function IpPagingPaPage() {
       <h2 id="cost">What IP paging tends to cost</h2>
       <p>
         Endpoint count, indoor/outdoor mix, cabling state and network readiness are the main cost
-        drivers. Indicative NZ installed ranges and a calculator for your own site are on the{" "}
+        drivers. Indicative Australian installed ranges and a calculator for your own site are on the{" "}
         <Link href="/pricing">pricing page</Link>.
       </p>
       <h2 id="platforms">Choosing a platform</h2>
       <p>
         SiteComms compares integrated school platforms, SIP-first options, browser-managed network audio, hybrid
         approaches and specialist architectures from brands including SPON, FrontRow, Algo, Bosch, ITC, Axis, TOA and
-        others relevant to the NZ market. Our{" "}
+        others relevant to the Australian market. Our{" "}
         <Link href="/compare">platform comparison guide</Link> matches those options to your priorities for
-        NZ buyers. Planning for a rest home or retirement village?{" "}
+        Australian buyers. Planning for a rest home or retirement village?{" "}
         <Link href="/industries/aged-care-retirement-villages">Use the aged-care comparison</Link>, where
         the requirements and shortlist differ.
       </p>
@@ -160,7 +160,7 @@ export default function IpPagingPaPage() {
             articleSchema({
               headline: "IP Paging & Network PA Systems",
               description:
-                "A plain-language explanation of IP paging and network PA systems for NZ sites: Audio over IP, PoE endpoints, zoning, scheduling and architecture trade-offs.",
+                "A plain-language explanation of IP paging and network PA systems for Australian sites: Audio over IP, PoE endpoints, zoning, scheduling and architecture trade-offs.",
               url: `${site.url}/systems/ip-paging-pa`,
               datePublished: publishedDate("/systems/ip-paging-pa"),
               dateModified: reviewedDate("/systems/ip-paging-pa"),

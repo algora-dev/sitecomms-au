@@ -24,7 +24,7 @@ export default function DisclosurePage() {
         SiteComms may research and discuss manufacturers, installers, distributors and public projects that are not members of our selected provider network. Editorial inclusion does not imply a commercial relationship. Being part of the selected provider network does not purchase a favourable product comparison or guaranteed recommendation.
       </p>
       <p>
-        When a user asks for practical help, SiteComms recommends from the providers available in its selected network based on the information supplied, project type, location and known provider capability. This is not represented as a search of every provider in New Zealand.
+        When a user asks for practical help, SiteComms recommends from the providers available in its selected network based on the information supplied, project type, location and known provider capability. This is not represented as a search of every provider in Australia.
       </p>
       <h2>Our commitments</h2>
       <ul>

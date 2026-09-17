@@ -35,8 +35,8 @@ import {
 
 /** Single source of truth for how a pathway is labelled everywhere it is serialised or displayed. */
 const PATHWAY_SUMMARY_LABEL: Record<PathwayKind, string> = {
-  five_ya: "5YA / 10YPP capital pathway",
-  maintenance_only: "Maintenance-only — not a current 5YA pathway",
+  five_ya: "school funding capital pathway",
+  maintenance_only: "Maintenance-only — not a current school funding pathway",
   state_integrated: "State-integrated property pathway",
   private: "Private-school capital / other funding",
   new_build: "New build / major capital project",
@@ -303,8 +303,8 @@ export function FundingCheckTool() {
             The next review can also confirm {result.confirmationsNeeded.slice(0, 2).join(" and ").toLowerCase()}.
           </p>
           <p className="mt-2 text-xs leading-relaxed text-[var(--sc-slate)]">
-            If your school is starting a new 5YA cycle from 1 July 2026, the updated base rate and minimum allocation
-            may be relevant to the amount available. Confirm the school&apos;s actual allocation and 10YPP priorities.
+            If your school is starting a new school funding cycle from 1 July 2026, the updated base rate and minimum allocation
+            may be relevant to the amount available. Confirm the school&apos;s actual allocation and school planning priorities.
           </p>
 
           {!enquiry && (

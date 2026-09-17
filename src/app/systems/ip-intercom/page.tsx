@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "IP Intercom & Two-Way Paging",
   description:
-    "What IP intercoms add to a paging system: two-way audio, SIP integration, classroom call points, gate entry and what to consider when specifying intercom for NZ sites.",
+    "What IP intercoms add to a paging system: two-way audio, SIP integration, classroom call points, gate entry and what to consider when specifying intercom for Australian sites.",
   path: "/systems/ip-intercom",
 });
 
@@ -25,7 +25,7 @@ export default function IpIntercomPage() {
         primaryCta={{ label: "Estimate project cost", href: "/pricing-tool" }}
         secondaryCta={{ label: "Compare system platforms", href: "/compare" }}
         reviewed={reviewedLabel("/systems/ip-intercom")}
-        note="NZ-focused guidance"
+        note="Australian-focused guidance"
         breadcrumb={[{ name: "Systems", href: "/systems" }, { name: "IP Intercom & Two-Way Paging" }]}
       />
       <AtAGlance
@@ -96,7 +96,7 @@ export default function IpIntercomPage() {
       <p>
         Intercom uplift depends on endpoint count and integration work. The{" "}
         <Link href="/pricing-tool">ballpark calculator</Link> lets you model feature scope against
-        indicative NZ installed cost ranges, and the{" "}
+        indicative Australian installed cost ranges, and the{" "}
         <Link href="/tools/funding-check">funding checker</Link> indicates whether an intercom
         component might fit a school property funding route.
       </p>
@@ -108,9 +108,9 @@ export default function IpIntercomPage() {
       </ul>
       <ContinuePlanning
         items={[
-          { title: "Compare system platforms", desc: "Which IP paging and intercom platforms fit NZ sites and budgets.", href: "/compare" },
+          { title: "Compare system platforms", desc: "Which IP paging and intercom platforms fit Australian sites and budgets.", href: "/compare" },
           { title: "Emergency & lockdown communication", desc: "How intercom call points support school emergency planning.", href: "/systems/emergency-lockdown" },
-          { title: "Pricing guide", desc: "Indicative NZ installed ranges and the main cost drivers.", href: "/pricing" },
+          { title: "Pricing guide", desc: "Indicative Australian installed ranges and the main cost drivers.", href: "/pricing" },
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">
@@ -122,7 +122,7 @@ export default function IpIntercomPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             articleSchema({
-              headline: "IP Intercom & Two-Way Paging Systems (NZ)",
+              headline: "IP Intercom & Two-Way Paging Systems (Australian)",
               description:
                 "What IP intercoms add to a paging system: two-way audio, SIP integration, classroom call points, gate entry and specification considerations.",
               url: `${site.url}/systems/ip-intercom`,

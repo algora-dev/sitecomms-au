@@ -50,7 +50,7 @@ const CHECKS = [
   {
     title: "Cabling state",
     items: [
-      "Test existing Cat5e/6 runs to endpoints that will reuse cabling — age and workmanship vary widely in NZ school buildings",
+      "Test existing Cat5e/6 runs to endpoints that will reuse cabling — age and workmanship vary widely in Australian school buildings",
       "Identify runs over 90–100m, which need an intermediate switch or re-route",
       "New cabling work is usually a property works item — see the funding implications on our funding page",
     ],
@@ -121,16 +121,16 @@ export default function NetworkReadinessPage() {
       </p>
       <h2 id="funding">Funding note for schools</h2>
       <p>
-        Cabling and switch work tied to a paging upgrade typically follows the same 10YPP / 5YA
+        Cabling and switch work tied to a paging upgrade typically follows the same school planning / school funding
         property route as the paging system itself. See the{" "}
-        <Link href="/funding">funding guide</Link> and use the{" "}
+        <Link href="/tools/funding-check">funding guide</Link> and use the{" "}
         <Link href="/tools/funding-check">funding checker</Link> for an indicative read.
       </p>
       <h2 id="after">After the checklist</h2>
       <p>
         Once you know the network position, write the full project scope with the{" "}
         <Link href="/guides/school-pa-specification-checklist">specification checklist</Link> so
-        every quote you receive covers the same work. The Ministry-side context is in the{" "}
+        every quote you receive covers the same work. The education authority context is in the{" "}
         <Link href="/guides/school-pa-paging-requirements">requirements guide</Link>.
       </p>
       <ContinuePlanning
@@ -149,7 +149,7 @@ export default function NetworkReadinessPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             articleSchema({
-              headline: "IP Paging Network Readiness Checklist (NZ Schools & Sites)",
+              headline: "IP Paging Network Readiness Checklist (Australian Schools & Sites)",
               description:
                 "What to check before specifying an IP paging system: PoE budget, VLANs, QoS, switch capacity, cabling state and support responsibility.",
               url: `${site.url}/guides/ip-paging-network-readiness`,

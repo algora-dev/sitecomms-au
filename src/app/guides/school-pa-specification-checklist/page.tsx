@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "School PA Specification Checklist",
   description:
-    "Use this NZ school PA and paging checklist to define coverage, bells, emergency features, intercom, networking and support before quoting.",
+    "Use this Australian school PA and paging checklist to define coverage, bells, emergency features, intercom, networking and support before quoting.",
   path: "/guides/school-pa-specification-checklist",
 });
 
@@ -85,7 +85,7 @@ const SECTIONS = [
       "Training included at handover, for how many staff",
       "Warranty period on endpoints, labour and configuration",
       "Ongoing support: response times, remote monitoring, firmware updates",
-      "Spare parts availability and NZ-local support presence",
+      "Spare parts availability and Australian-local support presence",
     ],
   },
   {
@@ -144,21 +144,21 @@ export default function SpecificationChecklistPage() {
       </ol>
       <h2 id="funding">Connecting to funding</h2>
       <p>
-        A clear specification is also what a 10YPP / 5YA property funding case needs: documented
+        A clear specification is also what a school property funding case needs: documented
         need, defined scope and evidence of value for money. See the{" "}
-        <Link href="/funding">funding guide</Link> and run the{" "}
+        <Link href="/tools/funding-check">funding guide</Link> and run the{" "}
         <Link href="/tools/funding-check">funding checker</Link> for an indicative read.
       </p>
       <ContinuePlanning
         items={[
-          { title: "Pricing guide", desc: "Indicative NZ installed ranges so you can sanity-check every quote.", href: "/pricing" },
-          { title: "5YA funding guide", desc: "How a clearly specified project fits the property funding process.", href: "/funding" },
+          { title: "Pricing guide", desc: "Indicative Australian installed ranges so you can sanity-check every quote.", href: "/pricing" },
+          { title: "school funding guide", desc: "How a clearly specified project fits the property funding process.", href: "/tools/funding-check" },
           { title: "Compare paging platforms", desc: "Which platforms and ecosystems suit which specifications.", href: "/compare" },
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">
         Last reviewed {reviewedLabel("/guides/school-pa-specification-checklist")}. Procurement-support guidance only — follow your school&apos;s and
-        the Ministry&apos;s procurement rules for any formal tender.
+        your education authority&apos;s procurement rules for any formal tender.
       </p>
       <script
         type="application/ld+json"
@@ -167,7 +167,7 @@ export default function SpecificationChecklistPage() {
             articleSchema({
               headline: "School PA Specification Checklist: Compare Quotes Like-for-Like",
               description:
-                "A practical pre-procurement checklist for NZ schools specifying a PA, paging, bell or intercom system, so quotes can be compared fairly.",
+                "A practical pre-procurement checklist for Australian schools specifying a PA, paging, bell or intercom system, so quotes can be compared fairly.",
               url: `${site.url}/guides/school-pa-specification-checklist`,
               datePublished: publishedDate("/guides/school-pa-specification-checklist"),
               dateModified: reviewedDate("/guides/school-pa-specification-checklist"),

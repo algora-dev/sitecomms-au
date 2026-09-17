@@ -3,9 +3,9 @@ import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Free Paging, PA & School Funding Tools NZ",
+  title: "Free Paging, PA & School Funding Tools Australian",
   description:
-    "Free SiteComms tools: get a ballpark installed system price or check whether an NZ school communications project may have a 5YA funding pathway.",
+    "Free SiteComms tools: get a ballpark installed system price or check whether an Australian school communications project may have a school funding pathway.",
   path: "/tools",
 });
 
@@ -28,10 +28,10 @@ export default function ToolsPage() {
         </div>
 
         <div className="sc-card p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--sc-blue-700)]">NZ schools</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--sc-blue-700)]">Australian schools</p>
           <h2 className="mt-2 text-xl font-semibold text-[var(--sc-blue-900)]">School Communications Funding Check</h2>
           <p className="mt-2 text-[var(--sc-slate)]">
-            See which parts of a paging, PA, bell, intercom or communications project may have a potential Ministry 5YA / 10YPP funding pathway.
+            See which parts of a paging, PA, bell, intercom or communications project may have a potential school funding pathway.
           </p>
           <Link href="/tools/funding-check" className="sc-btn-primary mt-5">Check potential funding</Link>
         </div>

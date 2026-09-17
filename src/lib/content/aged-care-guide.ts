@@ -4,55 +4,55 @@
  * Ordered shortlists describe the stated brief, not tested performance scores.
  */
 export const AGED_CARE_PATH = "/industries/aged-care-retirement-villages";
-export const AGED_CARE_TITLE = "Aged Care & Retirement Village PA, Paging & Intercom Systems NZ";
+export const AGED_CARE_TITLE = "Aged Care & Retirement Village PA, Paging & Intercom Systems Australian";
 export const AGED_CARE_HEADLINE = "PA, paging and intercom systems for aged care and retirement villages";
 export const AGED_CARE_DESCRIPTION =
-  "Compare PA, IP paging, announcement and intercom systems for NZ rest homes and retirement villages, including visitor video, existing-PA reuse, indicative pricing and finance options.";
+  "Compare PA, IP paging, announcement and intercom systems for Australian rest homes and retirement villages, including visitor video, existing-PA reuse, indicative pricing and finance options.";
 
 export const careSources = {
   "axis-edge": { label: "AXIS Audio Manager Edge — manufacturer manual", href: "https://help.axis.com/en-us/axis-audio-manager-edge", kind: "Technical documentation" },
   "axis-console": { label: "AXIS C6110 — paging console and two-way communication", href: "https://www.axis.com/products/axis-c6110", kind: "Manufacturer" },
   "axis-bridge": { label: "AXIS C8110 — analogue audio bridge", href: "https://www.axis.com/products/axis-c8110", kind: "Manufacturer" },
   "axis-entry": { label: "AXIS I8116-E — network video intercom", href: "https://www.axis.com/products/axis-i8116-e", kind: "Manufacturer" },
-  "axis-nz": { label: "JD Security NZ — Axis network-audio management", href: "https://www.jdsecurity.co.nz/axis/axis-ip-audio/axis-audio-manager-edge/", kind: "NZ integrator information" },
+  "axis-Australian": { label: "JD Security Australian — Axis network-audio management", href: "https://www.jdsecurity.co.Australian/axis/axis-ip-audio/axis-audio-manager-edge/", kind: "Australian integrator information" },
   "2n-entry": { label: "2N IP Verso 2.0 — modular entrance intercom", href: "https://www.2n.com/en-GB/products/intercoms/2n-ip-verso-2/", kind: "Manufacturer" },
   "2n-case": { label: "2N — Villa Melitta retirement/rehabilitation complex, Italy", href: "https://www.2n.com/en-GB/success-stories/2n-technology-protects-a-new-healthcare-complex-in-bolzano-italy/", kind: "Overseas manufacturer-published case study" },
-  "2n-nz": { label: "Sektor NZ — IP Verso 2.0 product listing", href: "https://www.sektor.co.nz/Product/SEAX02907001", kind: "NZ product listing" },
+  "2n-Australian": { label: "Sektor Australian — IP Verso 2.0 product listing", href: "https://www.sektor.co.Australian/Product/SEAX02907001", kind: "Australian product listing" },
   "2n-legacy": { label: "2N — Net Audio Systems in discontinued-product support", href: "https://www.2n.com/en-GB/support/discontinued/2n-net-audio-systems/", kind: "Manufacturer lifecycle information" },
   "algo-adapter": { label: "Algo 8301 — paging adapter and scheduler", href: "https://www.algosolutions.com/product/8301-ip-paging-adapter-scheduler/", kind: "Manufacturer" },
   "algo-speaker": { label: "Algo 8188 — IP ceiling speaker", href: "https://www.algosolutions.com/product/8188-ip-ceiling-speaker/", kind: "Manufacturer" },
-  "algo-nz": { label: "Everlea NZ — Algo 8301", href: "https://www.everlea.co.nz/ip-paging-solutions/voip-paging/algo-8301-paging-adapter-and-scheduler/", kind: "NZ supply information" },
+  "algo-Australian": { label: "Everlea Australian — Algo 8301", href: "https://www.everlea.co.Australian/ip-paging-solutions/voip-paging/algo-8301-paging-adapter-and-scheduler/", kind: "Australian supply information" },
   "toa-intercom": { label: "TOA N-8000 — dedicated IP intercom family", href: "https://www.toa.co.uk/products/intercom-systems/n-8000-series/", kind: "Manufacturer" },
   "toa-gateway": { label: "TOA IP-A1PG — paging gateway and web scheduler", href: "https://www.toa.co.uk/products/ip-a1pg/", kind: "Manufacturer" },
   "toa-interface": { label: "TOA IP-A1AF — audio interface", href: "https://www.toa.co.uk/products/ip-a1af/", kind: "Manufacturer" },
-  "toa-nz": { label: "Australis Music NZ — TOA", href: "https://www.australismusic.co.nz/brands/toa", kind: "NZ brand/channel information" },
+  "toa-Australian": { label: "Australis Music Australian — TOA", href: "https://www.australismusic.co.Australian/brands/toa", kind: "Australian brand/channel information" },
   "spon-control": { label: "SPON XC-9000 — audio management software", href: "https://sponcomm.com/products/audio-management-software", kind: "Manufacturer" },
   "spon-health": { label: "SPON — healthcare communications solution", href: "https://sponcomm.com/solution-detail/hospital", kind: "Manufacturer solution description; not clinical certification" },
-  "spon-nz": { label: "Sound Choice Pro Audio NZ — SPON products", href: "https://www.scpaudio.co.nz/brand/spon/", kind: "NZ supply information" },
+  "spon-Australian": { label: "Sound Choice Pro Audio Australian — SPON products", href: "https://www.scpaudio.co.Australian/brand/spon/", kind: "Australian supply information" },
   "spon-audio-intercom": { label: "SPON NAS-8523C/D — IP PoE audio intercom panel", href: "https://sponcomm.com/products/ip-poe-intercom-panel", kind: "Manufacturer" },
-  "spon-nz-audio-intercom": { label: "Sound Choice Pro Audio NZ — NAS-8523D intercom listing", href: "https://www.scpaudio.co.nz/shop/ip-paging/intercoms/nas-8523d/", kind: "NZ product listing" },
+  "spon-Australian-audio-intercom": { label: "Sound Choice Pro Audio Australian — NAS-8523D intercom listing", href: "https://www.scpaudio.co.Australian/shop/ip-paging/intercoms/nas-8523d/", kind: "Australian product listing" },
   "spon-video-intercom": { label: "SPON NAS-8523CV/DV — indoor IP video intercom panel", href: "https://sponcomm.com/products/ip-video-intercom-panel", kind: "Manufacturer" },
-  "spon-nz-video": { label: "Sound Choice Pro Audio NZ — NAS-8523CV video intercom listing", href: "https://www.scpaudio.co.nz/shop/ip-paging/intercoms/nas-8523cv/", kind: "NZ product listing" },
+  "spon-Australian-video": { label: "Sound Choice Pro Audio Australian — NAS-8523CV video intercom listing", href: "https://www.scpaudio.co.Australian/shop/ip-paging/intercoms/nas-8523cv/", kind: "Australian product listing" },
   "spon-outdoor-video": { label: "SPON XC-9137AV — network outdoor video intercom family", href: "https://sponcomm.com/products/network-outdoor-video-intercom", kind: "Manufacturer" },
-  "spon-nz-outdoor-video": { label: "Sound Choice Pro Audio NZ — XC-9137AV outdoor video intercom listing", href: "https://www.scpaudio.co.nz/shop/ip-paging/intercoms/xc-9137av/", kind: "NZ product listing" },
+  "spon-Australian-outdoor-video": { label: "Sound Choice Pro Audio Australian — XC-9137AV outdoor video intercom listing", href: "https://www.scpaudio.co.Australian/shop/ip-paging/intercoms/xc-9137av/", kind: "Australian product listing" },
   "spon-video-master": { label: "SPON XC-9037NV — network video intercom master station", href: "https://sponcomm.com/products/network-video-intercom-station", kind: "Manufacturer" },
-  "spon-nz-master": { label: "Sound Choice Pro Audio NZ — XC-9037N audio master station listing", href: "https://www.scpaudio.co.nz/shop/ip-paging/intercoms/xc-9037n/", kind: "NZ product listing (audio master; video master confirmed via manufacturer source)" },
+  "spon-Australian-master": { label: "Sound Choice Pro Audio Australian — XC-9037N audio master station listing", href: "https://www.scpaudio.co.Australian/shop/ip-paging/intercoms/xc-9037n/", kind: "Australian product listing (audio master; video master confirmed via manufacturer source)" },
   "spon-help-point": { label: "SPON XC-9242V — network emergency call box / help point", href: "https://sponcomm.com/products/network-emergency-call-box", kind: "Manufacturer" },
-  "spon-two-way-speaker": { label: "SPON GEN-6212A01 — microphone-equipped network speaker, NZ listing", href: "https://www.scpaudio.co.nz/shop/ip-paging/speakers-ip-speaker/gen-6212a01/", kind: "NZ product listing" },
+  "spon-two-way-speaker": { label: "SPON GEN-6212A01 — microphone-equipped network speaker, Australian listing", href: "https://www.scpaudio.co.Australian/shop/ip-paging/speakers-ip-speaker/gen-6212a01/", kind: "Australian product listing" },
   "itc-system": { label: "itc — 78-series system at a Cape Verde resort", href: "https://www.itctech.com.cn/case/index/art/1914.html", kind: "Overseas manufacturer architecture example; not a care installation" },
-  "itc-nz": { label: "Sound Choice Pro Audio NZ — T-7800A / Luna server", href: "https://www.scpaudio.co.nz/shop/commercial/t-7800a-ip-intercom-pa-system-server/", kind: "NZ product listing; current revision needs confirmation" },
+  "itc-Australian": { label: "Sound Choice Pro Audio Australian — T-7800A / Luna server", href: "https://www.scpaudio.co.Australian/shop/commercial/t-7800a-ip-intercom-pa-system-server/", kind: "Australian product listing; current revision needs confirmation" },
   "frontrow-system": { label: "FrontRow Conductor — campus communications", href: "https://www.gofrontrow.com/products/conductor/", kind: "Manufacturer" },
-  "frontrow-nz": { label: "Pacific AV — FrontRow and NZ school projects", href: "https://www.pacificav.co.nz/brands/frontrow/", kind: "NZ education evidence; not a care-sector installation claim" },
-  "prospero-system": { label: "Keenfinity Australia & NZ — Bosch PROSPERO IP PA", href: "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/", kind: "Manufacturer" },
-  "prospero-nz": { label: "Pacific AV NZ — Bosch PROSPERO", href: "https://www.pacificav.co.nz/product/bosch-prospero-ip-based-paging-and-bell-system/", kind: "NZ integrator/product information" },
+  "frontrow-Australian": { label: "Pacific AV — FrontRow and Australian school projects", href: "https://www.pacificav.co.Australian/brands/frontrow/", kind: "Australian education evidence; not a care-sector installation claim" },
+  "prospero-system": { label: "Keenfinity Australia & Australian — Bosch PROSPERO IP PA", href: "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/", kind: "Manufacturer" },
+  "prospero-Australian": { label: "Pacific AV Australian — Bosch PROSPERO", href: "https://www.pacificav.co.Australian/product/bosch-prospero-ip-based-paging-and-bell-system/", kind: "Australian integrator/product information" },
   "atlas-system": { label: "AtlasIED GLOBALCOM — announcement platform", href: "https://www.atlasied.com/ip108-sp", kind: "Manufacturer" },
-  "atlas-nz": { label: "NAS — AtlasIED distribution in Australia and NZ", href: "https://nz.nas.solutions/atlas-ied-now-distributed-by-nas", kind: "NZ distribution information" },
+  "atlas-Australian": { label: "NAS — AtlasIED distribution in Australia and Australian", href: "https://Australian.nas.solutions/atlas-ied-now-distributed-by-nas", kind: "Australian distribution information" },
   "praesensa": { label: "Keenfinity — PRAESENSA supervised loudspeaker-line retrofit", href: "https://www.keenfinity-group.com/xc/en/news/product-news/pra-eob-end-of-branch-device/", kind: "Manufacturer" },
-  "summerset": { label: "Summerset — Levin memory-care design, 7 September 2017", href: "https://www.summerset.co.nz/about-us/news/summerset-wins-national-award-for-innovative-memory-care/", kind: "Historical NZ operator account" },
-  "rictech": { label: "Rictech NZ — dedicated nurse-call systems", href: "https://www.rictech.nz/nurse-call-systems", kind: "NZ specialist manufacturer" },
-  "rauland": { label: "Rauland NZ — Pinpoint aged-care communications", href: "https://rauland.co.nz/pinpoint/aged-care/", kind: "NZ specialist supplier" },
-  "finance-market": { label: "eLeasing NZ — equipment-finance sectors and structures", href: "https://www.eleasing.co.nz/", kind: "Finance-provider market example; no SiteComms partnership implied" },
-  "care-scope": { label: "Health New Zealand — residential care and retirement-village distinction", href: "https://www.healthnz.govt.nz/hospitals-services/services-support/older-people/residential-care", kind: "Public health-service information" },
+  "summerset": { label: "Summerset — Levin memory-care design, 7 September 2017", href: "https://www.summerset.co.Australian/about-us/news/summerset-wins-national-award-for-innovative-memory-care/", kind: "Historical Australian operator account" },
+  "rictech": { label: "Rictech Australian — dedicated nurse-call systems", href: "https://www.rictech.Australian/nurse-call-systems", kind: "Australian specialist manufacturer" },
+  "rauland": { label: "Rauland Australian — Pinpoint aged-care communications", href: "https://rauland.co.Australian/pinpoint/aged-care/", kind: "Australian specialist supplier" },
+  "finance-market": { label: "eLeasing Australian — equipment-finance sectors and structures", href: "https://www.eleasing.co.Australian/", kind: "Finance-provider market example; no SiteComms partnership implied" },
+  "care-scope": { label: "Health Australia — residential care and retirement-village distinction", href: "https://www.healthnz.govt.Australian/hospitals-services/services-support/older-people/residential-care", kind: "Public health-service information" },
 } as const;
 export type CareSourceId = keyof typeof careSources;
 export type CarePlatformId = "axis" | "2n" | "algo" | "toa" | "spon" | "prospero" | "itc" | "frontrow";
@@ -82,7 +82,7 @@ type CarePlatform = {
   audio: string;
   call: string;
   entrance: string;
-  nz: string;
+  Australian: string;
   sources: readonly CareSourceId[];
   nzSources: readonly CareSourceId[];
 };
@@ -116,9 +116,9 @@ export const carePlatforms: readonly CarePlatform[] = [
     audio: "Selected indoor/outdoor Axis speakers; C8110 plus a suitable amplifier for retained 100V lines.",
     call: "C6110 with compatible two-way endpoints, configured and demonstrated.",
     entrance: "I8116-E network video intercom with door-release and receiving arrangement designed explicitly.",
-    nz: "JD Security's NZ site documents the audio-management platform. This is evidence of a local integration route, not a measured share of the aged-care market.",
+    Australian: "JD Security's Australian site documents the audio-management platform. This is evidence of a local integration route, not a measured share of the aged-care market.",
     sources: ["axis-edge", "axis-console", "axis-bridge", "axis-entry"],
-    nzSources: ["axis-nz"],
+    nzSources: ["axis-Australian"],
   },
   {
     id: "2n",
@@ -135,22 +135,22 @@ export const carePlatforms: readonly CarePlatform[] = [
     value: "Deep entrance/access specialisation rather than broad paging coverage.",
     costWatch: "Price modules, door hardware, receiving stations, licences and any access-control integration, not just the door panel.",
     strengths: [
-      "Specialist modular entrance/access proposition with current NZ-facing product listings.",
-      "Manufacturer-published healthcare-complex case study provides workflow evidence (overseas; not an NZ installation claim).",
+      "Specialist modular entrance/access proposition with current Australian-facing product listings.",
+      "Manufacturer-published healthcare-complex case study provides workflow evidence (overseas; not an Australian installation claim).",
       "Clear separation between current products and discontinued Net Audio simplifies lifecycle discussions.",
     ],
     tradeoffs: [
       "A door intercom is not a site-wide PA system; paging must come from a different design.",
       "Keep current entrance products separate from legacy Net Audio, which 2N places in discontinued-product support.",
-      "The Italian retirement/rehabilitation case study is workflow evidence, not proof of the same revision or installation in NZ.",
+      "The Italian retirement/rehabilitation case study is workflow evidence, not proof of the same revision or installation in Australian.",
     ],
     core: "IP Verso 2.0 with the required reader/button/camera modules.",
     audio: "Not a paging platform; use alongside a PA design where announcements are needed.",
     call: "Configured receiving arrangement: reception station, resident handset/app workflow or answering service.",
     entrance: "Core of the design; include door hardware, accessibility and after-hours routing.",
-    nz: "Sektor NZ lists IP Verso 2.0. The manufacturer also publishes an Italian retirement/rehabilitation project; that is useful workflow evidence, not proof of the same installation or product revision in NZ.",
+    Australian: "Sektor Australian lists IP Verso 2.0. The manufacturer also publishes an Italian retirement/rehabilitation project; that is useful workflow evidence, not proof of the same installation or product revision in Australian.",
     sources: ["2n-entry", "2n-legacy"],
-    nzSources: ["2n-nz", "2n-case"],
+    nzSources: ["2n-Australian", "2n-case"],
   },
   {
     id: "algo",
@@ -169,7 +169,7 @@ export const carePlatforms: readonly CarePlatform[] = [
     strengths: [
       "The 8301 is both a bell/announcement scheduler and a migration interface for existing amplifiers.",
       "Staged migration: new IP areas and retained analogue circuits can be considered together.",
-      "Straightforward provisioning story with NZ-facing supply and configuration training evidence.",
+      "Straightforward provisioning story with Australian-facing supply and configuration training evidence.",
     ],
     tradeoffs: [
       "A gateway cannot give individual-room control to speakers sharing one undivided analogue circuit.",
@@ -180,9 +180,9 @@ export const carePlatforms: readonly CarePlatform[] = [
     audio: "8188 indoor PoE speaker, suitable outdoor horn and the retained amplifier interface.",
     call: "8188 talkback with compatible call accessories, or a separate dedicated intercom design.",
     entrance: "Confirm exact package; not an entrance-specialist ecosystem.",
-    nz: "Everlea NZ publishes the 8301 and its paging/scheduling role. Ask the proposed provider to confirm support for the whole design rather than just the adapter.",
+    Australian: "Everlea Australian publishes the 8301 and its paging/scheduling role. Ask the proposed provider to confirm support for the whole design rather than just the adapter.",
     sources: ["algo-adapter", "algo-speaker"],
-    nzSources: ["algo-nz"],
+    nzSources: ["algo-Australian"],
   },
   {
     id: "toa",
@@ -206,15 +206,15 @@ export const carePlatforms: readonly CarePlatform[] = [
     tradeoffs: [
       "An audio-only N-8000 door station is not a like-for-like replacement for a video-entry system.",
       "Interoperability and limits need checking for the specific combination of families and endpoints.",
-      "Confirm NZ supply and support for the exact parts in the proposal.",
+      "Confirm Australian supply and support for the exact parts in the proposal.",
     ],
     core: "IP-A1PG for IP-A1 scheduling designs, or an N-8000 exchange for dedicated intercom designs.",
     audio: "IP-A1 speakers/horns and interface-fed amplifiers for passive zones.",
     call: "N-8000 master and sub-stations designed for staff/room communication.",
     entrance: "Audio-only door stations where video is not required.",
-    nz: "Australis Music's NZ site lists TOA. Confirm local availability and support for the exact N-8000 or IP-A1 parts in the proposal.",
+    Australian: "Australis Music's Australian site lists TOA. Confirm local availability and support for the exact N-8000 or IP-A1 parts in the proposal.",
     sources: ["toa-intercom", "toa-gateway", "toa-interface"],
-    nzSources: ["toa-nz"],
+    nzSources: ["toa-Australian"],
   },
   {
     id: "spon",
@@ -236,7 +236,7 @@ export const carePlatforms: readonly CarePlatform[] = [
       "Reception/master-station options support an answering-point workflow.",
       "Microphone-equipped network speakers and dedicated panels allow general two-way communication beyond entrances.",
       "SIP support across relevant devices improves integration options.",
-      "NZ channel evidence includes current SPON intercom and video-intercom listings.",
+      "Australian channel evidence includes current SPON intercom and video-intercom listings.",
     ],
     tradeoffs: [
       "Do not represent general intercom or help points as a clinical nurse-call replacement.",
@@ -248,9 +248,9 @@ export const carePlatforms: readonly CarePlatform[] = [
     audio: "Compatible indoor/outdoor endpoints; GEN-6212A01 microphone-equipped IP speakers where general two-way audio is needed.",
     call: "NAS-8523C/D audio intercom panels with master stations for staff/room communication (general facility intercom, not nurse call).",
     entrance: "NAS-8523CV/DV indoor and XC-9137AV outdoor video intercoms, answered from an XC-9037NV video master station at reception.",
-    nz: "Sound Choice Pro Audio NZ lists SPON equipment including current intercom and video-intercom products (NAS-8523D/CV, XC-9137AV, XC-9037N). A local catalogue helps identify a supply route; it does not prove stock for every model, installed care-sector share or compatibility between every generation.",
+    Australian: "Sound Choice Pro Audio Australian lists SPON equipment including current intercom and video-intercom products (NAS-8523D/CV, XC-9137AV, XC-9037N). A local catalogue helps identify a supply route; it does not prove stock for every model, installed care-sector share or compatibility between every generation.",
     sources: ["spon-control", "spon-health", "spon-audio-intercom", "spon-video-intercom", "spon-outdoor-video", "spon-video-master", "spon-help-point", "spon-two-way-speaker"],
-    nzSources: ["spon-nz", "spon-nz-audio-intercom", "spon-nz-video", "spon-nz-outdoor-video", "spon-nz-master"],
+    nzSources: ["spon-Australian", "spon-Australian-audio-intercom", "spon-Australian-video", "spon-Australian-outdoor-video", "spon-Australian-master"],
   },
   {
     id: "prospero",
@@ -269,7 +269,7 @@ export const carePlatforms: readonly CarePlatform[] = [
     strengths: [
       "Web-managed scheduling and zoned paging fit common-area announcement workflows.",
       "Amplifier interfaces support passive-speaker zones in larger shared spaces.",
-      "Current NZ-facing product page gives a local enquiry route.",
+      "Current Australian-facing product page gives a local enquiry route.",
     ],
     tradeoffs: [
       "The call station's zone-monitoring speaker is not proof of room talkback.",
@@ -280,18 +280,18 @@ export const carePlatforms: readonly CarePlatform[] = [
     audio: "IP endpoints and/or interface modules feeding suitable amplifiers and passive speakers.",
     call: "Specify separately; quote a documented room-calling solution if required.",
     entrance: "Confirm exact package; no visitor-video family established for this brief.",
-    nz: "Pacific AV publishes a NZ PROSPERO product page. Check the current locally supplied package and support arrangements.",
+    Australian: "Pacific AV publishes a Australian PROSPERO product page. Check the current locally supplied package and support arrangements.",
     sources: ["prospero-system"],
-    nzSources: ["prospero-nz"],
+    nzSources: ["prospero-Australian"],
   },
   {
     id: "itc",
     name: "ITC",
-    family: "NZ-listed T-7800A / Luna and compatible 78-series equipment",
+    family: "Australian-listed T-7800A / Luna and compatible 78-series equipment",
     category: "Server-managed IP / hybrid PA",
     fit: "A conditional IP / amplifier-hybrid alternative",
     verdict: "Worth a like-for-like proposal for centrally managed PA and intercom, with the exact local product revision confirmed.",
-    summary: "The documented 78-series approach combines a central server, IP endpoints and network amplifiers feeding passive speakers. That can be relevant to a mixed site with some existing PA and some new areas. The NZ T-7800A / Luna listing describes scheduling and intercom functions.",
+    summary: "The documented 78-series approach combines a central server, IP endpoints and network amplifiers feeding passive speakers. That can be relevant to a mixed site with some existing PA and some new areas. The Australian T-7800A / Luna listing describes scheduling and intercom functions.",
     paging: "Server-managed scheduling and paging controls.",
     intercom: "Specified 78-series intercom terminals; request a demonstration of the locally supplied revision.",
     visitor: "Video/access capability must be confirmed for the exact local package.",
@@ -300,7 +300,7 @@ export const carePlatforms: readonly CarePlatform[] = [
     costWatch: "Do not assume a low system price from overseas component listings; quote the local supported package.",
     strengths: [
       "Hybrid architecture accommodates network endpoints and amplifier-fed passive areas.",
-      "NZ listings make it a relevant local enquiry.",
+      "Australian listings make it a relevant local enquiry.",
     ],
     tradeoffs: [
       "Confirm the current supported generation before specifying it; local listings are not a lifecycle guarantee.",
@@ -311,9 +311,9 @@ export const carePlatforms: readonly CarePlatform[] = [
     audio: "T-7807-type endpoints and network amplifiers feeding suitable passive speakers.",
     call: "A compatible intercom terminal explicitly included and demonstrated.",
     entrance: "Confirm exact package for any visitor/video requirement.",
-    nz: "Sound Choice Pro Audio NZ publishes the T-7800A listing. Its existence is not a lifecycle or stock guarantee.",
+    Australian: "Sound Choice Pro Audio Australian publishes the T-7800A listing. Its existence is not a lifecycle or stock guarantee.",
     sources: ["itc-system"],
-    nzSources: ["itc-nz"],
+    nzSources: ["itc-Australian"],
   },
   {
     id: "frontrow",
@@ -331,7 +331,7 @@ export const carePlatforms: readonly CarePlatform[] = [
     costWatch: "Separate room voice amplification/AV control from the essential campus PA price.",
     strengths: [
       "A coherent workflow joins room audio, announcements and intercom where that ecosystem is already valuable.",
-      "NZ education integrator evidence provides a local route.",
+      "Australian education integrator evidence provides a local route.",
     ],
     tradeoffs: [
       "A classroom-led ecosystem is not the default starting point for a new care-only brief; that is a fit judgement, not a capability claim.",
@@ -341,9 +341,9 @@ export const carePlatforms: readonly CarePlatform[] = [
     audio: "Compatible room interfaces; amplifier connections for common areas.",
     call: "Compatible room microphone/call interface quoted separately.",
     entrance: "Confirm exact package; not a specialist entrance ecosystem.",
-    nz: "Pacific AV documents FrontRow and named NZ schools. Those references establish local education experience, not an aged-care installation record.",
+    Australian: "Pacific AV documents FrontRow and named Australian schools. Those references establish local education experience, not an aged-care installation record.",
     sources: ["frontrow-system"],
-    nzSources: ["frontrow-nz"],
+    nzSources: ["frontrow-Australian"],
   },
 ];
 
@@ -372,7 +372,7 @@ export const careUseCases: readonly CareUseCase[] = [
     whatMatters: "Entrance, gate and visitor video/intercom",
     startingPoints: ["2n", "axis", "spon"],
     why: "2N is the specialist modular entrance/access proposition; Axis offers video intercom within a mature security/access ecosystem; SPON's current indoor/outdoor full-duplex video intercoms, SIP, relay I/O and reception/master-station options now earn it third place for this brief.",
-    sources: ["2n-entry", "axis-entry", "spon-video-intercom", "spon-outdoor-video", "spon-video-master", "spon-nz-video"],
+    sources: ["2n-entry", "axis-entry", "spon-video-intercom", "spon-outdoor-video", "spon-video-master", "spon-Australian-video"],
   },
   {
     id: "integrated-communication",
@@ -415,7 +415,7 @@ export const careQuestions: readonly CareQuestion[] = [
   {
     id: "paging-nurse-call",
     question: "Is an aged-care paging system the same as nurse call?",
-    answer: "No. Paging can mean announcements over loudspeakers or private messages to staff devices. Nurse call is a separately specified resident/staff response system, potentially including call points, pendants, alert routing and escalation. Rictech and Rauland publish NZ specialist examples. A PA speaker with a microphone is not automatically an equivalent replacement.",
+    answer: "No. Paging can mean announcements over loudspeakers or private messages to staff devices. Nurse call is a separately specified resident/staff response system, potentially including call points, pendants, alert routing and escalation. Rictech and Rauland publish Australian specialist examples. A PA speaker with a microphone is not automatically an equivalent replacement.",
     sources: ["rictech", "rauland"],
   },
   {
@@ -457,12 +457,12 @@ export const careQuestions: readonly CareQuestion[] = [
   {
     id: "leasing-question",
     question: "Can a rest home or retirement village finance or lease a PA system?",
-    answer: "Equipment finance may be worth discussing. NZ providers advertise technology, AV and healthcare equipment-finance services, but the organisation, asset and transaction still need provider assessment. Ask whether installation is included and what ownership, return or purchase terms apply; a lease does not automatically become lease-to-own.",
+    answer: "Equipment finance may be worth discussing. Australian providers advertise technology, AV and healthcare equipment-finance services, but the organisation, asset and transaction still need provider assessment. Ask whether installation is included and what ownership, return or purchase terms apply; a lease does not automatically become lease-to-own.",
     sources: ["finance-market"],
   },
   {
     id: "installer-question",
-    question: "How do we find a suitable installer or service provider in New Zealand?",
+    question: "How do we find a suitable installer or service provider in Australia?",
     answer: "Ask for relevant project experience, exact product support, a coverage design and a demonstration of staff tasks. SiteComms can review your enquiry and reply with suggested providers' public contact details. Our selected network is not the entire market, and we do not send your enquiry to the providers we recommend.",
     sources: [],
   },
