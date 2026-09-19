@@ -1,3 +1,4 @@
+import { parseProjectState, projectStateName } from "@/lib/jurisdictions";
 import { NextResponse } from "next/server";
 
 export const runtime = "nodejs";
@@ -116,6 +117,8 @@ export async function POST(req: Request) {
     const organisation = get("organisation");
     const phone = get("phone");
     const location = get("location");
+    const rawProjectState = get("projectState");
+    const projectState = parseProjectState(rawProjectState);
     const message = get("message");
     const comments = get("comments");
     const helpType = get("helpType");
@@ -149,6 +152,12 @@ export async function POST(req: Request) {
     }
     if (!isProject && !message) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+    }
+
+    // Older clients may omit this newly introduced field; reject supplied invalid values.
+    // Current project forms require it in the browser, while generic contact stays lightweight.
+    if (rawProjectState && !projectState) {
+      return NextResponse.json({ error: "Please select a valid Australian state or territory." }, { status: 400 });
     }
 
     const files = fd.getAll("attachments").filter((f): f is File => f instanceof File && f.size > 0);
@@ -213,17 +222,18 @@ export async function POST(req: Request) {
       `Email: ${email}`,
       phone ? `Phone: ${phone}` : "Phone: (not provided)",
       location ? `Town / region: ${location}` : null,
+      projectState ? `Project state: ${projectStateName(projectState)} (${projectState})` : "Project state: not supplied",
       existingProvider && EXISTING_PROVIDER_LABELS[existingProvider]
         ? `Existing provider relationship: ${EXISTING_PROVIDER_LABELS[existingProvider]}${providerName ? ` (${providerName})` : ""}`
         : null,
       brandPreference ? `Brand / product preference: ${brandPreference}` : null,
-      estimate ? `Estimate: ${estimate}` : null,
+      estimate ? `Estimate supplied with enquiry (unverified client context): ${estimate}` : null,
       estimateLink ? `Estimate link: ${estimateLink}` : null,
       pageUrl ? `Page URL: ${pageUrl}` : null,
       referrer ? `Referrer: ${referrer}` : null,
       "",
       ...(contextLines.length
-        ? ["Tool / page context (attached automatically):", ...contextLines.map(([k, v]) => `- ${k}: ${v}`), ""]
+        ? ["User-reviewed tool / page context (client supplied, not a server-issued quote):", ...contextLines.map(([k, v]) => `- ${k}: ${v}`), ""]
         : []),
       isProject ? "Comments:" : "Message:",
       (isProject ? comments : message) || "(none)",

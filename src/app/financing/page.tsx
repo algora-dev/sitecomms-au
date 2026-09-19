@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ProjectStatePanel } from "@/components/project-state";
 import Link from "next/link";
 import { Suspense } from "react";
 import { IndustryAwareToolLink } from "@/components/industry-aware-tool-link";
@@ -52,7 +53,7 @@ const faqs = [
   },
   {
     q: "Does the SiteComms finance checker approve finance?",
-    a: "No. SiteComms does not provide finance or make credit decisions. The checker only helps determine whether a specialist conversation looks useful and gives the SiteComms team enough context to suggest an appropriate next step or provider from its selected network.",
+    a: "No. SiteComms does not provide finance or make credit decisions. The checker only helps determine whether a specialist conversation looks useful and gives the SiteComms team enough context to suggest an appropriate next step or a provider’s public contact details. Your enquiry is not forwarded to that provider.",
   },
 ];
 
@@ -83,7 +84,7 @@ export default function FinancingPage() {
 
       <header className="sc-container max-w-4xl py-16">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia project payment options</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australian project payment planning</p>
           <h1 className="mt-2 text-4xl font-bold tracking-tight text-[var(--sc-blue-900)]">
             Finance and leasing for paging, PA, bell and intercom systems
           </h1>
@@ -120,6 +121,7 @@ export default function FinancingPage() {
         </div>
       </section>
 
+      <div className="sc-container max-w-5xl"><ProjectStatePanel purpose="finance" /></div>
       <article className="sc-container max-w-3xl py-14 sc-prose">
         <h2>What can equipment finance help with?</h2>
         <p>

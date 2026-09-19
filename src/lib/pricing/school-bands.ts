@@ -1,5 +1,5 @@
 import type { CalculatorState } from "./types";
-import { calculateEstimate } from "./calculate";
+import { planningEstimate } from "../agent-ready/assessment";
 import { formatAUD } from "./config";
 
 export interface SchoolBand {
@@ -84,14 +84,14 @@ export const schoolBands: SchoolBand[] = [
 
 export function schoolBandSummaries() {
   return schoolBands.map((band) => {
-    const low = calculateEstimate(band.lowState);
-    const high = calculateEstimate(band.highState);
+    const low = planningEstimate(band.lowState);
+    const high = planningEstimate(band.highState);
     return {
       ...band,
-      displayRange: `${formatAUD(low.low)} – ${formatAUD(high.high)}${high.overThreshold ? "+" : ""} ex GST`,
-      lowValue: low.low,
-      highValue: high.high,
-      largeSystem: high.overThreshold,
+      displayRange: low && high ? `${formatAUD(low.low)} – ${formatAUD(high.high)}${high.overThreshold ? "+" : ""} ex GST` : "Estimate unavailable — pricing assumptions need review",
+      lowValue: low?.low ?? null,
+      highValue: high?.high ?? null,
+      largeSystem: high?.overThreshold ?? false,
     };
   });
 }

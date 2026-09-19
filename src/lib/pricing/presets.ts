@@ -2,7 +2,7 @@
 // Numbers are COMPUTED from the same config as the calculator — never duplicated as literals.
 
 import type { CalculatorState } from "./types";
-import { calculateEstimate } from "./calculate";
+import { planningEstimate } from "../agent-ready/assessment";
 import { formatAUD } from "./config";
 
 export function defaultState(): CalculatorState {
@@ -77,12 +77,13 @@ export interface PresetSummary {
   title: string;
   blurb: string;
   range: string;
+  available: boolean;
   detailLines: string[];
 }
 
 export function presetSummaries(): PresetSummary[] {
   return presets.map((p) => {
-    const r = calculateEstimate(p.state);
+    const r = planningEstimate(p.state);
     const a = p.state.areas;
     const detail: string[] = [];
     if (a.standardIndoor) detail.push(`${a.standardIndoor} indoor rooms`);
@@ -93,11 +94,12 @@ export function presetSummaries(): PresetSummary[] {
     const tierLabel =
       p.state.tier === "A" ? "new build" : p.state.tier === "B" ? "existing site, cabling available" : "existing site, new cabling required";
     detail.push(tierLabel);
-    if (r.overThreshold) detail.push("Large-system configuration: additional central hardware may be required");
+    if (r?.overThreshold) detail.push("Large-system configuration: additional central hardware may be required");
     return {
       title: p.title,
       blurb: p.blurb,
-      range: `${formatAUD(r.low)} – ${formatAUD(r.high)}${r.overThreshold ? "+" : ""} ex GST`,
+      available: r !== null,
+      range: r ? `${formatAUD(r.low)} – ${formatAUD(r.high)}${r.overThreshold ? "+" : ""} ex GST` : "Estimate unavailable — pricing assumptions need review",
       detailLines: detail,
     };
   });

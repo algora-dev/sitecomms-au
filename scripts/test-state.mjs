@@ -1,0 +1,37 @@
+import assert from "node:assert/strict";
+import { JURISDICTIONS, parseProjectState, projectStateName, withProjectState, PROJECT_STATE_KEY } from "../src/lib/jurisdictions.ts";
+import { createProjectStateStore } from "../src/lib/project-state-store.ts";
+assert.equal(JURISDICTIONS.length, 8);
+assert.equal(new Set(JURISDICTIONS.map(x=>x.code)).size, 8);
+for (const item of JURISDICTIONS) {
+  assert.equal(parseProjectState(item.code), item.code);
+  assert.equal(parseProjectState(` ${item.code.toLowerCase()} `), item.code);
+  assert.equal(projectStateName(item.code), item.name);
+  assert.equal(new URL(item.educationUrl).protocol, "https:");
+}
+for (const invalid of ["", "AU", "NZ", "Queensland", "<script>", "__proto__", {}, 0, null, undefined, "NSW,VIC"]) assert.equal(parseProjectState(invalid), undefined);
+const configured = '/pricing-tool?industry=aged-care&cfg=%7B%22tier%22%3A%22B%22%7D#results';
+const result = new URL(withProjectState(configured, "WA"), "https://sitecomms.test");
+assert.equal(result.searchParams.get("industry"), "aged-care");
+assert.equal(result.searchParams.get("cfg"), '{"tier":"B"}');
+assert.equal(result.searchParams.get("state"), "WA");
+assert.equal(result.hash, "#results");
+assert.equal(withProjectState("/compare?state=QLD#sources"), "/compare#sources");
+assert.equal(withProjectState("/compare?state=NSW", "NT"), "/compare?state=NT");
+for (const link of ["https://supplier.example/path", "//supplier.example/path", "mailto:test@example.com", "javascript:alert(1)", "/\\example.com"]) assert.equal(withProjectState(link, "SA"), link);
+const memory = new Map();
+const storage = { getItem: key => memory.get(key) ?? null, setItem: (key,value) => memory.set(key,value), removeItem: key => memory.delete(key) };
+const store = createProjectStateStore(()=>storage);
+assert.equal(store.getSnapshot(), "");
+store.set("qld"); assert.equal(store.getSnapshot(), "QLD"); assert.equal(memory.get(PROJECT_STATE_KEY), "QLD");
+const laterPage = createProjectStateStore(()=>storage);
+assert.equal(laterPage.getSnapshot(), "QLD", "Preference survives a new store/page.");
+memory.set(PROJECT_STATE_KEY, "VIC"); assert.equal(store.getSnapshot(), "VIC", "External tab update becomes visible.");
+store.set(undefined); assert.equal(store.getSnapshot(), ""); assert.equal(memory.has(PROJECT_STATE_KEY), false);
+memory.set(PROJECT_STATE_KEY, "invalid"); assert.equal(store.getSnapshot(), "");
+const blocked = createProjectStateStore(()=>{throw Error("storage disabled");});
+assert.equal(blocked.getSnapshot(), ""); blocked.set("ACT"); assert.equal(blocked.getSnapshot(), "ACT"); blocked.set(null); assert.equal(blocked.getSnapshot(), "");
+const quota = createProjectStateStore(()=>({ ...storage, setItem:()=>{throw Error("quota");} }));
+memory.set(PROJECT_STATE_KEY,"NSW"); quota.set("TAS"); assert.equal(quota.getSnapshot(), "TAS", "Successful reads cannot override a blocked-write fallback.");
+quota.set(undefined); assert.equal(quota.getSnapshot(), "");
+console.log("State tests passed: eight jurisdictions, validation, cfg/hash preservation, persistence, clearing, cross-tab reads, blocked storage and quota fallback.");

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ProjectStateBoot } from "@/components/project-state";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/lib/site";
@@ -14,6 +15,8 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  // Preview gate: remove only as part of an approved launch/indexing review.
+  robots: { index: false, follow: false },
   title: {
     default: "SiteComms Australia | IP paging, bell & PA system guidance for Australia",
     template: "%s | SiteComms Australia",
@@ -59,8 +62,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Suspense>
           <ScrollToTopOnNavigation />
         </Suspense>
+        <a href="#main-content" className="sc-skip-link">Skip to main content</a>
+        <Suspense fallback={null}><ProjectStateBoot /></Suspense>
         <SiteHeader />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-1">{children}</main>
         <SiteFooter />
       </body>
     </html>

@@ -1,0 +1,29 @@
+{
+  "intent": "pricing",
+  "project_state": "QLD",
+  "quantity_basis": "approximate",
+  "requested_outcome": "budget_estimate",
+  "configuration": {
+    "tier": "B",
+    "areas": {
+      "standardIndoor": 10,
+      "largeIndoor": 0,
+      "outdoor": 0,
+      "largeOutdoor": 0,
+      "entry": 0
+    },
+    "speakers": {
+      "largeIndoor": null,
+      "outdoor": null,
+      "largeOutdoor": null
+    },
+    "featurePackage": "essential",
+    "fineTune": {
+      "twoWayMode": "package",
+      "twoWayQty": 0,
+      "entryIntercom": "voice",
+      "additionalControlStations": 0,
+      "monitoring": false
+    }
+  }
+}

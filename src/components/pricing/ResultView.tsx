@@ -9,12 +9,15 @@ import { INDUSTRY_CONTEXTS } from "@/lib/industry-context";
 import { InquiryModal } from "./InquiryModal";
 import { ToolCrossSell } from "@/components/tool-cross-sell";
 import { track } from "@/lib/analytics";
+import type { PricingAssessment } from "@/lib/agent-ready/assessment";
+import { site } from "@/lib/site";
 
 const pdfLabel = "SiteComms Australia ballpark system estimate";
 
 export function ResultView({
   state,
   estimate,
+  assessment,
   industry,
   onEdit,
   onLeaveIndustry,
@@ -22,6 +25,7 @@ export function ResultView({
 }: {
   state: CalculatorState;
   estimate: EstimateResult;
+  assessment: PricingAssessment;
   industry?: IndustryContext;
   onEdit: () => void;
   onLeaveIndustry?: () => void;
@@ -36,19 +40,20 @@ export function ResultView({
     : state.tier === "C" ? "Existing site, new cabling required"
     : "Existing site, cabling not yet known";
 
-  // Site-wide cabling is excluded for every tier except B (adequate cabling
-  // within 3 m of each device location).
+  // Site-wide cabling is excluded in every tier. Tier B assumes adequate
+  // nearby cabling, so the additional cabling warning is only shown otherwise.
   const needsCablingNote = state.tier !== "B";
 
   const rangeSuffix = estimate.overThreshold ? "+" : "";
   const isAgedCare = industry === "aged-care";
 
-  const disclaimer =
-    state.tier === "A"
-      ? "This is an indicative communications-system estimate only, ex GST. It excludes network cabling throughout the site (see the cabling note above). Final pricing depends on the completed design, equipment quantities and project conditions."
-      : state.tier === "unsure"
-        ? "This is an indicative estimate because existing cabling and site conditions are not yet known. If site-wide cabling is required, it is excluded from this estimate and is an additional cost. A short site review can usually narrow the estimate considerably."
-        : "This is an indicative estimate only, ex GST. We have not inspected the site. It excludes site-wide network cabling (see the cabling note above). Final pricing may vary depending on cable routes, ceiling and wall access, network switch capacity, mounting requirements and the final system design.";
+  // Critical classification/scope text comes from the shared result, not a second policy.
+  const disclaimer = assessment.limitations.join(" ");
+  const source = assessment.sources[0];
+  const configParams = new URLSearchParams({ cfg: encodeURIComponent(JSON.stringify(state)) });
+  if (assessment.result.project_state) configParams.set("state", assessment.result.project_state);
+  if (industry) configParams.set("industry", industry);
+  const safeEstimateLink = `${site.url.replace(/\/$/, "")}/pricing-tool?${configParams}`;
 
   const summaryChips: string[] = [tierText];
   const a = state.areas;
@@ -141,7 +146,7 @@ export function ResultView({
     if (estimate.overThreshold) {
       doc.setFont("helvetica", "bold");
       doc.setTextColor(180, 80, 20);
-      doc.text("Large-system note: this configuration is beyond the standard range validated by", 50, y);
+      doc.text("Large-system note: this configuration is beyond the standard planning range used by", 50, y);
       y += 13;
       doc.text("the SiteComms calculator. Larger systems may need different control, network,", 50, y);
       y += 13;
@@ -161,19 +166,29 @@ export function ResultView({
       y += cablingLines.length * 11 + 10;
     }
 
-    // disclaimer box
+    // Shared domain summary, limitations and assumption metadata. Never drop scope to fit a page.
     doc.setFont("helvetica", "normal");
     doc.setFontSize(9);
     doc.setTextColor(90);
-    const lines = doc.splitTextToSize(
-      (isAgedCare
-        ? "This is a general paging and intercom planning estimate for a care-site project, not a complete nurse-call or certified evacuation-system quote. "
-        : "") +
-      disclaimer + " This document is an indicative estimate from a SiteComms planning model, not a formal quote. For a formal quote, SiteComms can review the project information and suggest an appropriate provider to contact from its selected network.",
-      W - 100,
-    );
-    if (y + lines.length * 11 > 780) { doc.addPage(); y = 60; }
-    doc.text(lines, 50, y);
+    const evidenceParagraphs = [
+      assessment.summary,
+      ...assessment.limitations,
+      ...assessment.result.assumptions.map(item => item.description),
+      `Source: ${source.source_id}. Assumption review recorded: ${source.reviewed_at ?? "not recorded"}; this is not new source verification.`,
+      `Model: ${assessment.result.versions.pricing_source}. Rules: ${assessment.result.versions.pricing_rules}. Policy: ${assessment.result.versions.assessment_policy}.`,
+      `Project state: ${assessment.result.project_state ?? "not supplied"}. Quantity basis: ${assessment.result.quantity_basis}.`,
+    ];
+    for (const paragraph of evidenceParagraphs) {
+      // Standard PDF fonts do not reliably cover all punctuation.
+      const ascii = paragraph.replace(/[–—]/g, "-").replace(/[’‘]/g, "'").replace(/[“”]/g, '"');
+      const wrapped: string[] = doc.splitTextToSize(ascii, W - 100);
+      for (const line of wrapped) {
+        if (y > 770) { doc.addPage(); y = 60; }
+        doc.text(line, 50, y);
+        y += 12;
+      }
+      y += 6;
+    }
 
     doc.save("SiteComms-estimate.pdf");
   }
@@ -181,6 +196,16 @@ export function ResultView({
   return (
     <div>
       <h2 className="text-2xl font-bold text-[var(--sc-navy)]">Your ballpark installed price</h2>
+      <p className="mt-2 text-sm font-semibold text-[var(--sc-navy)]">Budget estimate — not a formal quote</p>
+      <p className="mt-2 text-sm text-[var(--sc-slate)]">{assessment.summary}</p>
+      <details className="mt-3 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-4 text-xs text-[var(--sc-slate)]">
+        <summary className="cursor-pointer font-semibold text-[var(--sc-navy)]">Estimate basis, assumptions and sources</summary>
+        <p className="mt-3">Provisional model: {assessment.result.versions.pricing_source}. Assumption review recorded: {source.reviewed_at ?? "not recorded"}; this is not a current supplier stock or price verification.</p>
+        <p className="mt-2">Quantity basis: {assessment.result.quantity_basis}. Project state: {assessment.result.project_state ?? "not supplied"}. No state price uplift.</p>
+        {assessment.result.assumptions.map(item => <p key={item.id} className="mt-2">{item.description}</p>)}
+        <p className="mt-2">Unresolved: {assessment.result.unresolved_inputs.join("; ")}.</p>
+        <p className="mt-2"><a className="underline" href={source.reference_path}>Pricing methodology</a>. No enquiry has been sent and no assessment has been saved to the server.</p>
+      </details>
       <div className="mt-4 rounded-2xl border border-[var(--sc-border)] bg-white p-8 text-center shadow-sm">
         <div className="text-4xl font-bold tracking-tight text-[var(--sc-navy)] sm:text-5xl">
           {formatAUD(estimate.low)} – {formatAUD(estimate.high)}{rangeSuffix}
@@ -209,7 +234,7 @@ export function ResultView({
 
       {estimate.overThreshold && (
         <div className="mt-4 rounded-xl border-l-4 border-[#bd4a1a] bg-[#fdf3ec] p-4 text-sm text-[#7a3413]">
-          <strong>Large-system estimate:</strong> this configuration is beyond the standard range validated by the
+          <strong>Large-system estimate:</strong> this configuration is beyond the standard planning range used by the
           SiteComms calculator. Larger systems may require different control, network, amplification or licensing
           architecture, so this estimate may understate the final installed cost and a site-specific design is recommended.
         </div>
@@ -390,8 +415,14 @@ export function ResultView({
         mode={inquiry ?? "quote"}
         onClose={() => setInquiry(null)}
         estimateSummary={`${formatAUD(estimate.low)} - ${formatAUD(estimate.high)}${rangeSuffix} ex GST`}
-        estimateLink={typeof window !== "undefined" ? window.location.href : undefined}
+        estimateLink={safeEstimateLink}
         context={{
+          "Assessment classification": "Provisional budget estimate — not a formal quote",
+          "Pricing model": assessment.result.versions.pricing_source,
+          "Pricing rules": assessment.result.versions.pricing_rules,
+          "Quantity basis": assessment.result.quantity_basis,
+          "Excluded scope": assessment.result.excluded_scope.join("; "),
+          "Unresolved inputs": assessment.result.unresolved_inputs.join("; "),
           ...(isAgedCare ? { Industry: INDUSTRY_CONTEXTS[industry!].label } : {}),
           "Site situation": tierText,
           "Feature package": packageLabel[state.featurePackage],

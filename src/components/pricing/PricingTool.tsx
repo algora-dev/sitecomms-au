@@ -3,7 +3,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { industryFromParams, type IndustryContext } from "@/lib/industry-context";
 import type { AreaKey, CalculatorState, FeaturePackage, InstallationType } from "@/lib/pricing/types";
-import { calculateEstimate } from "@/lib/pricing/calculate";
+import { assessPricingConfiguration } from "@/lib/agent-ready/assessment";
+import { parseCalculatorConfig } from "@/lib/agent-ready/validation";
+import { useProjectState } from "@/components/project-state";
 import { track } from "@/lib/analytics";
 import { formatK, formatAUD, pricingConfig } from "@/lib/pricing/config";
 import { defaultState } from "@/lib/pricing/presets";
@@ -121,6 +123,8 @@ function InfoDot({ text }: { text: string }) {
 }
 
 export function PricingTool() {
+  const projectState = useProjectState();
+  const [savedConfigError, setSavedConfigError] = useState<string | null>(null);
   const [state, setState] = useState<CalculatorState>(defaultState);
   const [step, setStep] = useState(0); // 0 installation, 1 areas, 2 features, 3 result
   const [fineTuneOpen, setFineTuneOpen] = useState(false);
@@ -140,12 +144,14 @@ export function PricingTool() {
       setHydrated(true);
       const params = new URLSearchParams(window.location.search);
       setIndustry(industryFromParams(params));
-      if (params.get("cfg")) {
-        try {
-          const parsed = JSON.parse(decodeURIComponent(params.get("cfg")!));
-          if (parsed && parsed.areas && parsed.tier) setState({ ...defaultState(), ...parsed });
-          if (parsed?.tier) setStep(3);
-        } catch { /* ignore bad params */ }
+      if (params.has("cfg")) {
+        const parsed = parseCalculatorConfig(params.get("cfg"));
+        if (parsed.value) { setState(parsed.value); setStep(3); }
+        else {
+          setSavedConfigError("The saved estimate link is incomplete or invalid. No price was calculated from it. Please enter the site details again.");
+          params.delete("cfg");
+          window.history.replaceState(null, "", `${window.location.pathname}${params.size ? `?${params}` : ""}`);
+        }
       }
     });
   }, []);
@@ -189,16 +195,16 @@ export function PricingTool() {
 
   const restartTool = () => {
     skipPersist.current = true;
+    userTouchedRef.current = false;
+    setSavedConfigError(null);
     setState(defaultState());
     setStep(0);
     setFineTuneOpen(false);
     setConfirmRestart(false);
-    window.history.replaceState(null, "", window.location.pathname);
-    // Retain validated industry context across a restart unless the user
-    // deliberately leaves the care scope (general-calculator action).
-    if (industry) {
-      window.history.replaceState(null, "", `?industry=${industry}`);
-    }
+    const params = new URLSearchParams();
+    if (industry) params.set("industry", industry);
+    if (projectState) params.set("state", projectState);
+    window.history.replaceState(null, "", `${window.location.pathname}${params.size ? `?${params}` : ""}`);
   };
 
   const leaveIndustryScope = () => {
@@ -233,40 +239,9 @@ export function PricingTool() {
     };
   }, [step]);
 
-  const estimate = useMemo(() => calculateEstimate(state), [state]);
-
-  // Server-side output logging (proof of use). Fire-and-forget, once per
-  // unique result: fires when the results view renders (incl. deep-linked
-  // cfg loads) and again if the user edits and returns to a new result.
-  const loggedSig = useRef<string | null>(null);
-  useEffect(() => {
-    if (step !== 3) return;
-    const sig = JSON.stringify([state, estimate.low, estimate.high]);
-    if (loggedSig.current === sig) return;
-    loggedSig.current = sig;
-    fetch("/api/pricing-tool/output-log", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        tier: state.tier,
-        featurePackage: state.featurePackage,
-        areas: state.areas,
-        speakers: state.speakers,
-        fineTune: state.fineTune,
-        breakdown: estimate.breakdown,
-        low: estimate.low,
-        high: estimate.high,
-        basis: estimate.basis,
-        endpoints: estimate.endpoints,
-        overThreshold: estimate.overThreshold,
-        monitoringAnnual: estimate.monitoringAnnual,
-        monitoringIncludedMonths: estimate.monitoringIncludedMonths,
-        twoWayRooms: estimate.twoWayRooms,
-        fireInterface: estimate.fireInterface,
-      }),
-      keepalive: true,
-    }).catch(() => { /* silent: never surface to the user */ });
-  }, [step, state, estimate]);
+  const assessment = useMemo(() => assessPricingConfiguration(state, projectState, "approximate"), [state, projectState]);
+  const estimate = assessment.result.estimate;
+  // Assessments are stateless. Do not send/store a full result merely because it is viewed.
 
   const patch = (p: Partial<CalculatorState>) => {
     userTouchedRef.current = true;
@@ -285,6 +260,12 @@ export function PricingTool() {
 
   return (
     <div ref={toolTopRef} className="mx-auto max-w-3xl scroll-mt-6">
+      {savedConfigError && <p role="alert" className="mb-5 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-4 text-sm text-[var(--sc-navy)]">{savedConfigError}</p>}
+      {(step === 2 || step === 3) && !estimate && <div role="status" className="mb-5 sc-card bg-[var(--sc-blue-50)] p-5">
+        <p className="font-semibold text-[var(--sc-navy)]">{assessment.summary}</p>
+        {assessment.result.issues.map(issue => <p key={issue.field} className="mt-2 text-sm text-[var(--sc-slate)]">{issue.message}</p>)}
+        <button type="button" className="sc-btn-secondary mt-3" onClick={() => goToStep(1)}>Review the site details</button>
+      </div>}
       {/* progress */}
       <div className="mb-8 flex items-center gap-2">
         {[1, 2, 3].map((n) => (
@@ -371,7 +352,7 @@ export function PricingTool() {
               onClick={() => {
                 track("pricing_areas_completed", {
                   total_areas: totalAreas,
-                  endpoint_count: estimate.endpoints,
+                  endpoint_count: estimate?.endpoints,
                 });
                 goToStep(2);
               }}
@@ -499,7 +480,7 @@ export function PricingTool() {
                     className="h-4 w-4 accent-[var(--sc-teal)] cursor-pointer"
                   />
                   <span className="text-sm text-[var(--sc-charcoal)]">
-                    Add off-site monitoring ({formatAUD(pricingConfig.monitoringAnnualPrice)}/year, indicative model assumption)
+                    Add off-site monitoring ({estimate ? `${formatAUD(pricingConfig.monitoringAnnualPrice)}/year, indicative model assumption` : "price currently unavailable"})
                   </span>
                 </label>
               </div>
@@ -510,7 +491,9 @@ export function PricingTool() {
             <button type="button" onClick={() => goToStep(1)} className="text-sm font-medium text-[var(--sc-slate)] hover:text-[var(--sc-navy)] cursor-pointer">← Back</button>
             <button
               type="button"
+              disabled={!estimate}
               onClick={() => {
+                if (!estimate) return;
                 track("pricing_completed", {
                   installation_tier: state.tier,
                   total_areas: totalAreas,
@@ -530,11 +513,12 @@ export function PricingTool() {
       )}
 
       {/* RESULT */}
-      {step === 3 && (
+      {step === 3 && estimate && (
         <div ref={resultRef} className="scroll-mt-6">
           <ResultView
             state={state}
             estimate={estimate}
+            assessment={assessment}
             industry={industry}
             onEdit={() => goToStep(1)}
             onLeaveIndustry={industry ? leaveIndustryScope : undefined}
@@ -588,7 +572,7 @@ export function PricingTool() {
       )}
 
       {/* sticky running range */}
-      {showSticky && (
+      {showSticky && estimate && (
         <div className="fixed bottom-0 left-0 right-0 z-30 border-t border-[var(--sc-border)] bg-white/95 p-4 shadow-[0_-4px_12px_rgba(11,45,91,0.08)] backdrop-blur-sm">
           <div className="mx-auto flex max-w-3xl items-center justify-between">
             <div>

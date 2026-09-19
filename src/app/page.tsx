@@ -1,3 +1,4 @@
+import { ProjectStatePanel } from "@/components/project-state";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteCommsHero } from "@/components/home/sitecomms-hero";
@@ -45,7 +46,7 @@ const INTENT_CARDS = [
   },
   {
     href: "/tools/funding-check",
-    title: "Review school funding pathways",
+    title: "Prepare for funding research",
     desc: "See the status of SiteComms funding guidance and the Australian sector and jurisdiction factors that shape the relevant pathway.",
   },
   {
@@ -73,7 +74,7 @@ const UTILITY_LINKS = [
   },
   {
     href: "/tools/funding-check",
-    label: "School funding pathways",
+    label: "Funding planning status",
     event: "funding_check_cta_clicked",
   },
   {
@@ -102,6 +103,7 @@ export default function HomePage() {
   return (
     <>
       <SiteCommsHero />
+      <div className="sc-container max-w-4xl"><ProjectStatePanel /><p className="mb-8 text-sm text-[var(--sc-slate)]"><Link href="/states" className="font-semibold text-[var(--sc-blue-700)] underline">Plan by state or territory</Link> without losing access to the full Australian guide library.</p></div>
 
       <section className="border-y border-[var(--sc-border)] bg-[var(--sc-blue-50)]" aria-label="Popular planning resources">
         <div className="sc-container py-6">

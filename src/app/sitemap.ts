@@ -4,6 +4,9 @@ import { reviewedDate } from "@/lib/content-meta";
 
 const routes: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
+  { path: "/states", priority: 0.8 },
+  { path: "/guides/school-pa-paging-requirements", priority: 0.8 },
+  { path: "/guides/compare-pa-system-quotes", priority: 0.8 },
   { path: "/schools", priority: 0.98 },
   { path: "/systems", priority: 0.9 },
   { path: "/systems/ip-paging-pa", priority: 0.9 },
@@ -22,6 +25,7 @@ const routes: { path: string; priority: number }[] = [
   { path: "/tools/finance-check", priority: 0.95 },
   { path: "/compare", priority: 0.9 },
   { path: "/industries/aged-care-retirement-villages", priority: 0.9 },
+  { path: "/integrations", priority: 0.3 },
   { path: "/about", priority: 0.5 },
   { path: "/about/methodology", priority: 0.4 },
   { path: "/about/disclosure", priority: 0.4 },

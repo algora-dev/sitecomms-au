@@ -151,7 +151,7 @@ export default function SpecificationChecklistPage() {
       <ContinuePlanning
         items={[
           { title: "Pricing guide", desc: "Indicative Australian installed ranges so you can sanity-check every quote.", href: "/pricing" },
-          { title: "school funding guide", desc: "How a clearly specified project fits the property funding process.", href: "/tools/funding-check" },
+          { title: "Funding preparation and status", desc: "How a clearly specified project fits the property funding process.", href: "/tools/funding-check" },
           { title: "Compare paging platforms", desc: "Which platforms and ecosystems suit which specifications.", href: "/compare" },
         ]}
       />

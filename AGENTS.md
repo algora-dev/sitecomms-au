@@ -7,3 +7,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+
+## SiteComms foundation preservation
+
+Read `AGENT_HANDOFF_AGENT_READY.md` and `docs/agent-ready/PROFILE_AND_PLAN.md` before changing this iteration. Reuse the existing pricing engine through the shared assessment; do not duplicate rates or remove classification/scope checks. The HTTP test adapter is disabled by default and is not MCP. Do not restore automatic result storage, remove noindex, send live enquiries or change source approvals without explicit authorisation. Run the existing and Agent-Ready tests and report unavailable checks honestly.

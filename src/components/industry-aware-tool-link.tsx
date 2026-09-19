@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useProjectState } from "@/components/project-state";
+import { withProjectState } from "@/lib/jurisdictions";
 import { useSearchParams } from "next/navigation";
 import {
   buildIndustryToolHref,
@@ -26,6 +28,7 @@ export function IndustryAwareToolLink({
   fallbackLabel?: string;
 }) {
   const searchParams = useSearchParams();
+  const state = useProjectState();
   const industry = industryFromParams(searchParams);
   const estimate = readEstimateRange(searchParams);
   const href = buildIndustryToolHref(to, {
@@ -34,7 +37,7 @@ export function IndustryAwareToolLink({
     estimate,
   });
   return (
-    <Link href={href} className={className}>
+    <Link href={withProjectState(href, state)} className={className}>
       {fallbackLabel ?? children}
     </Link>
   );

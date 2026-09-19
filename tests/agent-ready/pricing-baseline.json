@@ -1,0 +1,4392 @@
+{
+  "basis": "Captured from supplied Phase 1 source, not independent market validation or new business approval.",
+  "cases": [
+    {
+      "id": "small-site",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 6,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 6580,
+        "high": 8225,
+        "basis": "B",
+        "endpoints": 6,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (6)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 3330,
+            "amountLow": 2664,
+            "amountHigh": 3330
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "medium-site",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 14,
+          "largeIndoor": 1,
+          "outdoor": 1,
+          "largeOutdoor": 0,
+          "entry": 1
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 14444,
+        "high": 18055,
+        "basis": "C",
+        "endpoints": 21,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (14)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 7770,
+            "amountLow": 6216,
+            "amountHigh": 7770
+          },
+          {
+            "label": "Large indoor spaces (1 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Outdoor areas (1 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 1110,
+            "amountLow": 888,
+            "amountHigh": 1110
+          },
+          {
+            "label": "Entry intercom panels (1 × voice intercom)",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "large-site",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 24,
+          "largeIndoor": 1,
+          "outdoor": 2,
+          "largeOutdoor": 1,
+          "entry": 2
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "video",
+          "additionalControlStations": 1,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 27464,
+        "high": 34330,
+        "basis": "B",
+        "endpoints": 37,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (24)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 13320,
+            "amountLow": 10656,
+            "amountHigh": 13320
+          },
+          {
+            "label": "Large indoor spaces (1 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Outdoor areas (2 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Large outdoor / sports areas (1 × 2 speakers)",
+            "detail": "Pole-mounted horn speakers",
+            "amount": 1700,
+            "amountLow": 1360,
+            "amountHigh": 1700
+          },
+          {
+            "label": "Entry intercom panels (2 × video intercom)",
+            "amount": 1420,
+            "amountLow": 1136,
+            "amountHigh": 1420
+          },
+          {
+            "label": "Two-way room call buttons (24)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 5520,
+            "amountLow": 4416,
+            "amountHigh": 5520
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          },
+          {
+            "label": "Additional control stations (1)",
+            "amount": 1500,
+            "amountLow": 1200,
+            "amountHigh": 1500
+          }
+        ],
+        "twoWayRooms": 24,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "small-school-low",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 6,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 6580,
+        "high": 8225,
+        "basis": "B",
+        "endpoints": 6,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (6)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 3330,
+            "amountLow": 2664,
+            "amountHigh": 3330
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "small-school-high",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 8,
+          "largeIndoor": 1,
+          "outdoor": 1,
+          "largeOutdoor": 0,
+          "entry": 1
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 11780,
+        "high": 14725,
+        "basis": "C",
+        "endpoints": 15,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (8)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 4440,
+            "amountLow": 3552,
+            "amountHigh": 4440
+          },
+          {
+            "label": "Large indoor spaces (1 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Outdoor areas (1 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 1110,
+            "amountLow": 888,
+            "amountHigh": 1110
+          },
+          {
+            "label": "Entry intercom panels (1 × voice intercom)",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "medium-school-low",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 12,
+          "largeIndoor": 1,
+          "outdoor": 1,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 13136,
+        "high": 16420,
+        "basis": "B",
+        "endpoints": 18,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (12)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 6660,
+            "amountLow": 5328,
+            "amountHigh": 6660
+          },
+          {
+            "label": "Large indoor spaces (1 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Outdoor areas (1 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 1110,
+            "amountLow": 888,
+            "amountHigh": 1110
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "medium-school-high",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 18,
+          "largeIndoor": 1,
+          "outdoor": 2,
+          "largeOutdoor": 0,
+          "entry": 1
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 20420,
+        "high": 25525,
+        "basis": "C",
+        "endpoints": 27,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (18)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 9990,
+            "amountLow": 7992,
+            "amountHigh": 9990
+          },
+          {
+            "label": "Large indoor spaces (1 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Outdoor areas (2 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Entry intercom panels (1 × voice intercom)",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          },
+          {
+            "label": "Two-way room call buttons (18)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 4140,
+            "amountLow": 3312,
+            "amountHigh": 4140
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 18,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "large-school-low",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 22,
+          "largeIndoor": 1,
+          "outdoor": 2,
+          "largeOutdoor": 1,
+          "entry": 1
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 20244,
+        "high": 25305,
+        "basis": "B",
+        "endpoints": 33,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (22)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 12210,
+            "amountLow": 9768,
+            "amountHigh": 12210
+          },
+          {
+            "label": "Large indoor spaces (1 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Outdoor areas (2 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Large outdoor / sports areas (1 × 2 speakers)",
+            "detail": "Pole-mounted horn speakers",
+            "amount": 1700,
+            "amountLow": 1360,
+            "amountHigh": 1700
+          },
+          {
+            "label": "Entry intercom panels (1 × voice intercom)",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "large-school-high",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 2,
+          "outdoor": 3,
+          "largeOutdoor": 1,
+          "entry": 2
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "video",
+          "additionalControlStations": 1,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 33896,
+        "high": 42370,
+        "basis": "C",
+        "endpoints": 49,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          },
+          {
+            "label": "Large indoor spaces (2 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 4440,
+            "amountLow": 3552,
+            "amountHigh": 4440
+          },
+          {
+            "label": "Outdoor areas (3 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 3330,
+            "amountLow": 2664,
+            "amountHigh": 3330
+          },
+          {
+            "label": "Large outdoor / sports areas (1 × 2 speakers)",
+            "detail": "Pole-mounted horn speakers",
+            "amount": 1700,
+            "amountLow": 1360,
+            "amountHigh": 1700
+          },
+          {
+            "label": "Entry intercom panels (2 × video intercom)",
+            "amount": 1420,
+            "amountLow": 1136,
+            "amountHigh": 1420
+          },
+          {
+            "label": "Two-way room call buttons (30)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 6900,
+            "amountLow": 5520,
+            "amountHigh": 6900
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          },
+          {
+            "label": "Additional control stations (1)",
+            "amount": 1500,
+            "amountLow": 1200,
+            "amountHigh": 1500
+          }
+        ],
+        "twoWayRooms": 30,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "aged-care",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 6,
+          "largeIndoor": 1,
+          "outdoor": 1,
+          "largeOutdoor": 0,
+          "entry": 1
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "none",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 9664,
+        "high": 12080,
+        "basis": "B",
+        "endpoints": 13,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (6)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 3330,
+            "amountLow": 2664,
+            "amountHigh": 3330
+          },
+          {
+            "label": "Large indoor spaces (1 × 4 speakers)",
+            "detail": "Ceiling speakers for halls / gymnasiums",
+            "amount": 2220,
+            "amountLow": 1776,
+            "amountHigh": 2220
+          },
+          {
+            "label": "Outdoor areas (1 × 2 speakers)",
+            "detail": "Weatherproof horn speakers",
+            "amount": 1110,
+            "amountLow": 888,
+            "amountHigh": 1110
+          },
+          {
+            "label": "Entry intercom panels (1 × voice intercom)",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "A-essential-1",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 4336,
+        "high": 5420,
+        "basis": "A",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "A-essential-10",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 8116,
+        "high": 10145,
+        "basis": "A",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5250,
+            "amountLow": 4200,
+            "amountHigh": 5250
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "A-essential-30",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 16516,
+        "high": 20645,
+        "basis": "A",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 15750,
+            "amountLow": 12600,
+            "amountHigh": 15750
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "A-essential-31",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 16936,
+        "high": 21170,
+        "basis": "A",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16275,
+            "amountLow": 13020,
+            "amountHigh": 16275
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "A-essential-99",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 45496,
+        "high": 56870,
+        "basis": "A",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 51975,
+            "amountLow": 41580,
+            "amountHigh": 51975
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "A-safety-1",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5564,
+        "high": 6955,
+        "basis": "A",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-safety-10",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 9344,
+        "high": 11680,
+        "basis": "A",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5250,
+            "amountLow": 4200,
+            "amountHigh": 5250
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-safety-30",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 17744,
+        "high": 22180,
+        "basis": "A",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 15750,
+            "amountLow": 12600,
+            "amountHigh": 15750
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-safety-31",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 18164,
+        "high": 22705,
+        "basis": "A",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16275,
+            "amountLow": 13020,
+            "amountHigh": 16275
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-safety-99",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 46724,
+        "high": 58405,
+        "basis": "A",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 51975,
+            "amountLow": 41580,
+            "amountHigh": 51975
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-interactive-1",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5748,
+        "high": 7185,
+        "basis": "A",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 525,
+            "amountLow": 420,
+            "amountHigh": 525
+          },
+          {
+            "label": "Two-way room call buttons (1)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 230,
+            "amountLow": 184,
+            "amountHigh": 230
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 1,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-interactive-10",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 11184,
+        "high": 13980,
+        "basis": "A",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5250,
+            "amountLow": 4200,
+            "amountHigh": 5250
+          },
+          {
+            "label": "Two-way room call buttons (10)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 2300,
+            "amountLow": 1840,
+            "amountHigh": 2300
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 10,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-interactive-30",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 23264,
+        "high": 29080,
+        "basis": "A",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 15750,
+            "amountLow": 12600,
+            "amountHigh": 15750
+          },
+          {
+            "label": "Two-way room call buttons (30)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 6900,
+            "amountLow": 5520,
+            "amountHigh": 6900
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 30,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-interactive-31",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 23868,
+        "high": 29835,
+        "basis": "A",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16275,
+            "amountLow": 13020,
+            "amountHigh": 16275
+          },
+          {
+            "label": "Two-way room call buttons (31)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 7130,
+            "amountLow": 5704,
+            "amountHigh": 7130
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 31,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "A-interactive-99",
+      "input": {
+        "tier": "A",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 64940,
+        "high": 81175,
+        "basis": "A",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 51975,
+            "amountLow": 41580,
+            "amountHigh": 51975
+          },
+          {
+            "label": "Two-way room call buttons (99)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 22770,
+            "amountLow": 18216,
+            "amountHigh": 22770
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 99,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-essential-1",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 4360,
+        "high": 5450,
+        "basis": "B",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "B-essential-10",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 8356,
+        "high": 10445,
+        "basis": "B",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "B-essential-30",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 17236,
+        "high": 21545,
+        "basis": "B",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "B-essential-31",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 17680,
+        "high": 22100,
+        "basis": "B",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "B-essential-99",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 47872,
+        "high": 59840,
+        "basis": "B",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "B-safety-1",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5588,
+        "high": 6985,
+        "basis": "B",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-safety-10",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 9584,
+        "high": 11980,
+        "basis": "B",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-safety-30",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 18464,
+        "high": 23080,
+        "basis": "B",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-safety-31",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 18908,
+        "high": 23635,
+        "basis": "B",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-safety-99",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 49100,
+        "high": 61375,
+        "basis": "B",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-interactive-1",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5772,
+        "high": 7215,
+        "basis": "B",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          },
+          {
+            "label": "Two-way room call buttons (1)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 230,
+            "amountLow": 184,
+            "amountHigh": 230
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 1,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-interactive-10",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 11424,
+        "high": 14280,
+        "basis": "B",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          },
+          {
+            "label": "Two-way room call buttons (10)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 2300,
+            "amountLow": 1840,
+            "amountHigh": 2300
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 10,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-interactive-30",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 23984,
+        "high": 29980,
+        "basis": "B",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          },
+          {
+            "label": "Two-way room call buttons (30)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 6900,
+            "amountLow": 5520,
+            "amountHigh": 6900
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 30,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-interactive-31",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 24612,
+        "high": 30765,
+        "basis": "B",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          },
+          {
+            "label": "Two-way room call buttons (31)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 7130,
+            "amountLow": 5704,
+            "amountHigh": 7130
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 31,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "B-interactive-99",
+      "input": {
+        "tier": "B",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 67316,
+        "high": 84145,
+        "basis": "B",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          },
+          {
+            "label": "Two-way room call buttons (99)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 22770,
+            "amountLow": 18216,
+            "amountHigh": 22770
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 99,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-essential-1",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 4360,
+        "high": 5450,
+        "basis": "C",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "C-essential-10",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 8356,
+        "high": 10445,
+        "basis": "C",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "C-essential-30",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 17236,
+        "high": 21545,
+        "basis": "C",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "C-essential-31",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 17680,
+        "high": 22100,
+        "basis": "C",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "C-essential-99",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 47872,
+        "high": 59840,
+        "basis": "C",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "C-safety-1",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5588,
+        "high": 6985,
+        "basis": "C",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-safety-10",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 9584,
+        "high": 11980,
+        "basis": "C",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-safety-30",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 18464,
+        "high": 23080,
+        "basis": "C",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-safety-31",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 18908,
+        "high": 23635,
+        "basis": "C",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-safety-99",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 49100,
+        "high": 61375,
+        "basis": "C",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-interactive-1",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5772,
+        "high": 7215,
+        "basis": "C",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          },
+          {
+            "label": "Two-way room call buttons (1)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 230,
+            "amountLow": 184,
+            "amountHigh": 230
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 1,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-interactive-10",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 11424,
+        "high": 14280,
+        "basis": "C",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          },
+          {
+            "label": "Two-way room call buttons (10)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 2300,
+            "amountLow": 1840,
+            "amountHigh": 2300
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 10,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-interactive-30",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 23984,
+        "high": 29980,
+        "basis": "C",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          },
+          {
+            "label": "Two-way room call buttons (30)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 6900,
+            "amountLow": 5520,
+            "amountHigh": 6900
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 30,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-interactive-31",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 24612,
+        "high": 30765,
+        "basis": "C",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          },
+          {
+            "label": "Two-way room call buttons (31)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 7130,
+            "amountLow": 5704,
+            "amountHigh": 7130
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 31,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "C-interactive-99",
+      "input": {
+        "tier": "C",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 67316,
+        "high": 84145,
+        "basis": "C",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          },
+          {
+            "label": "Two-way room call buttons (99)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 22770,
+            "amountLow": 18216,
+            "amountHigh": 22770
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 99,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-essential-1",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 4360,
+        "high": 5450,
+        "basis": "unsure",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "unsure-essential-10",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 8356,
+        "high": 10445,
+        "basis": "unsure",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "unsure-essential-30",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 17236,
+        "high": 21545,
+        "basis": "unsure",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "unsure-essential-31",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 17680,
+        "high": 22100,
+        "basis": "unsure",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "unsure-essential-99",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "essential",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 47872,
+        "high": 59840,
+        "basis": "unsure",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": false
+      }
+    },
+    {
+      "id": "unsure-safety-1",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5588,
+        "high": 6985,
+        "basis": "unsure",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-safety-10",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 9584,
+        "high": 11980,
+        "basis": "unsure",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-safety-30",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 18464,
+        "high": 23080,
+        "basis": "unsure",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-safety-31",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 18908,
+        "high": 23635,
+        "basis": "unsure",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-safety-99",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "safety",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 49100,
+        "high": 61375,
+        "basis": "unsure",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 0,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-interactive-1",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 1,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 5772,
+        "high": 7215,
+        "basis": "unsure",
+        "endpoints": 1,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (1)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 555,
+            "amountLow": 444,
+            "amountHigh": 555
+          },
+          {
+            "label": "Two-way room call buttons (1)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 230,
+            "amountLow": 184,
+            "amountHigh": 230
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 1,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-interactive-10",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 10,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 11424,
+        "high": 14280,
+        "basis": "unsure",
+        "endpoints": 10,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (10)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 5550,
+            "amountLow": 4440,
+            "amountHigh": 5550
+          },
+          {
+            "label": "Two-way room call buttons (10)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 2300,
+            "amountLow": 1840,
+            "amountHigh": 2300
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 10,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-interactive-30",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 30,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 23984,
+        "high": 29980,
+        "basis": "unsure",
+        "endpoints": 30,
+        "overThreshold": false,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (30)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 16650,
+            "amountLow": 13320,
+            "amountHigh": 16650
+          },
+          {
+            "label": "Two-way room call buttons (30)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 6900,
+            "amountLow": 5520,
+            "amountHigh": 6900
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 30,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-interactive-31",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 31,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 24612,
+        "high": 30765,
+        "basis": "unsure",
+        "endpoints": 31,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (31)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 17205,
+            "amountLow": 13764,
+            "amountHigh": 17205
+          },
+          {
+            "label": "Two-way room call buttons (31)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 7130,
+            "amountLow": 5704,
+            "amountHigh": 7130
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 31,
+        "fireInterface": true
+      }
+    },
+    {
+      "id": "unsure-interactive-99",
+      "input": {
+        "tier": "unsure",
+        "areas": {
+          "standardIndoor": 99,
+          "largeIndoor": 0,
+          "outdoor": 0,
+          "largeOutdoor": 0,
+          "entry": 0
+        },
+        "speakers": {
+          "largeIndoor": null,
+          "outdoor": null,
+          "largeOutdoor": null
+        },
+        "featurePackage": "interactive",
+        "fineTune": {
+          "twoWayMode": "package",
+          "twoWayQty": 0,
+          "entryIntercom": "voice",
+          "additionalControlStations": 0,
+          "monitoring": false
+        }
+      },
+      "expected": {
+        "low": 67316,
+        "high": 84145,
+        "basis": "unsure",
+        "endpoints": 99,
+        "overThreshold": true,
+        "monitoringAnnual": null,
+        "monitoringIncludedMonths": 0,
+        "breakdown": [
+          {
+            "label": "Central paging / control platform",
+            "detail": "Combined platform allowance (model assumption) - paging station, server, software, remote programming and commissioning. Equivalent functionality may be centralised or distributed depending on the architecture.",
+            "amount": 4895,
+            "amountLow": 3916,
+            "amountHigh": 4895
+          },
+          {
+            "label": "Standard indoor rooms (99)",
+            "detail": "1 wall-mount IP speaker per room, installed",
+            "amount": 54945,
+            "amountLow": 43956,
+            "amountHigh": 54945
+          },
+          {
+            "label": "Two-way room call buttons (99)",
+            "detail": "Room-call provision using a compatible call button and two-way audio endpoint/interface (model assumption)",
+            "amount": 22770,
+            "amountLow": 18216,
+            "amountHigh": 22770
+          },
+          {
+            "label": "Fire alarm / lockdown / EVAC interface",
+            "detail": "Emergency-system interface allowance (model assumption; implementation varies by platform)",
+            "amount": 1535,
+            "amountLow": 1228,
+            "amountHigh": 1535
+          }
+        ],
+        "twoWayRooms": 99,
+        "fireInterface": true
+      }
+    }
+  ]
+}

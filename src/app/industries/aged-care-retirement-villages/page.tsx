@@ -5,7 +5,7 @@ import { ProjectHelpLauncher } from "@/components/enquiry/ProjectHelpLauncher";
 import { articleSchema, breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { publishedDate, reviewedDate, reviewedLabel } from "@/lib/content-meta";
 import { site } from "@/lib/site";
-import { calculateEstimate } from "@/lib/pricing/calculate";
+import { planningEstimate } from "@/lib/agent-ready/assessment";
 import { formatAUD } from "@/lib/pricing/config";
 import { buildIndustryToolHref } from "@/lib/industry-context";
 import { CARE_PRICING_EXAMPLE, careExamplePricingHref } from "@/lib/content/aged-care-example";
@@ -27,7 +27,7 @@ const evidenceEntries = Object.entries(careSources) as [CareSourceId, (typeof ca
 const numbers = Object.fromEntries(evidenceEntries.map(([id], index) => [id, index + 1])) as Record<CareSourceId, number>;
 const platformNames = Object.fromEntries(carePlatforms.map(({ id, name }) => [id, name])) as Record<CarePlatformId, string>;
 /** FrontRow is treated as conditional rather than a main greenfield shortlist entry. */
-const mainPlatforms = carePlatforms.filter((p) => p.id !== "frontrow");
+const mainPlatforms = carePlatforms.filter((p) => p.id !== "frontrow" && p.id !== "spon");
 const linkClass = "rounded font-semibold text-[var(--sc-blue-700)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4";
 
 function Sources({ ids }: { ids: readonly CareSourceId[] }) {
@@ -74,9 +74,9 @@ function JsonLd({ data }: { data: unknown }) {
 }
 
 export default function AgedCareRetirementVillagesPage() {
-  const example = calculateEstimate(CARE_PRICING_EXAMPLE);
+  const example = planningEstimate(CARE_PRICING_EXAMPLE);
   const exampleFinanceHref = buildIndustryToolHref("/tools/finance-check", {
-    industry: "aged-care", source: "pricing", estimate: { low: example.low, high: example.high },
+    industry: "aged-care", source: "pricing", estimate: example ? { low: example.low, high: example.high } : undefined,
   });
   const article = {
     ...articleSchema({ headline: AGED_CARE_HEADLINE, description: AGED_CARE_DESCRIPTION, url: pageUrl,
@@ -110,10 +110,10 @@ export default function AgedCareRetirementVillagesPage() {
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia · Aged care & retirement villages</p>
         <h1 id="care-title" className="mt-3 max-w-4xl text-4xl font-bold tracking-tight text-[var(--sc-blue-900)] md:text-5xl">{AGED_CARE_HEADLINE}</h1>
         <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[var(--sc-slate)]">
-          Planning a rest-home PA upgrade, retirement-village announcement system or entrance intercom? Compare the systems against the job you need done: reaching the right areas, answering visitors, supporting staff and keeping everyday communication easy to manage.
+          Planning a aged-care-home PA upgrade, retirement-village announcement system or entrance intercom? Compare the systems against the job you need done: reaching the right areas, answering visitors, supporting staff and keeping everyday communication easy to manage.
         </p>
         <p className="mt-4 max-w-4xl leading-relaxed text-[var(--sc-slate)]">
-          Compare <strong>Axis, SPON, 2N, Algo, TOA, Bosch PROSPERO and ITC</strong> for common areas, visitor access and general two-way calling. The right shortlist changes with the brief, and specialist nurse call is explained separately.
+          Compare <strong>Axis, 2N, Algo, TOA and Bosch PROSPERO</strong>, with SPON and FrontRow treated conditionally, for common areas, visitor access and general two-way calling. The right shortlist changes with the brief, and specialist nurse call is explained separately.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link href={pricingHref} className="sc-btn-primary">Estimate project cost</Link>
@@ -177,7 +177,7 @@ export default function AgedCareRetirementVillagesPage() {
             </table>
           </TableRegion>
           <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">
-            <a href="#care-frontrow" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">FrontRow has a conditional role</a> where its room-audio ecosystem is already valuable, rather than a default greenfield shortlist entry. <a href="#care-alternatives" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">Traditional 100V, AtlasIED and Bosch PRAESENSA</a> are covered below where the brief changes.
+            <a href="#care-frontrow" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">FrontRow has a conditional role</a> where its room-audio ecosystem is already valuable. SPON is also conditional because Australian supply/support remains unverified. ITC is not included in the main Australian comparison. <a href="#care-alternatives" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">Traditional 100V and specialist architectures</a> are covered below where the brief changes.
           </p>
         </div>
       </section>
@@ -224,7 +224,7 @@ export default function AgedCareRetirementVillagesPage() {
           </div>
           <details className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
             <summary className={`cursor-pointer ${linkClass}`}>Independent village, residential care or a mixed site?</summary>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">Australian Government aged-care guidance distinguishes retirement-village living from residential aged care. Our planning recommendation is to reflect that distinction in the communications brief: an independent-living village may prioritise entrances and shared spaces; a care facility needs its care-response systems scoped alongside general PA; a mixed village should identify where the systems connect and where they remain separate.</p>
+            <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">Australian Government guidance describes residential aged care as a service type. Our planning recommendation is to identify the actual service and operator rather than treating all retirement housing as the same: an independent-living village may prioritise entrances and shared spaces; a care facility needs its care-response systems scoped alongside general PA; a mixed village should identify where the systems connect and where they remain separate.</p>
             <Sources ids={["care-scope"]} />
           </details>
           <p className="mt-5 text-sm leading-relaxed text-[var(--sc-slate)]">An emergency-announcement function is also not proof that a product meets a required fire/evacuation specification. Keep that engineered scope separate. Unsure which system you are asking for? <Help useCase="Distinguish PA, intercom, nurse call or specialist alerts" label="Tell us what needs to happen" className={`${linkClass} cursor-pointer bg-transparent`} />.</p>
@@ -233,7 +233,7 @@ export default function AgedCareRetirementVillagesPage() {
 
       <section id="care-platforms" aria-labelledby="care-platforms-title" className="sc-container max-w-5xl scroll-mt-24 py-12">
         <SectionHeading id="care-platforms-title" eyebrow="The system behind the brand" description="Compare the actual product family and the supported design. An Australian listing establishes a route for enquiry, not guaranteed stock, nationwide service or a care-sector market share.">
-          Detailed platform comparison and Australia support evidence
+          Detailed platform comparison and Australian evidence
         </SectionHeading>
         <div className="mt-7 space-y-5">
           {carePlatforms.map((platform) => (
@@ -290,13 +290,11 @@ export default function AgedCareRetirementVillagesPage() {
             </div>
             <div>
               <h3 className="font-semibold text-[var(--sc-blue-900)]">AtlasIED</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Consider a specified GLOBALCOM campus-notification platform for a larger multi-building estate where its capabilities justify it. AtlasIED has an ANZ route through NAS; shorter treatment here is about scope, not absence from Australia.</p>
-              <Sources ids={["atlas-system", "atlas-Australian"]} />
+              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Enterprise/mass-notification scope needs its own current product and Australian delivery review. Do not infer a care-sector recommendation from the brand name alone.</p>
             </div>
             <div>
               <h3 className="font-semibold text-[var(--sc-blue-900)]">Bosch PRAESENSA</h3>
               <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Investigate separately when a supervised public-address / voice-alarm design is an actual engineering requirement. PRAESENSA and PROSPERO are different systems; capabilities do not transfer between them.</p>
-              <Sources ids={["praesensa"]} />
             </div>
             <div>
               <h3 className="font-semibold text-[var(--sc-blue-900)]">FrontRow</h3>
@@ -330,7 +328,7 @@ export default function AgedCareRetirementVillagesPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--sc-blue-700)]">Illustrative common-area project · not a real installation</p>
             <h3 className="mt-2 text-xl font-bold text-[var(--sc-blue-900)]">Six small indoor areas, one large lounge, one outdoor area and one voice-entry point</h3>
             <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">Assumes suitable existing data cabling, the Essential package, no room-call buttons and no monitoring service. These are eight audio coverage areas plus an entrance—not nine speakers or nine software zones. The calculator applies its normal speaker-quantity assumptions.</p>
-            <p className="mt-5 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)] md:text-4xl">{formatAUD(example.low)}–{formatAUD(example.high)}<span className="mt-1 block text-sm font-medium tracking-normal text-[var(--sc-slate)]">AUD, excluding GST · indicative installed planning range</span></p>
+            <p className="mt-5 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)] md:text-4xl">{example ? `${formatAUD(example.low)}–${formatAUD(example.high)}` : "Estimate unavailable — pricing assumptions need review"}<span className="mt-1 block text-sm font-medium tracking-normal text-[var(--sc-slate)]">AUD, excluding GST · indicative installed planning range</span></p>
             <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">Calculated from the existing SiteComms model, including its central-platform and installation allowances. It is not a measured multi-brand average or a promise of a provider quote at this price. Different architectures and site conditions can fall outside it.</p>
             <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]"><strong>Not included:</strong> site-wide cabling, a clinical nurse-call/pendant system, a complete door/access-control project or an engineered fire/evacuation system. Those require their own scope. Confirm network capacity, installation access and any additional works.</p>
             <div className="mt-5 flex flex-wrap gap-3">
@@ -345,19 +343,20 @@ export default function AgedCareRetirementVillagesPage() {
 
       <section id="care-finance" aria-labelledby="care-finance-title" className="sc-container max-w-5xl scroll-mt-24 py-12">
         <SectionHeading id="care-finance-title" eyebrow="Payment options">Finance and leasing for a village communications upgrade</SectionHeading>
-        <p className="mt-4 leading-relaxed text-[var(--sc-slate)]">An equipment-finance conversation may be useful when the organisation prefers to spread a project’s cost. Australian providers publish technology/AV and healthcare equipment-finance offerings. The actual borrower, equipment, installation costs, security and ownership terms still need assessment by the provider.</p>
-        <Sources ids={["finance-market"]} />
+        <p className="mt-4 leading-relaxed text-[var(--sc-slate)]">A financing discussion should begin with the actual legal borrower and its authority to contract. Equipment, installation costs, security, term and ownership need assessment by a qualified provider. This phase has not validated lender eligibility for Australian aged-care operators.</p>
+
         <p className="mt-4 leading-relaxed text-[var(--sc-slate)]">The SiteComms check asks for a little project and budget context; it does not approve finance, quote repayments or reject an enquiry because the deposit or budget is uncertain. You can request the next step at every result level.</p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link href={financeHref} className="sc-btn-primary">Explore payment options</Link>
           <Link href={financingHref} className="sc-btn-secondary">Read about finance and leasing</Link>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">This is commercial equipment planning for the organisation, not residential-care subsidy advice. School property funding is not part of this aged-care journey.</p>
+        <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]"><Link href="/tools/funding-check" className={linkClass}>View funding research status for schools, aged care and other entities</Link>. No eligibility assessment is live yet.</p>
+        <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">This is commercial equipment planning for the organisation, not residential-care subsidy advice. Funding and finance are separate questions. The funding research will consider relevant non-school entities rather than reusing school assumptions.</p>
       </section>
 
       <section id="care-questions" aria-labelledby="care-questions-title" className="scroll-mt-24 border-y border-[var(--sc-border)] bg-slate-50 py-12">
         <div className="sc-container max-w-4xl">
-          <SectionHeading id="care-questions-title" eyebrow="Buyer questions">Rest-home and retirement-village communications FAQs</SectionHeading>
+          <SectionHeading id="care-questions-title" eyebrow="Buyer questions">Aged-care and retirement-village communications FAQs</SectionHeading>
           <div className="mt-5 divide-y divide-[var(--sc-border)]">
             {careQuestions.map((faq) => <section id={faq.id} key={faq.id} className="scroll-mt-24 py-5" aria-labelledby={`${faq.id}-title`}>
               <h3 id={`${faq.id}-title`} className="text-lg font-bold text-[var(--sc-blue-900)]">{faq.question}</h3>
@@ -383,11 +382,11 @@ export default function AgedCareRetirementVillagesPage() {
 
       <section id="care-methodology" aria-labelledby="care-methodology-title" className="sc-container max-w-5xl scroll-mt-24 py-10">
         <h2 id="care-methodology-title" className="text-xl font-bold text-[var(--sc-blue-900)]">How we reached these recommendations</h2>
-        <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">We matched documented product functions to six defined care/village communications briefs, then checked for an Australian-facing supply or integration route. The order favours a direct fit with the stated task; different integration needs can reverse it. We have not conducted a hands-on group test, measured market share or compared complete competitive tenders.</p>
-        <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">Manufacturer documents support capability, not universal superiority. Local listings and overseas case studies have their limits labelled. Editorial coverage is separate from SiteComms’ selected provider network, which does not cover the entire market. No business named here is being represented as a partner or endorser merely because it is cited. Clinical nurse call is outside the compared scope. See our <Link href="/about/editorial-policy" className={linkClass}>editorial policy</Link> and <Link href="/about/disclosure" className={linkClass}>commercial disclosure</Link>.</p>
+        <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">We matched documented product functions to six defined care/village communications briefs, then checked for an Australian-facing supply or integration route. The options are not ordered as winners; the proposed configuration and local support still need verification. We have not conducted a hands-on group test, measured market share or compared complete competitive tenders.</p>
+        <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">Manufacturer documents support capability, not universal superiority. Local listings and overseas case studies have their limits labelled. Citations do not establish a SiteComms provider relationship or coverage of the entire market. No business named here is being represented as a partner or endorser merely because it is cited. Clinical nurse call is outside the compared scope. See our <Link href="/about/editorial-policy" className={linkClass}>editorial policy</Link> and <Link href="/about/disclosure" className={linkClass}>commercial disclosure</Link>.</p>
         <details id="care-sources" className="mt-6 scroll-mt-24 rounded-xl border border-[var(--sc-border)] p-5 md:p-6">
           <summary className={`cursor-pointer ${linkClass}`}>Sources and evidence register ({evidenceEntries.length})</summary>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">Research checked 16 September 2026. Product revisions, supply and service terms need confirmation in a current proposal. References open the original publisher’s material.</p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">Evidence and local-support claims reviewed 19 September 2026. Product revisions, supply and service terms need confirmation in a current proposal. References open the original publisher’s material.</p>
           <ol className="mt-5 grid gap-3 md:grid-cols-2">
             {evidenceEntries.map(([id, source]) => <li key={id} className="min-w-0 rounded-lg border border-[var(--sc-border)] p-3">
               <a href={source.href} target="_blank" rel="noopener noreferrer" className={`text-sm ${linkClass}`}>[{numbers[id]}] {source.label}<span className="sr-only"> (opens in a new tab)</span></a>

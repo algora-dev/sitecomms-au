@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { ProjectStateSelector } from "@/components/project-state";
 
 const NAV = [
   { href: "/schools", label: "Schools" },
@@ -24,8 +25,9 @@ export function SiteHeader() {
           <Image
             src="/brand/SCAU-logo-colour-trans.png"
             alt="SiteComms Australia"
-            width={34}
-            height={48}
+            width={1334}
+            height={439}
+            sizes="146px"
             className="h-[3rem] w-auto cursor-pointer transition-all duration-200 ease-out hover:scale-[1.05] hover:drop-shadow-[0_6px_22px_rgba(244,164,0,0.55)]"
             priority
           />
@@ -85,8 +87,14 @@ export function SiteHeader() {
         </div>
       </div>
 
+      <div className="border-t border-[var(--sc-border)] bg-[var(--sc-blue-50)]">
+        <div className="sc-container flex flex-wrap items-center justify-between gap-x-4 gap-y-2 py-2">
+          <ProjectStateSelector compact label="Project location" />
+          <Link href="/states" onClick={() => setOpen(false)} className="text-xs font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">State planning guide</Link>
+        </div>
+      </div>
       {open && (
-        <nav id="sc-nav-menu" aria-label="Mobile navigation" className="border-t border-[var(--sc-border)] bg-white lg:hidden">
+        <nav id="sc-nav-menu" aria-label="Mobile navigation" className="max-h-[calc(100dvh-10rem)] overflow-y-auto border-t border-[var(--sc-border)] bg-white lg:hidden">
           <div className="sc-container flex flex-col py-4">
             {NAV.map((item) => (
               <Link

@@ -11,33 +11,23 @@ import {
 const pageSource = readFileSync(new URL("../src/app/industries/aged-care-retirement-villages/page.tsx", import.meta.url), "utf8");
 
 const platformIds = carePlatforms.map((p) => p.id);
-assert.equal(new Set(platformIds).size, 8);
-assert.deepEqual(new Set(platformIds), new Set(["axis", "2n", "algo", "toa", "spon", "prospero", "itc", "frontrow"]));
+assert.equal(new Set(platformIds).size, 7);
+assert.deepEqual(new Set(platformIds), new Set(["axis", "2n", "algo", "toa", "spon", "prospero", "frontrow"]));
 assert.equal(new Set(careUseCases.map((c) => c.id)).size, careUseCases.length);
 assert.equal(new Set(careQuestions.map((q) => q.id)).size, careQuestions.length);
 
-// Revised shortlist structure (compare-refresh handoff).
-const useCaseById = Object.fromEntries(careUseCases.map((c) => [c.id, c]));
+// Evidence-led use cases are not a fixed ranked top-three list.
 for (const useCase of careUseCases) {
-  assert.equal(useCase.startingPoints.length, 3, `Use case ${useCase.id} must list three starting points.`);
-  assert.equal(new Set(useCase.startingPoints).size, 3);
-  useCase.startingPoints.forEach((id) => assert.ok(platformIds.includes(id), `Unknown platform ${id} in ${useCase.id}`));
-  assert.ok(useCase.why.length > 40, `Use case ${useCase.id} must explain its order.`);
+  assert.ok(useCase.startingPoints.length >= 2, `Use case ${useCase.id} needs multiple relevant options.`);
+  assert.equal(new Set(useCase.startingPoints).size, useCase.startingPoints.length);
+  useCase.startingPoints.forEach((id) => assert.ok(platformIds.includes(id), `Unknown platform ${id}`));
+  assert.ok(!useCase.startingPoints.includes("spon"), "Unverified Australian support must not be a primary use-case recommendation.");
+  assert.ok(useCase.why.length > 40, `Use case ${useCase.id} needs a rationale.`);
 }
-assert.deepEqual(useCaseById["entrance-intercom"].startingPoints, ["2n", "axis", "spon"], "Entrance/video row must start 2n, axis, spon.");
-assert.equal(useCaseById["integrated-communication"].startingPoints[0], "spon", "Integrated communications must start with spon.");
-assert.equal(useCaseById["retain-pa"].startingPoints[0], "algo", "Reuse/SIP row must start with algo.");
-
-// SPON evidence: current audio + video intercom sources must be present.
 const spon = carePlatforms.find((p) => p.id === "spon");
-assert.ok(spon, "SPON profile must exist");
-for (const required of ["spon-audio-intercom", "spon-video-intercom", "spon-outdoor-video", "spon-video-master"]) {
-  assert.ok(spon.sources.includes(required), `SPON sources must include ${required}`);
-}
-for (const required of ["spon-Australian-video", "spon-Australian-outdoor-video"]) {
-  assert.ok(spon.auSources.includes(required), `SPON sources must include ${required}`);
-}
-assert.ok(spon.summary.toLowerCase().includes("video intercom"), "SPON summary must reflect the broader family.");
+assert.ok(spon, "Conditional SPON profile retained");
+assert.deepEqual(spon.auSources, [], "Do not fabricate Australian supply evidence.");
+assert.match(JSON.stringify(spon), /not verified|unverified|not been verified/i);
 
 // Enriched platform model used by shortlist/capability/profiles.
 for (const platform of carePlatforms) {
@@ -53,10 +43,11 @@ for (const item of [...carePlatforms, ...careUseCases, ...careQuestions]) {
 for (const source of Object.values(careSources)) assert.equal(new URL(source.href).protocol, "https:");
 assert.equal(AGED_CARE_PATH, "/industries/aged-care-retirement-villages");
 
-// Page integration: industry-aware journeys retained; no school-funding CTA.
+// Page integration: industry-aware journeys retained; funding is now all-sector preparation only.
 assert.ok(pageSource.includes('industry: "aged-care"'), "Page must build industry-aware links.");
 assert.ok(pageSource.includes("careExamplePricingHref"), "Example must use the cfg roundtrip link.");
-assert.ok(!/funding-check|5YA/i.test(pageSource), "Aged-care page must not link school funding.");
+assert.ok(!/5YA|10YPP|school funding guide/i.test(pageSource), "No NZ or school-only funding claim on aged-care page.");
+assert.ok(pageSource.includes("funding-check"), "Aged-care users can reach all-sector funding preparation.");
 
 assert.equal(parseIndustryContext("aged-care"), "aged-care");
 for (const bad of [undefined, null, "hospital", "state_school", "AGED-CARE", "<script>", "__proto__", 1, {}]) {

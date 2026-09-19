@@ -1,0 +1,147 @@
+SiteComms Agent-Ready Foundation review evidence — 19 September 2026
+
+
+=== test:pricing ===
+pricing tests: all assertions passed
+  A: $8,356 - $10,445
+  safety: $9,584 | interactive: $11,424 | endpoints: 34
+
+=== test:finance ===
+finance tests: all assertions passed, including public-entity governance guardrails
+
+=== test:aged-care ===
+Aged-care compare-refresh assertions passed: 7 profiles, 6 use-case rows, 20 sources.
+Illustrative scope, current engine: A$9664–$12080 ex GST; 13 endpoints under current defaults.
+
+=== test:state ===
+State tests passed: eight jurisdictions, validation, cfg/hash preservation, persistence, clearing, cross-tab reads, blocked storage and quota fallback.
+
+=== test:content ===
+Content tests passed: 7 school profiles, 4 use cases, 14 school comparison sources and three new dated routes.
+
+=== test:site ===
+Static site audit passed: 85 TS/TSX files parsed/transpiled, 225 local imports, 255 literal internal links, 30 routes and 29 sitemap entries.
+Preview/noindex preserved; active source NZ residue allowlisted only for the genuine operator privacy contact. Historical database data is untouched.
+Scope: syntax and source invariants only; not full framework type-check, build, ESLint or browser validation.
+
+=== test:agent-ready ===
+PASS 70 captured Phase 1 fixtures: full numeric/breakdown parity
+PASS AUD cents, GST exclusion, range basis and source identity
+PASS All eight jurisdictions preserve pricing while retaining context
+PASS Unknown state does not silently become Queensland or a price multiplier
+PASS Approximate quantities and null speaker defaults remain distinguishable
+PASS Missing configuration returns useful clarification, no invented defaults
+PASS Explicit zero counts stay zero but an entirely empty site does not produce a project price
+PASS Reject missing count without silent coercion
+PASS Reject unknown count without silent coercion
+PASS Reject negative without silent coercion
+PASS Reject numeric string without silent coercion
+PASS Reject fractional count without silent coercion
+PASS Reject infinity without silent coercion
+PASS Reject NaN without silent coercion
+PASS Reject out-of-bounds count without silent coercion
+PASS Reject boolean string without silent coercion
+PASS Reject unknown package without silent coercion
+PASS Reject array instead of areas without silent coercion
+PASS Reject zero speakers override without silent coercion
+PASS Reject too many controls without silent coercion
+PASS Reject nested unknown field without silent coercion
+PASS Reject undefined own field without silent coercion
+PASS Reject inconsistent two-way rooms without silent coercion
+PASS Array / prototype-like request fields cannot grant authority
+PASS Formal quote request cannot promote an estimate
+PASS Free text and conflicting structured fields are not silently reconciled
+PASS Brief length and type are bounded
+PASS Funding and finance return explicit non-eligibility outcomes
+PASS Supplied malformed configuration is rejected even on unsupported intents
+PASS Source review deadlines reject impossible calendar dates
+PASS Large site retains existing numbers and requires human review
+PASS Recurring monitoring is separate from the installed amount
+PASS unavailable required price source suppresses amount
+PASS conflicted required price source suppresses amount
+PASS withdrawn required price source suppresses amount
+PASS Stale or invalid review deadline cannot be relabelled fresh
+PASS Generated timestamps do not reset source review or manufacture verification
+PASS Public sources do not expose added internal fields
+PASS Outgoing money / scope / classification inconsistencies are rejected
+PASS Current and legacy cfg encodings preserve the same typed inputs
+PASS One source update reaches handler and page projections; restore baseline afterwards
+PASS Withdrawn pricing source suppresses page examples without breaking guide rendering
+PASS Human directory and search use identical public records
+PASS Search pagination, input limits and no-match outcomes
+PASS Source failure differs from empty search; stale directory is qualified
+PASS Comparison provenance is derived without new verification claims
+PASS Only two read/assessment capabilities; no model or write tool
+PASS Core never fetches, submits, or stores during an assessment/search
+PASS Retired legacy writer returns 410 without touching integrations
+PASS HTTP disabled by default, including when a key exists
+PASS HTTP refuses absent/weak server key
+PASS HTTP rejects unauthenticated, incorrect-key and browser requests
+PASS Actual assessment route invokes same core and sends no-store headers
+PASS Actual search route uses the same directory result
+PASS HTTP distinguishes clarification from malformed supplied input
+PASS HTTP rejects wrong type, malformed JSON and compressed inputs
+PASS HTTP enforces both advertised and actual streamed body size
+PASS HTTP query duplicate/unknown fields and method misuse are rejected
+PASS Operational logging excludes credentials and payloads
+PASS Local abuse backstop eventually returns 429, not unbounded work
+PASS Turning HTTP off leaves deterministic human paths intact
+PASS All public pricing projections use shared handler; original engine is the only formula
+Agent-Ready: 62 named test groups passed, including 70 captured pricing fixtures.
+Core-only warm single-process timing: n=1000, concurrency=1, p50=0.019ms, p95=0.042ms, p99=0.146ms. Not production/browser/client latency.
+No real enquiries, model calls, external client invocations or database writes performed. Next/browser/deployment checks are separate.
+
+=== Framework / normal npm commands attempted ===
+=== npm run build ===
+
+> sitecomms-au@0.1.0 build
+> next build
+
+sh: 1: next: not found
+EXIT: 127
+=== npm run lint ===
+
+> sitecomms-au@0.1.0 lint
+> eslint
+
+sh: 1: eslint: not found
+EXIT: 127
+=== npm test ===
+
+> sitecomms-au@0.1.0 test
+> npm run test:pricing && npm run test:finance && npm run test:aged-care && npm run test:state && npm run test:content && npm run test:site && npm run test:agent-ready
+
+
+> sitecomms-au@0.1.0 test:pricing
+> tsx scripts/test-pricing.mjs
+
+sh: 1: tsx: not found
+EXIT: 127
+=== npm run typecheck:agent-ready ===
+
+> sitecomms-au@0.1.0 typecheck:agent-ready
+> tsc --project tsconfig.agent-ready.json
+
+error TS2688: Cannot find type definition file for 'node'.
+  The file is in the program because:
+    Entry point of type library 'node' specified in compilerOptions
+EXIT: 2
+
+=== Strict core check ===
+Command and environment are in VALIDATION.md. Exit code 0; no diagnostics.
+
+=== npm ci attempt ===
+npm error Exit handler never called!
+npm error This is an error with npm itself. Please report this error at:
+npm error   <https://github.com/npm/cli/issues>
+npm error A complete log of this run can be found in: /home/oai/.npm/_logs/2026-09-19T13_31_31_627Z-debug-0.log
+
+Excerpt from npm debug log showing registry DNS failures:
+1023 http fetch GET https://registry.npmjs.org/zod-validation-error/-/zod-validation-error-4.0.2.tgz attempt 1 failed with EAI_AGAIN
+1024 http fetch GET https://registry.npmjs.org/zod/-/zod-4.5.4.tgz attempt 1 failed with EAI_AGAIN
+1025 http fetch GET https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz attempt 1 failed with EAI_AGAIN
+1026 http fetch GET https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz attempt 1 failed with EAI_AGAIN
+1027 http fetch GET https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.5.tgz attempt 1 failed with EAI_AGAIN
+1028 http fetch GET https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.22.tgz attempt 1 failed with EAI_AGAIN
+1029 http fetch GET https://registry.npmjs.org/which-collection/-/which-collection-1.0.2.tgz attempt 1 failed with EAI_AGAIN
+1030 http fetch GET https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.2.1.tgz attempt 1 failed with EAI_AGAIN

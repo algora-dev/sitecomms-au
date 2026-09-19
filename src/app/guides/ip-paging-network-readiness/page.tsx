@@ -16,67 +16,69 @@ export const metadata: Metadata = buildMetadata({
 
 const CHECKS = [
   {
-    title: "Switch ports and locations",
-    items: [
-      "Count available ports at each switch location near where endpoints will be installed",
-      "Identify buildings or blocks with no nearby switch — these may need a new switch or fibre/uplink work",
-      "Note port speeds: most IP speakers and intercoms are happy on 100 Mbps, but gigabit future-proofs",
-    ],
+    "title": "Switch ports, buildings and links",
+    "items": [
+      "Map proposed endpoints to switch locations and identify missing ports or inter-building links.",
+      "Check the exact manufacturer port-speed, topology and cabling requirements, rather than assuming all IP devices are interchangeable.",
+      "Record which network components are retained, upgraded or supplied by someone outside the paging quote."
+    ]
   },
   {
-    title: "PoE budget",
-    items: [
-      "Check the PoE class/wattage each proposed endpoint draws (datasheets vary from ~3W to 15W+)",
-      "Total the draw per switch and compare against its PoE budget (e.g. 370W on a typical 48-port PoE+ switch)",
-      "Plan headroom of at least 20% for additions and powered-up variants",
-      "Outdoor or high-output speakers may need PoE injectors or outdoor-rated supply decisions",
-    ],
+    "title": "Power over Ethernet and backup power",
+    "items": [
+      "Check the proposed model’s PoE class and maximum demand against both per-port limits and the switch’s total power budget.",
+      "Include other powered devices, startup behaviour, intended audio output and planned additions in the assessment; do not use one generic wattage for every speaker.",
+      "Ask which switches, controllers, amplifiers and endpoints need backed-up power, how long the design will operate and how that will be tested."
+    ]
   },
   {
-    title: "VLAN and addressing",
-    items: [
-      "Decide whether paging endpoints sit on a dedicated voice/IoT VLAN or the general LAN",
-      "Confirm enough IP addresses are available in the chosen scope",
-      "Document DHCP vs static addressing — many installers prefer static or reserved addresses for endpoints",
-    ],
+    "title": "Addressing, VLANs and access",
+    "items": [
+      "Agree VLANs, DHCP reservations or static addressing with the network owner and document the chosen design.",
+      "Confirm administration access, DNS and time-server access, firewall rules and permitted remote-support methods.",
+      "Separate the operator role from administrator access; record who owns accounts, configuration backups and firmware maintenance."
+    ]
   },
   {
-    title: "Quality of Service (QoS)",
-    items: [
-      "Ensure DSCP prioritisation is applied to paging audio so announcements are not delayed by heavy network use",
-      "This matters most on shared school networks during backup or update windows",
-    ],
+    "title": "Multicast, SIP and competing traffic",
+    "items": [
+      "Ask the integrator to document multicast groups, IGMP requirements and any routing between subnets for the chosen platform.",
+      "Where phones initiate pages, confirm SIP registration, licensing, codecs and behaviour if the phone service is unavailable.",
+      "Agree traffic prioritisation with the IT team and test paging under realistic network load. A QoS setting alone is not a resilience guarantee."
+    ]
   },
   {
-    title: "Cabling state",
-    items: [
-      "Test existing Cat5e/6 runs to endpoints that will reuse cabling — age and workmanship vary widely in Australian school buildings",
-      "Identify runs over 90–100m, which need an intermediate switch or re-route",
-      "New cabling work is usually a property works item — see the funding implications on our funding page",
-    ],
+    "title": "Existing and new cabling",
+    "items": [
+      "Inspect and test retained cabling; identify unsuitable routes, damaged runs, terminations and links beyond the selected cabling design’s limits.",
+      "Confirm suitable outdoor and inter-building protection, access equipment and any building-work approvals with the relevant specialists.",
+      "Identify who is responsible for communications cabling, test records and handover documentation. Do not assume cabling is included in endpoint installation allowances."
+    ]
   },
   {
-    title: "Core infrastructure resilience",
-    items: [
-      "Ask what happens to paging if the switch, server or controller fails — endpoint-local storage of emergency messages is a common mitigation",
-      "Confirm UPS coverage for core switches and any paging server",
-      "Check that a WAN outage does not take down on-site paging (local survivability matters for emergency use)",
-    ],
+    "title": "Timetables, time zones and calendar ownership",
+    "items": [
+      "Set the project’s actual local time zone and a suitable time source; test time recovery after a reboot or network interruption.",
+      "Demonstrate ordinary days, alternate timetables, term breaks, local holidays and any applicable daylight-saving changes.",
+      "Assign a staff member to maintain calendar exceptions. A scheduler is not evidence of automatic Australian school-calendar updates."
+    ]
   },
   {
-    title: "Wi-Fi independence",
-    items: [
-      "IP paging endpoints use cabled connections — do not plan paging over Wi-Fi",
-      "If a site has poor cabling but good Wi-Fi, that is a cabling project signal, not a wireless paging plan",
-    ],
+    "title": "Failures, recovery and coverage",
+    "items": [
+      "Test loss of WAN, a switch, a controller, a phone service and local power separately. Record which workflows still function in each case.",
+      "Local audio storage does not by itself provide power, a working activation path or continued network delivery.",
+      "Define fault reporting, escalation and periodic testing. If wireless links are proposed, require an engineered design and demonstrate performance under the agreed failure scenarios."
+    ]
   },
   {
-    title: "Who supports the network layer",
-    items: [
-      "Agree in writing whether the paging installer or the school's IT partner manages VLANs, QoS and PoE provisioning",
-      "This is the single most common cause of deployment delays on school IP paging projects",
-    ],
-  },
+    "title": "Responsibility and acceptance",
+    "items": [
+      "Name the network owner, paging integrator, cabler and day-to-day support contact, with clear boundaries between their responsibilities.",
+      "Include a practical test of live paging, scheduled audio, zone selection, authorised overrides and restore from backup.",
+      "Keep a network diagram, endpoint inventory, configuration backup and support record with the site owner."
+    ]
+  }
 ];
 
 export default function NetworkReadinessPage() {
@@ -85,7 +87,7 @@ export default function NetworkReadinessPage() {
       <AuthorityHero
         eyebrow="IT & Network Planning Guide"
         title="Is Your Network Ready for IP Paging?"
-        description="IP paging systems rely on the site's data network, but most projects do not need a complete network rebuild. This guide helps schools and IT teams assess cabling, PoE capacity, switch ports, fibre links, multicast, SIP, VLANs, time synchronisation, resilience and remote management before the paging design is finalised."
+        description="IP paging systems rely on the site's data network. Establish what can be reused and what needs upgrading before agreeing a project budget. This guide helps schools and IT teams assess cabling, PoE capacity, switch ports, fibre links, multicast, SIP, VLANs, time synchronisation, resilience and remote management before the paging design is finalised."
         tags={["Cat6 cabling", "PoE", "Network switches", "SIP", "Multicast", "VLANs"]}
         primaryCta={{ label: "Estimate an IP paging system", href: "/pricing-tool" }}
         secondaryCta={{ label: "Read the IP paging guide", href: "/systems/ip-paging-pa" }}
@@ -114,10 +116,19 @@ export default function NetworkReadinessPage() {
       ))}
       <h2 id="why-cost">Why this changes cost</h2>
       <p>
-        Network readiness is one of the main cost drivers between otherwise similar quotes. A
-        network-ready site means endpoint labour; an unready site means switch upgrades, cabling and
-        possible fibre work. Our <Link href="/pricing">pricing guide</Link> reflects this split, and
+        Network readiness is one of the main cost drivers between otherwise similar quotes. Even a network-ready site needs design, configuration and testing; an unready site may also need switch upgrades, cabling and inter-building links. Our <Link href="/pricing">pricing guide</Link> reflects this split, and
         the <Link href="/pricing-tool">ballpark calculator</Link> asks about it directly.
+      </p>
+      <h2 id="sources">Technical and Australian cabling references</h2>
+      <p>
+        Apply the documentation for the exact selected products. Examples include the{' '}
+        <a href="https://docs.algosolutions.com/docs/8301-user-guide" target="_blank" rel="noopener noreferrer">Algo 8301 guide</a>{' '}
+        for one SIP/multicast adapter and the{' '}
+        <a href="https://help.axis.com/en-us/axis-audio-manager-edge" target="_blank" rel="noopener noreferrer">Axis Audio Manager Edge manual</a>{' '}
+        for its network-audio environment; neither is a universal design standard. For Australian phone and data wiring,
+        ACMA explains the role of a{' '}
+        <a href="https://www.acma.gov.au/cabling-your-home-or-office" target="_blank" rel="noopener noreferrer">registered cabler</a>.
+        Confirm the registration, scope and documentation applicable to the work with the cabling professional.
       </p>
       <h2 id="funding">Funding note for schools</h2>
       <p>
@@ -128,7 +139,7 @@ export default function NetworkReadinessPage() {
       <p>
         Once you know the network position, write the full project scope with the{" "}
         <Link href="/guides/school-pa-specification-checklist">specification checklist</Link> so
-        every quote you receive covers the same work. The education authority context is in the{" "}
+        every quote you receive covers the same work. Project-owner and approval questions are in the{" "}
         <Link href="/guides/school-pa-paging-requirements">requirements guide</Link>.
       </p>
       <ContinuePlanning

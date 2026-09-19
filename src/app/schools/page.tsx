@@ -43,7 +43,7 @@ export default function SchoolsPage() {
       <AtAGlance
         items={[
           { label: "Typical use", value: "Bells, announcements, emergency messages and site-wide communication" },
-          { label: "Best fit", value: "Primary, intermediate and secondary schools upgrading or replacing legacy PA and bell systems" },
+          { label: "Best fit", value: "Primary, secondary and combined schools upgrading or replacing legacy PA and bell systems" },
           { label: "Planning options", value: "Full IP, traditional PA or hybrid upgrades" },
           { label: "Next step", value: "Estimate project cost or review funding pathways" },
         ]}

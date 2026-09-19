@@ -170,3 +170,16 @@ a:hover {
 }
 
 /* v2026-09-06b rebuild */
+
+/* Phase 1: shared accessibility; existing design tokens and component styling retained. */
+html { scroll-padding-top: 10rem; }
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--sc-blue-700);
+  outline-offset: 4px;
+}
+.sc-skip-link { position: fixed; top: .5rem; left: 1rem; z-index: 100; transform: translateY(-200%); background: white; padding: .75rem 1rem; border: 2px solid var(--sc-blue-700); border-radius: .5rem; }
+.sc-skip-link:focus { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

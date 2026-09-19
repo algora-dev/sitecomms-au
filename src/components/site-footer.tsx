@@ -30,6 +30,7 @@ export function SiteFooter() {
             <li><Link href="/about/methodology">Research methodology</Link></li>
             <li><Link href="/about/disclosure">Commercial relationships</Link></li>
             <li><Link href="/about/editorial-policy">Editorial policy</Link></li>
+            <li><Link href="/integrations">Integration status</Link></li>
             <li><Link href="/privacy">Privacy</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>

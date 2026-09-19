@@ -30,7 +30,7 @@ export default function PricingPage() {
   return (
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
-        headline: "IP Paging, PA & Intercom System Costs Australian",
+        headline: "IP Paging, PA & Intercom System Costs Australia",
         description: "Indicative installed price ranges for IP paging, PA, bell and intercom systems in Australia, plus the main factors that affect project cost.",
         url: `${site.url}/pricing`,
         datePublished: publishedDate("/pricing"),
@@ -62,7 +62,7 @@ export default function PricingPage() {
         <div className="sc-container max-w-4xl">
           <h2 className="text-2xl font-bold text-[var(--sc-blue-900)]">Indicative installed system examples</h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--sc-slate)]">
-            Every example includes a central control/platform allowance for the modelled system (modelled at {formatAUD(pricingConfig.headendPrice)} ex GST). Depending on manufacturer and architecture, equivalent functionality may be provided through a central controller, software, gateways, licences or distributed endpoints, so this allowance is a SiteComms planning assumption rather than a universal market price. These are configuration examples, not market averages or formal quotes.
+            Every example includes a central control/platform allowance for the modelled system ({examples[0]?.available ? `modelled at ${formatAUD(pricingConfig.headendPrice)} ex GST` : "amount withheld while the pricing source is under review"}). Depending on manufacturer and architecture, equivalent functionality may be provided through a central controller, software, gateways, licences or distributed endpoints, so this allowance is a SiteComms planning assumption rather than a universal market price. These are configuration examples, not market averages or formal quotes.
           </p>
           <div className="mt-6 grid gap-5">
             {examples.map((example) => (

@@ -1,5 +1,6 @@
 "use client";
 
+import { ProjectStateSelector } from "@/components/project-state";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
@@ -60,25 +61,25 @@ const MODE_COPY: Record<EnquiryMode, { title: string; blurb: string; submit: str
   project_help: {
     title: "Help me take the next step",
     blurb:
-      "Tell us a little about the site and what you need the system to do. We'll review it and suggest the most useful next step, or a suitable provider from our selected Australia network.",
+      "Tell us a little about the site and what you need the system to do. We'll review it and suggest the most useful next step, or suitable Australian providers to contact.",
     submit: "Send enquiry",
   },
   quote_help: {
     title: "Get help with a formal quote",
     blurb:
-      "Send us enough information to understand the project and we can suggest suitable providers from our selected Australia network for a formal quote.",
+      "Send us enough information to understand the project and we can suggest suitable Australian providers to contact for a formal quote.",
     submit: "Send enquiry",
   },
   funding_help: {
     title: "Discuss the technical scope and budget",
     blurb:
-      "A provider can help document the existing system, technical scope and indicative budget. The school, its property planning process and education authority requirements determine the funding pathway and approval.",
+      "A provider can help document the existing system, technical scope and indicative budget. The applicant organisation, project owner and relevant authority determine the funding pathway and approval. No funding eligibility or approval is promised.",
     submit: "Send enquiry",
   },
   finance_help: {
     title: "Discuss finance or leasing options",
     blurb:
-      "Tell us a little about the project. We'll review the information and, where appropriate, suggest a finance specialist or next step from our selected Australia network.",
+      "Tell us a little about the project. We'll review the information and, where appropriate, suggest a finance specialist or next step appropriate for your project.",
     submit: "Send finance enquiry",
   },
   site_assessment: {
@@ -122,7 +123,7 @@ export function ProjectEnquiryModal({
   /** e.g. "$11,845 - $14,214 ex GST" */
   estimateSummary?: string;
   estimateLink?: string;
-  /** Structured tool/page context lines attached automatically (non-PII). */
+  /** Structured tool/page context, visible for review before explicit form submission. */
   context?: Record<string, string>;
   /** e.g. "emergency_lockdown", "compare" */
   sourceTopic?: string;
@@ -300,13 +301,15 @@ export function ProjectEnquiryModal({
                 <p id="sc-enquiry-desc" className="mt-1 text-sm text-[var(--sc-slate)]">{blurb}</p>
                 {estimateSummary && (
                   <p className="mt-2 rounded-full bg-[var(--sc-blue-50)] px-3 py-1 text-xs font-medium text-[var(--sc-navy)]">
-                    Your estimate: {estimateSummary} ex GST
+                    Your estimate: {estimateSummary}
                   </p>
                 )}
                 {contextLines.length > 0 && (
-                  <p className="mt-2 rounded-lg bg-[var(--sc-blue-50)] px-3 py-1.5 text-xs leading-relaxed text-[var(--sc-slate)]">
-                    Attached automatically: {contextLines.map(([k]) => k).join(", ")}
-                  </p>
+                  <details className="mt-2 rounded-lg bg-[var(--sc-blue-50)] px-3 py-2 text-xs leading-relaxed text-[var(--sc-slate)]">
+                    <summary className="cursor-pointer font-semibold">Review the project context included with your enquiry</summary>
+                    <dl className="mt-2 space-y-2">{contextLines.map(([key, value]) => <div key={key}><dt className="font-semibold">{key}</dt><dd>{value}</dd></div>)}</dl>
+                    <p className="mt-2">This information is sent to SiteComms only when you submit the form. It is not forwarded to a recommended provider.</p>
+                  </details>
                 )}
               </div>
               <button
@@ -357,7 +360,8 @@ export function ProjectEnquiryModal({
                   />
                 </label>
               </div>
-              <div className="grid gap-4 sm:grid-cols-2">
+              {isProject ? <div><ProjectStateSelector name="projectState" required /></div> : null}
+                    <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block text-sm">
                   <span className="font-medium text-[var(--sc-charcoal)]">Email *</span>
                   <input required name="email" type="email" className={inputClass} placeholder="you@example.com.au" autoComplete="email" />
@@ -365,7 +369,7 @@ export function ProjectEnquiryModal({
                 {isProject ? (
                   <label className="block text-sm">
                     <span className="font-medium text-[var(--sc-charcoal)]">Town / region *</span>
-                    <input required name="location" className={inputClass} placeholder="e.g. Christchurch" />
+                    <input required name="location" className={inputClass} placeholder="e.g. Newcastle" />
                   </label>
                 ) : null}
               </div>
@@ -374,11 +378,11 @@ export function ProjectEnquiryModal({
                   <div className="grid gap-4 sm:grid-cols-2">
                     <label className="block text-sm">
                       <span className="font-medium text-[var(--sc-charcoal)]">Phone (optional)</span>
-                      <input name="phone" type="tel" className={inputClass} placeholder="021 234 5678 (optional)" autoComplete="tel" />
+                      <input name="phone" type="tel" className={inputClass} placeholder="Your contact number (optional)" autoComplete="tel" />
                     </label>
                     <label className="block text-sm">
                       <span className="font-medium text-[var(--sc-charcoal)]">Brand / product preference (optional)</span>
-                      <input name="brandPreference" className={inputClass} placeholder="e.g. SPON, Bosch, no preference" />
+                      <input name="brandPreference" className={inputClass} placeholder="Brand, model or no preference" />
                     </label>
                   </div>
 

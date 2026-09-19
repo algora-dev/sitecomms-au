@@ -52,15 +52,11 @@ export default function EmergencyLockdownPage() {
         </p>
       </div>
       <article className="sc-container max-w-[800px] py-8 sc-prose">
-      <h2 id="why-paging">Why the paging system is central to school emergencies</h2>
+      <h2 id="why-paging">The role of paging in the emergency plan</h2>
       <p>
-        In a lockdown or evacuation, the fastest way to reach every classroom, outdoor area and
-        detached building at once is usually the existing speaker system. Unlike emails, apps or
-        phone trees, paging reaches rooms instantly and works for visitors and students without any
-        device. That is why emergency capability has become a standard part of school paging
-        specifications in Australia.
+        Paging can deliver instructions without requiring each listener to have a phone or app. Its usefulness depends on audible coverage, accessibility, power, working activation paths and agreed procedures. Assess those dependencies rather than assuming an existing speaker system reaches everyone or works through every failure.
       </p>
-      <h2 id="capabilities">Common emergency capabilities on modern platforms</h2>
+      <h2 id="capabilities">Capabilities to specify and demonstrate</h2>
       <ul>
         <li>
           <strong>Pre-recorded messages.</strong> Calm, consistent, pre-scripted lockdown and
@@ -88,14 +84,20 @@ export default function EmergencyLockdownPage() {
         </li>
       </ul>
       <p>
-        These capabilities are features of IP-based platforms in particular — see the{" "}
+        Availability and behaviour vary by platform, configuration and installed design — see the{" "}
         <Link href="/systems/ip-paging-pa">IP paging architecture guide</Link> for the underlying
         model.
+      </p>
+      <p>
+        Manufacturer documentation describes product functions, not approval of an emergency plan. See the
+        <Link href="/compare#sources"> comparison sources</Link> for model-specific references. An ordinary PA
+        with an alert tone is not automatically a compliant voice-alarm or evacuation system; specialist design
+        and the applicable project requirements must determine what is needed.
       </p>
       <h2 id="redundancy">Redundancy and failure modes to ask about</h2>
       <ul>
         <li>What happens to emergency paging if the network switch, server or NVR fails?</li>
-        <li>Do endpoints have local storage of emergency messages so they can play without a server?</li>
+        <li>If messages are stored locally, what working power and activation path is still required to play them during a failure?</li>
         <li>Is there battery backup for at least the core endpoints, and for how long?</li>
         <li>Can the system be activated from more than one physical location?</li>
         <li>How is a failed or offline endpoint reported so it is fixed before it matters?</li>
@@ -106,9 +108,9 @@ export default function EmergencyLockdownPage() {
       </p>
       <h2 id="vs-other-channels">How paging fits with other emergency channels</h2>
       <p>
-        Paging handles the immediate, in-the-moment instruction. It complements — not replaces —
+        Paging is one possible channel for immediate instructions. It complements — not replaces —
         text/email notification systems for parents, and duress alarms that alert police or
-        security monitoring. A complete school plan considers all three layers. When specifying,
+        security monitoring. The school’s emergency-management team should define the appropriate combination of channels and fallback arrangements. When specifying,
         ask whether the paging platform can be triggered by or integrated with your existing
         security and notification systems.
       </p>
@@ -136,14 +138,14 @@ export default function EmergencyLockdownPage() {
       </ul>
       <ContinuePlanning
         items={[
-          { title: "Australian school PA requirements", desc: "Education-authority design, cabling, funding and procurement context for school communications.", href: "/guides/school-pa-paging-requirements" },
+          { title: "Australian school PA requirements", desc: "Project-owner, scope, cabling and approval questions for Australian school communications.", href: "/guides/school-pa-paging-requirements" },
           { title: "School systems overview", desc: "Features, indicative costs and upgrade decisions for school communications.", href: "/schools" },
-          { title: "school funding guide", desc: "How safety-motivated communications upgrades may fit the property funding process.", href: "/tools/funding-check" },
+          { title: "Funding preparation and status", desc: "Separate safety objectives, project approval and funding eligibility.", href: "/tools/funding-check" },
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">
         Last reviewed {reviewedLabel("/systems/emergency-lockdown")}. System-planning information only — not emergency procedure advice.
-        Follow your school&apos;s emergency management plan and official state education authority / Australian Police guidance.
+        Follow your school&apos;s emergency management plan and guidance from the relevant state or territory education authority and emergency services.
       </p>
       <script
         type="application/ld+json"

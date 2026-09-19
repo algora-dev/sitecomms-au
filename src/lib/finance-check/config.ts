@@ -79,13 +79,13 @@ export type UpfrontBand = (typeof UPFRONT_BANDS)[number]["value"];
 
 export const RESULT_COPY = {
   strong: {
-    eyebrow: "Strong reason to explore finance",
+    eyebrow: "Project information ready for discussion",
     headline: "A finance or leasing conversation looks well worth having",
     body:
       "You have enough project and budget information for a finance specialist to have a useful first conversation. The provider will still need to assess the organisation, equipment and final transaction before offering any terms.",
   },
   good: {
-    eyebrow: "Finance looks worth discussing",
+    eyebrow: "Some project information is available",
     headline: "There is enough here to explore the available options",
     body:
       "Your answers give a useful starting point. A specialist can explain which finance or leasing structures may be relevant and what extra information would be needed next.",
@@ -107,4 +107,4 @@ export const RESULT_COPY = {
 export type FinanceResultLevel = keyof typeof RESULT_COPY;
 
 export const DISCLAIMER =
-  "SiteComms does not provide finance, make credit decisions or guarantee approval. This checker is preliminary guidance only. Actual finance availability, rates, terms, security, documentation and approval are determined by the relevant finance provider.";
+  "SiteComms does not provide finance, make credit decisions or guarantee approval. This checker summarises planning readiness, not eligibility, affordability or permission to borrow. State-specific rules and provider options are not yet assessed. Actual finance availability, rates, terms, security, documentation and approval are determined by the relevant finance provider.";

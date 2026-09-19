@@ -17,7 +17,7 @@ export default function PrivacyPage() {
       </p>
       <h2>Information you may provide</h2>
       <p>
-        For project enquiries, name, organisation, email and town/region are required. For a general message, name,
+        For project enquiries, name, organisation, email, project state or territory and town/region are required. For a general message, name,
         email and the message are required. Other fields, including phone, brand preference and attachments, are
         optional unless the form specifically says otherwise.
       </p>
@@ -37,6 +37,14 @@ export default function PrivacyPage() {
         or providers we think may be suitable and explain why. You decide whether to contact them. SiteComms does not
         sell personal information to unrelated third parties.
       </p>
+      <h2>Project location preference</h2>
+      <p>
+        When you select a state or territory, this website remembers the selection in local storage on your
+        browser using the key <code>sitecomms.project-state.v1</code>. It is a preference, not precise location
+        detection. Select Australia-wide / not selected to clear it. Browser storage restrictions may limit
+        persistence to the current page session. When you submit a project enquiry, the selected project state
+        is included in the information sent to SiteComms.
+      </p>
       <h2>Analytics and attribution</h2>
       <ul>
         <li>Google Analytics may load when configured, to measure aggregate site usage.</li>
@@ -45,7 +53,7 @@ export default function PrivacyPage() {
           attaches it to enquiry emails so we know which page or tool an enquiry came from.
         </li>
         <li>
-          Pricing-tool outputs may be logged without personal information when configured, to improve the model.
+          The pricing calculator does not automatically store full assessments or PDFs on our server. Downloading a PDF creates it in your browser. If you choose to submit an enquiry, its reviewed estimate and context are sent with the form.
           Finance-check and funding-check answers may be attached to an enquiry when you choose to contact SiteComms,
           so the SiteComms team can understand the context you supplied. No names, emails or free-text notes are sent
           to analytics.

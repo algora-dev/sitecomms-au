@@ -46,21 +46,15 @@ export default function IpPagingPaPage() {
         packets and plays the audio locally.
       </p>
       <p>
-        The practical consequences are significant. Any endpoint can be addressed individually or in
-        any group you define, announcements can originate from any authorised phone, console or
-        software client, and the system grows building by building rather than amplifier by
-        amplifier.
+        The practical benefit is flexible addressing where the chosen platform supports it. Confirm which endpoints can be grouped, which authorised phones or consoles can initiate a page, and what extra configuration or licensing is required. Speakers retained on one analogue circuit generally remain a shared audio zone rather than becoming individually addressable.
       </p>
       <h2 id="poe">Power over Ethernet (PoE) endpoints</h2>
       <p>
-        Most modern IP speakers and intercoms are powered by the network cable itself, using Power
-        over Ethernet. This means one cable per endpoint carries both audio and power, which usually
-        removes the need for an electrician to wire a 240V point at every speaker location.
+        Many IP speakers and intercoms support Power over Ethernet: the network cable carries data and power. Check the specific endpoint’s PoE requirements and any separate amplifier or supply. This is not a reason to omit cabling, electrical or backup-power work from the project scope.
       </p>
       <p>
         The trade-off is that your network switches must supply enough PoE power for every connected
-        endpoint. A modest school deployment can easily need a dedicated PoE switch, or switch
-        upgrades, which is one of the main cost drivers in an IP project. Our{" "}
+        endpoint. Existing switches may need upgrading or extending, depending on the design and available capacity. Our{" "}
         <Link href="/guides/ip-paging-network-readiness">network readiness checklist</Link> covers
         what to check before specifying an IP system.
       </p>
@@ -68,19 +62,17 @@ export default function IpPagingPaPage() {
       <ul>
         <li>
           <strong>Zones are software-defined.</strong> A &quot;zone&quot; can be one classroom, one
-          building, or the whole site, and can be changed without re-cabling.
+          building, or the whole site where the platform and network design allow. Retained analogue circuits limit how finely those speakers can be separated.
         </li>
         <li>
           <strong>Calendars and schedules.</strong> Bell schedules, period changes and pre-recorded
-          messages can follow timetables, including public holidays and term breaks.
+          messages can follow configured timetables. Demonstrate local time settings, term breaks and holiday exceptions; do not assume calendars update themselves.
         </li>
         <li>
-          <strong>Per-endpoint volume and prioritisation.</strong> A hall can run quieter than a
-          workshop, and emergency messages can preempt routine paging automatically.
+          <strong>Per-endpoint volume and prioritisation.</strong> Check volume control and message priority for each device or shared circuit. Require a demonstration of configured priority overrides.
         </li>
         <li>
-          <strong>Remote management.</strong> Endpoint health, firmware and configuration are
-          monitored from a web interface rather than a site visit.
+          <strong>Remote management.</strong> Some platforms expose status, firmware and configuration through a web interface. Confirm permissions and monitoring coverage; remote tools do not remove the need for on-site inspection and maintenance.
         </li>
       </ul>
       <p>
@@ -103,10 +95,7 @@ export default function IpPagingPaPage() {
       </p>
       <h2 id="vs-traditional">IP vs traditional vs hybrid</h2>
       <p>
-        A full IP system gives the most flexibility but assumes a capable network. A traditional
-        100V system is simple and cheap for basic paging but limited. A hybrid keeps working 100V
-        speakers and cabling while replacing the control layer with IP — often the most
-        cost-effective path for staged upgrades. The{" "}
+        Full-IP, traditional 100V and hybrid systems suit different scopes. A hybrid can retain serviceable amplifiers, speakers or circuits while adding network control, but the retained equipment’s condition and zoning still matter. Compare the complete installed scope rather than assuming one architecture is always cheaper. The{" "}
         <Link href="/systems">architecture comparison</Link> covers the trade-offs, and{" "}
         <Link href="/systems/traditional-vs-ip">what to keep when replacing an old PA</Link> deals
         specifically with reuse.
@@ -120,12 +109,18 @@ export default function IpPagingPaPage() {
       <h2 id="platforms">Choosing a platform</h2>
       <p>
         SiteComms compares integrated school platforms, SIP-first options, browser-managed network audio, hybrid
-        approaches and specialist architectures from brands including SPON, FrontRow, Algo, Bosch, ITC, Axis, TOA and
-        others relevant to the Australian market. Our{" "}
+        approaches from FrontRow, Algo, Axis, Bosch PROSPERO, Bodet, TOA and Australian traditional/hybrid designs, with specialist and unverified-supply options clearly separated. Our{" "}
         <Link href="/compare">platform comparison guide</Link> matches those options to your priorities for
-        Australian buyers. Planning for a rest home or retirement village?{" "}
+        Australian buyers. Planning for an aged care home or retirement village?{" "}
         <Link href="/industries/aged-care-retirement-villages">Use the aged-care comparison</Link>, where
         the requirements and shortlist differ.
+      </p>
+      <h2 id="evidence">Check capabilities against the selected design</h2>
+      <p>
+        Our <Link href="/compare#sources">comparison source register</Link> separates manufacturer documentation
+        from evidence of Australian supply. A brand page is not confirmation that every model, integration or service
+        is available for your site. Use the <Link href="/guides/compare-pa-system-quotes">quote comparison guide</Link>
+        to request a defined scope and acceptance tests.
       </p>
       <h2 id="next">Next steps</h2>
       <ul>
@@ -139,7 +134,7 @@ export default function IpPagingPaPage() {
         </li>
         <li>
           Get an indicative cost with the <Link href="/pricing-tool">ballpark calculator</Link>, or{" "}
-          <Link href="/tools/funding-check">review school funding pathways</Link>
+          <Link href="/tools/funding-check">prepare a funding enquiry</Link>
         </li>
       </ul>
       <ContinuePlanning

@@ -16,7 +16,7 @@ Use this for each completed Australian school project before publishing a case s
 - Main functions delivered: bells, live paging, zoning, emergency/lockdown, intercom, outdoor coverage, mobile/desktop control, integrations
 - Approximate endpoint count
 - Final installed project value or approved public price range
-- Whether the project used 5YA/10YPP, another funding source, or no external/property funding
+- Whether the project used Australian state/territory, school sector and relevant approved capital/project pathway, another funding source, or no external/property funding
 - Installer/technology partner
 - Products/manufacturers only where permission exists and useful
 - 3-8 approved photos

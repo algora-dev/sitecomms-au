@@ -1,0 +1,76 @@
+{
+  "reviewed": "2026-09-19",
+  "sources": {
+    "frontrow": {
+      "label": "FrontRow Australia \u2014 Conductor",
+      "href": "https://www.gofrontrow.com.au/products/conductor/",
+      "kind": "Manufacturer Australian site"
+    },
+    "clearasound": {
+      "label": "ClearaSound \u2014 FrontRow Conductor services",
+      "href": "https://clearasound.com.au/audio-visual-systems-for-education/frontrow-conductor/",
+      "kind": "Australian provider publication; not a SiteComms partnership"
+    },
+    "algo": {
+      "label": "advanceNET \u2014 Algo 8301",
+      "href": "https://www.advance-net.com.au/product/algo-8301-sip-paging-adapter-bell-scheduler/",
+      "kind": "Australian wholesaler product listing"
+    },
+    "algo-manual": {
+      "label": "Algo \u2014 8301 user guide",
+      "href": "https://docs.algosolutions.com/docs/8301-user-guide",
+      "kind": "Manufacturer technical documentation"
+    },
+    "axis": {
+      "label": "Axis Australia \u2014 Audio Manager Edge",
+      "href": "https://www.axis.com/en-au/products/axis-audio-manager-edge",
+      "kind": "Manufacturer Australian site"
+    },
+    "axis-manual": {
+      "label": "Axis \u2014 Audio Manager Edge manual",
+      "href": "https://help.axis.com/en-us/axis-audio-manager-edge",
+      "kind": "Manufacturer technical documentation"
+    },
+    "prospero": {
+      "label": "Keenfinity Australia \u2014 Bosch PROSPERO",
+      "href": "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/",
+      "kind": "Manufacturer Australian site"
+    },
+    "bodet": {
+      "label": "advanceNET \u2014 Bodet Harmonys Trio",
+      "href": "https://www.advance-net.com.au/product/bodet-harmonys-trio-speaker-led-display-strobe/",
+      "kind": "Australian wholesaler product listing"
+    },
+    "toa": {
+      "label": "TOA \u2014 IP-A1PG gateway",
+      "href": "https://www.toa.co.uk/products/ip-a1pg/",
+      "kind": "Manufacturer technical page; not Australian stock evidence"
+    },
+    "toa-au": {
+      "label": "TOA \u2014 Australia authorised dealer",
+      "href": "https://toa.com.sg/dealers/29",
+      "kind": "Manufacturer Australian dealer directory; confirm exact family"
+    },
+    "monitor": {
+      "label": "Australian Monitor \u2014 school paging and custom tones design",
+      "href": "https://www.australianmonitor.com.au/pages/school-with-paging-and-custom-tones",
+      "kind": "Australian manufacturer application design; not a named school installation"
+    },
+    "spon": {
+      "label": "SPON \u2014 school PA solution",
+      "href": "https://sponcomm.com/solution-detail/smart-pa-solution-for-schools",
+      "kind": "Manufacturer description; Australian supply/support not verified"
+    },
+    "2n": {
+      "label": "2N \u2014 IP Verso 2.0",
+      "href": "https://www.2n.com/en-GB/products/intercoms/2n-ip-verso-2/",
+      "kind": "Manufacturer entrance-intercom description"
+    },
+    "2n-au": {
+      "label": "advanceNET \u2014 2N product category",
+      "href": "https://www.advance-net.com.au/product-category/2n/",
+      "kind": "Australian wholesaler category; confirm exact revision and availability"
+    }
+  },
+  "limits": "No stock, market share, every-state coverage or partnership verification. No grant or finance matching in phase 1."
+}

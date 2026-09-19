@@ -65,9 +65,30 @@ function upfrontKnown(answers: FinanceAnswers): boolean {
 }
 
 export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
+  const publicOrganisation = answers.organisationType === "government_school"
+    || answers.organisationType === "government"
+    || answers.organisationType === "local_government";
+  if (publicOrganisation) {
+    return {
+      level: "early",
+      eyebrow: "Confirm authority before exploring finance",
+      headline: "Start with your organisation’s finance and approval team",
+      body: "A known budget does not establish authority to borrow, lease or enter a supplier payment arrangement. This version has not checked your jurisdiction’s rules. Confirm the permitted structure and required approvals before approaching a provider.",
+      reasons: [
+        "Government schools and public organisations need an organisation-specific governance check; this is not a credit or eligibility result.",
+        "Confirm who can approve the commitment, which procurement process applies and whether ongoing payments are permitted.",
+        ...(answers.source === "funding" ? ["A funding shortfall does not itself establish authority to use finance."] : []),
+      ],
+      nextStep: "Confirm the approval route with the project owner. SiteComms can help clarify the communications scope, but cannot determine borrowing powers or finance approval.",
+      organisationLabel: organisationLabel(answers.organisationType),
+      projectValueLabel: projectValueLabel(answers),
+    };
+  }
   let level: FinanceResultLevel;
 
-  if (isLargeProject(answers)) {
+  if (!answers.organisationType || answers.organisationType === "other") {
+    level = "early";
+  } else if (isLargeProject(answers)) {
     level = "tailored";
   } else if (projectValueKnown(answers) && budgetKnown(answers) && upfrontKnown(answers)) {
     level = "strong";
@@ -93,13 +114,13 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
   }
 
   if (answers.upfrontBand === "none") {
-    reasons.push("No upfront contribution has been assumed. Some Australian equipment-finance structures can be offered without a deposit, subject to provider approval.");
+    reasons.push("You prefer no upfront contribution. This is a preference, not confirmation that a provider can offer that structure.");
   } else if (upfrontKnown(answers)) {
     reasons.push("You have indicated that an upfront contribution may be available if it helps structure the transaction.");
   }
 
   if (answers.source === "funding") {
-    reasons.push("You came from the school funding pathway, so finance may be useful as an alternative or complementary option if capital funding does not cover the project.");
+    reasons.push("You came from funding planning. Keep any funding conditions separate from a finance enquiry and check that combining the two would be permitted.");
   }
 
   const isSchool = answers.organisationType === "government_school" || answers.organisationType === "catholic_school" || answers.organisationType === "independent_school";
@@ -107,6 +128,9 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
     reasons.push("School finance arrangements can have additional governance, accounting or approval requirements, so the exact structure should be checked with the school and finance provider.");
   }
 
+  if (answers.organisationType === "tertiary" || answers.organisationType === "healthcare" || answers.organisationType === "aged_care") {
+    reasons.push("Confirm the legal applicant and whether it is publicly controlled; sector selection alone does not establish authority to finance equipment.");
+  }
   const copy = RESULT_COPY[level];
   return {
     level,
@@ -114,7 +138,7 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
     headline: copy.headline,
     body: copy.body,
     reasons,
-    nextStep: "Tell SiteComms a little more about the project and we can suggest an appropriate finance specialist or next step from our selected Australia network.",
+    nextStep: "Tell SiteComms about the project for a scope review and a suitable next step. Where a provider is suggested, we reply with public contact details; we do not forward your enquiry.",
     organisationLabel: organisationLabel(answers.organisationType),
     projectValueLabel: projectValueLabel(answers),
   };

@@ -1,3 +1,4 @@
+import { ProjectStatePanel } from "@/components/project-state";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
@@ -52,6 +53,7 @@ export default function PricingToolPage() {
           </p>
           <p className="mt-2 text-xs text-[var(--sc-slate)]">Indicative only, ex GST. Not a formal quote.</p>
         </div>
+        <div className="mx-auto max-w-3xl"><ProjectStatePanel purpose="pricing" /></div>
         <div className="mt-10"><PricingTool /></div>
       </div>
 

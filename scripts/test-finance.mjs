@@ -37,4 +37,15 @@ assert.equal(r.level, "early");
 assert.ok(r.reasons.some((x) => /school/i.test(x)));
 assert.ok(r.reasons.some((x) => /funding/i.test(x)));
 
-console.log("finance tests: all assertions passed");
+for (const organisationType of ["government_school", "government", "local_government"]) {
+  for (const projectValueBand of ["20_40", "250_plus"]) {
+    r = assessFinanceFit({ organisationType, projectValueBand, paymentFrequency: "monthly", paymentBudget: "1000_2000", upfrontBand: "none" });
+    assert.equal(r.level, "early", "Known budgets do not bypass public-entity authority checks.");
+    assert.match(r.eyebrow, /authority/i);
+    assert.doesNotMatch(r.body, /you qualify|approved|guaranteed/i);
+  }
+}
+r = assessFinanceFit({ paymentFrequency: "monthly", projectValueBand: "20_40", paymentBudget: "1000_2000", upfrontBand: "none" });
+assert.equal(r.level, "early", "Unknown applicant cannot receive a strong readiness result.");
+assert.doesNotMatch(r.reasons.join(" "), /can be offered without a deposit/i);
+console.log("finance tests: all assertions passed, including public-entity governance guardrails");
