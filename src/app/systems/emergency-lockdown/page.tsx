@@ -140,7 +140,7 @@ export default function EmergencyLockdownPage() {
         items={[
           { title: "Australian school PA requirements", desc: "Project-owner, scope, cabling and approval questions for Australian school communications.", href: "/guides/school-pa-paging-requirements" },
           { title: "School systems overview", desc: "Features, indicative costs and upgrade decisions for school communications.", href: "/schools" },
-          { title: "Funding preparation and status", desc: "Separate safety objectives, project approval and funding eligibility.", href: "/tools/funding-check" },
+          { title: "Funding pathways and conditions", desc: "Separate safety objectives, project approval and funding eligibility.", href: "/tools/funding-check" },
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">

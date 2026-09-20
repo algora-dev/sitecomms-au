@@ -27,3 +27,9 @@ export function withProjectState(href: string, state?: ProjectState): string {
   else url.searchParams.delete("state");
   return `${url.pathname}${url.search}${url.hash}`;
 }
+
+/** A named funding guide supplies project context; this does not infer location or authorise a programme. */
+export function projectStateFromFundingPath(pathname: string): ProjectState | undefined {
+  const match = /^\/funding\/([a-z-]+)\/?$/.exec(pathname);
+  return match ? JURISDICTIONS.find(item => item.slug === match[1])?.code : undefined;
+}

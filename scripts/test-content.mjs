@@ -23,6 +23,6 @@ assert.equal(research.reviewed,"2026-09-19");
 assert.deepEqual(research.sources,comparisonSources,"Research register must match the rendered source data.");
 for (const route of ["/states","/guides/school-pa-paging-requirements","/guides/compare-pa-system-quotes"]) {
   assert.equal(CONTENT_META[route].published,"2026-09-19");
-  assert.equal(CONTENT_META[route].reviewed,"2026-09-19");
+  assert.equal(CONTENT_META[route].reviewed, route === "/states" ? "2026-09-20" : "2026-09-19");
 }
 console.log(`Content tests passed: ${schoolPlatforms.length} school profiles, ${schoolUseCases.length} use cases, ${Object.keys(comparisonSources).length} school comparison sources and three new dated routes.`);

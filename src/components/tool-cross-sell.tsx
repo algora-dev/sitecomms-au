@@ -34,7 +34,7 @@ export function ToolCrossSell({
   industry?: IndustryContext;
 }) {
   if (variant === "pricing-to-funding") {
-    // Known aged-care context: never offer school funding on an aged-care journey.
+    // Known aged-care context: retain care-specific finance and offer the new all-sector funding tool, never assume a school grant.
     if (industry === "aged-care") {
       const financeHref = buildIndustryToolHref("/tools/finance-check", {
         industry,
@@ -59,15 +59,15 @@ export function ToolCrossSell({
             >
               Read about finance and leasing
             </Link>
+            <Link href="/tools/funding-check?source=aged-care" className="sc-btn-secondary" onClick={() => track("pricing_to_funding_clicked", { industry })}>
+              Check targeted funding routes
+            </Link>
           </div>
         </section>
       );
     }
-    const fundingHref = `/tools/funding-check${queryString({
-      source: "pricing",
-      estimateLow: Math.round(estimateLow ?? 0) || undefined,
-      estimateHigh: Math.round(estimateHigh ?? 0) || undefined,
-    })}`;
+    // Funding does not calculate awards from a URL-carried estimate.
+    const fundingHref = "/tools/funding-check?source=pricing";
     const financeHref = `/tools/finance-check${queryString({
       source: "pricing",
       estimateLow: Math.round(estimateLow ?? 0) || undefined,
@@ -83,7 +83,7 @@ export function ToolCrossSell({
           How might the project be paid for?
         </h3>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
-          If this is an Australian school project, the relevant capital or property pathway may be worth reviewing. Schools and other organisations can also explore equipment finance or leasing if they want to spread the project cost.
+          Check researched routes for schools, residential aged care, early learning and relevant community projects. Commercial finance is a separate option and requires the organisation’s legal authority and lender review.
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
@@ -102,7 +102,7 @@ export function ToolCrossSell({
           </Link>
         </div>
         <p className="mt-3 text-xs leading-relaxed text-[var(--sc-slate)]">
-          Your SiteComms estimate is carried into the next tool so you do not need to enter the project value again.
+          Your estimate carries into the finance checker. The funding checker instead assesses the applicant and project scope; it does not calculate or deduct a grant award.
         </p>
       </section>
     );

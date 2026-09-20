@@ -112,7 +112,7 @@ export default function SchoolBellPage() {
       <p>
         Bell functionality may be built in, licensed software or a separate controller. Ask what is included alongside endpoints, zones, cabling and commissioning. Use the{" "}
         <Link href="/pricing-tool">ballpark cost calculator</Link> for indicative figures, and the{" "}
-        <Link href="/tools/funding-check">funding pathways page</Link> to review the current Australian guidance status. Funding depends on sector, jurisdiction, project scope and current program rules.
+        <Link href="/tools/funding-check">funding pathways page</Link> to review researched state and national routes. Funding depends on sector, jurisdiction, project scope and current program rules.
       </p>
       <p>For documented scheduling examples and Australian supply evidence, see the <Link href="/compare#sources">comparison sources</Link>. Confirm the proposed model and demonstrate the actual timetable before acceptance.</p>
       <h2 id="specifying">Specifying the system</h2>
@@ -126,7 +126,7 @@ export default function SchoolBellPage() {
         items={[
           { title: "Specification checklist", desc: "Define the scope so every quote covers the same bells, zones and emergency functions.", href: "/guides/school-pa-specification-checklist" },
           { title: "IP intercom & two-way paging", desc: "Add two-way communication at gates, reception and selected classrooms.", href: "/systems/ip-intercom" },
-          { title: "Funding preparation and status", desc: "Prepare the applicant and scope details for later state-specific research.", href: "/tools/funding-check" },
+          { title: "Funding pathway checker", desc: "Review state-specific routes using the actual applicant and project scope.", href: "/tools/funding-check" },
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">

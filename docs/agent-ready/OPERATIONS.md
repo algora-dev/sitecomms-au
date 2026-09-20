@@ -1,6 +1,6 @@
 # Operations and rollback — Agent-Ready Foundation
 
-This is a foundation-only code release. No production deployment, external-client connection, real enquiry, database operation or background automation was performed. Existing host preview controls and noindex remain. Robots/noindex are not private-access controls; the hosting owner must protect a private preview.
+This document describes the preserved foundation controls. **For the current Phase 2 funding extension, use [funding operations](../funding/CONTRACT_AND_OPERATIONS.md) and the root Phase 2 handoff.** No production deployment, external-client connection, real enquiry, database operation or background automation was performed. Existing host preview controls and noindex remain. Robots/noindex are not private-access controls; the hosting owner must protect a private preview.
 
 ## Ownership and publication
 
@@ -59,7 +59,7 @@ The existing enquiry endpoint, attachment handling, email delivery, duplicate-pr
 
 ## Next iteration
 
-Research Queensland funding first, then NSW, Victoria and WA, before encoding verified state × applicant × scope rules; support explicit unknown/unreviewed states. Distinguish grants, internal capital allocations, procurement/approval routes and loans. Follow with finance research and a separate validated policy. Both can adopt the existing result/source/uncertainty contracts without inventing current eligibility.
+The Phase 2 funding extension now covers selected routes in QLD, NSW, VIC, WA and SA, with explicitly limited national-only coverage elsewhere. Its separate source/rule policy is documented in `docs/funding/`. Next: preview/owner review, then the separate finance research and policy build. Neither the funding capability nor finance preparation decides eligibility or awards.
 
 A later external pilot needs one named consuming client, supported protocol/SDK versions, controlled connection, actual listing/invocation/error/auth tests and downstream answer checks. Keep that evidence separate from human usefulness and organic discovery. MCP/WebMCP and model interpretation remain deferred, not partially advertised.
 

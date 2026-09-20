@@ -14,7 +14,7 @@ export interface SourceRecord extends Omit<SourceReference, "freshness" | "refer
 const editorial = (id: SourceId, title: string, path: string): SourceRecord => ({
   source_id: id, title, reference_path: path, owner: "T3 Labs / SiteComms editorial owner",
   authority: "Existing SiteComms public editorial content; not an eligibility or approval authority",
-  source_version: `phase-1:${CONTENT_META[path]?.reviewed ?? "undated"}`,
+  source_version: `editorial:${CONTENT_META[path]?.reviewed ?? "undated"}`,
   reviewed_at: CONTENT_META[path]?.reviewed ?? null, review_due_at: null,
   approval_status: "existing_public_content", availability: "available",
 });
@@ -33,7 +33,7 @@ export const SOURCE_RECORDS: Record<SourceId, SourceRecord> = {
   },
   content_directory: editorial("content_directory", "SiteComms public planning guide directory", "/guides"),
   school_comparison: editorial("school_comparison", "Australian school comparison and cited evidence", "/compare"),
-  funding_preparation: editorial("funding_preparation", "Funding preparation — matching not implemented", "/tools/funding-check"),
+  funding_preparation: editorial("funding_preparation", "Funding pathway checker — not eligibility or approval", "/tools/funding-check"),
   finance_preparation: editorial("finance_preparation", "Finance preparation — not lender or borrowing approval", "/tools/finance-check"),
   enquiry_policy: editorial("enquiry_policy", "SiteComms reviewed enquiry and recommendation process", "/contact"),
 };

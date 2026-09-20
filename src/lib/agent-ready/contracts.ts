@@ -1,7 +1,7 @@
 /** Business-domain contracts, not MCP/WebMCP wire messages. No private records. */
 export const CONTRACT_VERSION = "1.0.0";
 export const BUSINESS_ID = "sitecomms-au";
-export type CapabilityId = "search_business_content" | "assess_request";
+export type CapabilityId = "search_business_content" | "assess_request" | "assess_funding_pathways";
 export type OutcomeStatus = "ok" | "needs_input" | "not_supported" | "requires_human_review" | "unavailable";
 export type ResultType = "information" | "budget_estimate" | "qualification";
 export type FreshnessState = "within_review_period" | "review_interval_not_set" | "stale" | "unavailable" | "conflicted" | "withdrawn";

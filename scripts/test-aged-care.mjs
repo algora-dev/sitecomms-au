@@ -43,11 +43,11 @@ for (const item of [...carePlatforms, ...careUseCases, ...careQuestions]) {
 for (const source of Object.values(careSources)) assert.equal(new URL(source.href).protocol, "https:");
 assert.equal(AGED_CARE_PATH, "/industries/aged-care-retirement-villages");
 
-// Page integration: industry-aware journeys retained; funding is now all-sector preparation only.
+// Page integration: industry-aware journeys retained; funding remains an all-sector pathway tool, never a school-only eligibility promise.
 assert.ok(pageSource.includes('industry: "aged-care"'), "Page must build industry-aware links.");
 assert.ok(pageSource.includes("careExamplePricingHref"), "Example must use the cfg roundtrip link.");
 assert.ok(!/5YA|10YPP|school funding guide/i.test(pageSource), "No NZ or school-only funding claim on aged-care page.");
-assert.ok(pageSource.includes("funding-check"), "Aged-care users can reach all-sector funding preparation.");
+assert.ok(pageSource.includes("funding-check"), "Aged-care users can reach all-sector researched funding pathways.");
 
 assert.equal(parseIndustryContext("aged-care"), "aged-care");
 for (const bad of [undefined, null, "hospital", "state_school", "AGED-CARE", "<script>", "__proto__", 1, {}]) {

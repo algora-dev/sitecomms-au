@@ -97,7 +97,7 @@ export default function IpIntercomPage() {
         Intercom uplift depends on endpoint count and integration work. The{" "}
         <Link href="/pricing-tool">ballpark calculator</Link> lets you model feature scope against
         indicative Australian installed cost ranges, and the{" "}
-        <Link href="/tools/funding-check">funding pathways page</Link> explains the current status of Australian school funding guidance for communications projects.
+        <Link href="/tools/funding-check">funding pathways page</Link> shortlists researched Australian funding and project-approval routes by state, applicant and communications-project scope.
       </p>
       <h2 id="more">Related resources</h2>
       <ul>

@@ -6,8 +6,9 @@ Business contract: **1.0.0**. This is an internal application contract, not an M
 
 | Capability | Handler | Effect | Scope |
 |---|---|---|---|
-| `search_business_content` | `searchBusinessContent` | Read only; zero model calls | Keyword navigation search of the existing 12-record public guide directory |
+| `search_business_content` | `searchBusinessContent` | Read only; zero model calls | Keyword navigation search of the shared 18-record public guide directory |
 | `assess_request` | `assessRequest` | Stateless assessment; zero model calls | Existing deterministic AUD pricing model with strict structured inputs |
+| `assess_funding_pathways` | `assessFundingPathways` | Stateless assessment; zero model calls | Dated five-state/national pathway shortlist; no eligibility or award decision |
 
 There is no `submit_enquiry`, product-stock lookup, lender matching, funding-eligibility engine, natural-language interpretation or arbitrary fetch operation. A form link is not a submission. There is no durable assessment record or `assessment_id`. Transport request IDs diagnose calls only.
 
@@ -20,7 +21,7 @@ Successful domain evaluation, including a clarification or unsupported request, 
 ```text
 schema_version: "1.0.0"
 business_id: "sitecomms-au"             # fixed by application, never caller authority
-capability: search_business_content | assess_request
+capability: search_business_content | assess_request | assess_funding_pathways
 status: ok | needs_input | not_supported | requires_human_review | unavailable
 result_type: information | budget_estimate | qualification
 summary: string
@@ -39,7 +40,7 @@ Source records distinguish authority, owner role, source version, recorded edito
 
 Use `tests/agent-ready/example-request.json` for a complete **synthetic 10-room test configuration**, not a real customer submission. The existing pricing baseline produces AUD 8,356–10,445 excluding GST for that configuration; these numbers are regression expectations for the supplied provisional model, not new commercial approval.
 
-`intent` is required and accepts `pricing`, `funding`, or `finance`. Only pricing is implemented. Optional top-level fields are `configuration`, `project_state`, `quantity_basis`, `requested_outcome` and `brief`. No other keys are accepted.
+`intent` is required and accepts `pricing`, `funding`, or `finance`. Only pricing is implemented **under this original request shape**. Funding now has its own separate, strictly typed `assess_funding_pathways` capability; sending `intent: funding` to the pricing endpoint still returns a limitation and directs the caller to the proper funding tool. Do not reinterpret pricing quantities as funding inputs. Optional top-level fields are `configuration`, `project_state`, `quantity_basis`, `requested_outcome` and `brief`. No other keys are accepted.
 
 The exact nested configuration follows the existing `CalculatorState`:
 
@@ -80,6 +81,7 @@ Disabled unless `SC_AGENT_READY_HTTP_ENABLED=true`. A strong secret `SC_AGENT_RE
 ```text
 GET  /api/business/v1/search?query=cabling&limit=5
 POST /api/business/v1/assessments
+POST /api/business/v1/funding
 Authorization: Bearer <server-held key>
 Content-Type: application/json           # POST only
 ```
@@ -117,3 +119,9 @@ The adapter rejects all Origin-bearing requests intentionally because this selec
 | 500 | Safe generic unexpected failure, no stack trace or secret output |
 
 New adapter responses are private/no-store with noindex/nosniff headers. Request bodies are bounded using actual streamed bytes, not only Content-Length. The body deadline is 5 seconds. The local 60 authenticated requests/minute limit is a single-process backstop, **not** a production distributed quota or comprehensive denial-of-service protection.
+
+## Phase 2 funding extension — 20 September 2026
+
+See [funding contracts and operations](../funding/CONTRACT_AND_OPERATIONS.md). The shared envelope remains version 1.0.0; the capability registry adds a new ID, the funding rules are independently versioned and the pricing request/response semantics are unchanged. Strict consumers of the capability-name enumeration must refresh their schemas before opting into the new route. No external-client compatibility has been assumed or tested.
+
+Funding accepts structured enum fields, preserves unknowns, returns `qualification`, and always leaves award/approval unknown. Published programme caps are evidence text, never calculated awards. The guide directory now has 18 records. Existing foundation evidence is historical and must not be presented as a full Phase 2 build or browser test.

@@ -79,6 +79,9 @@ export async function handleCapabilityHttp(req: Request, capability: CapabilityI
       }
       value = CAPABILITIES.search_business_content.handler(parsed);
       status = value.status === "unavailable" ? 503 : 200;
+    } else if (capability === "assess_funding_pathways") {
+      value = CAPABILITIES.assess_funding_pathways.handler(await boundedJson(req));
+      status = value.result.issues.some(i => i.code !== "missing") ? 400 : value.status === "unavailable" ? 503 : 200;
     } else {
       value = CAPABILITIES.assess_request.handler(await boundedJson(req));
       // Missing fields are a domain clarification; malformed supplied values are a transport error.

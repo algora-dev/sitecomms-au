@@ -12,3 +12,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## SiteComms foundation preservation
 
 Read `AGENT_HANDOFF_AGENT_READY.md` and `docs/agent-ready/PROFILE_AND_PLAN.md` before changing this iteration. Reuse the existing pricing engine through the shared assessment; do not duplicate rates or remove classification/scope checks. The HTTP test adapter is disabled by default and is not MCP. Do not restore automatic result storage, remove noindex, send live enquiries or change source approvals without explicit authorisation. Run the existing and Agent-Ready tests and report unavailable checks honestly.
+
+## Current Phase 2 funding baseline
+
+Read `AGENT_HANDOFF_PHASE_2_FUNDING.md` and `docs/funding/CONTRACT_AND_OPERATIONS.md` first. Funding pages, the checker and the optional protected route use the same catalogue/handler. Preserve source dates, applicant distinctions, unknowns and no-award semantics. Run `npm run test:funding` as well as the full existing checks. The master standard and older evidence remain history, not permission to restore the holding page or change prices/indexing.

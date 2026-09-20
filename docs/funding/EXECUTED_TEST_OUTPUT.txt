@@ -1,0 +1,290 @@
+SiteComms Phase 2 funding — executed evidence, 20 September 2026
+Environment: Node v22.16.0; npm 10.9.2; global TypeScript 5.8.3.
+Working root: /mnt/data/sitecomms_phase2
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-pricing.mjs
+pricing tests: all assertions passed
+  A: $8,356 - $10,445
+  safety: $9,584 | interactive: $11,424 | endpoints: 34
+
+Exit: 0
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-finance.mjs
+finance tests: all assertions passed, including public-entity governance guardrails
+
+Exit: 0
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-aged-care.mjs
+Aged-care compare-refresh assertions passed: 7 profiles, 6 use-case rows, 20 sources.
+Illustrative scope, current engine: A$9664–$12080 ex GST; 13 endpoints under current defaults.
+
+Exit: 0
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-state.mjs
+State tests passed: eight jurisdictions, validation, cfg/hash preservation, persistence, clearing, cross-tab reads, blocked storage and quota fallback.
+
+Exit: 0
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-content.mjs
+Content tests passed: 7 school profiles, 4 use cases, 14 school comparison sources and three new dated routes.
+
+Exit: 0
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-site.mjs
+Static site audit passed: 100 TS/TSX files parsed/transpiled, 282 local imports, 276 literal internal links, 36 routes and 35 sitemap entries.
+Preview/noindex preserved; active source NZ residue allowlisted only for the genuine operator privacy contact. Historical database data is untouched.
+Scope: syntax and source invariants only; not full framework type-check, build, ESLint or browser validation.
+
+Exit: 0
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-agent-ready.mjs
+PASS 70 captured Phase 1 fixtures: full numeric/breakdown parity
+PASS AUD cents, GST exclusion, range basis and source identity
+PASS All eight jurisdictions preserve pricing while retaining context
+PASS Unknown state does not silently become Queensland or a price multiplier
+PASS Approximate quantities and null speaker defaults remain distinguishable
+PASS Missing configuration returns useful clarification, no invented defaults
+PASS Explicit zero counts stay zero but an entirely empty site does not produce a project price
+PASS Reject missing count without silent coercion
+PASS Reject unknown count without silent coercion
+PASS Reject negative without silent coercion
+PASS Reject numeric string without silent coercion
+PASS Reject fractional count without silent coercion
+PASS Reject infinity without silent coercion
+PASS Reject NaN without silent coercion
+PASS Reject out-of-bounds count without silent coercion
+PASS Reject boolean string without silent coercion
+PASS Reject unknown package without silent coercion
+PASS Reject array instead of areas without silent coercion
+PASS Reject zero speakers override without silent coercion
+PASS Reject too many controls without silent coercion
+PASS Reject nested unknown field without silent coercion
+PASS Reject undefined own field without silent coercion
+PASS Reject inconsistent two-way rooms without silent coercion
+PASS Array / prototype-like request fields cannot grant authority
+PASS Formal quote request cannot promote an estimate
+PASS Free text and conflicting structured fields are not silently reconciled
+PASS Brief length and type are bounded
+PASS Legacy pricing contract does not infer funding eligibility or finance approval
+PASS Supplied malformed configuration is rejected even on unsupported intents
+PASS Source review deadlines reject impossible calendar dates
+PASS Large site retains existing numbers and requires human review
+PASS Recurring monitoring is separate from the installed amount
+PASS unavailable required price source suppresses amount
+PASS conflicted required price source suppresses amount
+PASS withdrawn required price source suppresses amount
+PASS Stale or invalid review deadline cannot be relabelled fresh
+PASS Generated timestamps do not reset source review or manufacture verification
+PASS Public sources do not expose added internal fields
+PASS Outgoing money / scope / classification inconsistencies are rejected
+PASS Current and legacy cfg encodings preserve the same typed inputs
+PASS One source update reaches handler and page projections; restore baseline afterwards
+PASS Withdrawn pricing source suppresses page examples without breaking guide rendering
+PASS Human directory and search use identical public records
+PASS Search pagination, input limits and no-match outcomes
+PASS Source failure differs from empty search; stale directory is qualified
+PASS Comparison provenance is derived without new verification claims
+PASS Three explicitly selected read/assessment capabilities; no model or write tool
+PASS Core never fetches, submits, or stores during an assessment/search
+PASS Retired legacy writer returns 410 without touching integrations
+PASS HTTP disabled by default, including when a key exists
+PASS HTTP refuses absent/weak server key
+PASS HTTP rejects unauthenticated, incorrect-key and browser requests
+PASS Actual assessment route invokes same core and sends no-store headers
+PASS Actual search route uses the same directory result
+PASS HTTP distinguishes clarification from malformed supplied input
+PASS HTTP rejects wrong type, malformed JSON and compressed inputs
+PASS HTTP enforces both advertised and actual streamed body size
+PASS HTTP query duplicate/unknown fields and method misuse are rejected
+PASS Operational logging excludes credentials and payloads
+PASS Local abuse backstop eventually returns 429, not unbounded work
+PASS Turning HTTP off leaves deterministic human paths intact
+PASS All public pricing projections use shared handler; original engine is the only formula
+Agent-Ready: 62 named test groups passed, including 70 captured pricing fixtures.
+Core-only warm single-process timing: n=1000, concurrency=1, p50=0.043ms, p95=0.130ms, p99=0.306ms. Not production/browser/client latency.
+No real enquiries, model calls, external client invocations or database writes performed. Next/browser/deployment checks are separate.
+
+Exit: 0
+
+$ node --no-warnings --experimental-loader /mnt/data/sitecomms_phase2_loader.mjs scripts/test-funding.mjs
+PASS Catalogue has five priority states, 25 uniquely identified routes and 33 official sources
+PASS Every predicate uses existing schema values rather than a private shadow enum
+PASS Unknown required fields clarify without calculating an award
+PASS Non-object or inherited prototype input rejected: null
+PASS Non-object or inherited prototype input rejected: 
+PASS Non-object or inherited prototype input rejected: QLD
+PASS Non-object or inherited prototype input rejected: [object Object]
+PASS No silent coercion: state
+PASS No silent coercion: site_type
+PASS No silent coercion: stage
+PASS No silent coercion: invitation
+PASS No silent coercion: gaming
+PASS Unknown fields cannot override rules, permissions, date, source or expected award
+PASS Missing optional facts remain unknown; no fabricated invitation or eligibility
+PASS Conflicting building-scope answers require correction
+PASS QLD community NFP route is possible but grant award stays unknown
+PASS QLD school itself cannot apply to GCBF; parents’ body is a different applicant
+PASS QLD retirement facility exclusion not overwritten by NFP status
+PASS QLD private business not reclassified as eligible charity
+PASS Existing contracts/deposits are not retrospectively approved
+PASS Property permission and unknown project stage surface useful questions
+PASS No general operating-cost award from capital catalogue
+PASS Funding does not stack or subtract awards from price
+PASS Commonwealth standalone equipment restriction is explicit; exceptions need BGA review
+PASS Early childhood and government schools do not receive non-government CGP match
+PASS NSW government works remain approval, not grant allocation
+PASS NSW BGAS conflicting official status never becomes open
+PASS NSW CBP2026 closure and staged process preserved
+PASS NSW stale Open badge does not reopen the 2025 early-learning round
+PASS NSW child-based access stream needs correct preschool and specialised scope
+PASS NSW before-application rule is not silently changed to before-approval
+PASS VIC school-funded route is not a grant; published capital round is closed
+PASS VIC school PA renewal is not a specialist hearing adjustment
+PASS VIC separate Catholic and independent closed streams stay distinct
+PASS VIC Building Blocks is closed and does not treat for-profit service as eligible
+PASS WA Direct to Market preserves procurement classification
+PASS WA loan always remains finance signpost, not available grant award
+PASS Lotterywest core-service and public-benefit restrictions are not ignored
+PASS SA govt budget guidance does not invent a grant or threshold
+PASS SA Flying Start requires additional places and eligible operator, not ordinary replacement
+PASS SA published funding share is not applied to communications estimate
+PASS SA Julia Farr access route preserves exclusions
+PASS SA institution exclusion does not silently equate a venue with every separate legal applicant
+PASS QLD sponsored and government legal forms need confirmation rather than an invented blanket decision
+PASS SA school loan round remains closed and repayable
+PASS ACCAP is never a retirement-village entitlement
+PASS ACCAP Critical Infrastructure end date is not general open access
+PASS National-only states are supported honestly, including SA in deep coverage
+PASS No-match is not a claim that no Australian funding exists
+PASS QLD opening date is not an invented precise midnight opening time
+PASS QLD date-only closing day respects Brisbane local date, not UTC midnight
+PASS SA October cut-off accounts for Adelaide daylight saving
+PASS NSW child-based October cut-off accounts for Sydney daylight saving
+PASS Stale sources never receive a fresh or confidently open result
+PASS Missing required source suppresses affected conclusion and factual projection
+PASS Source withdrawal is not disguised as no matching programme
+PASS Invalid/future source review dates cannot manufacture freshness
+PASS Whole catalogue outage differs from a supported no-match
+PASS Generated time does not reset source review or rule version
+PASS Source update and withdrawal are shared by page/assessment status function
+PASS No grant upgrade to a quote, awarded amount or money total
+PASS Conditional questions avoid collecting names, contact details or medical data
+PASS No network, storage, model, enquiry or grant application during assessment
+PASS Five state pages and shared guide search refer to real reviewed routes
+PASS Form and registry invoke the shared domain handler, with no ad hoc fetch
+PASS Funding HTTP adapter disabled by default and still unavailable with a key only
+PASS Funding actual route/core parity under the same clock/source versions
+PASS Funding HTTP rejects forged approval fields and unsupported values
+PASS Funding HTTP returns domain clarification for missing fields
+PASS Funding API rejects invalid JSON, unauthorised browser and wrong method
+PASS Funding API rejects oversized streamed body rather than running unlimited work
+PASS Redacted capability events omit assessment fields and credentials
+PASS Lotterywest uncertain NFP legal forms require confirmation, not automatic exclusion or approval
+PASS Flying Start commitment timing refers to application, not an invented approval date
+PASS All entity/state combinations maintain classification and stable source IDs
+Funding: 75 named test groups passed; exhaustive state/site/applicant sweep = 960 cases.
+Core-only warm single-process timing, n=500, concurrency=1: p50=0.234ms p95=0.512ms. Not framework, browser, external-client or production performance.
+No real enquiries, funding applications, model calls, external clients or database writes. Browser/deployed integration remains a separate verification gate.
+
+Exit: 0
+
+$ tsc -p tsconfig.funding.json
+Exit: 0
+
+$ tsc -p /mnt/data/sitecomms_phase2_agent_domain_tsconfig.json
+Exit: 0
+
+Isolated domain config (review environment only):
+{
+  "extends": "/mnt/data/sitecomms_phase2/tsconfig.agent-ready.json",
+  "compilerOptions": {
+    "typeRoots": ["/opt/nvm/versions/node/v22.16.0/lib/node_modules/ts-node/node_modules/@types"],
+    "types": ["node"],
+    "incremental": false
+  }
+}
+
+$ npm run build
+
+> sitecomms-au@0.1.0 build
+> next build
+
+sh: 1: next: not found
+
+Exit: 127
+
+$ npm run lint
+
+> sitecomms-au@0.1.0 lint
+> eslint
+
+sh: 1: eslint: not found
+
+Exit: 127
+
+$ npm run typecheck:agent-ready
+
+> sitecomms-au@0.1.0 typecheck:agent-ready
+> tsc --project tsconfig.agent-ready.json
+
+error TS2688: Cannot find type definition file for 'node'.
+  The file is in the program because:
+    Entry point of type library 'node' specified in compilerOptions
+
+Exit: 2
+
+$ tsc --project tsconfig.json --incremental false
+error TS2688: Cannot find type definition file for 'estree'.
+  The file is in the program because:
+    Entry point for implicit type library 'estree'
+error TS2688: Cannot find type definition file for 'json-schema'.
+  The file is in the program because:
+    Entry point for implicit type library 'json-schema'
+error TS2688: Cannot find type definition file for 'json5'.
+  The file is in the program because:
+    Entry point for implicit type library 'json5'
+error TS2688: Cannot find type definition file for 'node'.
+  The file is in the program because:
+    Entry point for implicit type library 'node'
+error TS2688: Cannot find type definition file for 'pako'.
+  The file is in the program because:
+    Entry point for implicit type library 'pako'
+error TS2688: Cannot find type definition file for 'raf'.
+  The file is in the program because:
+    Entry point for implicit type library 'raf'
+error TS2688: Cannot find type definition file for 'react'.
+  The file is in the program because:
+    Entry point for implicit type library 'react'
+error TS2688: Cannot find type definition file for 'react-dom'.
+  The file is in the program because:
+    Entry point for implicit type library 'react-dom'
+error TS2688: Cannot find type definition file for 'trusted-types'.
+  The file is in the program because:
+    Entry point for implicit type library 'trusted-types'
+
+Exit: 2
+
+$ npm ci --ignore-scripts --no-audit --no-fund --fetch-retries=0 --fetch-timeout=20000
+npm error Exit handler never called!
+npm error This is an error with npm itself. Please report this error at:
+npm error   <https://github.com/npm/cli/issues>
+npm error A complete log of this run can be found in: /home/oai/.npm/_logs/2026-09-20T13_16_20_703Z-debug-0.log
+
+Installation failed. Selected underlying npm diagnostic lines:
+1023 http fetch GET https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz attempt 1 failed with EAI_AGAIN
+1024 http fetch GET https://registry.npmjs.org/zod-validation-error/-/zod-validation-error-4.0.2.tgz attempt 1 failed with EAI_AGAIN
+1025 http fetch GET https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.22.tgz attempt 1 failed with EAI_AGAIN
+1026 http fetch GET https://registry.npmjs.org/which-collection/-/which-collection-1.0.2.tgz attempt 1 failed with EAI_AGAIN
+1027 http fetch GET https://registry.npmjs.org/zod/-/zod-4.5.4.tgz attempt 1 failed with EAI_AGAIN
+1028 http fetch GET https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz attempt 1 failed with EAI_AGAIN
+1029 http fetch GET https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.2.1.tgz attempt 1 failed with EAI_AGAIN
+1030 http fetch GET https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.1.1.tgz attempt 1 failed with EAI_AGAIN
+1031 http fetch GET https://registry.npmjs.org/which/-/which-2.0.2.tgz attempt 1 failed with EAI_AGAIN
+1032 http fetch GET https://registry.npmjs.org/utrie/-/utrie-1.0.2.tgz attempt 1 failed with EAI_AGAIN
+1043 http fetch GET https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz attempt 1 failed with EAI_AGAIN
+1044 http fetch GET https://registry.npmjs.org/unrs-resolver/-/unrs-resolver-1.12.2.tgz attempt 1 failed with EAI_AGAIN
+
+Supplementary payload measurement (not a universal bound):
+{"max_tested_response_bytes":12097,"case":{"state":"SA","site_type":"early_childhood","applicant_type":"unknown"},"configuration":"same planning/unknown-detail baseline over 960 state/site/applicant combinations; not all possible inputs"}
+
+Preservation checks: PASS; see PRESERVATION_CHECKS.json. No live integrations, real enquiries, production data or deployments.

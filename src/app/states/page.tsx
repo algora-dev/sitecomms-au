@@ -6,6 +6,7 @@ import { JURISDICTIONS, withProjectState } from "@/lib/jurisdictions";
 import { buildMetadata, articleSchema, breadcrumbSchema } from "@/lib/seo";
 import { publishedDate, reviewedDate, reviewedLabel } from "@/lib/content-meta";
 import { site } from "@/lib/site";
+import { STATE_FUNDING_GUIDES } from "@/lib/funding/guides";
 const title = "Plan PA, paging and intercom projects by Australian state";
 const description = "Choose your project state or territory, identify the organisation and approval owner, and plan communications scope without assuming funding eligibility or local installer coverage.";
 export const metadata = buildMetadata({ title, description, path: "/states" });
@@ -14,16 +15,16 @@ export default function StatesPage() {
   return <div>
     <AuthorityHero eyebrow="One national resource, local project context" title={title} description={description}
       tags={["All eight jurisdictions", "Schools", "Aged care", "Other large sites"]}
-      primaryCta={{ label: "Define the system", href: "/systems" }} secondaryCta={{ label: "Funding research status", href: "/tools/funding-check" }}
-      reviewed={reviewedLabel("/states")} note="Planning directory, not eight separate websites or a live grant-matching service" />
+      primaryCta={{ label: "Define the system", href: "/systems" }} secondaryCta={{ label: "Check funding pathways", href: "/tools/funding-check" }}
+      reviewed={reviewedLabel("/states")} note="One national resource with selected state-specific funding research" />
     <div className="sc-container max-w-5xl py-6">
       <ProjectStatePanel />
       <section className="sc-prose max-w-4xl">
         <h2>What changes with the project location?</h2>
         <p>Use the same technical guide to define announcements, bells, zones, intercom and retained equipment. Then establish the local approval route, applicable organisation rules and the practical service arrangements for the site. Do not assume another state&apos;s school process or another operator&apos;s funding access applies to your project.</p>
-        <p>The selector currently carries location into tools and enquiries. The pricing model remains national. Funding matching and state-specific finance checks are not live in this release. The directory below supplies official education starting points, not a finding that any grant is open or that equipment is eligible.</p>
+        <p>The selector currently carries location into tools and enquiries. The pricing model remains national. The funding checker now covers selected QLD, NSW, VIC, WA and SA routes plus applicable national programmes. State-specific finance checks remain a separate phase. The directory below supplies official education starting points, not a finding that any grant is open or that equipment is eligible.</p>
         <h2>Start with the entity, not just the building</h2>
-        <p>For schools, distinguish government, Catholic and independent governance. For care sites, record whether the applicant is a residential aged care provider, retirement-village operator, property owner or another legal entity. For a community facility, identify the council, not-for-profit, tenant and owner roles. Those identities need to be resolved before a later funding assessment can be meaningful.</p>
+        <p>For schools, distinguish government, Catholic and independent governance. For care sites, record whether the applicant is a residential aged care provider, retirement-village operator, property owner or another legal entity. For a community facility, identify the council, not-for-profit, tenant and owner roles. Those identities need to be resolved before a funding pathway assessment can be meaningful.</p>
         <h2>Choose the state or territory of the physical project</h2>
         <p>Use the location of the site being upgraded, not just the organisation&apos;s head office. For a multisite project, list each location in the enquiry. A single saved state is a convenience, not a complete multi-jurisdiction assessment.</p>
       </section>
@@ -35,7 +36,8 @@ export default function StatesPage() {
           <p className="mt-2 text-xs text-[var(--sc-slate)]">Department directory only; not evidence of a specific grant, eligibility or supplier approval. Non-government schools must also confirm their governing body&apos;s requirements.</p>
           <div className="mt-4 flex flex-wrap gap-3 text-sm">
             <Link href={withProjectState("/pricing-tool", item.code)} className={linkClass}>Plan a {item.code} budget</Link>
-            <Link href={withProjectState("/tools/funding-check", item.code)} className={linkClass}>Funding status for this context</Link>
+            <Link href={withProjectState("/tools/funding-check", item.code)} className={linkClass}>Check funding for this context</Link>
+            {STATE_FUNDING_GUIDES.some(guide => guide.state === item.code) && <Link href={`/funding/${item.slug}`} className={linkClass}>Read the {item.code} funding guide</Link>}
           </div>
         </section>)}
       </div>

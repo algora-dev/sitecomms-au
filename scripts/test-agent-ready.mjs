@@ -114,7 +114,7 @@ await test("Free text and conflicting structured fields are not silently reconci
 await test("Brief length and type are bounded", () => {
   for (const brief of ["a".repeat(4001), { execute: "code" }]) noPrice(assessRequest(request({ brief }), { now }));
 });
-await test("Funding and finance return explicit non-eligibility outcomes", () => {
+await test("Legacy pricing contract does not infer funding eligibility or finance approval", () => {
   for (const intent of ["funding", "finance"]) {
     const value = assessRequest({ intent, project_state: "QLD" }, { now }); noPrice(value);
     assert.equal(value.status, "not_supported"); assert.match(value.next_actions[0].path, /state=QLD/);
@@ -229,8 +229,8 @@ await test("Comparison provenance is derived without new verification claims", (
     assert.equal(record.evidence_status, "inherited_phase_1_research"); assert.ok(!("verified_at" in record));
   }
 });
-await test("Only two read/assessment capabilities; no model or write tool", () => {
-  assert.deepEqual(Object.keys(CAPABILITIES), ["search_business_content", "assess_request"]);
+await test("Three explicitly selected read/assessment capabilities; no model or write tool", () => {
+  assert.deepEqual(Object.keys(CAPABILITIES), ["assess_funding_pathways", "search_business_content", "assess_request"]);
   for (const item of capabilityDescriptions()) { assert.equal(item.uses_model, false); assert.notEqual(item.category, "write"); assert.ok(item.input_schema); }
 });
 await test("Core never fetches, submits, or stores during an assessment/search", () => {

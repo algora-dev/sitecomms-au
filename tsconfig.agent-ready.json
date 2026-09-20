@@ -1,6 +1,19 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": { "incremental": false, "types": ["node"] },
-  "include": ["src/lib/agent-ready/**/*.ts", "src/lib/pricing/**/*.ts", "src/lib/content/school-compare.ts"],
-  "exclude": ["node_modules", ".next"]
+  "compilerOptions": {
+    "incremental": false,
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "src/lib/agent-ready/**/*.ts",
+    "src/lib/pricing/**/*.ts",
+    "src/lib/content/school-compare.ts",
+    "src/lib/funding/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next"
+  ]
 }

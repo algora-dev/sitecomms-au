@@ -146,12 +146,12 @@ export default function SpecificationChecklistPage() {
       <p>
         A clear specification is also what a school property funding case needs: documented
         need, defined scope and evidence of value for money. See the{" "}
-        <Link href="/tools/funding-check">funding pathways page</Link> for the current Australian guidance status.
+        <Link href="/tools/funding-check">funding pathways page</Link> for researched state and national routes and their approval conditions.
       </p>
       <ContinuePlanning
         items={[
           { title: "Pricing guide", desc: "Indicative Australian installed ranges so you can sanity-check every quote.", href: "/pricing" },
-          { title: "Funding preparation and status", desc: "How a clearly specified project fits the property funding process.", href: "/tools/funding-check" },
+          { title: "Funding pathways and conditions", desc: "How a clearly specified project fits the property funding process.", href: "/tools/funding-check" },
           { title: "Compare paging platforms", desc: "Which platforms and ecosystems suit which specifications.", href: "/compare" },
         ]}
       />

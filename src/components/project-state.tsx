@@ -4,7 +4,7 @@ import { useEffect, useId, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { createProjectStateStore } from "@/lib/project-state-store";
 import { usePathname, useSearchParams } from "next/navigation";
-import { JURISDICTIONS, PROJECT_STATE_KEY, parseProjectState, projectStateName, withProjectState, type ProjectState } from "@/lib/jurisdictions";
+import { JURISDICTIONS, PROJECT_STATE_KEY, parseProjectState, projectStateFromFundingPath, projectStateName, withProjectState, type ProjectState } from "@/lib/jurisdictions";
 
 const EVENT = "sitecomms:project-state";
 const preferenceStore = createProjectStateStore(() => window.localStorage);
@@ -23,7 +23,7 @@ export function setProjectState(value: unknown): void {
 export function useProjectState(): ProjectState | undefined {
   return parseProjectState(useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot));
 }
-/** Explicit incoming state links override a saved preference; no geolocation or redirect. */
+/** Explicit query wins; otherwise a named funding guide sets the context. No geolocation or redirect. */
 export function ProjectStateBoot() {
   const params = useSearchParams();
   const pathname = usePathname();
@@ -31,6 +31,10 @@ export function ProjectStateBoot() {
   useEffect(() => {
     if (parseProjectState(incoming)) setProjectState(incoming);
     else if (incoming === "AU") setProjectState(undefined);
+    else {
+      const routeState = projectStateFromFundingPath(pathname ?? "");
+      if (routeState) setProjectState(routeState);
+    }
   }, [incoming, pathname]);
   return null;
 }
@@ -56,7 +60,7 @@ export function ProjectStatePanel({ purpose = "planning" }: { purpose?: "plannin
   const note = purpose === "pricing"
     ? "The calculator uses the same AUD planning assumptions in every state. Travel, regional access and site-wide cabling need a separate project quote."
     : purpose === "funding"
-      ? "This saves your location for the next step. State-specific funding matching is not live yet; selecting a state does not establish eligibility."
+      ? "The funding checker uses this state with the legal applicant and project scope. QLD, NSW, VIC, WA and SA have reviewed state routes; other jurisdictions have selected national records only. Location is not proof of funding eligibility."
       : purpose === "finance"
         ? "Location is carried into your enquiry. This version does not check state borrowing rules, lender eligibility or approval. Public organisations must confirm their authority to enter an arrangement."
         : "Use one national guide library, with your project location remembered for tools and enquiries. Change or clear it at any time; no location detection is used.";

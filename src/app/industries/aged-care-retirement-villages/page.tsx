@@ -350,7 +350,7 @@ export default function AgedCareRetirementVillagesPage() {
           <Link href={financeHref} className="sc-btn-primary">Explore payment options</Link>
           <Link href={financingHref} className="sc-btn-secondary">Read about finance and leasing</Link>
         </div>
-        <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]"><Link href="/tools/funding-check" className={linkClass}>View funding research status for schools, aged care and other entities</Link>. No eligibility assessment is live yet.</p>
+        <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]"><Link href="/tools/funding-check" className={linkClass}>Check researched funding pathways for care and community projects</Link>. The checker distinguishes residential aged care from retirement-village operation and flags restricted or unverified routes; it does not approve eligibility or award money.</p>
         <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">This is commercial equipment planning for the organisation, not residential-care subsidy advice. Funding and finance are separate questions. The funding research will consider relevant non-school entities rather than reusing school assumptions.</p>
       </section>
 

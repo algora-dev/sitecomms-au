@@ -5,6 +5,13 @@ import { CONTENT_META } from "../content-meta";
  * Search returns these same public records, not a second article store.
  */
 export const PUBLIC_GUIDES = [
+  { title: "Australian communications funding guide", desc: "Understand grants, school capital approvals, targeted aged care, community projects and repayable loans.", href: "/funding" },
+  { title: "Queensland communications funding routes", desc: "Research QLD school, early-learning, community and national aged-care pathways with source evidence and current-status limitations.", href: "/funding/queensland" },
+  { title: "New South Wales communications funding routes", desc: "Research NSW school, early-learning, community and national aged-care pathways with source evidence and current-status limitations.", href: "/funding/new-south-wales" },
+  { title: "Victoria communications funding routes", desc: "Research VIC school, early-learning, community and national aged-care pathways with source evidence and current-status limitations.", href: "/funding/victoria" },
+  { title: "Western Australia communications funding routes", desc: "Research WA school, early-learning, community and national aged-care pathways with source evidence and current-status limitations.", href: "/funding/western-australia" },
+  { title: "South Australia communications funding routes", desc: "Research SA school, early-learning, community and national aged-care pathways with source evidence and current-status limitations.", href: "/funding/south-australia" },
+
   { title: "Compare Australian PA and intercom quotes", desc: "A scope-by-scope worksheet for coverage, installation, licensing, support and handover.", href: "/guides/compare-pa-system-quotes" },
   { title: "Plan by Australian state or territory", desc: "Save the project location, identify the approval owner and find official education starting points.", href: "/states" },
   {
@@ -53,8 +60,8 @@ export const PUBLIC_GUIDES = [
     href: "/pricing",
   },
   {
-    title: "Funding preparation: schools, aged care and other sites",
-    desc: "Prepare the applicant and project scope; state-specific funding matching is not live yet.",
+    title: "Australian funding pathway checker",
+    desc: "Find researched state and national pathways by legal applicant and project scope, with dates, official sources and clear limits.",
     href: "/tools/funding-check",
   },
 ];

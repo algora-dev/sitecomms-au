@@ -1,22 +1,22 @@
 import Link from "next/link";
+import AuthorityHero from "@/components/content/AuthorityHero";
 import { buildMetadata } from "@/lib/seo";
-import { ProjectStatePanel } from "@/components/project-state";
-import { ProjectHelpLauncher } from "@/components/enquiry/ProjectHelpLauncher";
-export const metadata = buildMetadata({ title: "Australian Communications Funding: Planning and Research Status", description: "Prepare a communications project brief for schools, aged care and other organisations. State-specific funding matching is being researched, not yet live.", path: "/tools/funding-check" });
+import { reviewedLabel } from "@/lib/content-meta";
+import FundingCheckTool from "./FundingCheckTool";
+export const metadata = buildMetadata({ title: "Australian Funding Pathway Checker — Schools, Aged Care and Community Sites", description: "Find researched funding and project-approval routes by state, site, applicant and project scope. QLD, NSW, VIC, WA and SA coverage; no eligibility or grant award promised.", path: "/tools/funding-check" });
 export default function FundingCheckPage() {
-  return <div className="sc-container max-w-3xl py-14">
-    <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australian project funding</p>
-    <h1 className="mt-2 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)] sm:text-4xl">Prepare the project before checking a funding pathway</h1>
-    <div className="sc-card mt-6 bg-white p-6">
-      <h2 className="text-xl font-semibold text-[var(--sc-blue-900)]">State-specific funding matching is not live yet</h2>
-      <p className="mt-3 leading-relaxed text-[var(--sc-slate)]">This page does not currently assess grants, eligibility, open rounds or approval. The planned tool will distinguish state/territory, entity type and project scope using reviewed official sources. Selecting a location below only saves project context.</p>
-      <ProjectStatePanel purpose="funding" />
-      <h2 className="mt-6 text-xl font-semibold text-[var(--sc-blue-900)]">Useful information to gather now</h2>
-      <p className="mt-3 leading-relaxed text-[var(--sc-slate)]">Record the site location, legal applicant, property owner, organisation type, existing system, required outcomes, rough budget and proposed timing. For schools, distinguish government, Catholic and independent. For care sites, distinguish a residential aged care provider from a retirement-village operator. For community facilities, identify the owner and the organisation seeking funds.</p>
-      <p className="mt-3 leading-relaxed text-[var(--sc-slate)]">A grant, an internal capital allocation, permission to undertake works and equipment finance are different routes. A communications project is not automatically eligible because it improves safety or involves fixed equipment. Do not incur expenditure on the assumption that it will later be reimbursed.</p>
-      <p className="mt-3 leading-relaxed text-[var(--sc-slate)]">SiteComms can review the technical requirement and suggest suitable providers to contact. It cannot approve funding or promise that a provider will secure it. Your enquiry is not automatically forwarded.</p>
-      <div className="mt-6 flex flex-wrap gap-3"><ProjectHelpLauncher mode="funding_help" sourceTopic="funding_preparation" buttonLabel="Discuss the scope and budget" /><Link href="/pricing-tool" className="sc-btn-secondary">Estimate the modelled system</Link></div>
+  return <div>
+    <AuthorityHero eyebrow="Australian project funding" title="Find the right funding conversation for your project"
+      description="Start with the state, the legal applicant and the work you need. We separate possible grant routes from internal capital processes, closed rounds and repayable loans — without pretending a PA or intercom project is automatically eligible."
+      tags={["Queensland", "NSW", "Victoria", "WA", "South Australia", "Selected national routes"]}
+      primaryCta={{ label: "Check a project", href: "#funding-tool" }} secondaryCta={{ label: "Read the state funding guides", href: "/funding" }}
+      reviewed={reviewedLabel("/tools/funding-check")} note="Research-led pathways, not grant approval or a live grants feed" />
+    <div className="sc-container max-w-4xl pb-16 pt-5">
+      <FundingCheckTool />
+      <section className="mt-10 text-sm leading-relaxed text-[var(--sc-slate)]"><h2 className="text-xl font-bold text-[var(--sc-blue-900)]">Before you commit to any expenditure</h2>
+        <p className="mt-3">A grant, a school budget, approval for works and finance are different mechanisms. Use the <Link href="/funding" className="font-semibold underline">funding guide</Link> to understand the distinction, and check the official scheme’s current rules before signing, paying a deposit or placing an order.</p>
+        <p className="mt-3">School, care and community safety obligations do not wait for a grant. Address urgent risks through your organisation’s responsible people and procedures; SiteComms does not certify life-safety, clinical or regulatory compliance.</p>
+      </section>
     </div>
-    <p className="mt-6 text-sm text-[var(--sc-slate)]">See the <Link href="/states" className="font-semibold underline">state planning directory</Link> and <Link href="/guides/compare-pa-system-quotes" className="font-semibold underline">quote comparison guide</Link>. Detailed funding research is the next separate work phase.</p>
   </div>;
 }

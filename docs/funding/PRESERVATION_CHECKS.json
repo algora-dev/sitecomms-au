@@ -1,0 +1,143 @@
+{
+  "baseline_zip": "sitecomms-au-codebase-2026-09-20.zip",
+  "baseline_zip_sha256": "e966621ca8bf9c4da58203303877e99dd521e73e33b3227fc567b1277767d3f1",
+  "dependencies_unchanged": true,
+  "public_asset_file_count": 11,
+  "checks": [
+    {
+      "path": "src/app/globals.css",
+      "sha256": "9d066e2eda340afe4b3120ce3cada2fa388706b8d8f97ba67254aee1a4b5ec44",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/pricing/config.ts",
+      "sha256": "e97d6155910affca57fdef5352ef7d7c42b4794f2c8144cf09e69ced39d9b3c0",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/pricing/calculate.ts",
+      "sha256": "8c7e4b73e2a0b674336e572e57964645b4465eb0276bbf876f7c3273e31141a0",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/pricing/presets.ts",
+      "sha256": "264be083fc354d95fa3558a37afb22bf9c312a39dc0b2cf3dd32bb6cd0428974",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/pricing/school-bands.ts",
+      "sha256": "356250833bcb5c5d85454433c7a26a1ce3aece8c78b4a4c097b9c8b50d05e19d",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/pricing/types.ts",
+      "sha256": "930f0c156f1fe2b4cdfd7c51325451238dcb33ac6797e659ff4a0eaf73c5cf7f",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/finance-check/config.ts",
+      "sha256": "999b679d55afac62cee3fe8dcd9ba34d7a4833f74fff8bf3b9f65ecee3e9cd2a",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/finance-check/engine.ts",
+      "sha256": "771410fe7d6205aa8960df78c41fdfde7d6c1b071647b99078bd3bfd40e029fc",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/inquiry/route.ts",
+      "sha256": "7bddd4c2a34d723f219e6e685df96995d8f255add5b2ddac69e83a9397839d99",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/pricing-tool/output-log/route.ts",
+      "sha256": "3308bc1935266df1c799161cc43fb622a7e279cdc83fdb8a479049d0c7ec6c9b",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/robots.ts",
+      "sha256": "78013db528978d5cde7df2c1b46fe88c97142f694a13605a66833a33133759b4",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/seo.ts",
+      "sha256": "fb25cc5db6e0d934bcce5f12caf490dbd9445975b42dfd7736f492376b6f6649",
+      "unchanged": true
+    },
+    {
+      "path": "next.config.ts",
+      "sha256": "b8a9896175ccd16fec29a918cfaa80f6b6ba5a20b24a2626f6d6bb1785e72bf0",
+      "unchanged": true
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "f508389042c7f688001fb7bef2cb008b2e6c171f9367ee9cd731aef426c0b541",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/content/school-compare.ts",
+      "sha256": "b67888be61b7c4a69958330849c6c066a2c21bdbddb13bbee7aa836baafef247",
+      "unchanged": true
+    },
+    {
+      "path": "docs/agent-ready/STANDARD_0.1.0.md",
+      "sha256": "d0a3eda10902232975a4766bfb39e665f50c8c8b48133b5228077c5b59171813",
+      "unchanged": true
+    },
+    {
+      "path": "public/brand/SCAU-logo-colour-trans.png",
+      "sha256": "cb493a50b9bca5565fd018ea87a8f6fe4b4ca4d861895b7a8f02855dd3fa670d",
+      "unchanged": true
+    },
+    {
+      "path": "public/brand/SCAU-logo-colour.png",
+      "sha256": "47561b2c5e5933fad3b7023e9778050343f867eff84e5727c25254bc4084d585",
+      "unchanged": true
+    },
+    {
+      "path": "public/brand/SCAU-logo-mono.png",
+      "sha256": "03bb6ac1d0fe7a0d664e2a7c7a147a43fd00acf159ad9d30b76a6e91fe1c7364",
+      "unchanged": true
+    },
+    {
+      "path": "public/brand/SCAU-logo-white.png",
+      "sha256": "d2555690cf909f0c772a3bafa2aa0c3b7e99a3b8d48f0316e7540d99bb049565",
+      "unchanged": true
+    },
+    {
+      "path": "public/brand/branding-pack.png",
+      "sha256": "f75c25fb0291d5eb7426ad93e99e82e997d52dcfe94612db37621810967a024f",
+      "unchanged": true
+    },
+    {
+      "path": "public/file.svg",
+      "sha256": "2b67812c325c199a02536cdbeea0c593a72f707d323b72ee3e08dbab06753bd4",
+      "unchanged": true
+    },
+    {
+      "path": "public/globe.svg",
+      "sha256": "b614b9bf183925957661ac851498fe1d8029fd43a62fbfed86f9e2624a57e7cf",
+      "unchanged": true
+    },
+    {
+      "path": "public/next.svg",
+      "sha256": "55995dfad6ecb4945a1e856ddca03c5e16aa5bf13fd21b4df6a74ae79357bcfc",
+      "unchanged": true
+    },
+    {
+      "path": "public/og-image.png",
+      "sha256": "391e8deab635c4168fed40a0a617d3638b6a3afb83967148a254304ff65fc3a4",
+      "unchanged": true
+    },
+    {
+      "path": "public/vercel.svg",
+      "sha256": "f081337b2fee635b455b63275406a3e7f39d6a014e25ad90dab5a67e62a12ac4",
+      "unchanged": true
+    },
+    {
+      "path": "public/window.svg",
+      "sha256": "644768c4aaeb4767bce293344eeb0c125fb804a94d801440424072202d85e3a1",
+      "unchanged": true
+    }
+  ]
+}

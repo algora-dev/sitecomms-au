@@ -1,5 +1,7 @@
 # Agent handoff — SiteComms Australia Phase 1
 
+> Historical handoff. The current source baseline is Phase 2 funding, 20 September 2026. Follow `AGENT_HANDOFF_PHASE_2_FUNDING.md` for current capabilities, counts and release gates; preserve the earlier safety controls.
+
 > Historical Phase 1 handoff. The current instructions are in `AGENT_HANDOFF_AGENT_READY.md`. In particular, automatic pricing-output storage has been retired; do not restore or exercise the superseded logging instructions below.
 
 Use this complete directory-preserving project as the Phase 1 working baseline. Preserve the content, evidence qualifications, AUD model, design system and enquiry privacy model. Do not merge back the older flattened ZIP or replace the new comparison with the previous ranked shortlist.

@@ -105,7 +105,7 @@ export default function SchoolsPage() {
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/tools/funding-check" className="sc-btn-primary">View funding pathways</Link>
-            <Link href="/tools/funding-check" className="sc-btn-secondary">Funding guidance status</Link>
+            <Link href="/funding" className="sc-btn-secondary">Read the state funding guides</Link>
           </div>
         </div>
       </section>

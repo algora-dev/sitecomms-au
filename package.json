@@ -14,9 +14,11 @@
     "test:state": "tsx scripts/test-state.mjs",
     "test:content": "tsx scripts/test-content.mjs",
     "test:site": "tsx scripts/test-site.mjs",
-    "test": "npm run test:pricing && npm run test:finance && npm run test:aged-care && npm run test:state && npm run test:content && npm run test:site && npm run test:agent-ready",
+    "test": "npm run test:pricing && npm run test:finance && npm run test:aged-care && npm run test:state && npm run test:content && npm run test:site && npm run test:agent-ready && npm run test:funding",
     "test:agent-ready": "tsx scripts/test-agent-ready.mjs",
-    "typecheck:agent-ready": "tsc --project tsconfig.agent-ready.json"
+    "typecheck:agent-ready": "tsc --project tsconfig.agent-ready.json",
+    "test:funding": "tsx scripts/test-funding.mjs",
+    "typecheck:funding": "tsc --project tsconfig.funding.json"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",

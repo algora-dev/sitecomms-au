@@ -1,42 +1,44 @@
 # SiteComms Australia
 
-Australian research, education, planning and enquiry resource for IP paging, PA, bell, intercom and integrated communication systems.
+Australian research, education, planning and enquiry resource for PA, IP paging, school bells, intercom and communications systems.
 
-## Current baseline — Agent-Ready Foundation (19 September 2026)
+## Current baseline — Phase 2 funding (20 September 2026)
 
-Start with [the current handoff](AGENT_HANDOFF_AGENT_READY.md) and [change log](SITECOMMS_AU_AGENT_READY_CHANGELOG.md). This iteration adds a shared, validated pricing/result core, a public guide search and disabled-by-default authenticated HTTP testing routes. It preserves the Phase 1 design, AUD model and noindex status. It does not implement MCP/WebMCP, a chatbot, funding eligibility, finance matching or direct agent enquiry submission.
+Start with [the current agent handoff](AGENT_HANDOFF_PHASE_2_FUNDING.md), [change log](SITECOMMS_AU_PHASE_2_FUNDING_CHANGELOG.md) and [validation evidence](docs/funding/VALIDATION.md). This is the full source project, preserving the Agent-Ready foundation, original theme/assets, AUD calculations, reviewed enquiry flow and preview/noindex controls.
 
-The former automatic pricing-result/PDF storage call is retired; historical data is untouched. Review [operations](docs/agent-ready/OPERATIONS.md) before restoring any assessment retention. Contracts, evidence and the supplied master standard are in `docs/agent-ready/`.
+Phase 2 adds a shared, deterministic funding-pathway assessment for Queensland, NSW, Victoria, Western Australia and South Australia, plus selected national school/aged-care records. A three-step checker, five state guides and a national funding hub share 25 pathway records and 33 official-source records. It is not an exhaustive or live grants register, an eligibility decision, an award calculation or an application service. Source availability and material gaps are explicit.
 
-## Core routes
+The optional authenticated HTTP test profile remains disabled by default. No MCP/WebMCP, chatbot, new database, direct agent enquiry submission or automated grant application is added. The retired automatic pricing-result/PDF logger stays retired; historical data is untouched. Finance and a further product-market comparison pass remain separate phases.
 
-- `/pricing-tool` — indicative installed pricing in AUD
-- `/pricing` — crawlable pricing guidance
-- `/compare` — platform comparison
-- `/schools` — Australian school communications planning
-- `/tools/funding-check` — holding page pending dedicated Australian funding rebuild
-- `/tools/finance-check` — preliminary finance/leasing fit check
-- `/industries/aged-care-retirement-villages` — aged-care and retirement-village communications guidance
+## Main routes
 
-## Local development
+- `/tools/funding-check` — researched state/applicant/project pathway tool.
+- `/funding` — national overview and links to five substantive state guides.
+- `/funding/queensland`, `/funding/new-south-wales`, `/funding/victoria`, `/funding/western-australia`, `/funding/south-australia`.
+- `/pricing-tool`, `/pricing`, `/schools` — existing shared indicative AUD model, unchanged arithmetic.
+- `/compare`, `/industries/aged-care-retirement-villages` — existing Australian comparison/sector content.
+- `/tools/finance-check` — existing preliminary finance guidance, not a researched state/lender eligibility engine.
+- `/integrations` — factual capability/compatibility status, not a universal AI-support claim.
 
-```bash
+## Development and checks
+
+```sh
 npm ci
+npm test
+npm run typecheck:funding
+npm run typecheck:agent-ready
+npx tsc --noEmit
+npm run lint
+npm run build
 npm run dev
 ```
 
-Useful checks:
+Use the unchanged dependency versions and lockfile. In the review environment dependency downloads failed; only the documented domain/source checks were completed. The hosting agent must finish the full framework and browser gates before deployment. Read `AGENTS.md` and the installed framework's version-matched documentation after installing dependencies.
 
-```bash
-npm run lint
-npm test
-npm run typecheck:agent-ready
-npx tsc --noEmit
-npm run build
-```
+Use `.env.example` only as a sanitised template. Supply real credentials in the host's protected environment. Noindex and API enablement are separate owner-authorised release decisions; robots/noindex do not protect private staging access.
 
-Set `NEXT_PUBLIC_SITE_URL=https://sitecomms.com.au` for production builds.
+## Maintenance and prior phases
 
-## Australian Phase 1 — 19 September 2026
+Current funding evidence, rules, update/withdrawal procedures and review priorities: [research](docs/funding/RESEARCH_AND_COVERAGE.md), [contracts and operations](docs/funding/CONTRACT_AND_OPERATIONS.md), [profile](docs/funding/PROFILE_AND_PLAN.md).
 
-Historical baseline: this source contains the national state-context layer, revised Australian comparisons and three new planning pages. Start with `SITECOMMS_AU_PHASE_1_CHANGELOG.md`, `AGENT_HANDOFF_PHASE_1.md` and `docs/PHASE_1_VALIDATION.md`. Detailed funding and finance phases remain separate. Keep preview/noindex enabled until the approved launch review.
+The Agent-Ready master standard is preserved at `docs/agent-ready/STANDARD_0.1.0.md`. Historical Phase 1 and foundation handoffs/validation remain for traceability; do not use them to restore the funding holding page, the old 12-record directory or automatic result storage. The next substantial work is the separate Australian finance phase.

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { JURISDICTIONS, parseProjectState, projectStateName, withProjectState, PROJECT_STATE_KEY } from "../src/lib/jurisdictions.ts";
+import { JURISDICTIONS, parseProjectState, projectStateName, projectStateFromFundingPath, withProjectState, PROJECT_STATE_KEY } from "../src/lib/jurisdictions.ts";
 import { createProjectStateStore } from "../src/lib/project-state-store.ts";
 assert.equal(JURISDICTIONS.length, 8);
 assert.equal(new Set(JURISDICTIONS.map(x=>x.code)).size, 8);
@@ -19,6 +19,11 @@ assert.equal(result.hash, "#results");
 assert.equal(withProjectState("/compare?state=QLD#sources"), "/compare#sources");
 assert.equal(withProjectState("/compare?state=NSW", "NT"), "/compare?state=NT");
 for (const link of ["https://supplier.example/path", "//supplier.example/path", "mailto:test@example.com", "javascript:alert(1)", "/\\example.com"]) assert.equal(withProjectState(link, "SA"), link);
+for (const item of JURISDICTIONS) {
+  assert.equal(projectStateFromFundingPath(`/funding/${item.slug}`), item.code);
+  assert.equal(projectStateFromFundingPath(`/funding/${item.slug}/`), item.code);
+}
+for (const path of ["/funding", "/funding/unknown", "/pricing-tool", "/funding/queensland/fake", "//funding/queensland"]) assert.equal(projectStateFromFundingPath(path), undefined);
 const memory = new Map();
 const storage = { getItem: key => memory.get(key) ?? null, setItem: (key,value) => memory.set(key,value), removeItem: key => memory.delete(key) };
 const store = createProjectStateStore(()=>storage);

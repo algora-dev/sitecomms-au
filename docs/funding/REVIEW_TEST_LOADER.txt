@@ -1,0 +1,25 @@
+Review-only loader used because npm dependencies were unavailable. Not part of the application or a framework replacement. Run from the project root. Uses the actual installed TypeScript compiler, not mocked React/Next modules.
+
+import ts from '/opt/nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/typescript.js';
+import { readFile, access } from 'node:fs/promises';
+import { pathToFileURL, fileURLToPath } from 'node:url';
+const root=process.cwd();
+export async function resolve(specifier, context, nextResolve) {
+  if (specifier==='typescript') return {url:'file:///opt/nvm/versions/node/v22.16.0/lib/node_modules/typescript/lib/typescript.js',shortCircuit:true};
+  if (specifier.startsWith('@/')) specifier=pathToFileURL(root+'/src/'+specifier.slice(2)).href;
+  if (specifier.startsWith('.') || specifier.startsWith('file:')) {
+    const base=new URL(specifier,context.parentURL).href;
+    for (const suffix of ['', '.ts', '.tsx', '/index.ts']) {
+      if (!/\.tsx?$/.test(base+suffix)) continue;
+      try { await access(fileURLToPath(base+suffix)); return {url:base+suffix,shortCircuit:true}; } catch {}
+    }
+  }
+  return nextResolve(specifier,context);
+}
+export async function load(url,context,nextLoad) {
+ if (/\.tsx?$/.test(url)) {
+   const text=await readFile(fileURLToPath(url),'utf8');
+   return {format:'module',source:ts.transpileModule(text,{fileName:fileURLToPath(url),compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext,jsx:ts.JsxEmit.ReactJSX}}).outputText,shortCircuit:true};
+ }
+ return nextLoad(url,context);
+}

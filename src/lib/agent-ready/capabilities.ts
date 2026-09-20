@@ -1,3 +1,5 @@
+import { assessFundingPathways, assertFundingResult } from "../funding/assessment";
+import { FUNDING_INPUT_SCHEMA } from "../funding/questions";
 import { assessRequest, assertAssessmentResult } from "./assessment";
 import { searchBusinessContent, SEARCH_INPUT_SCHEMA, assertSearchResult } from "./search";
 import { ASSESSMENT_INPUT_SCHEMA } from "./validation";
@@ -6,6 +8,15 @@ import { ASSESSMENT_INPUT_SCHEMA } from "./validation";
  * This is not a raw protocol tool-list response or an arbitrary command dispatcher.
  */
 export const CAPABILITIES = {
+  assess_funding_pathways: {
+    id: "assess_funding_pathways", category: "assessment", uses_model: false,
+    title: "Find researched Australian funding pathways",
+    description: "Shortlist dated official-source pathways for a structured state, site, applicant and scope. Separates grants, internal approvals, closed rounds, invitation-only routes and repayable loans. Does not determine eligibility, predict awards, submit applications/enquiries or fetch arbitrary sources. Five-state research plus selected national routes; other states have limited coverage.",
+    input_schema: FUNDING_INPUT_SCHEMA,
+    handler: assessFundingPathways,
+    validate_result: assertFundingResult,
+    output_contract: "BusinessResult<FundingPayload> (funding/types.ts)",
+  },
   search_business_content: {
     id: "search_business_content", category: "read", uses_model: false,
     title: "Find public planning guides",

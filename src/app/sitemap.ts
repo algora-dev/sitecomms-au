@@ -5,6 +5,13 @@ import { reviewedDate } from "@/lib/content-meta";
 const routes: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/states", priority: 0.8 },
+  { path: "/funding", priority: 0.85 },
+  { path: "/funding/queensland", priority: 0.85 },
+  { path: "/funding/new-south-wales", priority: 0.85 },
+  { path: "/funding/victoria", priority: 0.85 },
+  { path: "/funding/western-australia", priority: 0.85 },
+  { path: "/funding/south-australia", priority: 0.85 },
+
   { path: "/guides/school-pa-paging-requirements", priority: 0.8 },
   { path: "/guides/compare-pa-system-quotes", priority: 0.8 },
   { path: "/schools", priority: 0.98 },

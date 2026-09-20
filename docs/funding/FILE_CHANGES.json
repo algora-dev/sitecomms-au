@@ -1,0 +1,386 @@
+{
+  "baseline_archive": "sitecomms-au-codebase-2026-09-20.zip",
+  "baseline_sha256": "e966621ca8bf9c4da58203303877e99dd521e73e33b3227fc567b1277767d3f1",
+  "counts": {
+    "input_files": 146,
+    "added_excluding_manifest": 29,
+    "modified": 38,
+    "removed": 0
+  },
+  "note": "This generated manifest excludes its own content hash. All original files remain. See preservation checks and test evidence for validation scope.",
+  "changes": [
+    {
+      "path": "AGENTS.md",
+      "change": "modified",
+      "before_sha256": "96e0dfe16342c1c2d76345a1d8c72df8756147c306de0b3e4a4fc3b50c7b418b",
+      "sha256": "16632967d2302e27706cd67467592829d5b3d3956f3d33bdd9f1cd1294b4ef23"
+    },
+    {
+      "path": "AGENT_HANDOFF_AGENT_READY.md",
+      "change": "modified",
+      "before_sha256": "aabef3408a9d3cb9637a4a065e08c3b55d615da58bbc4c88407cb693fafbaa56",
+      "sha256": "1700baa69900274c02c0666fd13a23a384b9b0ea9e529c02f183e5dd9f5f1d32"
+    },
+    {
+      "path": "AGENT_HANDOFF_PHASE_1.md",
+      "change": "modified",
+      "before_sha256": "57dcbc068f4d2ae44883c8d8cfd0d7d549a58a64db56d4272744f2c55d996b7c",
+      "sha256": "23d8d28a22d59121d3ddf66859b70fcf2550f3988ac9ed57d8d19b2753ee962c"
+    },
+    {
+      "path": "AGENT_HANDOFF_PHASE_2_FUNDING.md",
+      "change": "added",
+      "sha256": "c3702a5f1072b1ae4920ce59bd521a94bf9a1645735b2d231a9c39fcc4557fa4"
+    },
+    {
+      "path": "README.md",
+      "change": "modified",
+      "before_sha256": "c07d172c97fef175aabbe9122d5f894138d60b9945ff5cb09e8351ab66bff492",
+      "sha256": "6a4ffdb633cc73772c28d9f243ce81b7860d010094611236f14423a428fda9f3"
+    },
+    {
+      "path": "SITECOMMS_AU_PHASE_2_FUNDING_CHANGELOG.md",
+      "change": "added",
+      "sha256": "ffa72964b9c6f7491d71026d3d3c18b4a3b09489cfc2d43192ade7e0f0a8e285"
+    },
+    {
+      "path": "docs/agent-ready/CONTRACTS.md",
+      "change": "modified",
+      "before_sha256": "2d290fb531d90d47bb288842f162a6da8e933c4e4b6e887de6c82424f294b499",
+      "sha256": "6b80fcd0dff24961457575103fd9bcec42d970fad8b9ff66bd0892092880d484"
+    },
+    {
+      "path": "docs/agent-ready/OPERATIONS.md",
+      "change": "modified",
+      "before_sha256": "c146ccd2e2e407c63e1b9ef2dad44828a471d66ccd017862822495ec63bebcb9",
+      "sha256": "757df7bbb7abbd616552eccc284de98ab09a144761df92b9be808cb57bfc46b6"
+    },
+    {
+      "path": "docs/funding/CONTRACT_AND_OPERATIONS.md",
+      "change": "added",
+      "sha256": "272a950e4fa1c57b50725b6575a59b0ed94c3de4978b74c2a47c95a7ed8e3902"
+    },
+    {
+      "path": "docs/funding/EXECUTED_TEST_OUTPUT.txt",
+      "change": "added",
+      "sha256": "8db13bfc6f1717a5eeb54ff0da4b3fd96815c29b0cd08b80790ed83de59c308e"
+    },
+    {
+      "path": "docs/funding/PRESERVATION_CHECKS.json",
+      "change": "added",
+      "sha256": "9cf2101f2a126ffa0eba8129c5128b7e4d0738166151e4d315537947d7675e1d"
+    },
+    {
+      "path": "docs/funding/PROFILE_AND_PLAN.md",
+      "change": "added",
+      "sha256": "d3937ad11caf67b6c9f3a8559f549b26b62d2331d568469c7b089193f79a1c1c"
+    },
+    {
+      "path": "docs/funding/RESEARCH_AND_COVERAGE.md",
+      "change": "added",
+      "sha256": "890d780a347c8bd562a254417953cb27df2fb64edaf0b8d5eb5a400e83137a0d"
+    },
+    {
+      "path": "docs/funding/REVIEW_TEST_LOADER.txt",
+      "change": "added",
+      "sha256": "133cdcd9496f8b2982bb95920681d0e18f31b5b1a18c3492cd9826f39086b02b"
+    },
+    {
+      "path": "docs/funding/VALIDATION.md",
+      "change": "added",
+      "sha256": "eb35f00aaf0db34852b8cefdd84dbd9a462d20af91df254048d2633f91c7439f"
+    },
+    {
+      "path": "package.json",
+      "change": "modified",
+      "before_sha256": "ce6d0da0bcc546139ebe4c8b3993c0ad22982b97bf97e73de6df32bd1b5bed62",
+      "sha256": "b59a31d34faf6ff55a96b5c7e5bd8b69ee72a672464e08f0aa1f5c9e1ca1616f"
+    },
+    {
+      "path": "scripts/test-aged-care.mjs",
+      "change": "modified",
+      "before_sha256": "456f83d849d9ab32d5c83936143b3ca9faf4e37418c142abb81a2404ea1234b9",
+      "sha256": "cc6811d9ab1c46213fd888670294b9a1ccff161fbaafdc016f65e33f7a5d2bee"
+    },
+    {
+      "path": "scripts/test-agent-ready.mjs",
+      "change": "modified",
+      "before_sha256": "c266dbb573cc2cbf1982adfdc099136c62d3c8f4ae7e5b343808b4074978c1e6",
+      "sha256": "cf1e07bbe2548fe6f22d2c05aa440b0e9a79cbbe3bb6548775cac8c15486f3ea"
+    },
+    {
+      "path": "scripts/test-content.mjs",
+      "change": "modified",
+      "before_sha256": "8f8032fd941f2a817a55d23d6f2643cdc9db06dc4387f6fe439eedefeb5d97c5",
+      "sha256": "1bc3410265f5817245c3a295cadb3b978b32cf285caf1b047aff15df8b3d6136"
+    },
+    {
+      "path": "scripts/test-funding.mjs",
+      "change": "added",
+      "sha256": "3177ced8f584f1e1a0e7d28a7a3b8f5cdda620d9cb9c72346f80df68288bed71"
+    },
+    {
+      "path": "scripts/test-state.mjs",
+      "change": "modified",
+      "before_sha256": "4c4602598298dd3590ee22ba65153d21f1ae592e8071414dbb89039cababfcc3",
+      "sha256": "6bbfa459a8eeea92adaf3a5f13e5a0d2e0bdb5805d009c78c819c0d55d4463f3"
+    },
+    {
+      "path": "src/app/api/business/v1/funding/route.ts",
+      "change": "added",
+      "sha256": "d5443346e52bda7a108dfa500e10e4886b2023556a54f03705770927e06be203"
+    },
+    {
+      "path": "src/app/funding/new-south-wales/page.tsx",
+      "change": "added",
+      "sha256": "ec837719a021876cf0db4a581cafbba64f381d408584476263891841605ae1e7"
+    },
+    {
+      "path": "src/app/funding/page.tsx",
+      "change": "added",
+      "sha256": "12ccf44dbc43783f9e530e0126a2fae00c165a0ec696a98d3d0036a2fb504648"
+    },
+    {
+      "path": "src/app/funding/queensland/page.tsx",
+      "change": "added",
+      "sha256": "4a93948fefc97f1eb710e0a4174d6a703d75de6ba5be26c0af9c51da0ecc860e"
+    },
+    {
+      "path": "src/app/funding/south-australia/page.tsx",
+      "change": "added",
+      "sha256": "600c49f2042d167517f4c5ac5174e1b36970334dda9903061285c825bd505024"
+    },
+    {
+      "path": "src/app/funding/victoria/page.tsx",
+      "change": "added",
+      "sha256": "4d679fdcb3fbd8fb38f5cb8dfc308cbc4daa72825183346118619686021f0964"
+    },
+    {
+      "path": "src/app/funding/western-australia/page.tsx",
+      "change": "added",
+      "sha256": "a723b1a304e66cf223a43a4e6bc1c7035a87e783925b5775281380a0a10f3213"
+    },
+    {
+      "path": "src/app/guides/ip-paging-network-readiness/page.tsx",
+      "change": "modified",
+      "before_sha256": "d8c0806000d6cce0f9d863f43282b843137a5f414ad71f8d0eca93379a879aa1",
+      "sha256": "24421802f3459c5998ab9031d9ae5f414a9ceee476a689b6616fa4dcb8e5727c"
+    },
+    {
+      "path": "src/app/guides/school-pa-paging-requirements/page.tsx",
+      "change": "modified",
+      "before_sha256": "ff1690f04762c8078d9c04dd62f5f8fec99a8c6d5cec9deceede3c5835c53101",
+      "sha256": "daf180753703fb9c77667e24a5b7664ef825c8d3699ceebbc73fc282ffb63725"
+    },
+    {
+      "path": "src/app/guides/school-pa-specification-checklist/page.tsx",
+      "change": "modified",
+      "before_sha256": "117e25fb65308e3729182e9c9842ff0d1ee317f2544935e681fc05430aa34a34",
+      "sha256": "73a40a9deadb0a813c6eda74f5f0594cd6d2ea3c73960dcf06e2bee3ed08068a"
+    },
+    {
+      "path": "src/app/industries/aged-care-retirement-villages/page.tsx",
+      "change": "modified",
+      "before_sha256": "8c75cd86d7ed29828c69ade6f01ba76d3d02ea1447c23eeef49e6b637bbf3cce",
+      "sha256": "fc29c2331fb73889adb48e8f18c76e8e2d637dffdef7dddcdac04ea49ae28a94"
+    },
+    {
+      "path": "src/app/integrations/page.tsx",
+      "change": "modified",
+      "before_sha256": "c372845f408407054e8b472eddb7bcca756f9f63f95b359cbf74745ff5685a95",
+      "sha256": "70bdf21689165a162aca02d2241e47afc838afb590d1692972c25489a1d987fa"
+    },
+    {
+      "path": "src/app/page.tsx",
+      "change": "modified",
+      "before_sha256": "977cbe7838eb570ab0ea44817cefd093c7ee261e0ef6b632ab903a018e389ced",
+      "sha256": "4d8895087f7753f4e23e24c3506a485ad6d6787ce7dad110740c623de1643aa6"
+    },
+    {
+      "path": "src/app/schools/page.tsx",
+      "change": "modified",
+      "before_sha256": "39dbecb7609fa9d7d16e996d021ac9f7b03b37f3927dcd0dd338dc8915c574c5",
+      "sha256": "608c80707bffd210395777fbb4b3eff9f70f07de5ef0917f9a6734e8a26e4f32"
+    },
+    {
+      "path": "src/app/sitemap.ts",
+      "change": "modified",
+      "before_sha256": "78120f2d3d78a3651cd4f11986b2f6d99069ecfb8399f3327f10cdd858a110ca",
+      "sha256": "2c15ce192ddab3e7a01225855c83de5bb2778d4e95d257fe9843376422482dcd"
+    },
+    {
+      "path": "src/app/states/page.tsx",
+      "change": "modified",
+      "before_sha256": "aefee4eea14b9eb0eb156ff8ab032af5e8ef1ec7ee09f28e0b22f1d42f6812ff",
+      "sha256": "accfe21d9268ddecda651e649e4708c1dfd7a9dd47b7ff280de7a4bc1dbb5426"
+    },
+    {
+      "path": "src/app/systems/emergency-lockdown/page.tsx",
+      "change": "modified",
+      "before_sha256": "304c617684ff7bb13bdafd389156de127d1ff28162d4bf160a41eb480854c669",
+      "sha256": "9c0e1e816c8478f328ec3c9d9a4bb7bd47f6997b3699b4d5e4abcc7dcb4064de"
+    },
+    {
+      "path": "src/app/systems/ip-intercom/page.tsx",
+      "change": "modified",
+      "before_sha256": "0d62d6e013088433ce0731c20684a75e9c24eaa2670ae85bf601fd65cbb89d9c",
+      "sha256": "22d054ec6a1e3fc9f7665dcdb165019bcf6b522c9381b679d2f9e7055d05b1df"
+    },
+    {
+      "path": "src/app/systems/ip-paging-pa/page.tsx",
+      "change": "modified",
+      "before_sha256": "23e0880436deb889b97439088490b2187605ed9eb1ece8ec7f94c22bf42fe584",
+      "sha256": "d8354c2d5f3df79e02077ca0020a18a0faa9dd8282dd6a032a2c305891f5c482"
+    },
+    {
+      "path": "src/app/systems/school-bell-announcements/page.tsx",
+      "change": "modified",
+      "before_sha256": "4e02cfcb1dcf7ea7a4218a8776773e1239f43c10b552e9618e93fe07d1eccdd8",
+      "sha256": "6f261fcf064c649d94ef345404486661e45a4e0a80c0331c9040ad8753cad577"
+    },
+    {
+      "path": "src/app/tools/funding-check/FundingCheckTool.tsx",
+      "change": "added",
+      "sha256": "603a036267c40c30b3724e8dedb68080db9c974423256889428ea71b67e242e9"
+    },
+    {
+      "path": "src/app/tools/funding-check/page.tsx",
+      "change": "modified",
+      "before_sha256": "115409c443af74f82433e2e3a3df98190a675ec652d1f466f3888f3fbb1cc3ab",
+      "sha256": "40bcfb5fbed69d0fd0a009b6c2d1fa803a8b8e7c2fd4ab8537012da395b5bc81"
+    },
+    {
+      "path": "src/app/tools/page.tsx",
+      "change": "modified",
+      "before_sha256": "c285bb9dc7dbca6f015e5e28499668f25ca532d1a33aadd59b3f6d6e59f74539",
+      "sha256": "4be9be250be350e370e99f9d50fa9a78ecdbe3cfac35dba843dccc95bdc7b2e7"
+    },
+    {
+      "path": "src/components/funding/FundingPathwayCard.tsx",
+      "change": "added",
+      "sha256": "c93648256e61611d06143e8a11839b44928ad5fe0fb137e6f6cb39a149beed7b"
+    },
+    {
+      "path": "src/components/funding/StateFundingGuide.tsx",
+      "change": "added",
+      "sha256": "6a01a16a54be0b1b7e31479734a68ddfc3f9048372c8a8e7a6417f43c137af61"
+    },
+    {
+      "path": "src/components/project-state.tsx",
+      "change": "modified",
+      "before_sha256": "fd667a655701cf8b592a7bd135acdb72d41e8b01b609b18c9d03b12eea64e1c9",
+      "sha256": "b2682bb7eda83fb28029c719da51f2cbaf568f4298e2d9baa1dbfee8f26413ed"
+    },
+    {
+      "path": "src/components/site-footer.tsx",
+      "change": "modified",
+      "before_sha256": "739857943056822e7bed47b59904222f499bd3b404b8e0cb084969f5f868b203",
+      "sha256": "b82a3675968731a555ee46a8517e47d11c165ff8a9bc5efd3d0c2b0717624908"
+    },
+    {
+      "path": "src/components/tool-cross-sell.tsx",
+      "change": "modified",
+      "before_sha256": "40fcaa8dacdb265b6dae2b29782ddb3ec27de2c6abbb9008dee5faf6081cff06",
+      "sha256": "65ee0bc9dc2c0c27782b0e2e8c1e195171ff96ca7bdf0e30ee7b301c5f1fc775"
+    },
+    {
+      "path": "src/lib/agent-ready/assessment.ts",
+      "change": "modified",
+      "before_sha256": "4e4a8b5f4399de5265e6563604a602b959377a0d37758f958b57e8824c43d86c",
+      "sha256": "80c0fc761b44d26197fbb13d3a2e661621dc95de6121e1c0bc8458c37bbc5697"
+    },
+    {
+      "path": "src/lib/agent-ready/capabilities.ts",
+      "change": "modified",
+      "before_sha256": "82718216798796dc31ede4078b69925bb7f026df400c7df6260a4672790e37e2",
+      "sha256": "b69ff7d05d37a3d2f59544ad8c3c298f7d28bb94d8c0b2092c0116072623549a"
+    },
+    {
+      "path": "src/lib/agent-ready/content.ts",
+      "change": "modified",
+      "before_sha256": "16e90f79d182b1072499f1e03867540f873509a5d25c2a757e9dbdc73de7f14b",
+      "sha256": "bf1d4c8df546021f2c40f25d9b89c072d8450e7ea7eba37ff88aad73e53b9d32"
+    },
+    {
+      "path": "src/lib/agent-ready/contracts.ts",
+      "change": "modified",
+      "before_sha256": "b0115c7e38acb66d51abe5a982dfcd0a79772c59e162dcd43a7dfb6236159189",
+      "sha256": "cd3080725fd57a54b90a0124cbce36b6e99e5d46dcc9b8c809f3e21ecb9268db"
+    },
+    {
+      "path": "src/lib/agent-ready/http.server.ts",
+      "change": "modified",
+      "before_sha256": "a0084787ac9b60263f8d847f860ccc5c547a034a21da5cc2b64ca992899bf2fc",
+      "sha256": "aaa32239831104980354a985e93fd2c0e366f83150641ebdbeca0a7508ca6f80"
+    },
+    {
+      "path": "src/lib/agent-ready/sources.ts",
+      "change": "modified",
+      "before_sha256": "bfc5ce09811afd84e752563421a7e8b881a44aa0a751e1fa5aca19ff34c29aee",
+      "sha256": "771f041ab5e0fae3ca235297458208db147252822831849483f32b4427957e62"
+    },
+    {
+      "path": "src/lib/content-meta.ts",
+      "change": "modified",
+      "before_sha256": "586392a3b025f1e87fe84b8d110145d8b9e91f0a11a467b39c85cb0fe4c1f9e3",
+      "sha256": "8b4faef379068bf88bffbf4e0b29f5e4df06657cd497b0cce6692686a29ceb6e"
+    },
+    {
+      "path": "src/lib/funding/assessment.ts",
+      "change": "added",
+      "sha256": "9983dbd3765b25d23c88c9711b826f8e14d80246db64f75c7b2b0e767660ea76"
+    },
+    {
+      "path": "src/lib/funding/catalogue.ts",
+      "change": "added",
+      "sha256": "eb93792644ce97b27a248af88c1549b9ffa0ae732898512f9c8824dfaa58d1b7"
+    },
+    {
+      "path": "src/lib/funding/guides.ts",
+      "change": "added",
+      "sha256": "12361a5d784c3d58c236d6329d5b300f81b011141db2cce07a2cf392444120a8"
+    },
+    {
+      "path": "src/lib/funding/questions.ts",
+      "change": "added",
+      "sha256": "a8418b51499809a1bdbd435f01b0fa0658048e9e267648a888b76a9cab658b7c"
+    },
+    {
+      "path": "src/lib/funding/types.ts",
+      "change": "added",
+      "sha256": "34e5323ed3b274d386ec3910356c6876788e23d144c6b925cc71795a76be056b"
+    },
+    {
+      "path": "src/lib/jurisdictions.ts",
+      "change": "modified",
+      "before_sha256": "719440a52d9e10ec5fb4681813e1c8b351b336ced67ab6a321bf6de10407acca",
+      "sha256": "72f13ddc948957a2ff5fff661f286aa9425ddf7fc68563b331381225f650ae84"
+    },
+    {
+      "path": "tests/funding/README.md",
+      "change": "added",
+      "sha256": "41f7a6b9dea0db9d71ac9ae680a247c2c2fa6930b55ca64f817b3ab9a129d92f"
+    },
+    {
+      "path": "tests/funding/example-request.json",
+      "change": "added",
+      "sha256": "1eec094516d339a456fa4fa14abfc2faf779790a60279466cce0288fa6b5cd86"
+    },
+    {
+      "path": "tests/funding/example-response.json",
+      "change": "added",
+      "sha256": "ed8678b414d185d881ac2a4f6b23b116742953fb7a743e96b04e7c6e4e3e748b"
+    },
+    {
+      "path": "tsconfig.agent-ready.json",
+      "change": "modified",
+      "before_sha256": "c17013c83d9eb48e3fefd4a61a997089a7f1268f956e94b36d19df2659251301",
+      "sha256": "64685fef470a71c76a736c03ffd4e73bed5e6023978e4dc40ab55c5cf78fb2a4"
+    },
+    {
+      "path": "tsconfig.funding.json",
+      "change": "added",
+      "sha256": "208b69ed9478edb16e853dd8711e76b28b97212fe490cf1da896cb296722f864"
+    }
+  ]
+}

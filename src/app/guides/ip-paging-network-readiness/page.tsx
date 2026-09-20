@@ -133,7 +133,7 @@ export default function NetworkReadinessPage() {
       <h2 id="funding">Funding note for schools</h2>
       <p>
         Cabling and switch work tied to a paging upgrade may form part of the same property or capital project as the paging system itself. The applicable pathway varies by school sector and jurisdiction. See the{" "}
-        <Link href="/tools/funding-check">funding pathways page</Link> for the current SiteComms guidance status.
+        <Link href="/tools/funding-check">funding pathways page</Link> for researched state and national pathways with official sources and clear limitations.
       </p>
       <h2 id="after">After the checklist</h2>
       <p>

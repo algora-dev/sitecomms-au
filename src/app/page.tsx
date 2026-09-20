@@ -46,8 +46,8 @@ const INTENT_CARDS = [
   },
   {
     href: "/tools/funding-check",
-    title: "Prepare for funding research",
-    desc: "See the status of SiteComms funding guidance and the Australian sector and jurisdiction factors that shape the relevant pathway.",
+    title: "Find researched funding routes",
+    desc: "Check selected state and national routes by organisation and project scope, with official sources, current-status limits and practical next steps.",
   },
   {
     href: "/tools/finance-check",
@@ -74,7 +74,7 @@ const UTILITY_LINKS = [
   },
   {
     href: "/tools/funding-check",
-    label: "Funding planning status",
+    label: "Funding pathway checker",
     event: "funding_check_cta_clicked",
   },
   {

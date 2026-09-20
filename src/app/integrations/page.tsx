@@ -24,13 +24,14 @@ export default function IntegrationPage() {
       <h2>What a planning result means</h2>
       <p>Pricing results retain the original provisional AUD assumptions, exclude GST and distinguish the modelled scope from unresolved site costs. A result is not a supplier quote, an acoustic design, funding approval or a promise that a particular product is available in your area. Source-review dates are not refreshed just because a result is generated.</p>
       <h2>Funding, finance and enquiries</h2>
-      <p>State-specific funding matching and lender or borrowing-authority decisions are not available through these capabilities. You can prepare a project through the ordinary tools and submit a separate reviewed enquiry. SiteComms replies with suitable providers&apos; public contact details; it does not forward your enquiry to those providers.</p>
+      <p>A third capability now shortlists researched funding pathways for QLD, NSW, VIC, WA and SA plus selected national programmes. It preserves uncertainty, source dates and the distinction between grants, approvals and loans. It does not determine funding eligibility, lender approval or borrowing authority. You can prepare a project through the ordinary tools and submit a separate reviewed enquiry. SiteComms replies with suitable providers&apos; public contact details; it does not forward your enquiry to those providers.</p>
       <h2>For integration developers</h2>
-      <p>The selected testing profile uses <code>GET /api/business/v1/search</code> and <code>POST /api/business/v1/assessments</code>, with server-side authentication and no browser/CORS access. Use the repository&apos;s Agent-Ready contracts and handoff for setup, request examples, limits and test requirements. No API key belongs in a public browser bundle.</p>
+      <p>The selected testing profile uses <code>GET /api/business/v1/search</code> and <code>POST /api/business/v1/assessments</code> and <code>POST /api/business/v1/funding</code>, with server-side authentication and no browser/CORS access. Use the repository&apos;s Agent-Ready contracts and handoff for setup, request examples, limits and test requirements. No API key belongs in a public browser bundle.</p>
     </section>
     <div className="mt-7 flex flex-wrap gap-3">
       <Link href="/guides" className="sc-btn-secondary">Browse and search guides</Link>
       <Link href="/pricing-tool" className="sc-btn-primary">Use the pricing tool</Link>
+      <Link href="/tools/funding-check" className="sc-btn-secondary">Check funding pathways</Link>
       <Link href="/contact" className="sc-btn-secondary">Review an enquiry</Link>
     </div>
   </div>;

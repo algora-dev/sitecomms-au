@@ -1,5 +1,7 @@
 # Agent handoff — SiteComms Australia Agent-Ready Foundation
 
+> Historical handoff. The current source baseline is Phase 2 funding, 20 September 2026. Follow `AGENT_HANDOFF_PHASE_2_FUNDING.md` for current capabilities, counts and release gates; preserve the earlier safety controls.
+
 Use **this complete directory-preserving source tree** as the next working baseline, replacing the earlier Phase 1 source after review. This is implemented code, not only a proposal. Keep the supplied design/theme/assets, existing Australian content and pricing assumptions. No deployment, real email, database mutation or indexing change is authorised by this package.
 
 Start with `SITECOMMS_AU_AGENT_READY_CHANGELOG.md`, then `docs/agent-ready/PROFILE_AND_PLAN.md`, `CONTRACTS.md`, `OPERATIONS.md` and `VALIDATION.md`. The supplied standard is retained verbatim at `docs/agent-ready/STANDARD_0.1.0.md`. Historical Phase 1 documents are reference history, not instructions to restore superseded logging behaviour.

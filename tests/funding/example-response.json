@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "business_id": "sitecomms-au",
+  "capability": "assess_funding_pathways",
+  "generated_at": "2026-09-20T12:00:00.000Z",
+  "status": "requires_human_review",
+  "result_type": "qualification",
+  "summary": "Review the possible routes and their conditions below. No funding eligibility or approval has been determined.",
+  "result": {
+    "catalogue_version": "2026-09-20.1",
+    "rule_version": "1.0.0",
+    "inputs": {
+      "state": "QLD",
+      "site_type": "community",
+      "applicant_type": "not_for_profit",
+      "project_focus": "communications",
+      "stage": "planning",
+      "tenure": "owned",
+      "community_benefit": "yes",
+      "already_grant_funded": "no",
+      "building_component": "unknown",
+      "core_service": "unknown",
+      "accessibility_evidence": "unknown",
+      "hearing_evidence": "unknown",
+      "funded_preschool": "unknown",
+      "early_service_type": "unknown",
+      "adds_places": "unknown",
+      "eligible_nsw_preschool": "unknown",
+      "child_adjustment": "unknown",
+      "registered_care_provider": "unknown",
+      "targeted_care_need": "unknown",
+      "invitation": "unknown",
+      "gaming": "unknown"
+    },
+    "issues": [],
+    "coverage": "five_state_review",
+    "coverage_note": "Selected national and Queensland pathways reviewed on 20 September 2026. This is not an exhaustive state grants register.",
+    "pathways": [
+      {
+        "id": "qld-gcbf-127",
+        "title": "Queensland Gambling Community Benefit Fund — Round 127",
+        "route_type": "grant",
+        "route_label": "Grant programme",
+        "match": "potential_pathway",
+        "availability": "open_at_review",
+        "availability_label": "Within published application dates — recheck with funder",
+        "freshness": "within_review_period",
+        "section": "investigate",
+        "facts": "The fund supports eligible not-for-profit community equipment and facility projects. Schools themselves cannot apply; eligible P&C/P&F associations may apply in their own capacity.",
+        "interpretation": "A community-use PA, announcement or intercom project may be worth scoping if the actual applicant and expenditure satisfy the rules. Parent-body status is not a workaround for every school project.",
+        "conditions": [
+          "Check legal entity/auspice, Queensland community benefit, ABN, bank details, quotes and permission for works.",
+          "Do not order, pay a deposit or sign contracts before approval under the programme rules.",
+          "Retirement-living/body-corporate facility improvements and ordinary operating costs are excluded; check all item restrictions."
+        ],
+        "reasons": [
+          "Round 127 was open at the research date and closes 28 September 2026. Confirm the funder’s exact cut-off on the closing day."
+        ],
+        "questions": [],
+        "next_step": "Read the current round and item rules, identify the actual legal applicant, and ask the funder about the proposed communications items before any commitment.",
+        "source_ids": [
+          "qld-gcbf",
+          "qld-gcbf-eligibility",
+          "qld-gcbf-items"
+        ],
+        "reviewed_at": "2026-09-20",
+        "review_due_at": "2026-09-27",
+        "deadline": "2026-09-28",
+        "published_funding_terms": "Published Round 127 ceiling: up to A$35,000. This is a programme limit, not an expected or approved award for this project.",
+        "award_amount": null
+      }
+    ],
+    "missing_fields": [],
+    "grant_award": null,
+    "approval": "not_determined"
+  },
+  "sources": [
+    {
+      "source_id": "qld-gcbf",
+      "title": "Gambling Community Benefit Fund: current round",
+      "authority": "Queensland Department of Justice",
+      "owner": "SiteComms editorial catalogue; programme decisions remain with the cited authority",
+      "reference_path": "/funding",
+      "reference_url": "https://www.justice.qld.gov.au/initiatives/community-grants",
+      "source_version": "2026-09-20.1:qld-gcbf",
+      "reviewed_at": "2026-09-20",
+      "review_due_at": "2026-09-27",
+      "approval_status": "provisional",
+      "freshness": "within_review_period"
+    },
+    {
+      "source_id": "qld-gcbf-eligibility",
+      "title": "GCBF eligibility requirements",
+      "authority": "Queensland Department of Justice",
+      "owner": "SiteComms editorial catalogue; programme decisions remain with the cited authority",
+      "reference_path": "/funding",
+      "reference_url": "https://www.justice.qld.gov.au/initiatives/community-grants/guidelines/eligibility",
+      "source_version": "2026-09-20.1:qld-gcbf-eligibility",
+      "reviewed_at": "2026-09-20",
+      "review_due_at": "2026-10-20",
+      "approval_status": "provisional",
+      "freshness": "within_review_period"
+    },
+    {
+      "source_id": "qld-gcbf-items",
+      "title": "GCBF eligible and ineligible items",
+      "authority": "Queensland Department of Justice",
+      "owner": "SiteComms editorial catalogue; programme decisions remain with the cited authority",
+      "reference_path": "/funding",
+      "reference_url": "https://www.justice.qld.gov.au/initiatives/community-grants/guidelines/items",
+      "source_version": "2026-09-20.1:qld-gcbf-items",
+      "reviewed_at": "2026-09-20",
+      "review_due_at": "2026-10-20",
+      "approval_status": "provisional",
+      "freshness": "within_review_period"
+    }
+  ],
+  "limitations": [
+    "This is a researched pathway shortlist, not a grant application, eligibility decision, approval, award or funding probability.",
+    "Programme facts come from the linked official sources. Communications-project relevance is SiteComms interpretation and requires the funder’s confirmation.",
+    "This is a dated editorial catalogue, not a live lookup of every grant. No result means no route identified in this catalogue, not that funding does not exist.",
+    "No grant amount is calculated or deducted from your project estimate. Do not combine schemes for the same cost or assume retrospective reimbursement.",
+    "No enquiry is sent and no information is forwarded to providers by running this assessment."
+  ],
+  "next_actions": [
+    {
+      "type": "view_page",
+      "label": "Read the research, scope and state guides",
+      "path": "/funding"
+    },
+    {
+      "type": "review_enquiry_form",
+      "label": "Review a project enquiry to SiteComms — no automatic submission",
+      "path": "/tools/funding-check#project-enquiry"
+    }
+  ]
+}
