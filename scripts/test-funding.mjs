@@ -53,6 +53,12 @@ await test("Unknown fields cannot override rules, permissions, date, source or e
 await test("Missing optional facts remain unknown; no fabricated invitation or eligibility", () => {
   const r = result(care); assert.equal(r.result.inputs.invitation, "unknown"); assert.equal(get("national-accap-critical", care).match, "confirm_details"); assert.equal(r.result.grant_award, null);
 });
+await test("Public shortlist does not require funder-specific detail questions up front", () => {
+  const p = get("qld-gcbf-127", { tenure: "unknown", community_benefit: "unknown", core_service: "unknown", already_grant_funded: "unknown" });
+  assert.equal(p.section, "investigate");
+  assert.equal(p.match, "potential_pathway");
+  assert.ok(p.questions.includes("tenure"));
+});
 await test("Conflicting building-scope answers require correction", () => { assert.ok(result({ project_focus: "building", building_component: "no" }).result.issues.some(i => i.code === "conflict")); });
 await test("QLD community NFP route is possible but grant award stays unknown", () => {
   const p = get("qld-gcbf-127"); assert.equal(p.section, "investigate"); assert.equal(p.match, "potential_pathway"); assert.match(p.published_funding_terms, /35,000/); assert.equal(p.award_amount, null);
@@ -113,13 +119,13 @@ await test("SA Flying Start requires additional places and eligible operator, no
   assert.equal(get("sa-flying-start", early).match, "potential_pathway");
   assert.equal(get("sa-flying-start", { ...early, adds_places: "no" }).match, "outside_scope");
   for (const early_service_type of ["government", "for_profit", "family_day_care"]) assert.equal(get("sa-flying-start", { ...early, early_service_type }).match, "outside_scope");
-  assert.equal(get("sa-flying-start", { ...early, early_service_type: "unknown" }).match, "confirm_details");
+  assert.equal(get("sa-flying-start", { ...early, early_service_type: "unknown" }).match, "potential_pathway");
 });
 await test("SA published funding share is not applied to communications estimate", () => { const p = get("sa-flying-start", early); assert.match(p.published_funding_terms, /not 50% back/); assert.equal(p.award_amount, null); });
 await test("SA Julia Farr access route preserves exclusions", () => {
   assert.equal(get("sa-julia-farr", inclusion).match, "potential_pathway");
   for (const patch of [{ gaming: "yes" }, { already_grant_funded: "yes" }, { site_type: "government_school", applicant_type: "school_authority" }, { site_type: "tertiary", applicant_type: "other_government" }, { project_focus: "communications" }]) assert.equal(get("sa-julia-farr", { ...inclusion, ...patch }).match, "outside_scope");
-  assert.equal(get("sa-julia-farr", { ...inclusion, gaming: "unknown" }).match, "confirm_details");
+  assert.equal(get("sa-julia-farr", { ...inclusion, gaming: "unknown" }).match, "potential_pathway");
 });
 await test("SA institution exclusion does not silently equate a venue with every separate legal applicant", () => {
   for (const site_type of ["government_school", "tertiary", "early_childhood"]) assert.equal(get("sa-julia-farr", { ...inclusion, site_type }).match, "confirm_details");
@@ -190,7 +196,7 @@ await test("Five state pages and shared guide search refer to real reviewed rout
 await test("Form and registry invoke the shared domain handler, with no ad hoc fetch", () => {
   assert.equal(CAPABILITIES.assess_funding_pathways.handler, assess);
   const ui = readFileSync(new URL("../src/app/tools/funding-check/FundingCheckTool.tsx", import.meta.url), "utf8");
-  assert.match(ui, /assessFundingPathways\(inputs/); assert.match(ui, /fingerprint/); assert.match(ui, /visibilitychange/); assert.match(ui, /detailState === state/); assert.match(ui, /ProjectHelpLauncher/); assert.ok(!ui.includes('fetch('));
+  assert.match(ui, /assessFundingPathways\(inputs/); assert.match(ui, /fingerprint/); assert.match(ui, /visibilitychange/); assert.match(ui, /const fingerprint = JSON\.stringify\(inputs\)/); assert.match(ui, /ProjectHelpLauncher/); assert.ok(!ui.includes('fetch('));
 });
 const oldEnv = Object.fromEntries(["SC_AGENT_READY_HTTP_ENABLED", "SC_AGENT_READY_HTTP_KEY", "SC_AGENT_READY_LOG_EVENTS"].map(k => [k, process.env[k]]));
 const key = randomBytes(32).toString("hex");

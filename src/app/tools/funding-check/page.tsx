@@ -6,11 +6,11 @@ import FundingCheckTool from "./FundingCheckTool";
 export const metadata = buildMetadata({ title: "Australian Funding Pathway Checker — Schools, Aged Care and Community Sites", description: "Find researched funding and project-approval routes by state, site, applicant and project scope. QLD, NSW, VIC, WA and SA coverage; no eligibility or grant award promised.", path: "/tools/funding-check" });
 export default function FundingCheckPage() {
   return <div>
-    <AuthorityHero eyebrow="Australian project funding" title="Find the right funding conversation for your project"
-      description="Start with the state, the legal applicant and the work you need. We separate possible grant routes from internal capital processes, closed rounds and repayable loans — without pretending a PA or intercom project is automatically eligible."
+    <AuthorityHero eyebrow="Australian project funding" title="See whether your project has a funding path"
+      description="Answer five simple project questions. We’ll show the researched funding routes that may be worth pursuing, the official source and the next practical step."
       tags={["Queensland", "NSW", "Victoria", "WA", "South Australia", "Selected national routes"]}
       primaryCta={{ label: "Check a project", href: "#funding-tool" }} secondaryCta={{ label: "Read the state funding guides", href: "/funding" }}
-      reviewed={reviewedLabel("/tools/funding-check")} note="Research-led pathways, not grant approval or a live grants feed" />
+      reviewed={reviewedLabel("/tools/funding-check")} note="A quick funding-pathway check using reviewed official sources" />
     <div className="sc-container max-w-4xl pb-16 pt-5">
       <FundingCheckTool />
       <section className="mt-10 text-sm leading-relaxed text-[var(--sc-slate)]"><h2 className="text-xl font-bold text-[var(--sc-blue-900)]">Before you commit to any expenditure</h2>

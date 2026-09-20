@@ -98,7 +98,12 @@ function assessPathway(pathway: FundingPathway, inputs: FundingInput, now: Date,
   for (const rule of pathway.rules) {
     const value = inputs[rule.field];
     if (!value || value === "unknown") {
-      questions.push(rule.field); reasons.push(rule.message); needsReview = true;
+      questions.push(rule.field);
+      reasons.push(rule.message);
+      // The public checker intentionally asks only the five high-value project
+      // questions. Funder-specific detail fields remain conditions to confirm
+      // after a pathway is found; they do not block an initial shortlist.
+      if (REQUIRED_FUNDING_FIELDS.includes(rule.field)) needsReview = true;
     } else if (!rule.allowed.includes(value)) {
       reasons.push(rule.message);
       if (rule.mismatch === "review") needsReview = true; else outside = true;
@@ -118,7 +123,12 @@ function assessPathway(pathway: FundingPathway, inputs: FundingInput, now: Date,
     outside = true; reasons.push("The records in this capital/equipment catalogue do not substantiate ordinary subscriptions, staffing or continuing operating costs.");
   }
   if (pathway.route_type === "grant" && inputs.tenure !== "owned" && inputs.tenure !== "consent") {
-    needsReview = true; questions.push("tenure"); reasons.push("Resolve property control, any lease requirements and written owner permission where relevant to the proposed works.");
+    questions.push("tenure");
+    reasons.push("Resolve property control, any lease requirements and written owner permission where relevant to the proposed works.");
+    // Unknown tenure is a follow-up condition, not a reason to make the initial
+    // public questionnaire longer. An explicit unresolved/pending answer still
+    // needs review when supplied through a structured integration.
+    if (inputs.tenure && inputs.tenure !== "unknown") needsReview = true;
   }
   if (pathway.route_type === "grant" && inputs.already_grant_funded === "yes") {
     needsReview = true; reasons.push("The same cost must not be double-funded. Obtain written programme advice; this tool does not aggregate grant amounts or authorise co-funding.");

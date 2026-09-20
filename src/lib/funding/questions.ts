@@ -11,19 +11,19 @@ export const FUNDING_FIELDS = {
     ["sport_recreation", "Sport / recreation facility"], ["healthcare", "Other healthcare facility"], ["tertiary", "University / TAFE / tertiary"],
     ["commercial", "Commercial / industrial / business site"], ["other", "Another type of site"],
   ] as const },
-  applicant_type: { label: "Who would apply or approve the project?", options: [
+  applicant_type: { label: "Who owns/runs the site or would apply?", options: [
     ["unknown", "Not sure yet"], ["school_authority", "School / school system / authorised school body"],
     ["school_parent_body", "School parents’ association (P&C / P&F)"], ["not_for_profit", "Incorporated not-for-profit / charity"],
     ["local_government", "Local council"], ["other_government", "Other government organisation"],
     ["private_business", "For-profit operator / business"], ["social_enterprise", "Certified social enterprise"], ["unincorporated_group", "Unincorporated not-for-profit group"], ["individual", "Individual"],
   ] as const },
-  project_focus: { label: "What is the main project?", options: [
+  project_focus: { label: "What is the project?", options: [
     ["unknown", "Not sure yet"], ["communications", "Replace or upgrade PA / paging / bells / intercom"],
     ["building", "New building, extension or substantial refurbishment"], ["maintenance", "Repair or maintenance"],
     ["accessibility", "A specific disability-access or hearing-access adjustment"], ["urgent_failure", "Urgent infrastructure failure / safety issue"],
     ["operating_costs", "Subscriptions, staffing or other ongoing costs"],
   ] as const },
-  stage: { label: "How far has the project progressed?", options: [
+  stage: { label: "What stage is the project at?", options: [
     ["unknown", "Not sure"], ["planning", "Planning only"], ["quotes", "Getting quotes — no purchase or contract yet"],
     ["committed", "Order, deposit or contract already committed"], ["started", "Work already started"], ["completed", "Work completed / equipment purchased"],
   ] as const },
