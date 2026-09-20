@@ -38,17 +38,17 @@ export function ProjectStateBoot() {
   }, [incoming, pathname]);
   return null;
 }
-export function ProjectStateSelector({ compact = false, required = false, name, label = "Project state or territory" }: {
-  compact?: boolean; required?: boolean; name?: string; label?: string;
+export function ProjectStateSelector({ compact = false, required = false, name, label = "Project state or territory", labelClassName, selectClassName, wrapperClassName }: {
+  compact?: boolean; required?: boolean; name?: string; label?: string; labelClassName?: string; selectClassName?: string; wrapperClassName?: string;
 }) {
   const id = useId();
   const state = useProjectState();
   return (
-    <div className={compact ? "flex flex-wrap items-center gap-2" : "space-y-2"}>
-      <label htmlFor={id} className="text-sm font-medium text-[var(--sc-blue-900)]">{label}{required ? " *" : ""}</label>
+    <div className={wrapperClassName ?? (compact ? "flex flex-wrap items-center gap-2" : "space-y-2")}>
+      <label htmlFor={id} className={labelClassName ?? "text-sm font-medium text-[var(--sc-blue-900)]"}>{label}{required ? " *" : ""}</label>
       <select id={id} name={name} value={state ?? ""} required={required}
         onChange={(event) => setProjectState(event.target.value)}
-        className={`rounded-lg border border-[var(--sc-border)] bg-white px-3 py-2 text-sm text-[var(--sc-blue-900)] ${compact ? "max-w-full" : "w-full"}`}>
+        className={selectClassName ?? `rounded-lg border border-[var(--sc-border)] bg-white px-3 py-2 text-sm text-[var(--sc-blue-900)] ${compact ? "max-w-full" : "w-full"}`}>
         <option value="">{required ? "Select the project location" : "Australia-wide / not selected"}</option>
         {JURISDICTIONS.map((item) => <option key={item.code} value={item.code}>{item.name} ({item.code})</option>)}
       </select>
