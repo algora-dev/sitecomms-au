@@ -30,11 +30,11 @@ export default function FundingGuidePage() {
         <p>The checker separates possible routes, conditions to clarify, closed rounds and routes outside its supported scope. It never issues a grant approval, estimates a success probability, invents an award or adds grants together. A programme’s closing date and a source’s next review date are separate: a programme can be closed, or its source can require a fresh check.</p>
         <h2>Evidence and maintenance</h2>
         <p>The initial catalogue was researched on {FUNDING_REVIEWED}. Each record links to the official programme evidence, carries source-review information and preserves material gaps or conflicting status labels. Dates are not renewed merely because the page is built or someone runs the checker. Source links are the place to confirm the latest conditions before committing money.</p>
-        <p>This release prioritises relevant programmes rather than claiming exhaustive coverage of local council, philanthropic, disaster-specific or industry grants. Detailed commercial finance research and new state-specific borrowing rules are a separate next phase.</p>
+        <p>This release prioritises relevant programmes rather than claiming exhaustive coverage of local council, philanthropic, disaster-specific or industry grants. Commercial finance is assessed separately in the SiteComms finance checker, which now includes reviewed Australian provider evidence and state-specific public-school governance guidance.</p>
         <h2>How SiteComms helps after research</h2>
         <p>A useful next step is a clear requirement and comparable supplier quotes. SiteComms reviews an explicitly submitted enquiry and replies with suitable providers’ public contact details. We do not automatically forward the enquiry, lodge a grant application or guarantee that a provider can secure funding.</p>
       </section>
-      <div className="mt-8 flex flex-wrap gap-3"><Link href="/tools/funding-check" className="sc-btn-primary">Find researched pathways</Link><Link href="/pricing-tool" className="sc-btn-secondary">Estimate the modelled system</Link><Link href="/tools/finance-check" className="sc-btn-secondary">Finance preparation — separate from grants</Link></div>
+      <div className="mt-8 flex flex-wrap gap-3"><Link href="/tools/funding-check" className="sc-btn-primary">Find researched pathways</Link><Link href="/pricing-tool" className="sc-btn-secondary">Estimate the modelled system</Link><Link href="/tools/finance-check" className="sc-btn-secondary">Check finance or leasing</Link></div>
     </div>
   </div>;
 }

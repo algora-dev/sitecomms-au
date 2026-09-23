@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "PA, Paging & Intercom Finance & Leasing Australia",
   description:
-    "Explore equipment finance, leasing and lease-to-own options for Australian paging, PA, school bell, intercom and communications-system projects, then run a quick finance check.",
+    "Explore equipment finance, leasing and hire-purchase options for Australian paging, PA, school bell, intercom and communications-system projects, then run a quick finance check.",
   path: "/financing",
 });
 
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "What finance structures may be available?",
-    a: "Depending on the provider and transaction, options can include commercial equipment loans, finance leases, business rentals and other equipment-finance structures. Some providers also use lease-to-own wording for arrangements where ownership transfers at the end of the agreed term.",
+    a: "Depending on the provider and transaction, options can include commercial equipment loans, finance leases, operating or rental leases and hire purchase. Under a hire-purchase arrangement, ownership transfers after the final required payment; a lease can instead end in return, renewal or a purchase option depending on the contract.",
   },
   {
     q: "Do I need a deposit?",
@@ -63,7 +63,7 @@ export default function FinancingPage() {
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({
         headline: "Finance and leasing options for paging, PA, bell and intercom systems in Australia",
-        description: "Equipment finance, leasing and lease-to-own options for Australian communications-system projects, plus a quick SiteComms finance check.",
+        description: "Equipment finance, leasing and hire-purchase options for Australian communications-system projects, plus a quick SiteComms finance check.",
         url: `${site.url}/financing`,
         datePublished: publishedDate("/financing"),
         dateModified: reviewedDate("/financing"),
@@ -89,7 +89,7 @@ export default function FinancingPage() {
             Finance and leasing for paging, PA, bell and intercom systems
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-[var(--sc-slate)]">
-            Paying the full project cost upfront is not the only possible route. Commercial equipment finance, leasing and lease-to-own-style structures may let an eligible organisation spread the cost of a communications-system project over regular payments.
+            Paying the full project cost upfront is not the only possible route. Commercial equipment finance, leasing and hire-purchase structures may let an eligible organisation spread the cost of a communications-system project over regular payments.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Suspense><IndustryAwareToolLink to="/tools/finance-check" className="sc-btn-primary">Check whether finance is worth exploring</IndustryAwareToolLink></Suspense>
@@ -130,7 +130,7 @@ export default function FinancingPage() {
 
         <h2>Finance lease, rental or equipment loan?</h2>
         <p>
-          Different providers use different structures. Common Australian commercial-equipment options include finance leases, business rentals and commercial equipment loans. “Lease to own” is also used in the market for some finance-lease arrangements where ownership transfers at the end of the agreed term. The right structure depends on the organisation and transaction, so SiteComms does not attempt to choose the contract type inside the checker.
+          Different providers use different structures. Common Australian commercial-equipment options include equipment loans, finance leases, operating or rental leases and commercial hire purchase. Hire purchase is the clearest ownership-transfer structure: the financier owns the asset during the term and ownership transfers after the final required payment. A lease can instead involve return, renewal or a purchase option depending on the contract. SiteComms does not attempt to choose the contract type inside the checker.
         </p>
 
         <h2>Who might explore finance?</h2>
@@ -145,7 +145,7 @@ export default function FinancingPage() {
 
         <h2>Schools: funding and finance are different questions</h2>
         <p>
-          Australian government schools may have property or capital pathways that vary by state or territory, while finance or leasing is a separate commercial arrangement. Governance, accounting and borrowing requirements can also differ by school sector and jurisdiction. A school should therefore check the relevant education-authority and governance position before treating commercial finance as an available alternative to capital funding.
+          Australian government-school finance and leasing rules differ materially by jurisdiction. The SiteComms checker now uses reviewed public guidance for Queensland, NSW, Victoria, Western Australia, South Australia, Northern Territory and Tasmania, while still requiring the school to confirm its own authority. Victoria, for example, permits operating leases but not finance leases for school councils; WA school councils/boards must not borrow or obtain credit; and South Australian governing councils need written Ministerial consent to borrow.
         </p>
 
         <h2>What parts of a PA, paging or intercom project may be financed?</h2>
@@ -212,10 +212,26 @@ export default function FinancingPage() {
 
         <h2>Sources and market context</h2>
         <p>
-          The descriptions above are based on publicly available Australia equipment-finance information. They establish that these kinds of commercial structures exist; they do not mean SiteComms has a commercial relationship with every provider referenced.
+          The descriptions above are based on current public Australian equipment-finance and education-governance information. These links show that relevant commercial products and approved lease structures exist; they do not mean SiteComms has a commercial relationship with every organisation referenced or that any application will be approved.
         </p>
+        <h3>Examples of current Australian finance pathways</h3>
         <ul>
-          <li><a href="https://www.education.gov.au/school-funding">Australian Government Department of Education — school funding context</a></li>
+          <li><a href="https://www.nab.com.au/business/loans-and-finance/vehicle-or-equipment/vehicle-and-equipment-loan">NAB — business vehicle and equipment finance</a></li>
+          <li><a href="https://www.westpac.com.au/business-banking/loans-finance/vehicle-equipment-finance/">Westpac — business equipment loans, finance leases and hire purchase</a></li>
+          <li><a href="https://www.commbank.com.au/business/loans-and-finance/car-and-equipment-finance/technology-equipment-finance.html">CommBank — technology equipment finance</a></li>
+          <li><a href="https://vestonecapital.com/school-equipment-finance/">Vestone Capital — school and education equipment finance</a></li>
+          <li><a href="https://finlease.com.au/finance/technology-equipment-finance/technology-finance-education/">Finlease — technology finance for education</a></li>
+          <li><a href="https://www.anz.com.au/business/industries/health/">ANZ — health, aged-care, retirement-living and childcare finance context</a></li>
+        </ul>
+        <h3>Government-school governance examples</h3>
+        <ul>
+          <li><a href="https://education.qld.gov.au/parents-and-carers/school-information/student-device-programs/one-to-one-models">Queensland Department of Education — school device financing models</a></li>
+          <li><a href="https://education.nsw.gov.au/policy-library/policies/pd-2020-0472">NSW Department of Education — financial management policy</a></li>
+          <li><a href="https://www2.education.vic.gov.au/pal/asset-and-inventory-management-finance-manual-section-13/policy">Victoria — school asset and lease policy</a></li>
+          <li><a href="https://www.education.wa.edu.au/web/policies/-/councils-and-boards-in-public-schools-procedures">Western Australia — school councils and boards procedures</a></li>
+          <li><a href="https://www.education.sa.gov.au/docs/psp/governing-council/governing-council/school-governance-administrative-instruction.pdf">South Australia — School Governance Administrative Instruction</a></li>
+          <li><a href="https://education.nt.gov.au/media/docs/policies/resource-management/farms-manual/financial-and-resource-management-for-schools-farms-manual-updated.pdf">Northern Territory — FARMS school finance manual</a></li>
+          <li><a href="https://publicdocumentcentre.education.tas.gov.au/library/Document%20Centre/School-Associations-Ministerial-Instruction-No-12.pdf">Tasmania — School Associations Ministerial Instruction No 12</a></li>
         </ul>
 
         <div className="not-prose mt-8 rounded-xl border border-[var(--sc-border)] bg-white p-5 text-sm leading-relaxed text-[var(--sc-slate)]">

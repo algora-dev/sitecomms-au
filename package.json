@@ -10,6 +10,7 @@
     "test:pricing": "tsx scripts/test-pricing.mjs",
     "indexnow": "node scripts/indexnow.mjs",
     "test:finance": "tsx scripts/test-finance.mjs",
+    "typecheck:finance": "tsc --project tsconfig.finance.json",
     "test:aged-care": "tsx scripts/test-aged-care.mjs",
     "test:state": "tsx scripts/test-state.mjs",
     "test:content": "tsx scripts/test-content.mjs",

@@ -62,7 +62,7 @@ export function ProjectStatePanel({ purpose = "planning" }: { purpose?: "plannin
     : purpose === "funding"
       ? "The funding checker uses this state with the legal applicant and project scope. QLD, NSW, VIC, WA and SA have reviewed state routes; other jurisdictions have selected national records only. Location is not proof of funding eligibility."
       : purpose === "finance"
-        ? "Location is carried into your enquiry. This version does not check state borrowing rules, lender eligibility or approval. Public organisations must confirm their authority to enter an arrangement."
+        ? "State mainly changes government-school and public-sector governance guidance. The finance checker uses reviewed public rules where available; private and non-government finance evidence is generally Australia-wide. Provider approval still applies."
         : "Use one national guide library, with your project location remembered for tools and enquiries. Change or clear it at any time; no location detection is used.";
   return (
     <aside className="sc-card my-6 bg-[var(--sc-blue-50)] p-5" aria-label="Project location context">

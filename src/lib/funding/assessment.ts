@@ -1,6 +1,6 @@
 import { resultEnvelope, InputValidationError, type InputIssue, type SourceReference, type FreshnessState } from "../agent-ready/contracts";
 import { projectStateName } from "../jurisdictions";
-import { FUNDING_FIELDS, REQUIRED_FUNDING_FIELDS, type FundingField, type FundingInput } from "./questions";
+import { FUNDING_FEATURES, FUNDING_FIELDS, REQUIRED_FUNDING_FIELDS, type FundingFeature, type FundingField, type FundingInput, type FundingInputKey } from "./questions";
 import { FUNDING_PATHWAYS, FUNDING_SOURCES, FUNDING_CATALOGUE_VERSION, FUNDING_RULE_VERSION, PRIORITY_FUNDING_STATES } from "./catalogue";
 import { ROUTE_LABELS, type FundingPathway, type FundingSource, type FundingResult, type PathwayAssessment, type Availability } from "./types";
 
@@ -68,7 +68,17 @@ function validate(raw: unknown): { inputs: FundingInput; issues: InputIssue[] } 
   }
   if (Object.keys(raw).length > 40) throw new InputValidationError([{ field: "request", code: "invalid", message: "Too many fields in the funding request." }]);
   const inputs: FundingInput = {};
+  const allowedFeatures = new Set<string>(FUNDING_FEATURES.map(option => option[0]));
+
   for (const [key, value] of Object.entries(raw)) {
+    if (key === "features") {
+      if (!Array.isArray(value) || value.length === 0 || value.length > FUNDING_FEATURES.length || value.some(item => typeof item !== "string" || !allowedFeatures.has(item)) || new Set(value).size !== value.length) {
+        issues.push({ field: "features", code: "invalid", message: "Choose at least one supported communications feature." });
+      } else {
+        inputs.features = value as FundingFeature[];
+      }
+      continue;
+    }
     if (!Object.hasOwn(FUNDING_FIELDS, key)) {
       issues.push({ field: key.slice(0, 80), code: "unknown_field", message: "This field is not part of the funding assessment contract." });
       continue;
@@ -78,7 +88,19 @@ function validate(raw: unknown): { inputs: FundingInput; issues: InputIssue[] } 
       issues.push({ field, code: "invalid", message: `Choose a supported value for ${FUNDING_FIELDS[field].label}` });
     } else inputs[field] = value;
   }
+
   for (const field of REQUIRED_FUNDING_FIELDS) if (!Object.hasOwn(raw, field)) issues.push({ field, code: "missing", message: FUNDING_FIELDS[field].label });
+  if (!Object.hasOwn(raw, "features")) issues.push({ field: "features", code: "missing", message: "Choose what you want the communications system to do." });
+
+  // The public user describes the communications functions they want. The
+  // specialised project classification stays internal: a specific visual/hearing
+  // access requirement can surface accessibility routes; everything else is
+  // ordinary communications infrastructure unless a controlled integration
+  // explicitly supplies a different supported project_focus.
+  if (!inputs.project_focus && inputs.features?.length) {
+    inputs.project_focus = inputs.features.includes("accessibility_alerts") ? "accessibility" : "communications";
+  }
+
   for (const field of Object.keys(FUNDING_FIELDS) as FundingField[]) if (!inputs[field] && !REQUIRED_FUNDING_FIELDS.includes(field)) inputs[field] = "unknown";
   if (inputs.project_focus === "building" && inputs.building_component === "no") {
     issues.push({ field: "building_component", code: "conflict", message: "The main project is a building project but the communications work is stated not to be part of it. Resolve that scope before assessing." });
@@ -171,7 +193,7 @@ export function assessFundingPathways(raw: unknown, context: FundingAssessmentCo
     : coverage === "national_only"
       ? `Only applicable national pathways are included for ${projectStateName(inputs.state)}. State/territory-specific research has not been completed for this location.`
       : "Choose a state or territory and site type to identify the reviewed scope.";
-  const base = { catalogue_version: FUNDING_CATALOGUE_VERSION, rule_version: FUNDING_RULE_VERSION, inputs, issues, coverage, coverage_note: coverageNote, pathways: [] as PathwayAssessment[], missing_fields: issues.filter(i => i.code === "missing").map(i => i.field as FundingField), grant_award: null, approval: "not_determined" } as const;
+  const base = { catalogue_version: FUNDING_CATALOGUE_VERSION, rule_version: FUNDING_RULE_VERSION, inputs, issues, coverage, coverage_note: coverageNote, pathways: [] as PathwayAssessment[], missing_fields: issues.filter(i => i.code === "missing").map(i => i.field as FundingInputKey), grant_award: null, approval: "not_determined" } as const;
   if (issues.length) return resultEnvelope("assess_funding_pathways", now, {
     status: "needs_input", result_type: "qualification", summary: "Check the highlighted project details before a funding pathway assessment.",
     result: base, sources: [], limitations: LIMITATIONS, next_actions: issues.map(i => ({ type: "provide_input" as const, label: i.message, field: i.field })),

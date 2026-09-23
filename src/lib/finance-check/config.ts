@@ -79,32 +79,32 @@ export type UpfrontBand = (typeof UPFRONT_BANDS)[number]["value"];
 
 export const RESULT_COPY = {
   strong: {
-    eyebrow: "Project information ready for discussion",
-    headline: "A finance or leasing conversation looks well worth having",
+    eyebrow: "Strong possibility worth exploring",
+    headline: "A finance pathway looks realistic enough to discuss",
     body:
-      "You have enough project and budget information for a finance specialist to have a useful first conversation. The provider will still need to assess the organisation, equipment and final transaction before offering any terms.",
+      "Your answers fit the kind of equipment-finance conversation Australian lenders and technology-finance providers publicly support. This is not an approval, but there is enough information for a useful next step with a specialist.",
   },
   good: {
-    eyebrow: "Some project information is available",
-    headline: "There is enough here to explore the available options",
+    eyebrow: "A finance pathway may be available",
+    headline: "There is a reasonable finance conversation to have",
     body:
-      "Your answers give a useful starting point. A specialist can explain which finance or leasing structures may be relevant and what extra information would be needed next.",
+      "Your project has enough shape to explore equipment finance or leasing. A provider would still need to assess the organisation, equipment, transaction and credit position before offering terms.",
   },
   tailored: {
-    eyebrow: "Tailored finance discussion recommended",
-    headline: "This looks like a project worth discussing directly with a specialist",
+    eyebrow: "Tailored finance pathway",
+    headline: "This project is better suited to a specialist finance discussion",
     body:
-      "Larger or less-defined projects often need a tailored structure rather than a simple online estimate. That does not rule finance out — it just means the next useful step is a conversation about the organisation, project and available options.",
+      "Larger projects often need a tailored structure rather than a simple online estimate. That does not rule finance out; it means the provider needs to understand the equipment, installation scope, organisation and payment structure.",
   },
   early: {
-    eyebrow: "Worth a conversation",
-    headline: "You do not need every number worked out before asking about finance",
+    eyebrow: "Finance may still be worth exploring",
+    headline: "You can start the conversation before every number is final",
     body:
-      "You are still early in the planning process, but a finance specialist can explain what may be possible and what information would make the next step more useful. If the project cost is still unclear, SiteComms can also help you estimate it first.",
+      "The project is still early or some information is open, but finance can still be discussed. SiteComms can help firm up the communications scope before you approach a provider.",
   },
 } as const;
 
 export type FinanceResultLevel = keyof typeof RESULT_COPY;
 
 export const DISCLAIMER =
-  "SiteComms does not provide finance, make credit decisions or guarantee approval. This checker summarises planning readiness, not eligibility, affordability or permission to borrow. State-specific rules and provider options are not yet assessed. Actual finance availability, rates, terms, security, documentation and approval are determined by the relevant finance provider.";
+  "SiteComms does not provide finance, financial advice, credit assessment or approval. This checker is preliminary guidance only. It does not assess creditworthiness, affordability, rates, tax treatment or formal authority to borrow or lease. Public-sector rules are summarised from reviewed public sources and should be confirmed with the relevant organisation. Actual finance availability and terms are determined by the finance provider.";

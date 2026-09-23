@@ -23,22 +23,18 @@ export function FundingSourceLinks({ ids }: { ids: readonly string[] }) {
 export function FundingPathwayCard({ pathway, secondary = false }: { pathway: PathwayAssessment; secondary?: boolean }) {
   const noEvidence = ["withdrawn", "unavailable"].includes(pathway.freshness);
   const badge = pathway.section === "investigate"
-    ? "Worth investigating"
+    ? "Possible funding avenue"
     : pathway.section === "check_first"
-      ? "Check eligibility / status"
+      ? "May be relevant — check first"
       : pathway.section === "watchlist"
         ? "Not currently actionable"
-        : "Outside the basic match";
+        : "Not a current match";
 
   const source = pathway.source_ids.map(id => FUNDING_SOURCES.find(item => item.id === id)).find(Boolean);
 
   return (
     <article className={`rounded-xl border border-[var(--sc-border)] bg-white ${secondary ? "p-4" : "p-5 sm:p-6"}`} aria-labelledby={`result-${pathway.id}`}>
-      <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded-full bg-[var(--sc-blue-50)] px-2.5 py-1 text-xs font-bold text-[var(--sc-blue-800)]">{badge}</span>
-        <span className="text-xs font-semibold text-[var(--sc-slate)]">{pathway.route_label}</span>
-      </div>
-
+      <span className="inline-flex rounded-full bg-[var(--sc-blue-50)] px-2.5 py-1 text-xs font-bold text-[var(--sc-blue-800)]">{badge}</span>
       <h4 id={`result-${pathway.id}`} className="mt-3 text-lg font-bold text-[var(--sc-blue-900)]">{pathway.title}</h4>
 
       {!secondary && !noEvidence && (
@@ -49,25 +45,26 @@ export function FundingPathwayCard({ pathway, secondary = false }: { pathway: Pa
           <p className="mt-4 text-sm leading-relaxed text-[var(--sc-slate)]">
             <strong className="text-[var(--sc-blue-900)]">Next step: </strong>{pathway.next_step}
           </p>
-          {source && (
-            <a href={source.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">
-              View the official source<span className="sr-only"> (opens a new tab)</span>
-            </a>
-          )}
+          <div className="mt-5 flex flex-wrap gap-3">
+            {source && (
+              <a href={source.url} target="_blank" rel="noopener noreferrer" className="sc-btn-secondary">
+                View official source<span className="sr-only"> (opens a new tab)</span>
+              </a>
+            )}
+            <a href="#project-enquiry" className="sc-btn-primary">Ask SiteComms for help</a>
+          </div>
         </>
       )}
 
-      {secondary && (
-        <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">{pathway.availability_label}</p>
-      )}
+      {secondary && <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">{pathway.availability_label}</p>}
 
-      <details className="mt-4 text-sm text-[var(--sc-slate)]">
+      <details className="mt-5 text-sm text-[var(--sc-slate)]">
         <summary className="cursor-pointer font-semibold text-[var(--sc-blue-900)]">
-          {secondary ? "Why this is not in the main result" : "See evidence and conditions"}
+          {secondary ? "Why this is not in the main result" : "More details and evidence"}
         </summary>
-
         <div className="mt-3 border-t border-[var(--sc-border)] pt-3">
-          <p className="leading-relaxed"><strong className="text-[var(--sc-blue-900)]">Current status: </strong>{pathway.availability_label}</p>
+          <p className="leading-relaxed"><strong className="text-[var(--sc-blue-900)]">Route type: </strong>{pathway.route_label}</p>
+          <p className="mt-2 leading-relaxed"><strong className="text-[var(--sc-blue-900)]">Current status: </strong>{pathway.availability_label}</p>
 
           {noEvidence ? (
             <p className="mt-3 leading-relaxed">The evidence for this record is unavailable or withdrawn, so no current positive conclusion is shown.</p>

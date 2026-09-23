@@ -56,3 +56,12 @@ assert.deepEqual(errors,[],errors.join('\n'));
 console.log(`Static site audit passed: ${files.length} TS/TSX files parsed/transpiled, ${imports} local imports, ${links} literal internal links, ${routeFiles.size} routes and ${siteRoutes.length} sitemap entries.`);
 console.log('Preview/noindex preserved; active source NZ residue allowlisted only for the genuine operator privacy contact. Historical database data is untouched.');
 console.log('Scope: syntax and source invariants only; not full framework type-check, build, ESLint or browser validation.');
+
+// Finance-check state step and evidence must stay in the public flow.
+{
+  const financeTool = readFileSync(path.join(root, "src/app/tools/finance-check/FinanceCheckTool.tsx"), "utf8");
+  assert.match(financeTool, /Step \{screen \+ 1\} of 4/, "Finance checker should remain a four-step state-first flow.");
+  assert.match(financeTool, /Where is the project\?/, "Finance checker should ask project state first.");
+  assert.match(financeTool, /Why this is a real Australian finance pathway/, "Finance result should show reviewed evidence.");
+  assert.match(financeTool, /ProjectStateSelector required/, "Finance state must be explicitly selected.");
+}

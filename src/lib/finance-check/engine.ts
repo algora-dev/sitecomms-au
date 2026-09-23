@@ -1,3 +1,4 @@
+import type { ProjectState } from "../jurisdictions";
 import {
   ORGANISATION_TYPES,
   PROJECT_VALUE_BANDS,
@@ -10,8 +11,10 @@ import {
   type SiteSizeBand,
   type UpfrontBand,
 } from "./config";
+import { financeEvidenceFor, publicSchoolFinanceGuidance, type FinanceEvidence } from "./sources";
 
 export interface FinanceAnswers {
+  projectState?: ProjectState;
   organisationType?: OrganisationType;
   projectValueBand?: ProjectValueBand;
   carriedEstimateLow?: number;
@@ -33,6 +36,8 @@ export interface FinanceResult {
   nextStep: string;
   organisationLabel: string;
   projectValueLabel: string;
+  evidence: FinanceEvidence[];
+  stateGuidance?: { title: string; summary: string };
 }
 
 function organisationLabel(value?: OrganisationType): string {
@@ -64,28 +69,44 @@ function upfrontKnown(answers: FinanceAnswers): boolean {
   return Boolean(answers.upfrontBand && answers.upfrontBand !== "unsure");
 }
 
+function publicSectorResult(answers: FinanceAnswers): FinanceResult {
+  const evidence = financeEvidenceFor(answers.organisationType, answers.projectState);
+  const isGovernmentSchool = answers.organisationType === "government_school";
+  const guidance = isGovernmentSchool ? publicSchoolFinanceGuidance(answers.projectState) : undefined;
+
+  return {
+    level: "early",
+    eyebrow: isGovernmentSchool ? "Possible route — approval rules come first" : "Authority check before finance",
+    headline: isGovernmentSchool
+      ? guidance?.title ?? "Confirm the approved finance or lease route first"
+      : "Start with the organisation's finance and approval team",
+    body: isGovernmentSchool
+      ? guidance?.summary ?? "Government-school finance arrangements depend on the relevant jurisdiction and contracting authority. Confirm the permitted structure before approaching a provider."
+      : "Public bodies can use finance and leasing structures, but authority, procurement and borrowing rules are organisation-specific. A commercial lender's product page does not establish that your organisation may enter the arrangement.",
+    reasons: [
+      isGovernmentSchool
+        ? "Your state changes the governance position for a government-school finance or lease arrangement."
+        : "Public-sector authority and procurement rules need to be confirmed before a lender conversation becomes meaningful.",
+      projectValueKnown(answers)
+        ? "You already have a useful project-value range to take into that internal approval conversation."
+        : "The communications scope can be estimated first if the likely finance amount is still unclear.",
+      ...(answers.source === "funding" ? ["A funding shortfall does not itself create authority to borrow or lease."] : []),
+    ],
+    nextStep: "Ask SiteComms to help define the project and the likely finance amount, then confirm the approved contracting route with the organisation before any finance application.",
+    organisationLabel: organisationLabel(answers.organisationType),
+    projectValueLabel: projectValueLabel(answers),
+    evidence,
+    stateGuidance: guidance ? { title: guidance.title, summary: guidance.summary } : undefined,
+  };
+}
+
 export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
   const publicOrganisation = answers.organisationType === "government_school"
     || answers.organisationType === "government"
     || answers.organisationType === "local_government";
-  if (publicOrganisation) {
-    return {
-      level: "early",
-      eyebrow: "Confirm authority before exploring finance",
-      headline: "Start with your organisation’s finance and approval team",
-      body: "A known budget does not establish authority to borrow, lease or enter a supplier payment arrangement. This version has not checked your jurisdiction’s rules. Confirm the permitted structure and required approvals before approaching a provider.",
-      reasons: [
-        "Government schools and public organisations need an organisation-specific governance check; this is not a credit or eligibility result.",
-        "Confirm who can approve the commitment, which procurement process applies and whether ongoing payments are permitted.",
-        ...(answers.source === "funding" ? ["A funding shortfall does not itself establish authority to use finance."] : []),
-      ],
-      nextStep: "Confirm the approval route with the project owner. SiteComms can help clarify the communications scope, but cannot determine borrowing powers or finance approval.",
-      organisationLabel: organisationLabel(answers.organisationType),
-      projectValueLabel: projectValueLabel(answers),
-    };
-  }
-  let level: FinanceResultLevel;
+  if (publicOrganisation) return publicSectorResult(answers);
 
+  let level: FinanceResultLevel;
   if (!answers.organisationType || answers.organisationType === "other") {
     level = "early";
   } else if (isLargeProject(answers)) {
@@ -114,23 +135,24 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
   }
 
   if (answers.upfrontBand === "none") {
-    reasons.push("You prefer no upfront contribution. This is a preference, not confirmation that a provider can offer that structure.");
+    reasons.push("You prefer no upfront contribution. Australian providers publicly advertise zero-deposit or high-percentage equipment finance for some qualifying transactions, but the provider decides whether that structure is available.");
   } else if (upfrontKnown(answers)) {
     reasons.push("You have indicated that an upfront contribution may be available if it helps structure the transaction.");
   }
 
   if (answers.source === "funding") {
-    reasons.push("You came from funding planning. Keep any funding conditions separate from a finance enquiry and check that combining the two would be permitted.");
+    reasons.push("You came from funding planning. Keep any grant or capital-program conditions separate from a finance enquiry and confirm that combining the two is permitted.");
   }
 
-  const isSchool = answers.organisationType === "government_school" || answers.organisationType === "catholic_school" || answers.organisationType === "independent_school";
+  const isSchool = answers.organisationType === "catholic_school" || answers.organisationType === "independent_school";
   if (isSchool) {
-    reasons.push("School finance arrangements can have additional governance, accounting or approval requirements, so the exact structure should be checked with the school and finance provider.");
+    reasons.push("Australian specialist providers publicly offer equipment and technology finance to non-government schools, subject to provider assessment and the school's own governance approvals.");
   }
 
   if (answers.organisationType === "tertiary" || answers.organisationType === "healthcare" || answers.organisationType === "aged_care") {
-    reasons.push("Confirm the legal applicant and whether it is publicly controlled; sector selection alone does not establish authority to finance equipment.");
+    reasons.push("Sector-specific equipment finance is publicly available in Australia, but the legal applicant and provider assessment still determine the actual structure.");
   }
+
   const copy = RESULT_COPY[level];
   return {
     level,
@@ -138,8 +160,9 @@ export function assessFinanceFit(answers: FinanceAnswers): FinanceResult {
     headline: copy.headline,
     body: copy.body,
     reasons,
-    nextStep: "Tell SiteComms about the project for a scope review and a suitable next step. Where a provider is suggested, we reply with public contact details; we do not forward your enquiry.",
+    nextStep: "Tell SiteComms about the project. We can review the communications scope and suggest a finance/provider route to investigate. If we suggest a provider, we give you its public contact details; your enquiry is not forwarded automatically.",
     organisationLabel: organisationLabel(answers.organisationType),
     projectValueLabel: projectValueLabel(answers),
+    evidence: financeEvidenceFor(answers.organisationType, answers.projectState),
   };
 }

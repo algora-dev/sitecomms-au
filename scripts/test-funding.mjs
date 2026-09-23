@@ -5,7 +5,7 @@ import { randomBytes } from "node:crypto";
 import { performance } from "node:perf_hooks";
 import { FUNDING_PATHWAYS as paths, FUNDING_SOURCES as sources, PRIORITY_FUNDING_STATES } from "../src/lib/funding/catalogue.ts";
 import { assessFundingPathways as assess, assertFundingResult, pathwayAvailability, fundingPublicationStatus } from "../src/lib/funding/assessment.ts";
-import { FUNDING_FIELDS, FUNDING_INPUT_SCHEMA, relevantDetailFields } from "../src/lib/funding/questions.ts";
+import { FUNDING_FEATURES, FUNDING_FIELDS, FUNDING_INPUT_SCHEMA, relevantDetailFields } from "../src/lib/funding/questions.ts";
 import { CAPABILITIES } from "../src/lib/agent-ready/capabilities.ts";
 import { InputValidationError } from "../src/lib/agent-ready/contracts.ts";
 import { POST as httpFunding } from "../src/app/api/business/v1/funding/route.ts";
@@ -14,14 +14,14 @@ import { STATE_FUNDING_GUIDES } from "../src/lib/funding/guides.ts";
 import { publicGuideRecords } from "../src/lib/agent-ready/content.ts";
 import { CONTENT_META } from "../src/lib/content-meta.ts";
 const now = new Date("2026-09-20T12:00:00Z");
-const input = (patch = {}) => ({ state: "QLD", site_type: "community", applicant_type: "not_for_profit", project_focus: "communications", stage: "planning", tenure: "owned", community_benefit: "yes", ...patch });
+const input = (patch = {}) => ({ state: "QLD", site_type: "community", applicant_type: "not_for_profit", stage: "planning", features: ["announcements_paging", "emergency_lockdown"], tenure: "owned", community_benefit: "yes", ...patch });
 const result = (patch = {}, ctx = {}) => assess(input(patch), { now, ...ctx });
 const get = (id, patch = {}, ctx = {}) => { const p = result(patch, ctx).result.pathways.find(p => p.id === id); assert.ok(p, id); return p; };
 const nonGov = { site_type: "independent_school", applicant_type: "school_authority", building_component: "yes" };
 const gov = { site_type: "government_school", applicant_type: "school_authority" };
 const early = { state: "SA", site_type: "early_childhood", early_service_type: "non_profit", adds_places: "yes", funded_preschool: "yes", building_component: "yes" };
 const care = { site_type: "residential_aged_care", applicant_type: "private_business", registered_care_provider: "yes", targeted_care_need: "yes" };
-const inclusion = { state: "SA", project_focus: "accessibility", accessibility_evidence: "yes", core_service: "no", gaming: "no", already_grant_funded: "no" };
+const inclusion = { state: "SA", features: ["accessibility_alerts"], accessibility_evidence: "yes", core_service: "no", gaming: "no", already_grant_funded: "no" };
 let passed = 0;
 async function test(name, fn) { await fn(); passed++; console.log(`PASS ${name}`); }
 await test("Catalogue has five priority states, 25 uniquely identified routes and 33 official sources", () => {
@@ -36,10 +36,15 @@ await test("Every predicate uses existing schema values rather than a private sh
     assert.ok(FUNDING_FIELDS[rule.field]); for (const allowed of rule.allowed) assert.ok(FUNDING_FIELDS[rule.field].options.some(o => o[0] === allowed), `${p.id}:${rule.field}:${allowed}`);
   }
   assert.deepEqual(FUNDING_INPUT_SCHEMA.properties.state.enum, FUNDING_FIELDS.state.options.map(o => o[0]));
+  assert.deepEqual(FUNDING_INPUT_SCHEMA.properties.features.items.enum, FUNDING_FEATURES.map(o => o[0]));
+});
+await test("Public feature selection derives the internal project classification", () => {
+  assert.equal(result({ features: ["bells_schedules", "emergency_lockdown"] }).result.inputs.project_focus, "communications");
+  assert.equal(result({ features: ["accessibility_alerts"] }).result.inputs.project_focus, "accessibility");
 });
 await test("Unknown required fields clarify without calculating an award", () => {
   const r = assess({}, { now }); assert.equal(r.status, "needs_input"); assert.equal(r.result.pathways.length, 0); assert.equal(r.result.grant_award, null);
-  assert.deepEqual(r.result.missing_fields, ["state", "site_type", "applicant_type", "project_focus", "stage"]);
+  assert.deepEqual(r.result.missing_fields, ["state", "site_type", "applicant_type", "stage", "features"]);
 });
 for (const bad of [null, [], "QLD", Object.create({ state: "QLD" })]) await test(`Non-object or inherited prototype input rejected: ${String(bad)}`, () => assert.throws(() => assess(bad, { now }), InputValidationError));
 for (const [key, value] of [["state", "qld"], ["site_type", "school"], ["stage", 0], ["invitation", true], ["gaming", null]]) await test(`No silent coercion: ${key}`, () => {
@@ -85,7 +90,7 @@ await test("NSW government works remain approval, not grant allocation", () => {
 await test("NSW BGAS conflicting official status never becomes open", () => { const p = get("nsw-bgas", { ...nonGov, state: "NSW" }); assert.equal(p.availability, "confirm_status"); assert.equal(p.section, "check_first"); });
 await test("NSW CBP2026 closure and staged process preserved", () => { const p = get("nsw-cbp-2026", { state: "NSW" }); assert.equal(p.availability, "closed"); assert.equal(p.section, "watchlist"); assert.match(p.conditions.join(" "), /shortlisted/); });
 await test("NSW stale Open badge does not reopen the 2025 early-learning round", () => { const p = get("nsw-belp", { state: "NSW", site_type: "early_childhood" }); assert.equal(p.availability, "closed"); assert.notEqual(p.section, "investigate"); });
-const nswIE = { state: "NSW", site_type: "early_childhood", project_focus: "accessibility", eligible_nsw_preschool: "yes", accessibility_evidence: "yes", child_adjustment: "yes" };
+const nswIE = { state: "NSW", site_type: "early_childhood", features: ["accessibility_alerts"], eligible_nsw_preschool: "yes", accessibility_evidence: "yes", child_adjustment: "yes" };
 await test("NSW child-based access stream needs correct preschool and specialised scope", () => {
   assert.equal(get("nsw-ie-child-2026", nswIE).match, "potential_pathway");
   assert.equal(get("nsw-ie-child-2026", { ...nswIE, eligible_nsw_preschool: "no" }).match, "outside_scope");
@@ -119,12 +124,15 @@ await test("SA Flying Start requires additional places and eligible operator, no
   assert.equal(get("sa-flying-start", early).match, "potential_pathway");
   assert.equal(get("sa-flying-start", { ...early, adds_places: "no" }).match, "outside_scope");
   for (const early_service_type of ["government", "for_profit", "family_day_care"]) assert.equal(get("sa-flying-start", { ...early, early_service_type }).match, "outside_scope");
+  // Unknown detail fields are follow-up conditions; they do not demote the
+  // initial public shortlist (assessment.ts rule loop + smart-flow changelog).
   assert.equal(get("sa-flying-start", { ...early, early_service_type: "unknown" }).match, "potential_pathway");
 });
 await test("SA published funding share is not applied to communications estimate", () => { const p = get("sa-flying-start", early); assert.match(p.published_funding_terms, /not 50% back/); assert.equal(p.award_amount, null); });
 await test("SA Julia Farr access route preserves exclusions", () => {
   assert.equal(get("sa-julia-farr", inclusion).match, "potential_pathway");
   for (const patch of [{ gaming: "yes" }, { already_grant_funded: "yes" }, { site_type: "government_school", applicant_type: "school_authority" }, { site_type: "tertiary", applicant_type: "other_government" }, { project_focus: "communications" }]) assert.equal(get("sa-julia-farr", { ...inclusion, ...patch }).match, "outside_scope");
+  // Unknown gaming status is a follow-up condition, not a demotion (same rule loop).
   assert.equal(get("sa-julia-farr", { ...inclusion, gaming: "unknown" }).match, "potential_pathway");
 });
 await test("SA institution exclusion does not silently equate a venue with every separate legal applicant", () => {
@@ -196,7 +204,7 @@ await test("Five state pages and shared guide search refer to real reviewed rout
 await test("Form and registry invoke the shared domain handler, with no ad hoc fetch", () => {
   assert.equal(CAPABILITIES.assess_funding_pathways.handler, assess);
   const ui = readFileSync(new URL("../src/app/tools/funding-check/FundingCheckTool.tsx", import.meta.url), "utf8");
-  assert.match(ui, /assessFundingPathways\(inputs/); assert.match(ui, /fingerprint/); assert.match(ui, /visibilitychange/); assert.match(ui, /const fingerprint = JSON\.stringify\(inputs\)/); assert.match(ui, /ProjectHelpLauncher/); assert.ok(!ui.includes('fetch('));
+  assert.match(ui, /assessFundingPathways\(inputs/); assert.match(ui, /fingerprint/); assert.match(ui, /visibilitychange/); assert.match(ui, /FUNDING_FEATURES/); assert.match(ui, /ProjectHelpLauncher/); assert.ok(!ui.includes('fetch(')); assert.ok(!ui.includes('select("project_focus"'));
 });
 const oldEnv = Object.fromEntries(["SC_AGENT_READY_HTTP_ENABLED", "SC_AGENT_READY_HTTP_KEY", "SC_AGENT_READY_LOG_EVENTS"].map(k => [k, process.env[k]]));
 const key = randomBytes(32).toString("hex");
@@ -220,7 +228,7 @@ try {
   await test("Funding API rejects oversized streamed body rather than running unlimited work", async () => { assert.equal((await httpFunding(request(input(), { body: JSON.stringify({ brief: "a".repeat(50000) }) }))).status, 413); });
   await test("Redacted capability events omit assessment fields and credentials", async () => {
     const old = console.info, logs = []; process.env.SC_AGENT_READY_LOG_EVENTS = "true"; console.info = value => logs.push(value);
-    try { await httpFunding(request(input({ project_focus: "accessibility" }))); } finally { console.info = old; process.env.SC_AGENT_READY_LOG_EVENTS = "false"; }
+    try { await httpFunding(request(input({ features: ["accessibility_alerts"] }))); } finally { console.info = old; process.env.SC_AGENT_READY_LOG_EVENTS = "false"; }
     assert.equal(logs.length, 1); assert.ok(!logs[0].includes(key)); assert.ok(!logs[0].includes("accessibility")); assert.ok(!logs[0].includes("inputs"));
   });
 } finally { for (const [k, v] of Object.entries(oldEnv)) if (v === undefined) delete process.env[k]; else process.env[k] = v; }

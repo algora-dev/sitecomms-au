@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { track } from "@/lib/analytics";
 import { ProjectEnquiryModal } from "@/components/enquiry/ProjectEnquiryModal";
+import { ProjectStateSelector, useProjectState } from "@/components/project-state";
+import { projectStateName } from "@/lib/jurisdictions";
 import {
   DISCLAIMER,
   MONTHLY_BUDGETS,
@@ -98,6 +100,7 @@ export function FinanceCheckTool() {
   const fundingResult = searchParams.get("fundingResult") ?? undefined;
   // Non-personal journey context: preselects (does not lock) the organisation.
   const incomingIndustry = industryFromParams(searchParams);
+  const projectState = useProjectState();
 
   const [screen, setScreen] = useState(0);
   const [answers, setAnswers] = useState<FinanceAnswers>({
@@ -127,7 +130,7 @@ export function FinanceCheckTool() {
     track("finance_tool_started", { source: answers.source ?? "direct" });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const result = useMemo(() => assessFinanceFit(answers), [answers]);
+  const result = useMemo(() => assessFinanceFit({ ...answers, projectState }), [answers, projectState]);
   // Outgoing context follows the CURRENT answer, not the incoming query:
   // an explicit change of organisation always overrides the sector hint.
   const effectiveIndustry = resolveIndustryContext(incomingIndustry, answers.organisationType);
@@ -145,7 +148,7 @@ export function FinanceCheckTool() {
   }, []);
 
   function next() {
-    setScreen((current) => Math.min(2, current + 1));
+    setScreen((current) => Math.min(3, current + 1));
   }
 
   function back() {
@@ -155,6 +158,7 @@ export function FinanceCheckTool() {
   function finish() {
     setResultReady(true);
     track("finance_check_completed", {
+      project_state: projectState,
       organisation_type: answers.organisationType,
       project_value: answers.projectValueBand,
       site_size: answers.siteSizeBand,
@@ -188,14 +192,16 @@ export function FinanceCheckTool() {
   }, [resultReady, screen]);
 
   const canContinue =
-    (screen === 0 && Boolean(answers.organisationType)) ||
-    (screen === 1 && Boolean(answers.projectValueBand) && (!projectValueUnknown || Boolean(answers.siteSizeBand))) ||
-    (screen === 2 && Boolean(answers.paymentBudget && answers.upfrontBand));
+    (screen === 0 && Boolean(projectState)) ||
+    (screen === 1 && Boolean(answers.organisationType)) ||
+    (screen === 2 && Boolean(answers.projectValueBand) && (!projectValueUnknown || Boolean(answers.siteSizeBand))) ||
+    (screen === 3 && Boolean(answers.paymentBudget && answers.upfrontBand));
 
   if (resultReady) {
     const financeContext: Record<string, string> = {
       ...(effectiveIndustry ? { Industry: INDUSTRY_CONTEXTS[effectiveIndustry].label } : {}),
       "Finance-fit result": result.eyebrow,
+      State: projectStateName(projectState),
       Organisation: result.organisationLabel,
       "Project value": result.projectValueLabel,
       "Regular budget": labelFrom(
@@ -212,6 +218,7 @@ export function FinanceCheckTool() {
     const isSchool = answers.organisationType === "government_school" || answers.organisationType === "catholic_school" || answers.organisationType === "independent_school";
 
     const answerSummary: [string, string][] = [
+      ["State", projectStateName(projectState)],
       ["Organisation", result.organisationLabel],
       ["Project value", result.projectValueLabel],
       ["Regular budget", `${labelFrom(answers.paymentFrequency === "weekly" ? WEEKLY_BUDGETS : MONTHLY_BUDGETS, answers.paymentBudget)} / ${answers.paymentFrequency}`],
@@ -241,7 +248,7 @@ export function FinanceCheckTool() {
               Discuss finance options
             </button>
           </div>
-          <p className="mt-5 text-xs leading-relaxed text-[var(--sc-slate)]">Preliminary guidance only — not an approval or finance offer.</p>
+          <p className="mt-5 text-xs leading-relaxed text-[var(--sc-slate)]">Preliminary guidance only — not an approval, credit assessment or finance offer.</p>
         </section>
 
         {/* Compact personalised answer summary */}
@@ -263,6 +270,33 @@ export function FinanceCheckTool() {
             {result.reasons.map((reason) => <CheckLine key={reason}>{reason}</CheckLine>)}
           </ul>
         </div>
+
+        {result.evidence.length > 0 && (
+          <div className="sc-card mt-6 p-6">
+            <h3 className="font-semibold text-[var(--sc-blue-900)]">Why this is a real Australian finance pathway</h3>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
+              These current public sources show that relevant equipment-finance, technology-leasing or governance pathways exist. They are evidence, not SiteComms endorsements or approval promises.
+            </p>
+            <div className="mt-4 space-y-3">
+              {result.evidence.slice(0, 3).map((source) => (
+                <a key={source.id} href={source.url} target="_blank" rel="noreferrer" className="block rounded-xl border border-[var(--sc-border)] bg-white p-4 hover:border-[var(--sc-blue-400)]">
+                  <span className="block text-sm font-semibold text-[var(--sc-blue-900)]">{source.name} ↗</span>
+                  <span className="mt-1 block text-xs leading-relaxed text-[var(--sc-slate)]">{source.note}</span>
+                </a>
+              ))}
+            </div>
+            {result.evidence.length > 3 && (
+              <details className="mt-4 rounded-xl border border-[var(--sc-border)] bg-slate-50 p-4">
+                <summary className="cursor-pointer text-sm font-semibold text-[var(--sc-blue-900)]">More reviewed finance evidence</summary>
+                <div className="mt-3 space-y-3">
+                  {result.evidence.slice(3).map((source) => (
+                    <a key={source.id} href={source.url} target="_blank" rel="noreferrer" className="block text-sm font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">{source.name} ↗</a>
+                  ))}
+                </div>
+              </details>
+            )}
+          </div>
+        )}
 
         {isSchool && (
           <div className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
@@ -307,7 +341,7 @@ export function FinanceCheckTool() {
             Is finance or leasing worth exploring for your communications project?
           </h1>
           <p className="mt-3 text-[var(--sc-slate)]">
-            Answer three short questions about the organisation, rough project value and budget. We&apos;ll give you a practical starting point and, if you want, help identify an appropriate finance specialist to speak with.
+            Start with the project state, then answer three short questions about the organisation, rough project value and budget. We&apos;ll show whether a finance conversation looks worthwhile and the evidence behind that guidance.
           </p>
           <p className="mt-2 text-xs leading-relaxed text-[var(--sc-slate)]">
             Preliminary guidance only — not a finance application, credit assessment or approval. <Link href="/financing" className="underline">Read how equipment finance and leasing can work</Link>.
@@ -316,15 +350,27 @@ export function FinanceCheckTool() {
       )}
       <div className="mb-8">
         <div className="flex items-center justify-between text-xs font-medium text-[var(--sc-slate)]">
-          <span>Step {screen + 1} of 3</span>
-          <span>{Math.round(((screen + 1) / 3) * 100)}%</span>
+          <span>Step {screen + 1} of 4</span>
+          <span>{Math.round(((screen + 1) / 4) * 100)}%</span>
         </div>
         <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
-          <div className="h-full rounded-full bg-[var(--sc-teal)] transition-all" style={{ width: `${((screen + 1) / 3) * 100}%` }} />
+          <div className="h-full rounded-full bg-[var(--sc-teal)] transition-all" style={{ width: `${((screen + 1) / 4) * 100}%` }} />
         </div>
       </div>
 
       {screen === 0 && (
+        <div>
+          <h2 className="text-2xl font-bold text-[var(--sc-blue-900)]">Where is the project?</h2>
+          <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
+            State matters mainly for government-school and public-sector approval rules. It does not change the finance result simply because a private organisation is in a different state.
+          </p>
+          <div className="sc-card mt-6 bg-white p-5">
+            <ProjectStateSelector required label="State or territory" />
+          </div>
+        </div>
+      )}
+
+      {screen === 1 && (
         <div>
           <h2 className="text-2xl font-bold text-[var(--sc-blue-900)]">What type of organisation is this for?</h2>
           <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
@@ -350,7 +396,7 @@ export function FinanceCheckTool() {
         </div>
       )}
 
-      {screen === 1 && (
+      {screen === 2 && (
         <div>
           <h2 className="text-2xl font-bold text-[var(--sc-blue-900)]">Roughly how much finance might the project need?</h2>
           <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
@@ -400,7 +446,7 @@ export function FinanceCheckTool() {
         </div>
       )}
 
-      {screen === 2 && (
+      {screen === 3 && (
         <div>
           <h2 className="text-2xl font-bold text-[var(--sc-blue-900)]">What would feel manageable within your budget?</h2>
           <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
@@ -456,7 +502,7 @@ export function FinanceCheckTool() {
         {screen > 0 ? (
           <button type="button" onClick={back} className="text-sm font-semibold text-[var(--sc-slate)] hover:text-[var(--sc-blue-900)]">← Back</button>
         ) : <span />}
-        {screen < 2 ? (
+        {screen < 3 ? (
           <button type="button" disabled={!canContinue} onClick={next} className="sc-btn-primary cursor-pointer disabled:opacity-40">Next step →</button>
         ) : (
           <button type="button" disabled={!canContinue} onClick={finish} className="sc-btn-primary cursor-pointer disabled:opacity-40">See my result</button>

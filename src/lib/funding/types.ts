@@ -1,6 +1,6 @@
 import type { BusinessResult, FreshnessState, InputIssue } from "../agent-ready/contracts";
 import type { ProjectState } from "../jurisdictions";
-import type { FundingField, FundingInput } from "./questions";
+import type { FundingField, FundingInput, FundingInputKey } from "./questions";
 export type RouteType = "grant" | "internal_allocation" | "project_approval" | "procurement" | "concessional_loan";
 export const ROUTE_LABELS: Record<RouteType, string> = {
   grant: "Grant programme", internal_allocation: "Internal allocation / department assistance",
@@ -45,6 +45,6 @@ export interface FundingPayload {
   inputs: FundingInput; issues: InputIssue[];
   coverage: "five_state_review" | "national_only" | "not_selected";
   coverage_note: string; pathways: PathwayAssessment[];
-  missing_fields: FundingField[]; grant_award: null; approval: "not_determined";
+  missing_fields: FundingInputKey[]; grant_award: null; approval: "not_determined";
 }
 export type FundingResult = BusinessResult<FundingPayload>;

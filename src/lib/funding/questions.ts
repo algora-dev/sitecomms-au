@@ -1,7 +1,31 @@
 import { JURISDICTIONS } from "../jurisdictions";
 
 const yesNo = [["unknown", "Not sure / not established"], ["yes", "Yes"], ["no", "No"]] as const;
-/** One public option registry drives the form and the HTTP input schema. No free text or personal data. */
+
+/**
+ * The public checker asks for functions the visitor wants from the communications
+ * system. These are intentionally broader than product SKUs or grant terminology.
+ */
+export const FUNDING_FEATURES = [
+  ["bells_schedules", "Bells and scheduled tones"],
+  ["announcements_paging", "Live announcements and zoned paging"],
+  ["emergency_lockdown", "Emergency / lockdown messages"],
+  ["two_way_intercom", "Two-way room / intercom communication"],
+  ["entry_intercom", "Entry / door intercom"],
+  ["outdoor_coverage", "Outdoor paging / wider-site coverage"],
+  ["accessibility_alerts", "Visual alerts or hearing-access support"],
+  ["upgrade_existing", "Replace or expand an existing system"],
+  ["staff_communications", "Staff paging / help points / care-area communication"],
+  ["general_upgrade", "General communications upgrade / not sure yet"],
+] as const;
+
+export type FundingFeature = (typeof FUNDING_FEATURES)[number][0];
+
+/**
+ * One option registry drives the structured funding contract. The public form uses
+ * only the high-value fields; the detailed fields remain available for researched
+ * follow-up conditions and controlled integrations.
+ */
 export const FUNDING_FIELDS = {
   state: { label: "Where is the project?", options: JURISDICTIONS.map(s => [s.code, s.name] as const) },
   site_type: { label: "What kind of site is it?", options: [
@@ -17,6 +41,8 @@ export const FUNDING_FIELDS = {
     ["local_government", "Local council"], ["other_government", "Other government organisation"],
     ["private_business", "For-profit operator / business"], ["social_enterprise", "Certified social enterprise"], ["unincorporated_group", "Unincorporated not-for-profit group"], ["individual", "Individual"],
   ] as const },
+  // Kept as a structured/internal field for backwards compatibility and detailed
+  // pathway rules. The public form derives it from selected system features.
   project_focus: { label: "What is the project?", options: [
     ["unknown", "Not sure yet"], ["communications", "Replace or upgrade PA / paging / bells / intercom"],
     ["building", "New building, extension or substantial refurbishment"], ["maintenance", "Repair or maintenance"],
@@ -24,7 +50,7 @@ export const FUNDING_FIELDS = {
     ["operating_costs", "Subscriptions, staffing or other ongoing costs"],
   ] as const },
   stage: { label: "What stage is the project at?", options: [
-    ["unknown", "Not sure"], ["planning", "Planning only"], ["quotes", "Getting quotes — no purchase or contract yet"],
+    ["unknown", "Not sure"], ["planning", "Planning / early stage"], ["quotes", "Getting quotes — nothing committed yet"],
     ["committed", "Order, deposit or contract already committed"], ["started", "Work already started"], ["completed", "Work completed / equipment purchased"],
   ] as const },
   tenure: { label: "Who controls the property?", options: [
@@ -51,18 +77,39 @@ export const FUNDING_FIELDS = {
   gaming: { label: "Does the applicant hold a gaming-machine licence or operate gaming machines?", options: yesNo },
   already_grant_funded: { label: "Has another grant already funded this same project or cost?", options: yesNo },
 } as const;
+
 export type FundingField = keyof typeof FUNDING_FIELDS;
-export type FundingInput = Partial<Record<FundingField, string>>;
-export const REQUIRED_FUNDING_FIELDS: FundingField[] = ["state", "site_type", "applicant_type", "project_focus", "stage"];
+export type FundingInputKey = FundingField | "features";
+export type FundingInput = Partial<Record<FundingField, string>> & { features?: FundingFeature[] };
+
+/** The public flow needs only these facts plus one or more selected system features. */
+export const REQUIRED_FUNDING_FIELDS: FundingField[] = ["state", "site_type", "applicant_type", "stage"];
+
 export function fieldLabel(field: FundingField, value: string): string {
   return FUNDING_FIELDS[field].options.find(option => option[0] === value)?.[1] ?? value;
 }
+export function featureLabel(value: FundingFeature): string {
+  return FUNDING_FEATURES.find(option => option[0] === value)?.[1] ?? value;
+}
+
 export const FUNDING_INPUT_SCHEMA = {
-  type: "object", additionalProperties: false, required: REQUIRED_FUNDING_FIELDS,
-  properties: Object.fromEntries(Object.entries(FUNDING_FIELDS).map(([key, field]) => [key, {
-    type: "string", enum: field.options.map(option => option[0]), description: field.label,
-  }])),
+  type: "object",
+  additionalProperties: false,
+  required: [...REQUIRED_FUNDING_FIELDS, "features"],
+  properties: {
+    ...Object.fromEntries(Object.entries(FUNDING_FIELDS).map(([key, field]) => [key, {
+      type: "string", enum: field.options.map(option => option[0]), description: field.label,
+    }])),
+    features: {
+      type: "array",
+      minItems: 1,
+      uniqueItems: true,
+      items: { type: "string", enum: FUNDING_FEATURES.map(option => option[0]) },
+      description: "The communications functions the project needs.",
+    },
+  },
 } as const;
+
 /** Questions relevant to the selected branch. Unknown stays unknown; hidden fields are never inferred. */
 export function relevantDetailFields(input: FundingInput): FundingField[] {
   const fields: FundingField[] = ["tenure", "building_component", "already_grant_funded"];
