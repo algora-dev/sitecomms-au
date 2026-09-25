@@ -59,14 +59,14 @@ After staging passes, set in the **production build environment**:
 ```sh
 SITE_INDEXING_ENABLED=true
 SITE_ALLOW_MODEL_TRAINING=false
-NEXT_PUBLIC_SITE_URL=https://sitecomms.com.au
+NEXT_PUBLIC_SITE_URL=https://sitecomms.au
 ```
 
 Retain the existing production enquiry/analytics secrets in protected hosting configuration. Rebuild/redeploy; changing the variable after an already-produced static build may not update every metadata/header output.
 
 Verify on the live origin before requesting indexing:
 
-- `GET /robots.txt` allows public crawling, advertises `https://sitecomms.com.au/sitemap.xml`, explicitly allows OAI-SearchBot and blocks GPTBot under the default policy.
+- `GET /robots.txt` allows public crawling, advertises `https://sitecomms.au/sitemap.xml`, explicitly allows OAI-SearchBot and blocks GPTBot under the default policy.
 - `GET /sitemap.xml` contains the intended public canonical URLs, including `/compare/schools`; it does not contain `/compare` or `/integrations`.
 - `curl -I` on representative public pages does **not** return the global noindex header.
 - `curl -I /api/business/v1/search` still returns an `X-Robots-Tag` noindex header.
@@ -81,7 +81,7 @@ Verify on the live origin before requesting indexing:
 After the live verification:
 
 1. Add/verify the property in Google Search Console and Bing Webmaster Tools as applicable.
-2. Submit `https://sitecomms.com.au/sitemap.xml`.
+2. Submit `https://sitecomms.au/sitemap.xml`.
 3. Inspect/request indexing for a representative set: `/`, `/schools`, `/compare/schools`, `/systems/ip-paging-pa`, `/pricing`, `/tools/funding-check`, `/financing`, `/industries/aged-care-retirement-villages` and one state funding guide.
 4. Use the existing IndexNow script only after the public key file is reachable. Example: `npm run indexnow -- / /schools /compare/schools /pricing /funding /financing`.
 5. Do not promise instant indexing or AI citations; measure discovery separately from traffic and enquiries.

@@ -5,7 +5,7 @@ export const site = {
   locale: "en-AU",
   country: "AU",
   currency: "AUD",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sitecomms.com.au",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sitecomms.au",
   description:
     "Australian information and planning resource for IP paging, PA, bell, intercom and integrated communication systems, including pricing and finance/leasing tools.",
 } as const;
