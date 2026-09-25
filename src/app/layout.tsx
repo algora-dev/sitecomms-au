@@ -58,6 +58,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             />
           </>
         ) : null}
+        {/* Microsoft Clarity - session recording & heatmaps. Production hosts only.
+         QA override for staging: set window.__CLARITY_QA__ = true in the browser
+         console BEFORE page load to force-load Clarity on a non-production host.
+         Project-level masking is set to Balanced mode in the Clarity dashboard. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(location.hostname==='sitecomms.au'||location.hostname==='www.sitecomms.au'||window.__CLARITY_QA__===true){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","ynyyoqllam");}`,
+          }}
+        />
         <Suspense>
           <AttributionBoot />
         </Suspense>
