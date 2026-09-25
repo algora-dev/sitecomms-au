@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "./site";
+import { siteIndexingEnabled } from "./indexing";
 
 export function buildMetadata(opts: {
   title: string;
@@ -12,9 +13,9 @@ export function buildMetadata(opts: {
     title: opts.title,
     description: opts.description,
     alternates: { canonical: url },
-    robots: opts.noindex
-      ? { index: false, follow: false }
-      : { index: false, follow: false, googleBot: { index: false, follow: false } }, // PREVIEW MODE: site-wide noindex until launch
+    robots: opts.noindex || !siteIndexingEnabled()
+      ? { index: false, follow: false, googleBot: { index: false, follow: false } }
+      : { index: true, follow: true, googleBot: { index: true, follow: true } },
     openGraph: {
       title: opts.title,
       description: opts.description,

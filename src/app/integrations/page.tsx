@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 import { capabilityDescriptions } from "@/lib/agent-ready/capabilities";
 import { CONTRACT_VERSION } from "@/lib/agent-ready/contracts";
 
-export const metadata = buildMetadata({ title: "Integration status and planning capabilities", description: "How SiteComms keeps public planning information and indicative calculations consistent, with clear integration limits and ordinary human alternatives.", path: "/integrations" });
+export const metadata = buildMetadata({ title: "Integration status and planning capabilities", description: "How SiteComms keeps public planning information and indicative calculations consistent, with clear integration limits and ordinary human alternatives.", path: "/integrations", noindex: true });
 
 export default function IntegrationPage() {
   return <div className="sc-container max-w-4xl py-16">

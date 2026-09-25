@@ -8,6 +8,7 @@ import { site } from "@/lib/site";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 import { GA4_MEASUREMENT_ID } from "@/lib/analytics";
 import { Suspense } from "react";
+import { siteIndexingEnabled } from "@/lib/indexing";
 import { AttributionBoot } from "@/components/attribution-boot";
 import { ScrollToTopOnNavigation } from "@/components/scroll-to-top-on-navigation";
 
@@ -15,8 +16,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  // Preview gate: remove only as part of an approved launch/indexing review.
-  robots: { index: false, follow: false },
+  robots: siteIndexingEnabled()
+    ? { index: true, follow: true, googleBot: { index: true, follow: true } }
+    : { index: false, follow: false, googleBot: { index: false, follow: false } },
   title: {
     default: "SiteComms Australia | IP paging, bell & PA system guidance for Australia",
     template: "%s | SiteComms Australia",

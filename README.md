@@ -2,30 +2,43 @@
 
 Australian research, education, planning and reviewed-enquiry resource for PA, IP paging, school bells, intercom and communications systems.
 
-## Current baseline — Phase 4 schools comparison (25 September 2026)
+## Current baseline — Launch-ready candidate (25 September 2026)
 
-**Start with `AGENT_HANDOFF_PHASE_4_SCHOOLS_COMPARE.md`.** This is the complete project built on the Phase 3 finance ZIP. All current instructions, research, changes and validation evidence are inside this archive.
+**Start with `AGENT_HANDOFF_LAUNCH_READY.md`.** This is the complete project built on the agent-verified Phase 4 schools-comparison ZIP. All current launch instructions and validation notes are inside this archive.
 
-The school comparison is now `/compare/schools`. It includes eight main approaches, feature-based shortlists, expandable profiles, cost/scope guidance, five-state Australian references and the existing reviewed enquiry form. SPON is a positive all-round option; its Australian supplier/support route remains unverified. `/compare` permanently redirects to the canonical page, with compatibility fragment targets preserved.
+The content/tool baseline includes school planning and comparison, indicative AUD pricing, simplified state-aware funding pathways, state-aware finance guidance, aged-care planning content, Australian system guides, state context and the reviewed SiteComms enquiry workflow.
 
-The existing global theme/assets, provisional AUD 80–100% pricing model, simplified funding flow, state-aware finance tool and enquiry backend are unchanged. The Agent-Ready public guide directory points to the new comparison; there is no new AI protocol, model, database or automatic lead submission.
+## Controlled indexing
+
+Indexing is now governed by one server-side build setting:
+
+```sh
+SITE_INDEXING_ENABLED=false   # preview/staging
+SITE_INDEXING_ENABLED=true    # production launch after QA
+```
+
+When false, robots, page metadata and the global `X-Robots-Tag` all block indexing. When true, ordinary public pages become crawlable and indexable, `/robots.txt` advertises the sitemap, and API responses remain noindex. The `/integrations` status page remains explicitly noindex for this release.
+
+Search discovery and model-training crawling are deliberately separate. `SITE_ALLOW_MODEL_TRAINING=false` is the conservative default; the launched robots policy still allows OAI-SearchBot while GPTBot remains blocked. Change that only as an explicit owner policy decision.
+
+**The production environment variable must be present during the production build.** Do not set it to true on a publicly reachable staging site.
 
 ## Main routes
 
-- `/schools` → `/compare/schools`: school planning and comparison.
-- `/pricing-tool`, `/pricing`: shared indicative AUD model, not brand quotes.
-- `/tools/funding-check`: simplified state/site/applicant/stage/features pathway tool.
-- `/funding` and the five state guides: researched pathways, not awards or a live grants feed.
-- `/tools/finance-check`, `/financing`: Phase 3 state-aware indicative finance guidance.
-- `/industries/aged-care-retirement-villages`: existing aged-care comparison, unchanged in Phase 4.
-- `/integrations`: truthful status of the controlled, disabled-by-default HTTP profile.
+- `/schools` and `/compare/schools`: school planning and Australian system comparison.
+- `/pricing-tool`, `/pricing`: shared indicative AUD planning model.
+- `/tools/funding-check`, `/funding`: state-aware funding-pathway research.
+- `/tools/finance-check`, `/financing`: state-aware indicative finance guidance.
+- `/industries/aged-care-retirement-villages`: aged-care communications planning.
+- `/systems`, `/guides`, `/states`: supporting research and planning content.
 - `/contact`: ordinary reviewed enquiry route.
 
-## Development and release checks
+## Required release checks
 
 ```sh
 npm ci
 npm test
+npm run test:launch
 npm run typecheck:schools-compare
 npm run typecheck:finance
 npm run typecheck:funding
@@ -33,23 +46,21 @@ npm run typecheck:agent-ready
 npx tsc --noEmit
 npm run lint
 npm run build
-npm run dev
 ```
 
-Dependencies and the lockfile are unchanged. Full framework installation/build and browser behaviour remain release gates in the hosting environment; see `docs/schools-compare/VALIDATION.md` for exactly what ran here.
+Then preview the key human journeys on mobile and desktop before the production build. Use a test inbox for enquiry-delivery tests.
 
-Preview/noindex protection remains enabled. Do not enable indexing, public integration access or production deployment without owner approval. Noindex is not access control: protect private staging appropriately. Real environment secrets belong in the hosting provider's protected settings, never in an exported source ZIP.
+After the production build with `SITE_INDEXING_ENABLED=true`, verify `/robots.txt`, `/sitemap.xml`, representative page source/headers, canonical URLs and live enquiries before requesting indexing.
 
 ## Current documentation
 
-- `AGENT_HANDOFF_PHASE_4_SCHOOLS_COMPARE.md`: agent action and preview checklist.
-- `SITECOMMS_AU_PHASE_4_SCHOOLS_COMPARE_CHANGELOG.md`: scope and known limits.
-- `docs/schools-compare/`: profile, research, validation, actual test output and preservation/changed-file evidence.
-- `docs/comparison-research.json`: source snapshot corresponding to the shared comparison registry.
-- `docs/finance/`, `docs/funding/`, `docs/agent-ready/`: preserved domain research, operations and standard.
+- `AGENT_HANDOFF_LAUNCH_READY.md`: production/staging instructions and launch checklist.
+- `SITECOMMS_AU_LAUNCH_READINESS_CHANGELOG.md`: what changed in this pass.
+- `docs/launch/VALIDATION.md`: checks completed here and remaining host-side gates.
+- `AGENT_HANDOFF_PHASE_4_SCHOOLS_COMPARE.md` and prior handoffs: historical implementation evidence.
 
-Earlier phase handoffs are historical evidence. Do not use them to restore the funding holding page, the pre-simplification questionnaire, automatic result/PDF storage, the old seven-system comparison or obsolete finance copy.
+Earlier handoffs must not be used to restore old pricing storage, the funding holding page, the pre-simplification funding questionnaire, old finance wording or the old school comparison.
 
-## Next work
+## Post-launch work
 
-The hosting agent should complete staging QA and fix integration issues without changing approved content/logic. Subsequent work can strengthen verified local installation/support evidence (especially SPON), refine the aged-care comparison, and complete launch QA. No automatic date refresh or unattended research task is configured.
+Improve the aged-care comparison, add further Australian verticals and verified local installation evidence, and use real search/enquiry data to guide content expansion. Do not mass-produce near-duplicate location pages.

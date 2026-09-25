@@ -21,7 +21,8 @@
     "test:funding": "tsx scripts/test-funding.mjs",
     "typecheck:funding": "tsc --project tsconfig.funding.json",
     "test:schools-compare": "tsx scripts/test-schools-compare.mjs",
-    "typecheck:schools-compare": "tsc --project tsconfig.schools-compare.json"
+    "typecheck:schools-compare": "tsc --project tsconfig.schools-compare.json",
+    "test:launch": "node scripts/test-launch-readiness.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",

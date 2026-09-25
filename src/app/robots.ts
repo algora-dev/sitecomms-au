@@ -1,9 +1,26 @@
 import type { MetadataRoute } from "next";
+import { modelTrainingCrawlerEnabled, siteIndexingEnabled } from "@/lib/indexing";
+import { site } from "@/lib/site";
 
-// PREVIEW MODE: private, not for indexing. Flip to the production rules
-// (allow all + sitemap) when the site is ready to go public.
 export default function robots(): MetadataRoute.Robots {
+  if (!siteIndexingEnabled()) {
+    return {
+      rules: [{ userAgent: "*", disallow: "/" }],
+    };
+  }
+
+  const rules = [
+    { userAgent: "*", allow: "/", disallow: ["/api/"] },
+    // Keep ChatGPT search discovery separate from model-training policy.
+    { userAgent: "OAI-SearchBot", allow: "/", disallow: ["/api/"] },
+    ...(modelTrainingCrawlerEnabled()
+      ? []
+      : [{ userAgent: "GPTBot", disallow: "/" }]),
+  ];
+
   return {
-    rules: [{ userAgent: "*", disallow: "/" }],
+    rules,
+    sitemap: `${site.url}/sitemap.xml`,
+    host: site.url,
   };
 }

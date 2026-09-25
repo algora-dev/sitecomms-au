@@ -44,12 +44,12 @@ const sitemap=readFileSync(path.join(root,'src/app/sitemap.ts'),'utf8');
 const siteRoutes=[...sitemap.matchAll(/path: "([^"]+)"/g)].map(m=>m[1]);
 assert.equal(siteRoutes.length,new Set(siteRoutes).size,'Sitemap duplicates');
 for (const route of siteRoutes) { assert.ok(routeFiles.has(route),`Sitemap route absent: ${route}`); assert.ok(CONTENT_META[route],`Missing metadata: ${route}`); }
-for (const route of routeFiles.keys()) if (!['/tools/system-planner','/compare'].includes(route)) assert.ok(siteRoutes.includes(route),`Missing sitemap entry: ${route}`);
+for (const route of routeFiles.keys()) if (!['/tools/system-planner','/compare','/integrations'].includes(route)) assert.ok(siteRoutes.includes(route),`Missing sitemap entry: ${route}`); // /integrations intentionally noindex and excluded from the sitemap (launch policy)
 assert.ok(!siteRoutes.includes('/compare'), 'Legacy redirect must not be in sitemap');
 assert.match(readFileSync(path.join(root,'src/app/compare/page.tsx'),'utf8'), /permanentRedirect/);
 assert.match(readFileSync(path.join(root,'next.config.ts'),'utf8'), /source: "\/compare", destination: "\/compare\/schools", permanent: true/);
 assert.match(readFileSync(path.join(root,'src/app/robots.ts'),'utf8'),/disallow: "\/"/);
-assert.match(readFileSync(path.join(root,'src/app/layout.tsx'),'utf8'),/robots: \{ index: false, follow: false \}/);
+assert.match(readFileSync(path.join(root,'src/app/layout.tsx'),'utf8'),/index: false, follow: false, googleBot: \{ index: false, follow: false \}/); // locked default branch of the SITE_INDEXING_ENABLED gate
 assert.match(readFileSync(path.join(root,'src/lib/seo.ts'),'utf8'),/index: false/);
 const logging=readFileSync(path.join(root,'src/app/api/pricing-tool/output-log/route.ts'),'utf8');
 assert.ok(!logging.includes('Pacific/Auckland'));

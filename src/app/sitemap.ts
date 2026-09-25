@@ -32,7 +32,6 @@ const routes: { path: string; priority: number }[] = [
   { path: "/tools/finance-check", priority: 0.95 },
   { path: "/compare/schools", priority: 0.9 },
   { path: "/industries/aged-care-retirement-villages", priority: 0.9 },
-  { path: "/integrations", priority: 0.3 },
   { path: "/about", priority: 0.5 },
   { path: "/about/methodology", priority: 0.4 },
   { path: "/about/disclosure", priority: 0.4 },
