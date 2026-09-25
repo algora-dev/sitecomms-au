@@ -226,7 +226,7 @@ await test("Comparison provenance is derived without new verification claims", (
   assert.equal(comparisonEvidenceRecords().length, Object.keys(comparisonSources).length);
   for (const record of comparisonEvidenceRecords()) {
     assert.equal(record.href, comparisonSources[record.source_id.split(":")[1]].href);
-    assert.equal(record.evidence_status, "inherited_phase_1_research"); assert.ok(!("verified_at" in record));
+    assert.equal(record.evidence_status, "document_review"); assert.ok(!("verified_at" in record));
   }
 });
 await test("Three explicitly selected read/assessment capabilities; no model or write tool", () => {

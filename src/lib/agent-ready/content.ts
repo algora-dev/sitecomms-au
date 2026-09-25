@@ -35,9 +35,9 @@ export const PUBLIC_GUIDES = [
     href: "/guides/school-pa-specification-checklist",
   },
   {
-    title: "IP Paging & PA Systems: 2026 Buyer’s Guide",
-    desc: "Compare integrated school platforms, SIP-first options, browser-managed audio, hybrid approaches and specialist architectures for Australian buyers.",
-    href: "/compare",
+    title: "Compare School PA, Bell & Intercom Systems in Australia",
+    desc: "Compare SPON, FrontRow, Algo, Axis, Bosch, Bodet, TOA and hybrid school systems, with feature, value and Australian support evidence.",
+    href: "/compare/schools",
   },
   {
     title: "School PA, Paging, Bell & Intercom Systems",

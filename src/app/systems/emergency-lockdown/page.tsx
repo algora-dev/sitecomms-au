@@ -90,7 +90,7 @@ export default function EmergencyLockdownPage() {
       </p>
       <p>
         Manufacturer documentation describes product functions, not approval of an emergency plan. See the
-        <Link href="/compare#sources"> comparison sources</Link> for model-specific references. An ordinary PA
+        <Link href="/compare/schools#sources"> comparison sources</Link> for model-specific references. An ordinary PA
         with an alert tone is not automatically a compliant voice-alarm or evacuation system; specialist design
         and the applicable project requirements must determine what is needed.
       </p>

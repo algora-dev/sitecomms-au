@@ -78,7 +78,7 @@ const UTILITY_LINKS = [
     event: "funding_check_cta_clicked",
   },
   {
-    href: "/compare",
+    href: "/compare/schools",
     label: "Buyer comparison guide",
     event: "compare_cta_clicked",
   },

@@ -114,7 +114,7 @@ export default function SchoolBellPage() {
         <Link href="/pricing-tool">ballpark cost calculator</Link> for indicative figures, and the{" "}
         <Link href="/tools/funding-check">funding pathways page</Link> to review researched state and national routes. Funding depends on sector, jurisdiction, project scope and current program rules.
       </p>
-      <p>For documented scheduling examples and Australian supply evidence, see the <Link href="/compare#sources">comparison sources</Link>. Confirm the proposed model and demonstrate the actual timetable before acceptance.</p>
+      <p>For documented scheduling examples and Australian supply evidence, see the <Link href="/compare/schools#sources">comparison sources</Link>. Confirm the proposed model and demonstrate the actual timetable before acceptance.</p>
       <h2 id="specifying">Specifying the system</h2>
       <p>
         When comparing quotes, make sure every proposal covers the same bell and announcement scope —

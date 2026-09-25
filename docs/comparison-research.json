@@ -1,76 +1,214 @@
 {
-  "reviewed": "2026-09-19",
+  "reviewed": "2026-09-25",
+  "scope": "Primary-document review; not hands-on testing, current stock verification or a supplier appointment.",
   "sources": {
+    "spon": {
+      "label": "SPON — school communications design",
+      "href": "https://sponcomm.com/solution-detail/smart-pa-solution-for-schools",
+      "kind": "Manufacturer solution",
+      "scope": "School workflows and example SPON components.",
+      "limits": "Manufacturer description, not a verified Australian deployment or supply channel.",
+      "reviewed_at": "2026-09-25"
+    },
+    "spon-software": {
+      "label": "SPON — XC-9000 audio management software",
+      "href": "https://sponcomm.com/products/audio-management-software",
+      "kind": "Manufacturer technical page",
+      "scope": "Scheduling, zones, SIP, two-way communication and stated platform capacity.",
+      "limits": "Capacity is a manufacturer claim; confirm edition, licences, network design and local support.",
+      "reviewed_at": "2026-09-25"
+    },
     "frontrow": {
-      "label": "FrontRow Australia \u2014 Conductor",
+      "label": "FrontRow Australia — Conductor",
       "href": "https://www.gofrontrow.com.au/products/conductor/",
-      "kind": "Manufacturer Australian site"
+      "kind": "Australian-facing manufacturer",
+      "scope": "Conductor campus communication and compatible classroom/display integration.",
+      "limits": "Not proof of stock, individual school suitability or installer coverage.",
+      "reviewed_at": "2026-09-25"
     },
     "clearasound": {
-      "label": "ClearaSound \u2014 FrontRow Conductor services",
+      "label": "ClearaSound — Conductor and school services",
       "href": "https://clearasound.com.au/audio-visual-systems-for-education/frontrow-conductor/",
-      "kind": "Australian provider publication; not a SiteComms partnership"
+      "kind": "Australian provider",
+      "scope": "Conductor services; provider describes NSW and Queensland education coverage.",
+      "limits": "Provider's own account, not independent verification or a SiteComms partnership.",
+      "reviewed_at": "2026-09-25"
     },
     "algo": {
-      "label": "advanceNET \u2014 Algo 8301",
+      "label": "advanceNET — Algo 8301 adapter and scheduler",
       "href": "https://www.advance-net.com.au/product/algo-8301-sip-paging-adapter-bell-scheduler/",
-      "kind": "Australian wholesaler product listing"
+      "kind": "Australian distributor listing",
+      "scope": "An Australian Algo enquiry route and 8301 product description.",
+      "limits": "A listing is not a live inventory check or an installation quote.",
+      "reviewed_at": "2026-09-25"
     },
     "algo-manual": {
-      "label": "Algo \u2014 8301 user guide",
+      "label": "Algo — 8301 user guide",
       "href": "https://docs.algosolutions.com/docs/8301-user-guide",
-      "kind": "Manufacturer technical documentation"
+      "kind": "Manufacturer technical documentation",
+      "scope": "8301 scheduling, SIP/multicast and line-level integration.",
+      "limits": "Applies to the specified device/firmware; confirm the full system configuration.",
+      "reviewed_at": "2026-09-25"
+    },
+    "algo-speaker": {
+      "label": "Algo — 8188 IP ceiling speaker",
+      "href": "https://www.algosolutions.com/product/8188-ip-ceiling-speaker/",
+      "kind": "Manufacturer technical page",
+      "scope": "Specified 8188 talkback, call inputs and multicast endpoint behaviour.",
+      "limits": "Not every speaker or retained analogue circuit has these features.",
+      "reviewed_at": "2026-09-25"
     },
     "axis": {
-      "label": "Axis Australia \u2014 Audio Manager Edge",
+      "label": "Axis Australia — Audio Manager Edge",
       "href": "https://www.axis.com/en-au/products/axis-audio-manager-edge",
-      "kind": "Manufacturer Australian site"
+      "kind": "Australian-facing manufacturer",
+      "scope": "Edge management, scheduling and stated site/zone limits.",
+      "limits": "Not a universal limit for every Axis architecture or proof of local inventory.",
+      "reviewed_at": "2026-09-25"
     },
     "axis-manual": {
-      "label": "Axis \u2014 Audio Manager Edge manual",
+      "label": "Axis — Audio Manager Edge manual",
       "href": "https://help.axis.com/en-us/axis-audio-manager-edge",
-      "kind": "Manufacturer technical documentation"
+      "kind": "Manufacturer technical documentation",
+      "scope": "Configuration, schedules, priorities and supported workflows.",
+      "limits": "Functions depend on device, software version and integration.",
+      "reviewed_at": "2026-09-25"
+    },
+    "axis-display": {
+      "label": "Axis Australia — C1710 display speaker",
+      "href": "https://www.axis.com/en-au/products/axis-c1710",
+      "kind": "Australian-facing manufacturer",
+      "scope": "C1710 speaker, text display, strobe and two-way audio.",
+      "limits": "The page describes functions with Axis audio management; third-party configurations can differ.",
+      "reviewed_at": "2026-09-25"
     },
     "prospero": {
-      "label": "Keenfinity Australia \u2014 Bosch PROSPERO",
+      "label": "Keenfinity Australia — Bosch PROSPERO",
       "href": "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/",
-      "kind": "Manufacturer Australian site"
+      "kind": "Australian-facing manufacturer",
+      "scope": "IP PA, scheduling, controllers, stations and interfaces.",
+      "limits": "Not certification of an Australian life-safety design or evidence of every integrator's capability.",
+      "reviewed_at": "2026-09-25"
     },
     "bodet": {
-      "label": "advanceNET \u2014 Bodet Harmonys Trio",
+      "label": "advanceNET — Bodet Harmonys Trio",
       "href": "https://www.advance-net.com.au/product/bodet-harmonys-trio-speaker-led-display-strobe/",
-      "kind": "Australian wholesaler product listing"
+      "kind": "Australian distributor listing",
+      "scope": "Harmonys Trio audio, display and flash; an Australian enquiry route.",
+      "limits": "Confirm controller, commissioning, current availability and exact feature set.",
+      "reviewed_at": "2026-09-25"
+    },
+    "bodet-range": {
+      "label": "Bodet — Harmonys IP audio range",
+      "href": "https://www.bodet-time.com/products/audio-alert-systems/ip-audio-system.html",
+      "kind": "Manufacturer solution",
+      "scope": "IP bells, live/recorded audio, clocks, alerts and system components.",
+      "limits": "Not confirmation of an Australian installer or automatic suitability for a hearing-access project.",
+      "reviewed_at": "2026-09-25"
     },
     "toa": {
-      "label": "TOA \u2014 IP-A1PG gateway",
+      "label": "TOA — IP-A1PG gateway",
       "href": "https://www.toa.co.uk/products/ip-a1pg/",
-      "kind": "Manufacturer technical page; not Australian stock evidence"
+      "kind": "Manufacturer technical page",
+      "scope": "Gateway scheduling and SIP/ONVIF-to-multicast functions.",
+      "limits": "Not Australian stock evidence. This gateway is not itself a 100V amplifier.",
+      "reviewed_at": "2026-09-25"
     },
     "toa-au": {
-      "label": "TOA \u2014 Australia authorised dealer",
+      "label": "TOA — Australian authorised dealer directory",
       "href": "https://toa.com.sg/dealers/29",
-      "kind": "Manufacturer Australian dealer directory; confirm exact family"
+      "kind": "Manufacturer dealer directory",
+      "scope": "Identifies Australis Music Group as an Australian route.",
+      "limits": "Confirm the exact IP/PA family, model revision, stock and service responsibility.",
+      "reviewed_at": "2026-09-25"
     },
     "monitor": {
-      "label": "Australian Monitor \u2014 school paging and custom tones design",
+      "label": "Australian Monitor — school paging design",
       "href": "https://www.australianmonitor.com.au/pages/school-with-paging-and-custom-tones",
-      "kind": "Australian manufacturer application design; not a named school installation"
-    },
-    "spon": {
-      "label": "SPON \u2014 school PA solution",
-      "href": "https://sponcomm.com/solution-detail/smart-pa-solution-for-schools",
-      "kind": "Manufacturer description; Australian supply/support not verified"
+      "kind": "Manufacturer design example",
+      "scope": "Illustrates a traditional school PA and triggered-tone design.",
+      "limits": "The equipment list includes discontinued models. Not a current bill of materials or named deployment.",
+      "reviewed_at": "2026-09-25"
     },
     "2n": {
-      "label": "2N \u2014 IP Verso 2.0",
+      "label": "2N — IP Verso 2.0",
       "href": "https://www.2n.com/en-GB/products/intercoms/2n-ip-verso-2/",
-      "kind": "Manufacturer entrance-intercom description"
+      "kind": "Manufacturer technical page",
+      "scope": "Entrance intercom and access use case.",
+      "limits": "Entrance intercom is not a complete campus bell/PA solution.",
+      "reviewed_at": "2026-09-25"
     },
     "2n-au": {
-      "label": "advanceNET \u2014 2N product category",
+      "label": "advanceNET — 2N range",
       "href": "https://www.advance-net.com.au/product-category/2n/",
-      "kind": "Australian wholesaler category; confirm exact revision and availability"
+      "kind": "Australian distributor listing",
+      "scope": "An Australian 2N enquiry route.",
+      "limits": "Confirm exact model, integrations and stock; not a SiteComms partnership.",
+      "reviewed_at": "2026-09-25"
+    },
+    "atlas": {
+      "label": "AtlasIED — IPX endpoints",
+      "href": "https://www.atlasied.com/ipx",
+      "kind": "Manufacturer solution",
+      "scope": "IP endpoints and notification ecosystem.",
+      "limits": "Specify the controlling platform, integration and licensing; not an Australian installation.",
+      "reviewed_at": "2026-09-25"
+    },
+    "atlas-au": {
+      "label": "AtlasIED — Australian distribution announcement",
+      "href": "https://www.atlasied.com/news/national-audio-systems-named-distributor-for-atlasied-in-australia",
+      "kind": "Historical manufacturer announcement",
+      "scope": "Names National Audio Systems as Australian distributor.",
+      "limits": "Historical channel evidence only. Reconfirm the current arrangement and models before procurement.",
+      "reviewed_at": "2026-09-25"
+    },
+    "qsys": {
+      "label": "Q-SYS — audio, video and control platform",
+      "href": "https://www.qsys.com/",
+      "kind": "Manufacturer platform",
+      "scope": "Broader programmable audio/video/control architecture.",
+      "limits": "Does not establish a packaged school bell workflow, project cost or Australian school deployment.",
+      "reviewed_at": "2026-09-25"
+    },
+    "macrosphere": {
+      "label": "Macrosphere — school bells",
+      "href": "https://www.macrosphere.com.au/school-bells/",
+      "kind": "Australian provider",
+      "scope": "Provider-published school bell/PA services and Queensland locations.",
+      "limits": "Provider's own description retrieved in search; direct page fetch was unavailable in this review. No model or school deployment verified.",
+      "reviewed_at": "2026-09-25"
+    },
+    "visionone": {
+      "label": "Vision One — St Carlo Borromeo Primary School",
+      "href": "https://visionone.com.au/portfolio/st-carlo-borromeo/",
+      "kind": "Named integrator project",
+      "scope": "Published Victorian assembly/performance audio project.",
+      "limits": "An integrator's account of Audac-led audio work, not a whole-campus IP bell system or independent performance test.",
+      "reviewed_at": "2026-09-25"
+    },
+    "advancenet": {
+      "label": "advanceNET — contact and office information",
+      "href": "https://www.advance-net.com.au/contact-us/",
+      "kind": "Australian distributor",
+      "scope": "Published Sydney and Perth office/contact routes.",
+      "limits": "Office presence does not establish site installation coverage, stocked models or repair response times.",
+      "reviewed_at": "2026-09-25"
+    },
+    "teachtek": {
+      "label": "Teach TEK — school audio, lighting and bells",
+      "href": "https://www.teachtek.education/audio-and-lighting",
+      "kind": "Australian provider",
+      "scope": "School bell/PA services and an Adelaide office/showroom.",
+      "limits": "Does not specify a compared platform for a named school; not a partner endorsement.",
+      "reviewed_at": "2026-09-25"
+    },
+    "scp-australia": {
+      "label": "SCP Audio Australia — school audio examples",
+      "href": "https://www.scpaudio.com/Schools",
+      "kind": "Named supplier project",
+      "scope": "Brisbane South State College multipurpose hall audio example.",
+      "limits": "Hall sound reinforcement, not proof of SPON supply or campus paging.",
+      "reviewed_at": "2026-09-25"
     }
-  },
-  "limits": "No stock, market share, every-state coverage or partnership verification. No grant or finance matching in phase 1."
+  }
 }

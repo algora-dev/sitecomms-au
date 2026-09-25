@@ -35,7 +35,7 @@ export default function SchoolsPage() {
         description="Plan a modern school communication system for bells, live announcements, emergency messages, indoor and outdoor coverage, and optional two-way intercom. Compare systems, estimate cost and review the relevant school funding pathways."
         tags={["School paging", "Bell systems", "Emergency announcements", "Intercom", "school funding"]}
         primaryCta={{ label: "Get a ballpark price", href: "/pricing-tool" }}
-        secondaryCta={{ label: "View funding pathways", href: "/tools/funding-check" }}
+        secondaryCta={{ label: "Compare school systems", href: "/compare/schools" }}
         reviewed={reviewedLabel("/schools")}
         note="Indicative pricing and funding guidance"
         breadcrumb={[{ name: "Schools", href: "/schools" }]}
@@ -116,7 +116,7 @@ export default function SchoolsPage() {
           { title: "Australian school requirements", desc: "Education authority design, cabling and procurement guidance for school PA and paging.", href: "/guides/school-pa-paging-requirements" },
           { title: "Specification checklist", desc: "Define scope so every quote covers the same things and compares fairly.", href: "/guides/school-pa-specification-checklist" },
           { title: "Network readiness", desc: "Check cabling, PoE and switching before an IP paging project.", href: "/guides/ip-paging-network-readiness" },
-          { title: "Compare platforms", desc: "Side-by-side comparison of paging and PA platforms available in Australia.", href: "/compare" },
+          { title: "Compare platforms", desc: "Compare school features, complete-system value and evidence of Australian supply/support.", href: "/compare/schools" },
           { title: "Pricing", desc: "Indicative installed cost ranges and how they are built up.", href: "/pricing" },
           { title: "School funding", desc: "Whether fixed communications work may fit a school funding pathway.", href: "/tools/funding-check" },
         ]}

@@ -124,16 +124,20 @@ await test("SA Flying Start requires additional places and eligible operator, no
   assert.equal(get("sa-flying-start", early).match, "potential_pathway");
   assert.equal(get("sa-flying-start", { ...early, adds_places: "no" }).match, "outside_scope");
   for (const early_service_type of ["government", "for_profit", "family_day_care"]) assert.equal(get("sa-flying-start", { ...early, early_service_type }).match, "outside_scope");
-  // Unknown detail fields are follow-up conditions; they do not demote the
-  // initial public shortlist (assessment.ts rule loop + smart-flow changelog).
-  assert.equal(get("sa-flying-start", { ...early, early_service_type: "unknown" }).match, "potential_pathway");
+  // Existing simplified-flow policy: unknown secondary facts stay questions, not a credit/award decision.
+  const pending = get("sa-flying-start", { ...early, early_service_type: "unknown" });
+  assert.equal(pending.match, "potential_pathway");
+  assert.ok(pending.questions.includes("early_service_type"));
+  assert.equal(pending.award_amount, null);
 });
 await test("SA published funding share is not applied to communications estimate", () => { const p = get("sa-flying-start", early); assert.match(p.published_funding_terms, /not 50% back/); assert.equal(p.award_amount, null); });
 await test("SA Julia Farr access route preserves exclusions", () => {
   assert.equal(get("sa-julia-farr", inclusion).match, "potential_pathway");
   for (const patch of [{ gaming: "yes" }, { already_grant_funded: "yes" }, { site_type: "government_school", applicant_type: "school_authority" }, { site_type: "tertiary", applicant_type: "other_government" }, { project_focus: "communications" }]) assert.equal(get("sa-julia-farr", { ...inclusion, ...patch }).match, "outside_scope");
-  // Unknown gaming status is a follow-up condition, not a demotion (same rule loop).
-  assert.equal(get("sa-julia-farr", { ...inclusion, gaming: "unknown" }).match, "potential_pathway");
+  const pending = get("sa-julia-farr", { ...inclusion, gaming: "unknown" });
+  assert.equal(pending.match, "potential_pathway");
+  assert.ok(pending.questions.includes("gaming"));
+  assert.equal(pending.award_amount, null);
 });
 await test("SA institution exclusion does not silently equate a venue with every separate legal applicant", () => {
   for (const site_type of ["government_school", "tertiary", "early_childhood"]) assert.equal(get("sa-julia-farr", { ...inclusion, site_type }).match, "confirm_details");

@@ -15,7 +15,7 @@ export default function PlanningArticle({ path, title, description, children }: 
     <AuthorityHero eyebrow="Australian project planning" title={title} description={description}
       tags={["Project scope", "Australian evidence", "Practical next steps"]}
       primaryCta={{ label: "Estimate the modelled system", href: "/pricing-tool" }}
-      secondaryCta={{ label: "Compare architectures", href: "/compare" }}
+      secondaryCta={{ label: "Compare architectures", href: "/compare/schools" }}
       reviewed={reviewedLabel(path)} note="Planning guidance, not a compliance or funding decision"
       breadcrumb={[{ name: "Guides", href: "/guides" }, { name: title }]} />
     <article className="sc-container max-w-[850px] py-8 sc-prose">{children}</article>

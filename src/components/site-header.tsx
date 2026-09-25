@@ -8,7 +8,7 @@ import { ProjectStateSelector } from "@/components/project-state";
 const NAV = [
   { href: "/schools", label: "Schools" },
   { href: "/systems", label: "Systems" },
-  { href: "/compare", label: "Compare" },
+  { href: "/compare/schools", label: "Compare" },
   { href: "/pricing", label: "Pricing" },
   { href: "/tools", label: "Tools" },
   { href: "/guides", label: "Guides" },

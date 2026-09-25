@@ -1,0 +1,92 @@
+{
+  "baseline_archive": "sitecomms-au-phase-3-finance-2026-09-23.zip",
+  "method": "SHA-256 per-file equality against input ZIP; not visual/browser proof",
+  "checks": {
+    "src/lib/pricing/": {
+      "files": 5,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/components/pricing/": {
+      "files": 4,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/app/pricing-tool/": {
+      "files": 1,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/lib/funding/": {
+      "files": 5,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/components/funding/": {
+      "files": 2,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/app/tools/funding-check/": {
+      "files": 2,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/lib/finance-check/": {
+      "files": 3,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/app/tools/finance-check/": {
+      "files": 2,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/app/financing/": {
+      "files": 1,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/components/enquiry/": {
+      "files": 2,
+      "unchanged": true,
+      "changed": []
+    },
+    "src/app/api/": {
+      "files": 5,
+      "unchanged": true,
+      "changed": []
+    },
+    "public/": {
+      "files": 11,
+      "unchanged": true,
+      "changed": []
+    },
+    "package-lock.json": {
+      "unchanged": true,
+      "exists": true
+    },
+    "src/app/globals.css": {
+      "unchanged": true,
+      "exists": true
+    },
+    "src/app/robots.ts": {
+      "unchanged": true,
+      "exists": true
+    },
+    "src/lib/seo.ts": {
+      "unchanged": true,
+      "exists": true
+    },
+    "src/app/industries/aged-care-retirement-villages/page.tsx": {
+      "unchanged": true,
+      "exists": true
+    },
+    "dependencies": {
+      "unchanged": true
+    },
+    "devDependencies": {
+      "unchanged": true
+    }
+  }
+}

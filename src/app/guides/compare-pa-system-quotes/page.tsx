@@ -41,6 +41,6 @@ export default function CompareQuotesPage() {
     <p>For regional or remote sites, record travel charges, access windows, shipping/spares arrangements and support response expectations explicitly. Choosing a state on SiteComms saves project context; it does not certify provider coverage.</p>
     <h2>Use a simple whole-project comparison</h2>
     <p>For each proposal, record: required functions met, unresolved assumptions, capital total on a common GST basis, separately quoted works, recurring charges over a stated period, acceptance criteria and support responsibilities. Ask for clarifications in writing. Compare funding and finance only after the project scope is sufficiently clear; neither should hide an omitted cost.</p>
-    <p>The <Link href="/compare">Australian comparison guide</Link> supplies manufacturer and local-listing evidence for representative approaches. SiteComms can review an enquiry and suggest providers&apos; public contact details; you decide whether to contact them. Your enquiry is not automatically forwarded to those providers.</p>
+    <p>The <Link href="/compare/schools">Australian comparison guide</Link> supplies manufacturer and local-listing evidence for representative approaches. SiteComms can review an enquiry and suggest providers&apos; public contact details; you decide whether to contact them. Your enquiry is not automatically forwarded to those providers.</p>
   </PlanningArticle>;
 }

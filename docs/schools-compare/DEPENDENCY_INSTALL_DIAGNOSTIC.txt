@@ -1,0 +1,22 @@
+Command: timeout 55s npm ci --ignore-scripts --no-audit --no-fund
+Environment overrides: npm_config_fetch_retries=0; npm_config_fetch_timeout=20000
+Result: failed, return code 1; npm final error: Exit handler never called.
+Registry-fetch diagnostic excerpts:
+1023 http fetch GET https://registry.npmjs.org/zod-validation-error/-/zod-validation-error-4.0.2.tgz attempt 1 failed with EAI_AGAIN
+1024 http fetch GET https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz attempt 1 failed with EAI_AGAIN
+1025 http fetch GET https://registry.npmjs.org/zod/-/zod-4.5.4.tgz attempt 1 failed with EAI_AGAIN
+1026 http fetch GET https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.5.tgz attempt 1 failed with EAI_AGAIN
+1027 http fetch GET https://registry.npmjs.org/which-typed-array/-/which-typed-array-1.1.22.tgz attempt 1 failed with EAI_AGAIN
+1028 http fetch GET https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz attempt 1 failed with EAI_AGAIN
+1029 http fetch GET https://registry.npmjs.org/which-collection/-/which-collection-1.0.2.tgz attempt 1 failed with EAI_AGAIN
+1030 http fetch GET https://registry.npmjs.org/which-builtin-type/-/which-builtin-type-1.2.1.tgz attempt 1 failed with EAI_AGAIN
+1031 http fetch GET https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.1.1.tgz attempt 1 failed with EAI_AGAIN
+1032 http fetch GET https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz attempt 1 failed with EAI_AGAIN
+1033 http fetch GET https://registry.npmjs.org/utrie/-/utrie-1.0.2.tgz attempt 1 failed with EAI_AGAIN
+1044 http fetch GET https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.3.2.tgz attempt 1 failed with EAI_AGAIN
+1045 http fetch GET https://registry.npmjs.org/unrs-resolver/-/unrs-resolver-1.12.2.tgz attempt 1 failed with EAI_AGAIN
+1046 http fetch GET https://registry.npmjs.org/unbox-primitive/-/unbox-primitive-1.1.0.tgz attempt 1 failed with EAI_AGAIN
+1047 http fetch GET https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz attempt 1 failed with EAI_AGAIN
+1048 http fetch GET https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.4.3.tgz attempt 1 failed with EAI_AGAIN
+Partial node_modules was removed. No dependencies or lockfile were changed.
+Later normal build/lint/tsx commands could not start (exit 127 / command Permission denied in this sandbox PATH).

@@ -1,30 +1,33 @@
 # SiteComms Australia
 
-Australian research, education, planning and enquiry resource for PA, IP paging, school bells, intercom and communications systems.
+Australian research, education, planning and reviewed-enquiry resource for PA, IP paging, school bells, intercom and communications systems.
 
-## Current baseline — Phase 2 funding (20 September 2026)
+## Current baseline — Phase 4 schools comparison (25 September 2026)
 
-Start with [the current agent handoff](AGENT_HANDOFF_PHASE_2_FUNDING.md), [change log](SITECOMMS_AU_PHASE_2_FUNDING_CHANGELOG.md) and [validation evidence](docs/funding/VALIDATION.md). This is the full source project, preserving the Agent-Ready foundation, original theme/assets, AUD calculations, reviewed enquiry flow and preview/noindex controls.
+**Start with `AGENT_HANDOFF_PHASE_4_SCHOOLS_COMPARE.md`.** This is the complete project built on the Phase 3 finance ZIP. All current instructions, research, changes and validation evidence are inside this archive.
 
-Phase 2 adds a shared, deterministic funding-pathway assessment for Queensland, NSW, Victoria, Western Australia and South Australia, plus selected national school/aged-care records. A three-step checker, five state guides and a national funding hub share 25 pathway records and 33 official-source records. It is not an exhaustive or live grants register, an eligibility decision, an award calculation or an application service. Source availability and material gaps are explicit.
+The school comparison is now `/compare/schools`. It includes eight main approaches, feature-based shortlists, expandable profiles, cost/scope guidance, five-state Australian references and the existing reviewed enquiry form. SPON is a positive all-round option; its Australian supplier/support route remains unverified. `/compare` permanently redirects to the canonical page, with compatibility fragment targets preserved.
 
-The optional authenticated HTTP test profile remains disabled by default. No MCP/WebMCP, chatbot, new database, direct agent enquiry submission or automated grant application is added. The retired automatic pricing-result/PDF logger stays retired; historical data is untouched. Finance and a further product-market comparison pass remain separate phases.
+The existing global theme/assets, provisional AUD 80–100% pricing model, simplified funding flow, state-aware finance tool and enquiry backend are unchanged. The Agent-Ready public guide directory points to the new comparison; there is no new AI protocol, model, database or automatic lead submission.
 
 ## Main routes
 
-- `/tools/funding-check` — researched state/applicant/project pathway tool.
-- `/funding` — national overview and links to five substantive state guides.
-- `/funding/queensland`, `/funding/new-south-wales`, `/funding/victoria`, `/funding/western-australia`, `/funding/south-australia`.
-- `/pricing-tool`, `/pricing`, `/schools` — existing shared indicative AUD model, unchanged arithmetic.
-- `/compare`, `/industries/aged-care-retirement-villages` — existing Australian comparison/sector content.
-- `/tools/finance-check` — existing preliminary finance guidance, not a researched state/lender eligibility engine.
-- `/integrations` — factual capability/compatibility status, not a universal AI-support claim.
+- `/schools` → `/compare/schools`: school planning and comparison.
+- `/pricing-tool`, `/pricing`: shared indicative AUD model, not brand quotes.
+- `/tools/funding-check`: simplified state/site/applicant/stage/features pathway tool.
+- `/funding` and the five state guides: researched pathways, not awards or a live grants feed.
+- `/tools/finance-check`, `/financing`: Phase 3 state-aware indicative finance guidance.
+- `/industries/aged-care-retirement-villages`: existing aged-care comparison, unchanged in Phase 4.
+- `/integrations`: truthful status of the controlled, disabled-by-default HTTP profile.
+- `/contact`: ordinary reviewed enquiry route.
 
-## Development and checks
+## Development and release checks
 
 ```sh
 npm ci
 npm test
+npm run typecheck:schools-compare
+npm run typecheck:finance
 npm run typecheck:funding
 npm run typecheck:agent-ready
 npx tsc --noEmit
@@ -33,12 +36,20 @@ npm run build
 npm run dev
 ```
 
-Use the unchanged dependency versions and lockfile. In the review environment dependency downloads failed; only the documented domain/source checks were completed. The hosting agent must finish the full framework and browser gates before deployment. Read `AGENTS.md` and the installed framework's version-matched documentation after installing dependencies.
+Dependencies and the lockfile are unchanged. Full framework installation/build and browser behaviour remain release gates in the hosting environment; see `docs/schools-compare/VALIDATION.md` for exactly what ran here.
 
-Use `.env.example` only as a sanitised template. Supply real credentials in the host's protected environment. Noindex and API enablement are separate owner-authorised release decisions; robots/noindex do not protect private staging access.
+Preview/noindex protection remains enabled. Do not enable indexing, public integration access or production deployment without owner approval. Noindex is not access control: protect private staging appropriately. Real environment secrets belong in the hosting provider's protected settings, never in an exported source ZIP.
 
-## Maintenance and prior phases
+## Current documentation
 
-Current funding evidence, rules, update/withdrawal procedures and review priorities: [research](docs/funding/RESEARCH_AND_COVERAGE.md), [contracts and operations](docs/funding/CONTRACT_AND_OPERATIONS.md), [profile](docs/funding/PROFILE_AND_PLAN.md).
+- `AGENT_HANDOFF_PHASE_4_SCHOOLS_COMPARE.md`: agent action and preview checklist.
+- `SITECOMMS_AU_PHASE_4_SCHOOLS_COMPARE_CHANGELOG.md`: scope and known limits.
+- `docs/schools-compare/`: profile, research, validation, actual test output and preservation/changed-file evidence.
+- `docs/comparison-research.json`: source snapshot corresponding to the shared comparison registry.
+- `docs/finance/`, `docs/funding/`, `docs/agent-ready/`: preserved domain research, operations and standard.
 
-The Agent-Ready master standard is preserved at `docs/agent-ready/STANDARD_0.1.0.md`. Historical Phase 1 and foundation handoffs/validation remain for traceability; do not use them to restore the funding holding page, the old 12-record directory or automatic result storage. The next substantial work is the separate Australian finance phase.
+Earlier phase handoffs are historical evidence. Do not use them to restore the funding holding page, the pre-simplification questionnaire, automatic result/PDF storage, the old seven-system comparison or obsolete finance copy.
+
+## Next work
+
+The hosting agent should complete staging QA and fix integration issues without changing approved content/logic. Subsequent work can strengthen verified local installation/support evidence (especially SPON), refine the aged-care comparison, and complete launch QA. No automatic date refresh or unattended research task is configured.

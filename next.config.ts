@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [{ source: "/compare", destination: "/compare/schools", permanent: true }];
+  },
   // PREVIEW MODE: block indexing at header level too. Remove when going public.
   async headers() {
     return [

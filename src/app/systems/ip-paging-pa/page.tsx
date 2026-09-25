@@ -23,7 +23,7 @@ export default function IpPagingPaPage() {
         description="Modern IP paging systems use the data network to deliver live announcements, scheduled messages, emergency audio and zoned communication across classrooms, offices, warehouses and multi-building sites. This guide explains how the architecture works, when full-IP or hybrid systems make sense, and what to consider before specifying one."
         tags={["IP paging", "Network PA", "PoE speakers", "Zoned announcements", "Hybrid systems"]}
         primaryCta={{ label: "Estimate project cost", href: "/pricing-tool" }}
-        secondaryCta={{ label: "Compare paging platforms", href: "/compare" }}
+        secondaryCta={{ label: "Compare paging platforms", href: "/compare/schools" }}
         reviewed={reviewedLabel("/systems/ip-paging-pa")}
         note="Australian-focused guidance"
         breadcrumb={[{ name: "Systems", href: "/systems" }, { name: "IP Paging & Network PA" }]}
@@ -110,14 +110,14 @@ export default function IpPagingPaPage() {
       <p>
         SiteComms compares integrated school platforms, SIP-first options, browser-managed network audio, hybrid
         approaches from FrontRow, Algo, Axis, Bosch PROSPERO, Bodet, TOA and Australian traditional/hybrid designs, with specialist and unverified-supply options clearly separated. Our{" "}
-        <Link href="/compare">platform comparison guide</Link> matches those options to your priorities for
+        <Link href="/compare/schools">platform comparison guide</Link> matches those options to your priorities for
         Australian buyers. Planning for an aged care home or retirement village?{" "}
         <Link href="/industries/aged-care-retirement-villages">Use the aged-care comparison</Link>, where
         the requirements and shortlist differ.
       </p>
       <h2 id="evidence">Check capabilities against the selected design</h2>
       <p>
-        Our <Link href="/compare#sources">comparison source register</Link> separates manufacturer documentation
+        Our <Link href="/compare/schools#sources">comparison source register</Link> separates manufacturer documentation
         from evidence of Australian supply. A brand page is not confirmation that every model, integration or service
         is available for your site. Use the <Link href="/guides/compare-pa-system-quotes">quote comparison guide</Link>
         to request a defined scope and acceptance tests.
@@ -139,7 +139,7 @@ export default function IpPagingPaPage() {
       </ul>
       <ContinuePlanning
         items={[
-          { title: "Compare paging platforms", desc: "Use-case shortlists for integrated school platforms, SIP-first paging, hybrid migration and specialist architectures.", href: "/compare" },
+          { title: "Compare paging platforms", desc: "Use-case shortlists for integrated school platforms, SIP-first paging, hybrid migration and specialist architectures.", href: "/compare/schools" },
           { title: "Network readiness checklist", desc: "Check cabling, PoE and switch capacity before requesting IP paging quotes.", href: "/guides/ip-paging-network-readiness" },
           { title: "Replacing an old PA system", desc: "What can be kept, what usually changes and how to plan the replacement.", href: "/systems/traditional-vs-ip" },
         ]}
