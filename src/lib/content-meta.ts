@@ -36,7 +36,7 @@ export const CONTENT_META: Record<string, ContentMeta> = {
   "/guides": { published: "2026-09-12", reviewed: "2026-09-25" },
   "/guides/ip-paging-network-readiness": { published: "2026-09-12", reviewed: "2026-09-19" },
   "/guides/school-pa-specification-checklist": { published: "2026-09-12", reviewed: "2026-09-12" },
-  "/pricing": { published: "2026-09-11", reviewed: "2026-09-17" },
+  "/pricing": { published: "2026-09-11", reviewed: "2026-10-20" },
   "/pricing-tool": { published: "2026-09-11", reviewed: "2026-10-20" },
   "/tools/funding-check": { published: "2026-09-11", reviewed: "2026-10-20" },
   "/tools": { published: "2026-09-11", reviewed: "2026-09-20" },

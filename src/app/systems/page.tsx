@@ -74,6 +74,11 @@ const FUNCTIONS = [
 
 const RESOURCES = [
   {
+    href: "/schools",
+    title: "School PA systems Australia",
+    desc: "Independent buyer guide covering school PA architectures, provider approaches, reuse, costs and Australian requirements.",
+  },
+  {
     href: "/compare/schools",
     title: "Compare platforms",
     desc: "Side-by-side comparison of leading paging and PA platforms sold in Australia.",

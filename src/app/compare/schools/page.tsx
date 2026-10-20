@@ -74,7 +74,7 @@ export default function SchoolComparePage() {
           Start with the project shape before the brand. A school that mainly needs a better bell timer may not need a new campus platform; a school with usable speakers may suit a hybrid upgrade; a school that needs bells, zoned paging, intercom and expansion should compare complete integrated designs. The cards below use those outcomes to narrow the field before you read the detailed profiles.
         </p>
         <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[var(--sc-slate)]">
-          If the immediate problem is bell scheduling or an ageing timer, start with the <Link href="/systems/school-bell-announcements" className={linkClass}>school bell systems and timers guide</Link> before deciding whether a full replacement is justified.
+          If you are still defining the overall project, start with the <Link href="/schools" className={linkClass}>Australian school PA systems buyer guide</Link>. If the immediate problem is bell scheduling or an ageing timer, use the <Link href="/systems/school-bell-announcements" className={linkClass}>school bell systems and timers guide</Link> before deciding whether a full replacement is justified.
         </p>
         <Sources ids={["spon", "spon-software", "frontrow", "algo"]} />
         <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[var(--sc-slate)]">
