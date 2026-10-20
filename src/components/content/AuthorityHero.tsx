@@ -11,6 +11,7 @@ export default function AuthorityHero({
   primaryCtaNode,
   secondaryCta,
   reviewed,
+  reviewer,
   note,
   breadcrumb,
 }: {
@@ -23,6 +24,7 @@ export default function AuthorityHero({
   primaryCtaNode?: React.ReactNode;
   secondaryCta?: { label: string; href: string };
   reviewed: string;
+  reviewer?: { name: string; role?: string; href?: string };
   note?: string;
   breadcrumb?: AuthorityHeroBreadcrumb[];
 }) {
@@ -78,8 +80,14 @@ export default function AuthorityHero({
         </div>
         <p className="mt-6 text-xs text-[var(--sc-slate)]">
           Last reviewed {reviewed}
+          {reviewer ? <span aria-hidden> · </span> : null}
+          {reviewer ? (reviewer.href ? (
+            <Link href={reviewer.href} className="font-medium text-[var(--sc-blue-700)] underline underline-offset-2">
+              Reviewed by {reviewer.name}{reviewer.role ? `, ${reviewer.role}` : ""}
+            </Link>
+          ) : <span className="font-medium">Reviewed by {reviewer.name}{reviewer.role ? `, ${reviewer.role}` : ""}</span>) : null}
           {note ? <span aria-hidden> · </span> : null}
-          {note ? <span className="ml-1 font-medium text-[var(--sc-teal-strong)]">{note}</span> : null}
+          {note ? <span className="font-medium text-[var(--sc-teal-strong)]">{note}</span> : null}
         </p>
       </div>
     </section>

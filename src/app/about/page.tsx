@@ -6,7 +6,7 @@ import { site, authors } from "@/lib/site";
 export const metadata: Metadata = buildMetadata({
   title: "About SiteComms Australia",
   description:
-    "SiteComms Australia provides Australia guidance and planning tools for paging, bell, PA, intercom and integrated communication systems. Operated by T3 Labs.",
+    "SiteComms Australia provides Australian guidance and planning tools for paging, bell, PA, intercom and integrated communication systems. Operated by T3 Labs.",
   path: "/about",
 });
 
@@ -15,7 +15,7 @@ export default function AboutPage() {
     <div className="sc-container max-w-3xl py-16 sc-prose">
       <h1 className="text-4xl font-bold tracking-tight text-[var(--sc-blue-900)]">About SiteComms Australia</h1>
       <p className="mt-4 text-lg text-[var(--sc-slate)]">
-        SiteComms Australia is a Australia information and planning resource for paging, PA, bell, intercom and integrated communication systems. It is designed to make the early project decisions easier: what the system should do, what it may cost, what funding or finance options may be worth exploring and what to resolve before requesting a final quote.
+        SiteComms Australia is an Australian information and planning resource for paging, PA, bell, intercom and integrated communication systems. It is designed to make the early project decisions easier: what the system should do, what it may cost, what funding or finance options may be worth exploring and what to resolve before requesting a final quote.
       </p>
       <h2>What we do</h2>
       <ul>

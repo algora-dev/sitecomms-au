@@ -215,14 +215,15 @@ export function SiteCommsHero() {
           </div>
           <p className="sc-description">
             Australian guidance, comparisons and planning tools for IP paging, school bell, PA,
-            intercom and integrated communication systems.
+            intercom and integrated communication systems. When you are ready, SiteComms can review
+            the project and suggest suitable providers for you to contact.
           </p>
           <div className="sc-actions">
             <Link className="sc-button sc-button-primary" href="/pricing-tool">
               Estimate your system <span aria-hidden="true">↗</span>
             </Link>
-            <Link className="sc-button sc-button-secondary" href="/systems">
-              Explore solutions <span aria-hidden="true">→</span>
+            <Link className="sc-button sc-button-secondary" href="/#how-sitecomms-helps">
+              How SiteComms helps <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

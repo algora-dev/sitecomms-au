@@ -5,7 +5,7 @@ import { ProjectHelpLauncher } from "@/components/enquiry/ProjectHelpLauncher";
 import { StateAwareLink } from "@/components/project-state";
 import { articleSchema, breadcrumbSchema, buildMetadata } from "@/lib/seo";
 import { publishedDate, reviewedDate, reviewedLabel } from "@/lib/content-meta";
-import { site } from "@/lib/site";
+import { authors, site } from "@/lib/site";
 import {
   SCHOOL_COMPARE_PATH, schoolPlatforms, schoolPlatform,
   schoolUseCases, specialistPlatforms, australianStateReferences, schoolComparisonQuestions,
@@ -57,6 +57,7 @@ export default function SchoolComparePage() {
         primaryCta={{ label: "Find your shortlist", href: "#shortlist" }}
         secondaryCta={{ label: "Compare the features", href: "#capabilities" }}
         reviewed={reviewedLabel(path)}
+        reviewer={{ name: authors.shaun.name, role: authors.shaun.role, href: "/about/methodology" }}
         breadcrumb={[{ name: "Schools", href: "/schools" }, { name: "Compare systems" }]}
       />
       <nav aria-label="On this school comparison page" className="sc-container flex max-w-6xl flex-wrap gap-x-5 gap-y-3 py-5 text-sm">
@@ -70,9 +71,10 @@ export default function SchoolComparePage() {
 
       <Section id="shortlist" title="Which systems belong on your shortlist?">
         <p className={`mt-4 max-w-4xl ${bodyClass}`}>
-          For an integrated school-wide brief, SPON deserves a close look: bells, zoned paging, two-way communication and a path to expansion.
-          FrontRow is particularly relevant when classroom audio is part of the job; Algo is a useful hybrid/SIP comparator.
-          Axis, PROSPERO, Bodet and TOA bring different strengths. These are editorial starting points, not test scores or a cheapest-brand ranking.
+          Start with the project shape before the brand. A school that mainly needs a better bell timer may not need a new campus platform; a school with usable speakers may suit a hybrid upgrade; a school that needs bells, zoned paging, intercom and expansion should compare complete integrated designs. The cards below use those outcomes to narrow the field before you read the detailed profiles.
+        </p>
+        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[var(--sc-slate)]">
+          If the immediate problem is bell scheduling or an ageing timer, start with the <Link href="/systems/school-bell-announcements" className={linkClass}>school bell systems and timers guide</Link> before deciding whether a full replacement is justified.
         </p>
         <Sources ids={["spon", "spon-software", "frontrow", "algo"]} />
         <p className="mt-3 max-w-4xl text-sm leading-relaxed text-[var(--sc-slate)]">
@@ -308,7 +310,7 @@ export default function SchoolComparePage() {
         <Section id="next-step" title="Turn the shortlist into a clear next step">
           <p className={`mt-4 max-w-3xl ${bodyClass}`}>
             Tell us which school, what needs to work and what you already have. You do not need to choose a brand first.
-            SiteComms reviews your requirement and replies with suitable providers&apos; public contact details. You decide whether to contact them; we do not automatically forward your enquiry.
+            SiteComms personally reviews your requirement and replies with the next steps it recommends. Where useful, we can provide suitable providers&apos; public contact details and explain why they may fit. Your request is reviewed by SiteComms only; we do not automatically forward your enquiry, and we do not send your contact details, attachments or tool answers to installers or suppliers. You decide whether to contact anyone we suggest.
           </p>
           <Help label="Ask SiteComms about my school project" />
           <p className="mt-4 text-sm text-[var(--sc-slate)]">Prefer a normal contact page? <Link href="/contact" className={linkClass}>Contact SiteComms</Link>.</p>
@@ -350,7 +352,7 @@ export default function SchoolComparePage() {
       </Section>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        ...articleSchema({ headline: title, description, url: `${site.url}${path}`, datePublished: publishedDate(path), dateModified: reviewedDate(path) }),
+        ...articleSchema({ headline: title, description, url: `${site.url}${path}`, datePublished: publishedDate(path), dateModified: reviewedDate(path), reviewedBy: { name: authors.shaun.name, role: authors.shaun.role, organisation: site.name } }),
         citation: Object.values(comparisonSources).map(source => source.href),
       }).replace(/</g, "\\u003c") }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(

@@ -28,9 +28,9 @@ export default function ContactPage() {
         <div className="rounded-2xl border border-[var(--sc-border)] bg-white p-5">
           <h2 className="font-semibold text-[var(--sc-blue-900)]">Project help</h2>
           <p className="mt-2 text-sm text-[var(--sc-slate)]">
-            A quote or installer, site assessment, system selection, or a funding / project-scope question. The SiteComms team reviews the enquiry and replies with the next step or provider we think is most appropriate to contact.
+            A quote or installer, site assessment, system selection, or a funding / project-scope question. The SiteComms team personally reviews the enquiry and replies with the next step or provider contacts we think may be useful. SiteComms does not send your enquiry or contact details to installers or suppliers. You decide whether to contact anyone we suggest.
           </p>
-          <ProjectHelpLauncher buttonLabel="Tell us about your project" className="sc-btn-primary mt-6 inline-flex cursor-pointer" />
+          <ProjectHelpLauncher buttonLabel="Send your project to SiteComms" className="sc-btn-primary mt-6 inline-flex cursor-pointer" />
         </div>
       </div>
     </div>

@@ -31,7 +31,6 @@ export function ResultView({
   onLeaveIndustry?: () => void;
   onRestart: () => void;
 }) {
-  const [breakdownOpen, setBreakdownOpen] = useState(false);
   const [inquiry, setInquiry] = useState<string | null>(null);
 
   const tierText =
@@ -195,42 +194,29 @@ export function ResultView({
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-[var(--sc-navy)]">Your ballpark installed price</h2>
-      <p className="mt-2 text-sm font-semibold text-[var(--sc-navy)]">Budget estimate — not a formal quote</p>
-      <p className="mt-2 text-sm text-[var(--sc-slate)]">{assessment.summary}</p>
-      <details className="mt-3 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-4 text-xs text-[var(--sc-slate)]">
-        <summary className="cursor-pointer font-semibold text-[var(--sc-navy)]">Estimate basis, assumptions and sources</summary>
-        <p className="mt-3">Provisional model: {assessment.result.versions.pricing_source}. Assumption review recorded: {source.reviewed_at ?? "not recorded"}; this is not a current supplier stock or price verification.</p>
-        <p className="mt-2">Quantity basis: {assessment.result.quantity_basis}. Project state: {assessment.result.project_state ?? "not supplied"}. No state price uplift.</p>
-        {assessment.result.assumptions.map(item => <p key={item.id} className="mt-2">{item.description}</p>)}
-        <p className="mt-2">Unresolved: {assessment.result.unresolved_inputs.join("; ")}.</p>
-        <p className="mt-2"><a className="underline" href={source.reference_path}>Pricing methodology</a>. No enquiry has been sent and no assessment has been saved to the server.</p>
-      </details>
-      <div className="mt-4 rounded-2xl border border-[var(--sc-border)] bg-white p-8 text-center shadow-sm">
-        <div className="text-4xl font-bold tracking-tight text-[var(--sc-navy)] sm:text-5xl">
+      <section className="rounded-2xl border-2 border-[var(--sc-teal)] bg-white p-6 text-center shadow-sm sm:p-8">
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--sc-blue-700)]">Your ballpark installed price</p>
+        <div className="mt-4 text-4xl font-bold tracking-tight text-[var(--sc-navy)] sm:text-5xl">
           {formatAUD(estimate.low)} – {formatAUD(estimate.high)}{rangeSuffix}
           <span className="ml-2 align-middle text-sm font-normal text-[var(--sc-slate)]">ex GST</span>
         </div>
-        <p className="mt-3 text-sm text-[var(--sc-slate)]">
-          SiteComms uses a range-based planning model to give a realistic order-of-magnitude estimate for the
-          configuration you entered. Actual product, installation and site costs can sit above or below the range
-          depending on the platform, existing infrastructure, supplier and project conditions. A site review can
-          confirm the final equipment quantities, cabling requirements and installed price.
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
+          Based on the site, areas and system level you entered. This is a planning estimate rather than a formal supplier quote; actual product, installation and site conditions can move the final price.
         </p>
-        <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <button
-            type="button"
-            onClick={() => {
-              track("pricing_connect_opened", { installation_tier: state.tier });
-              setInquiry("connect");
-            }}
-            className="w-full rounded-full bg-[var(--sc-teal-strong)] px-6 py-3 text-center text-sm font-semibold text-white hover:bg-[var(--sc-teal-strong-hover)] hover:shadow-lg transition-all sm:w-auto cursor-pointer"
-          >
-            Want more information?
-          </button>
-          <span className="text-xs text-[var(--sc-slate)]">We can suggest the provider or providers we think are most relevant for your site and region.</span>
-        </div>
-      </div>
+        <button
+          type="button"
+          onClick={() => {
+            track("pricing_connect_opened", { installation_tier: state.tier });
+            setInquiry("connect");
+          }}
+          className="sc-btn-primary mt-6 cursor-pointer"
+        >
+          Send this estimate to SiteComms
+        </button>
+        <p className="mx-auto mt-4 max-w-2xl text-xs leading-relaxed text-[var(--sc-slate)]">
+          The SiteComms team will personally review your estimate and project details, then reply with the next step we suggest or providers you may want to contact. SiteComms does not send your estimate, project information or contact details to installers or suppliers. You decide whether to contact anyone we suggest.
+        </p>
+      </section>
 
       {estimate.overThreshold && (
         <div className="mt-4 rounded-xl border-l-4 border-[#bd4a1a] bg-[#fdf3ec] p-4 text-sm text-[#7a3413]">
@@ -244,7 +230,7 @@ export function ResultView({
         <div className="mt-4 rounded-xl border-l-4 border-[var(--sc-teal)] bg-[var(--sc-blue-50)] p-4 text-sm text-[var(--sc-navy)]">
           <strong>Aged-care / retirement-village scope.</strong> This is a general paging and intercom planning
           estimate, not a complete nurse-call or certified evacuation-system quote. Scheduled-announcement wording
-          is used throughout.{' '}
+          is used throughout.{" "}
           {onLeaveIndustry && (
             <button
               type="button"
@@ -257,132 +243,100 @@ export function ResultView({
         </div>
       )}
 
-      {/* site-wide cabling exclusion (all tiers except B) */}
       {needsCablingNote && (
         <div className="mt-4 rounded-xl border-l-4 border-[var(--sc-teal-strong)] bg-[var(--sc-blue-50)] p-4 text-sm text-[var(--sc-navy)]">
-          <strong>Network cabling is not included.</strong>{" "}
-          {pricingConfig.cablingDisclaimer}{" "}
-          <button
-            type="button"
-            onClick={() => {
-              track("pricing_cabling_enquiry_opened", { installation_tier: state.tier });
-              setInquiry("cabling");
-            }}
-            className="mt-2 block font-semibold text-[var(--sc-teal-strong)] underline decoration-2 underline-offset-2 hover:text-[var(--sc-blue-700)] cursor-pointer"
-          >
-            Be put in touch with the right people →
-          </button>
+          <strong>Network cabling is not included.</strong> {pricingConfig.cablingDisclaimer} SiteComms will take this exclusion into account if you send the estimate for review.
         </div>
       )}
 
-      {/* summary chips */}
-      <div className="mt-6 flex flex-wrap gap-2">
-        {summaryChips.map((c) => (
-          <span key={c} className="rounded-full border border-[var(--sc-border)] bg-[var(--sc-blue-50)] px-3 py-1.5 text-xs font-medium text-[var(--sc-navy)]">
-            {c}
-          </span>
-        ))}
-      </div>
-
-      {/* included */}
-      <h3 className="mt-8 text-lg font-semibold text-[var(--sc-navy)]">Included in this estimate</h3>
-      <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
-        {included.map((i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-[var(--sc-slate)]">
-            <span className="mt-0.5 text-[var(--sc-teal)]">✓</span> {i}
-          </li>
-        ))}
-      </ul>
-
-      {/* recurring */}
-      {estimate.monitoringAnnual !== null && (
-        <div className="mt-6 rounded-xl border border-[var(--sc-teal)]/30 bg-[var(--sc-blue-50)] p-4">
-          <div className="text-sm font-semibold text-[var(--sc-navy)]">Off-site monitoring</div>
-          <div className="text-sm text-[var(--sc-slate)]">
-            {formatAUD(estimate.monitoringAnnual)}/year (indicative SiteComms model assumption, not a market-wide package)
-            <span className="block text-xs">Recurring cost, separate from the installed estimate above.</span>
-          </div>
-        </div>
-      )}
-
-      {/* what could change price */}
-      <h3 className="mt-8 text-lg font-semibold text-[var(--sc-navy)]">What could change the final price?</h3>
-      <ul className="mt-3 space-y-1.5 text-sm text-[var(--sc-slate)]">
-        <li>• Cable routes and building access</li>
-        <li>• Network switch and power capacity</li>
-        <li>• Exact speaker quantities and mounting requirements</li>
-        <li>• Additional central hardware for very large systems</li>
-      </ul>
-
-      {/* breakdown */}
-      <div className="mt-8 rounded-xl border border-[var(--sc-border)] bg-white">
-        <button
-          type="button"
-          onClick={() => setBreakdownOpen((o) => !o)}
-          className="flex w-full items-center justify-between p-4 text-left font-medium text-[var(--sc-navy)] hover:bg-[var(--sc-blue-50)] rounded-xl transition-colors cursor-pointer"
-        >
-          View estimate breakdown
-          <span className="text-[var(--sc-slate)]">{breakdownOpen ? "▲" : "▼"}</span>
-        </button>
-        {breakdownOpen && (
-          <div className="border-t border-[var(--sc-border)] p-4">
-            {estimate.breakdown.map((l) => (
-              <div key={l.label} className="flex items-start justify-between gap-4 py-2 text-sm">
-                <div>
-                  <div className="text-[var(--sc-charcoal)]">{l.label}</div>
-                  {l.detail && <div className="text-xs text-[var(--sc-slate)]">{l.detail}</div>}
-                </div>
-                <div className="whitespace-nowrap font-medium text-[var(--sc-navy)]">
-                  {formatAUD(l.amountLow ?? l.amount)} – {formatAUD(l.amountHigh ?? l.amount)}
-                </div>
-              </div>
+      <details
+        className="mt-6 rounded-2xl border border-[var(--sc-border)] bg-white"
+        onToggle={(event) => {
+          if ((event.currentTarget as HTMLDetailsElement).open) {
+            track("pricing_result_details_opened", { installation_tier: state.tier, package: state.featurePackage });
+          }
+        }}
+      >
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-semibold text-[var(--sc-navy)] hover:bg-[var(--sc-blue-50)] sm:p-6">
+          <span>See the full estimate details</span>
+          <span aria-hidden className="text-[var(--sc-blue-700)]">+</span>
+        </summary>
+        <div className="border-t border-[var(--sc-border)] p-5 sm:p-6">
+          <div className="flex flex-wrap gap-2">
+            {summaryChips.map((c) => (
+              <span key={c} className="rounded-full border border-[var(--sc-border)] bg-[var(--sc-blue-50)] px-3 py-1.5 text-xs font-medium text-[var(--sc-navy)]">
+                {c}
+              </span>
             ))}
-            <div className="mt-2 flex justify-between border-t border-[var(--sc-border)] pt-3 text-sm font-semibold text-[var(--sc-navy)]">
-              <span>Subtotal</span>
-              <span>{formatAUD(estimate.low)} (range up to {formatAUD(estimate.high)}{rangeSuffix})</span>
-            </div>
-            <p className="mt-2 text-xs text-[var(--sc-slate)]">
-              {estimate.basis === "unsure"
-                ? "Priced on existing-site rates. If site-wide cabling is required, it is excluded from this estimate and is an additional cost."
-                : "Top of range reflects the calculated subtotal; the lower end allows for favourable site conditions."}
-            </p>
           </div>
-        )}
-      </div>
 
-      <ToolCrossSell variant="pricing-to-funding" estimateLow={estimate.low} estimateHigh={estimate.high} industry={industry} />
+          <h3 className="mt-7 text-lg font-semibold text-[var(--sc-navy)]">Included in this estimate</h3>
+          <ul className="mt-3 grid gap-1.5 sm:grid-cols-2">
+            {included.map((i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-[var(--sc-slate)]">
+                <span className="mt-0.5 text-[var(--sc-teal)]">✓</span> {i}
+              </li>
+            ))}
+          </ul>
 
-      {/* Quote / assessment CTAs */}
-      <div className="mt-8 rounded-2xl bg-[var(--sc-navy)] p-8 text-center">
-        <div className="text-lg font-semibold text-white">Want a proper number?</div>
-        <p className="mx-auto mt-2 max-w-md text-sm text-white/80">
-          Send us this estimate and the SiteComms team can review the project information and suggest an appropriate provider to contact about a formal quote.
-        </p>
-        <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <button
-            type="button"
-            onClick={() => {
-              track("pricing_quote_opened");
-              setInquiry("quote");
-            }}
-            className="w-full rounded-full bg-[var(--sc-teal-strong)] px-6 py-3 text-center text-sm font-semibold text-white hover:bg-[var(--sc-teal-strong-hover)] hover:shadow-lg transition-all sm:w-auto cursor-pointer"
-          >
-            Get help with a formal quote
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              track("pricing_site_assessment_opened");
-              setInquiry("assessment");
-            }}
-            className="w-full rounded-full border border-white/40 px-6 py-3 text-center text-sm font-semibold text-white hover:bg-white/10 transition-all sm:w-auto cursor-pointer"
-          >
-            Ask about a site assessment
-          </button>
+          {estimate.monitoringAnnual !== null && (
+            <div className="mt-6 rounded-xl border border-[var(--sc-teal)]/30 bg-[var(--sc-blue-50)] p-4">
+              <div className="text-sm font-semibold text-[var(--sc-navy)]">Off-site monitoring</div>
+              <div className="text-sm text-[var(--sc-slate)]">
+                {formatAUD(estimate.monitoringAnnual)}/year (indicative SiteComms model assumption, not a market-wide package)
+                <span className="block text-xs">Recurring cost, separate from the installed estimate above.</span>
+              </div>
+            </div>
+          )}
+
+          <h3 className="mt-7 text-lg font-semibold text-[var(--sc-navy)]">What could change the final price?</h3>
+          <ul className="mt-3 space-y-1.5 text-sm text-[var(--sc-slate)]">
+            <li>• Cable routes and building access</li>
+            <li>• Network switch and power capacity</li>
+            <li>• Exact speaker quantities and mounting requirements</li>
+            <li>• Additional central hardware for very large systems</li>
+          </ul>
+
+          <details className="mt-7 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)]">
+            <summary className="cursor-pointer p-4 font-medium text-[var(--sc-navy)]">Itemised cost breakdown</summary>
+            <div className="border-t border-[var(--sc-border)] bg-white p-4">
+              {estimate.breakdown.map((l) => (
+                <div key={l.label} className="flex items-start justify-between gap-4 py-2 text-sm">
+                  <div>
+                    <div className="text-[var(--sc-charcoal)]">{l.label}</div>
+                    {l.detail && <div className="text-xs text-[var(--sc-slate)]">{l.detail}</div>}
+                  </div>
+                  <div className="whitespace-nowrap font-medium text-[var(--sc-navy)]">
+                    {formatAUD(l.amountLow ?? l.amount)} – {formatAUD(l.amountHigh ?? l.amount)}
+                  </div>
+                </div>
+              ))}
+              <div className="mt-2 flex justify-between border-t border-[var(--sc-border)] pt-3 text-sm font-semibold text-[var(--sc-navy)]">
+                <span>Subtotal</span>
+                <span>{formatAUD(estimate.low)} (range up to {formatAUD(estimate.high)}{rangeSuffix})</span>
+              </div>
+              <p className="mt-2 text-xs text-[var(--sc-slate)]">
+                {estimate.basis === "unsure"
+                  ? "Priced on existing-site rates. If site-wide cabling is required, it is excluded from this estimate and is an additional cost."
+                  : "Top of range reflects the calculated subtotal; the lower end allows for favourable site conditions."}
+              </p>
+            </div>
+          </details>
+
+          <details className="mt-4 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-4 text-xs text-[var(--sc-slate)]">
+            <summary className="cursor-pointer font-semibold text-[var(--sc-navy)]">Estimate basis, assumptions and sources</summary>
+            <p className="mt-3">{assessment.summary}</p>
+            <p className="mt-2">Provisional model: {assessment.result.versions.pricing_source}. Assumption review recorded: {source.reviewed_at ?? "not recorded"}; this is not a current supplier stock or price verification.</p>
+            <p className="mt-2">Quantity basis: {assessment.result.quantity_basis}. Project state: {assessment.result.project_state ?? "not supplied"}. No state price uplift.</p>
+            {assessment.result.assumptions.map(item => <p key={item.id} className="mt-2">{item.description}</p>)}
+            <p className="mt-2">Unresolved: {assessment.result.unresolved_inputs.join("; ")}.</p>
+            <p className="mt-2"><a className="underline" href={source.reference_path}>Pricing methodology</a>. No enquiry has been sent and no assessment has been saved to the server.</p>
+            <p className="mt-2">{disclaimer} Prices shown are ex GST. The standard model allowance covers up to {pricingConfig.endpointWarningThreshold} IP endpoints; beyond that a site-specific design is recommended.</p>
+          </details>
         </div>
-      </div>
+      </details>
 
-      <div className="mt-6 flex flex-col items-center justify-between gap-4 sm:flex-row">
+      <div className="mt-6 flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
         <button
           type="button"
           onClick={downloadPdf}
@@ -390,32 +344,21 @@ export function ResultView({
         >
           Download estimate (PDF)
         </button>
-        <button
-          type="button"
-          onClick={onEdit}
-          className="text-sm font-medium text-[var(--sc-slate)] hover:text-[var(--sc-navy)] cursor-pointer"
-        >
-          ← Change my answers
-        </button>
-        <button
-          type="button"
-          onClick={onRestart}
-          className="text-sm font-medium text-[var(--sc-slate)] hover:text-[var(--sc-navy)] cursor-pointer"
-        >
-          ↻ Start again
-        </button>
+        <div className="flex flex-wrap gap-4">
+          <button type="button" onClick={onEdit} className="text-sm font-medium text-[var(--sc-slate)] hover:text-[var(--sc-navy)] cursor-pointer">← Change answers</button>
+          <button type="button" onClick={onRestart} className="text-sm font-medium text-[var(--sc-slate)] hover:text-[var(--sc-navy)] cursor-pointer">↻ Start again</button>
+        </div>
       </div>
 
-      {/* disclaimer */}
-      <div className="mt-8 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-5 text-xs leading-relaxed text-[var(--sc-slate)]">
-        {disclaimer} Prices shown are ex GST. The standard model allowance covers up to {pricingConfig.endpointWarningThreshold} IP endpoints; beyond that a site-specific design is recommended.
-      </div>
+      <ToolCrossSell variant="pricing-to-funding" estimateLow={estimate.low} estimateHigh={estimate.high} industry={industry} />
+
       <InquiryModal
         open={inquiry !== null}
-        mode={inquiry ?? "quote"}
+        mode={inquiry ?? "connect"}
         onClose={() => setInquiry(null)}
         estimateSummary={`${formatAUD(estimate.low)} - ${formatAUD(estimate.high)}${rangeSuffix} ex GST`}
         estimateLink={safeEstimateLink}
+        sourceTopic="pricing_tool"
         context={{
           "Assessment classification": "Provisional budget estimate — not a formal quote",
           "Pricing model": assessment.result.versions.pricing_source,

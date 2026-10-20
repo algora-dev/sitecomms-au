@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata, articleSchema, breadcrumbSchema } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { authors, site } from "@/lib/site";
 import { schoolBandSummaries } from "@/lib/pricing/school-bands";
 import AuthorityHero from "@/components/content/AuthorityHero";
 import AtAGlance from "@/components/content/AtAGlance";
@@ -31,12 +31,13 @@ export default function SchoolsPage() {
     <div>
       <AuthorityHero
         eyebrow="Australian school communications"
-        title="School Paging, PA, Bell & Intercom Systems"
-        description="Plan a modern school communication system for bells, live announcements, emergency messages, indoor and outdoor coverage, and optional two-way intercom. Compare systems, estimate cost and review the relevant school funding pathways."
+        title="School PA, Paging, Bell & Intercom Systems"
+        description="A modern school PA system can combine live paging, automated bells, scheduled announcements, emergency messages, indoor and outdoor coverage, and optional two-way intercom. Compare architectures, estimate cost and review potential funding pathways."
         tags={["School paging", "Bell systems", "Emergency announcements", "Intercom", "school funding"]}
         primaryCta={{ label: "Get a ballpark price", href: "/pricing-tool" }}
         secondaryCta={{ label: "Compare school systems", href: "/compare/schools" }}
         reviewed={reviewedLabel("/schools")}
+        reviewer={{ name: authors.shaun.name, role: authors.shaun.role, href: "/about/methodology" }}
         note="Indicative pricing and funding guidance"
         breadcrumb={[{ name: "Schools", href: "/schools" }]}
       />
@@ -45,7 +46,7 @@ export default function SchoolsPage() {
           { label: "Typical use", value: "Bells, announcements, emergency messages and site-wide communication" },
           { label: "Best fit", value: "Primary, secondary and combined schools upgrading or replacing legacy PA and bell systems" },
           { label: "Planning options", value: "Full IP, traditional PA or hybrid upgrades" },
-          { label: "Next step", value: "Estimate project cost or review funding pathways" },
+          { label: "Next step", value: "Compare systems, plan a bell upgrade or estimate project cost" },
         ]}
       />
       <div className="h-8" />
@@ -113,6 +114,7 @@ export default function SchoolsPage() {
       <section className="sc-container max-w-4xl py-14">
       <ContinuePlanning
         items={[
+          { title: "School bell systems & timers", desc: "Decide between a timer-only upgrade, hybrid modernisation and a wider integrated PA/bell platform.", href: "/systems/school-bell-announcements" },
           { title: "Australian school requirements", desc: "Education authority design, cabling and procurement guidance for school PA and paging.", href: "/guides/school-pa-paging-requirements" },
           { title: "Specification checklist", desc: "Define scope so every quote covers the same things and compares fairly.", href: "/guides/school-pa-specification-checklist" },
           { title: "Network readiness", desc: "Check cabling, PoE and switching before an IP paging project.", href: "/guides/ip-paging-network-readiness" },
@@ -134,7 +136,7 @@ export default function SchoolsPage() {
         <p>Start with a ballpark budget and a clearly defined scope. For a government school, the relevant capital or property pathway then depends on the state or territory and current program rules. A site assessment can confirm what is reusable, where coverage is needed and what should appear in a formal quote or funding discussion. The education authority context is covered in our <Link href="/guides/school-pa-paging-requirements">Australian school PA and paging requirements guide</Link>, and the <Link href="/guides/school-pa-specification-checklist">specification checklist</Link> helps you get comparable quotes.</p>
       </article>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({ headline: "School PA, Paging, Bell & Intercom Systems Australia", description: "Australian guide to school paging, bells, PA, emergency communication, intercom, pricing and funding.", url: `${site.url}/schools`, datePublished: publishedDate("/schools"), dateModified: reviewedDate("/schools") })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema({ headline: "School PA, Paging, Bell & Intercom Systems Australia", description: "Australian guide to school PA, paging, bells, emergency communication, intercom, pricing and funding.", url: `${site.url}/schools`, datePublished: publishedDate("/schools"), dateModified: reviewedDate("/schools"), reviewedBy: { name: authors.shaun.name, role: authors.shaun.role, organisation: site.name } })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([{ name: "SiteComms Australia", url: site.url }, { name: "Schools", url: `${site.url}/schools` }])) }} />
     </div>
   );

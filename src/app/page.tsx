@@ -10,12 +10,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "IP Paging, PA, Bell & Intercom Systems Australia | SiteComms Australia",
   description:
-    "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in Australia. Pricing, school funding pathway and finance/leasing guidance.",
+    "Independent Australian guidance for IP paging, school PA, bell and intercom projects. Compare options, estimate cost and get confidential SiteComms help with next steps.",
   alternates: { canonical: site.url },
   openGraph: {
     title: "IP Paging, PA, Bell & Intercom Systems Australia | SiteComms Australia",
     description:
-      "Plan, price and understand IP paging, PA, bell, intercom and emergency communication systems in Australia.",
+      "Independent Australian guidance for IP paging, school PA, bell and intercom projects, including planning tools and confidential next-step help.",
     url: site.url,
     siteName: site.name,
     locale: site.locale,
@@ -213,21 +213,25 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      <section className="sc-container py-16">
+      <section id="how-sitecomms-helps" className="sc-container scroll-mt-24 py-16">
         <Reveal>
-          <h2 className="text-3xl font-bold tracking-tight text-[var(--sc-blue-900)]">Built to make the next step easier</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Independent next-step help</p>
+          <h2 className="mt-2 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)]">Useful research first. Personal project help when you need it.</h2>
           <p className="mt-3 max-w-3xl text-lg text-[var(--sc-slate)]">
-            Whether you are researching a future project or already talking to an installer, the site is designed to help you understand the architecture, budget, funding possibilities and questions worth resolving before a final quote.
+            Send SiteComms your project or a result from one of the planning tools. Our team reviews it, considers the requirements and location, and replies with the next steps we think make sense. Where suitable, we can suggest providers and give you their public contact details and our reasoning.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--sc-slate)]">
+            Your request is reviewed by SiteComms only. We do not send your enquiry, contact details, attachments or tool answers to installers, suppliers or other project parties. You decide whether to contact anyone we suggest.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/systems" className="sc-btn-secondary">Compare system architectures</Link>
-            <Link href="/guides" className="sc-btn-secondary">Browse practical guides</Link>
             <ProjectHelpLauncher
               mode="project_help"
               sourceTopic="homepage_bottom_cta"
-              buttonLabel="Tell us about your project"
+              buttonLabel="Send your project to SiteComms"
               className="sc-btn-primary"
             />
+            <Link href="/systems" className="sc-btn-secondary">Compare system architectures</Link>
+            <Link href="/guides" className="sc-btn-secondary">Browse practical guides</Link>
           </div>
         </Reveal>
       </section>

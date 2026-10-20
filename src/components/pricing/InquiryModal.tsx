@@ -15,7 +15,7 @@ const LEGACY_MODE_MAP: Record<string, EnquiryMode> = {
   assessment: "site_assessment",
   message: "general_message",
   cabling: "cabling_help",
-  connect: "project_help",
+  connect: "quote_help",
 };
 
 export function InquiryModal({

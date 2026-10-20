@@ -34,77 +34,60 @@ export function ToolCrossSell({
   industry?: IndustryContext;
 }) {
   if (variant === "pricing-to-funding") {
-    // Known aged-care context: retain care-specific finance and offer the new all-sector funding tool, never assume a school grant.
-    if (industry === "aged-care") {
-      const financeHref = buildIndustryToolHref("/tools/finance-check", {
-        industry,
-        source: "pricing",
-        estimate: estimateLow && estimateHigh ? { low: estimateLow, high: estimateHigh } : undefined,
-      });
-      return (
-        <section className="mt-8 rounded-2xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-6 sm:p-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Payment options</p>
-          <h3 className="mt-2 text-xl font-semibold text-[var(--sc-blue-900)]">Want to explore spreading the project cost?</h3>
-          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
-            Equipment finance or leasing may be worth discussing. Your estimate will carry into the finance check, so you do not need to enter the project value again.
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            <Link href={financeHref} className="sc-btn-primary" onClick={() => track("pricing_to_finance_clicked", { industry })}>
-              Explore payment options
-            </Link>
-            <Link
-              href={buildIndustryToolHref("/financing", { industry })}
-              className="sc-btn-secondary"
-              onClick={() => track("pricing_to_finance_clicked", { industry })}
-            >
-              Read about finance and leasing
-            </Link>
-            <Link href="/tools/funding-check?source=aged-care" className="sc-btn-secondary" onClick={() => track("pricing_to_funding_clicked", { industry })}>
-              Check targeted funding routes
-            </Link>
-          </div>
-        </section>
-      );
-    }
-    // Funding does not calculate awards from a URL-carried estimate.
-    const fundingHref = "/tools/funding-check?source=pricing";
-    const financeHref = `/tools/finance-check${queryString({
-      source: "pricing",
-      estimateLow: Math.round(estimateLow ?? 0) || undefined,
-      estimateHigh: Math.round(estimateHigh ?? 0) || undefined,
-    })}`;
+    const fundingHref = industry === "aged-care"
+      ? "/tools/funding-check?source=aged-care"
+      : "/tools/funding-check?source=pricing";
+    const financeHref = industry === "aged-care"
+      ? buildIndustryToolHref("/tools/finance-check", {
+          industry,
+          source: "pricing",
+          estimate: estimateLow && estimateHigh ? { low: estimateLow, high: estimateHigh } : undefined,
+        })
+      : `/tools/finance-check${queryString({
+          source: "pricing",
+          estimateLow: Math.round(estimateLow ?? 0) || undefined,
+          estimateHigh: Math.round(estimateHigh ?? 0) || undefined,
+        })}`;
 
     return (
-      <section className="mt-8 rounded-2xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-6 sm:p-7">
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">
-          Payment & funding options
-        </p>
-        <h3 className="mt-2 text-xl font-semibold text-[var(--sc-blue-900)]">
-          How might the project be paid for?
-        </h3>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
-          Check researched routes for schools, residential aged care, early learning and relevant community projects. Commercial finance is a separate option and requires the organisation’s legal authority and lender review.
+      <details className="mt-7 rounded-xl border border-[var(--sc-border)] bg-white p-5">
+        <summary className="cursor-pointer text-sm font-semibold text-[var(--sc-blue-900)]">
+          Not ready for provider help? Explore funding or finance
+        </summary>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
+          {industry === "aged-care"
+            ? "You can check researched funding routes for relevant care projects or explore equipment finance and leasing. These are separate planning paths and do not change this estimate."
+            : "You can check researched funding routes or explore equipment finance and leasing. These are separate planning paths and do not change this estimate."}
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
             href={fundingHref}
-            className="sc-btn-primary"
-            onClick={() => track("pricing_to_funding_clicked")}
+            className="sc-btn-secondary"
+            onClick={() => track("pricing_to_funding_clicked", industry ? { industry } : undefined)}
           >
-            View funding pathways
+            Check funding pathways
           </Link>
           <Link
             href={financeHref}
             className="sc-btn-secondary"
-            onClick={() => track("pricing_to_finance_clicked")}
+            onClick={() => track("pricing_to_finance_clicked", industry ? { industry } : undefined)}
           >
             Explore finance / leasing
           </Link>
+          {industry === "aged-care" ? (
+            <Link
+              href={buildIndustryToolHref("/financing", { industry })}
+              className="text-sm font-semibold text-[var(--sc-blue-700)] underline underline-offset-2 self-center"
+              onClick={() => track("pricing_to_finance_guide_clicked", { industry })}
+            >
+              Read the finance guide
+            </Link>
+          ) : null}
         </div>
         <p className="mt-3 text-xs leading-relaxed text-[var(--sc-slate)]">
-          Your estimate carries into the finance checker. The funding checker instead assesses the applicant and project scope; it does not calculate or deduct a grant award.
+          A carried pricing estimate can prefill the finance checker. Funding eligibility is assessed separately from the estimate value.
         </p>
-      </section>
+      </details>
     );
   }
 
@@ -117,29 +100,26 @@ export function ToolCrossSell({
   const pricingHref = `/pricing-tool${queryString({ source: "funding" })}`;
 
   return (
-    <section className="mt-8 rounded-2xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-6 sm:p-7">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">
-        Next options
-      </p>
-      <h3 className="mt-2 text-xl font-semibold text-[var(--sc-blue-900)]">
-        {financePrimary ? "Funding may not be the only route" : "Compare the next ways to progress"}
-      </h3>
-      <p className="mt-2 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
+    <details className="mt-7 rounded-xl border border-[var(--sc-border)] bg-white p-5">
+      <summary className="cursor-pointer text-sm font-semibold text-[var(--sc-blue-900)]">
+        {financePrimary ? "No clear funding route? See other ways to progress" : "Other ways to progress the project"}
+      </summary>
+      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[var(--sc-slate)]">
         {financePrimary
-          ? "The pathway assessed may not be the strongest fit as entered. Equipment finance or leasing can still be worth discussing, and you can also estimate the project cost if it is not yet clear."
-          : "A funding pathway and commercial finance are different options. You can estimate the likely project cost or explore finance and leasing without changing this funding result."}
+          ? "Equipment finance or leasing may still be worth exploring. You can also estimate the likely installed cost if the project value is not yet clear."
+          : "Funding and commercial finance are different options. You can estimate the likely project cost or explore finance without changing this funding result."}
       </p>
       <div className="mt-4 flex flex-wrap gap-3">
         <Link
           href={financeHref}
-          className={financePrimary ? "sc-btn-primary" : "sc-btn-secondary"}
+          className="sc-btn-secondary"
           onClick={() => track("funding_to_finance_clicked", { funding_result: fundingResult ?? "unknown" })}
         >
           Explore finance / leasing
         </Link>
         <Link
           href={pricingHref}
-          className={financePrimary ? "sc-btn-secondary" : "sc-btn-primary"}
+          className="sc-btn-secondary"
           onClick={() => track("funding_to_pricing_clicked")}
         >
           Estimate project cost
@@ -150,6 +130,6 @@ export function ToolCrossSell({
           The pricing estimate you brought into this funding check will also carry into the finance checker.
         </p>
       ) : null}
-    </section>
+    </details>
   );
 }

@@ -110,7 +110,7 @@ export default function AgedCareRetirementVillagesPage() {
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia · Aged care & retirement villages</p>
         <h1 id="care-title" className="mt-3 max-w-4xl text-4xl font-bold tracking-tight text-[var(--sc-blue-900)] md:text-5xl">{AGED_CARE_HEADLINE}</h1>
         <p className="mt-5 max-w-4xl text-lg leading-relaxed text-[var(--sc-slate)]">
-          Planning a aged-care-home PA upgrade, retirement-village announcement system or entrance intercom? Compare the systems against the job you need done: reaching the right areas, answering visitors, supporting staff and keeping everyday communication easy to manage.
+          Planning an aged-care-home PA upgrade, retirement-village announcement system or entrance intercom? Compare the systems against the job you need done: reaching the right areas, answering visitors, supporting staff and keeping everyday communication easy to manage.
         </p>
         <p className="mt-4 max-w-4xl leading-relaxed text-[var(--sc-slate)]">
           Compare <strong>Axis, 2N, Algo, TOA and Bosch PROSPERO</strong>, with SPON and FrontRow treated conditionally, for common areas, visitor access and general two-way calling. The right shortlist changes with the brief, and specialist nurse call is explained separately.

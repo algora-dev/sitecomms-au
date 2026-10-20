@@ -4,9 +4,9 @@ import { buildMetadata } from "@/lib/seo";
 import { reviewedLabel } from "@/lib/content-meta";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Paging, PA, Bell & Intercom System Types",
+  title: "IP Audio Paging, PA, Bell & Intercom Systems",
   description:
-    "Compare traditional 100V, full-IP and hybrid paging systems, then explore bells, emergency messaging, intercom and network planning.",
+    "Compare IP audio paging, public-address, traditional 100V and hybrid systems, then plan bells, announcements, emergency messaging and intercom.",
   path: "/systems",
 });
 
@@ -109,12 +109,10 @@ export default function SystemsPage() {
             System architecture guide
           </p>
           <h1 className="mt-3 text-[2.1rem] font-bold leading-[1.1] tracking-tight text-[var(--sc-blue-900)] sm:text-[3rem]">
-            Paging, PA, Bell &amp; Intercom System Types
+            IP Audio Paging, PA, Bell &amp; Intercom System Types
           </h1>
           <p className="mt-5 max-w-3xl text-[1.125rem] leading-relaxed text-[var(--sc-slate)] sm:text-lg">
-            Modern communication systems range from simple 100V public-address installations to full
-            IP and hybrid networks combining paging, bells, emergency messages and two-way intercom.
-            Start with the architecture, then explore the functions your site actually needs.
+            SiteComms covers audio paging and public-address systems for schools, campuses and facilities, from simple 100V installations to full IP and hybrid networks combining announcements, bells, emergency messages and two-way intercom. Start with the architecture, then explore the functions your site actually needs.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/pricing-tool" className="sc-btn-primary">Estimate project cost</Link>

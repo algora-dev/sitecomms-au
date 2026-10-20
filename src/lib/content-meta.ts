@@ -26,10 +26,10 @@ export const CONTENT_META: Record<string, ContentMeta> = {
   "/guides/compare-pa-system-quotes": { published: "2026-09-19", reviewed: "2026-09-19" },
 
   "/": { published: "2026-09-05", reviewed: "2026-09-20" },
-  "/schools": { published: "2026-09-11", reviewed: "2026-09-13" },
-  "/systems": { published: "2026-09-11", reviewed: "2026-09-13" },
+  "/schools": { published: "2026-09-11", reviewed: "2026-10-20" },
+  "/systems": { published: "2026-09-11", reviewed: "2026-10-20" },
   "/systems/ip-paging-pa": { published: "2026-09-12", reviewed: "2026-09-19" },
-  "/systems/school-bell-announcements": { published: "2026-09-12", reviewed: "2026-09-19" },
+  "/systems/school-bell-announcements": { published: "2026-09-12", reviewed: "2026-10-20" },
   "/systems/emergency-lockdown": { published: "2026-09-12", reviewed: "2026-09-19" },
   "/systems/ip-intercom": { published: "2026-09-12", reviewed: "2026-09-12" },
   "/systems/traditional-vs-ip": { published: "2026-09-11", reviewed: "2026-09-13" },
@@ -37,11 +37,11 @@ export const CONTENT_META: Record<string, ContentMeta> = {
   "/guides/ip-paging-network-readiness": { published: "2026-09-12", reviewed: "2026-09-19" },
   "/guides/school-pa-specification-checklist": { published: "2026-09-12", reviewed: "2026-09-12" },
   "/pricing": { published: "2026-09-11", reviewed: "2026-09-17" },
-  "/pricing-tool": { published: "2026-09-11", reviewed: "2026-09-19" },
-  "/tools/funding-check": { published: "2026-09-11", reviewed: "2026-09-20" },
+  "/pricing-tool": { published: "2026-09-11", reviewed: "2026-10-20" },
+  "/tools/funding-check": { published: "2026-09-11", reviewed: "2026-10-20" },
   "/tools": { published: "2026-09-11", reviewed: "2026-09-20" },
   "/financing": { published: "2026-09-17", reviewed: "2026-09-23" },
-  "/tools/finance-check": { published: "2026-09-17", reviewed: "2026-09-23" },
+  "/tools/finance-check": { published: "2026-09-17", reviewed: "2026-10-20" },
   "/compare": { published: "2026-09-12", reviewed: "2026-09-19" }, // Legacy redirect; not a canonical article.
   "/compare/schools": { published: "2026-09-12", reviewed: "2026-09-25" }, // Existing article migrated and substantively rebuilt.
   "/industries/aged-care-retirement-villages": { published: "2026-09-17", reviewed: "2026-09-19" },

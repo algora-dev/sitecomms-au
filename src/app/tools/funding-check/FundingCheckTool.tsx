@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ProjectStateSelector, useProjectState } from "@/components/project-state";
 import { ProjectHelpLauncher } from "@/components/enquiry/ProjectHelpLauncher";
 import { FundingPathwayCard } from "@/components/funding/FundingPathwayCard";
+import { ToolCrossSell } from "@/components/tool-cross-sell";
+import { track } from "@/lib/analytics";
 import { assessFundingPathways } from "@/lib/funding/assessment";
 import {
   FUNDING_FEATURES,
@@ -86,6 +88,10 @@ export default function FundingCheckTool() {
   const assessment = active ? assessFundingPathways(inputs, { now: new Date(clock ?? submitted!.time) }) : null;
 
   useEffect(() => {
+    track("funding_tool_started");
+  }, []);
+
+  useEffect(() => {
     if (!submitted) return;
     const updateClock = () => setClock(new Date().toISOString());
     const interval = window.setInterval(updateClock, 60_000);
@@ -148,6 +154,15 @@ export default function FundingCheckTool() {
       setFormError(checked.result.issues.map(issue => issue.message).join(" "));
       return;
     }
+    const checkedPathways = checked.result.pathways;
+    track("funding_check_completed", {
+      project_state: state,
+      site_type: answers.site_type,
+      applicant_type: answers.applicant_type,
+      project_stage: answers.stage,
+      investigate_count: checkedPathways.filter(pathway => pathway.section === "investigate").length,
+      check_first_count: checkedPathways.filter(pathway => pathway.section === "check_first").length,
+    });
     setSubmitted({ fingerprint, time });
     setClock(time);
     setFormError("");
@@ -288,71 +303,94 @@ export default function FundingCheckTool() {
 
       {assessment && (
         <section className="mt-10" aria-labelledby="funding-result-heading">
-          <div className="sc-card border-t-4 border-[var(--sc-blue-700)] bg-[var(--sc-blue-50)] p-6 sm:p-8">
+          <div className="rounded-2xl border-2 border-[var(--sc-teal)] bg-[var(--sc-blue-50)] p-6 sm:p-8">
             <p className="text-xs font-bold uppercase tracking-widest text-[var(--sc-blue-700)]">Your funding result</p>
-            <h2 id="funding-result-heading" ref={resultHeading} tabIndex={-1} className="mt-3 text-2xl font-bold leading-tight text-[var(--sc-blue-900)]">
+            <h2 id="funding-result-heading" ref={resultHeading} tabIndex={-1} className="mt-3 text-2xl font-bold leading-tight text-[var(--sc-blue-900)] sm:text-3xl">
               {resultHeadline}
             </h2>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--sc-slate)]">{resultIntro}</p>
+            <p className="mt-3 max-w-3xl leading-relaxed text-[var(--sc-slate)]">{resultIntro}</p>
             <p className="mt-4 text-sm font-semibold text-[var(--sc-blue-900)]">
               {projectStateName(state)} · {fieldLabel("site_type", answers.site_type ?? "")} · {fieldLabel("stage", answers.stage ?? "")}
             </p>
-            <div className="mt-4 flex flex-wrap gap-2" aria-label="Selected communications features">
-              {selectedFeatureLabels.map(label => (
-                <span key={label} className="rounded-full border border-[var(--sc-border)] bg-white px-3 py-1 text-xs font-medium text-[var(--sc-blue-900)]">{label}</span>
-              ))}
+
+            <div id="project-enquiry" className="mt-6">
+              <ProjectHelpLauncher
+                mode="funding_help"
+                sourceTopic="funding_pathways"
+                buttonLabel="Send this result to SiteComms"
+                context={enquiryContext}
+                className="sc-btn-primary"
+              />
+              <p className="mt-3 max-w-2xl text-xs leading-relaxed text-[var(--sc-slate)]">
+                Your result and answers are included automatically. The SiteComms team reviews them personally and replies with suggested next steps or provider contacts where useful. We do not send your information to installers, suppliers or funding providers; you decide whether to contact anyone we suggest.
+              </p>
             </div>
+
             <button type="button" className="mt-5 text-sm font-semibold text-[var(--sc-blue-700)] underline underline-offset-2" onClick={() => { setSubmitted(null); move(0); }}>
               Change my answers
             </button>
           </div>
 
-          {mainPathways.length > 0 && (
-            <section className="mt-8">
-              <h3 className="text-xl font-bold text-[var(--sc-blue-900)]">Funding avenues to check</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
-                These are the routes most relevant to your answers. Open the official source for the programme rules, or ask SiteComms to help you turn the communications requirement into a project scope.
-              </p>
-              <div className="mt-5 space-y-5">
-                {mainPathways.map(pathway => <FundingPathwayCard key={pathway.id} pathway={pathway} />)}
-              </div>
-            </section>
-          )}
-
-          <section id="project-enquiry" className="sc-card mt-8 bg-[var(--sc-blue-50)] p-6">
-            <h3 className="text-xl font-bold text-[var(--sc-blue-900)]">Want SiteComms to help with the next step?</h3>
-            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[var(--sc-slate)]">
-              Send us the requirement and we can review the communications scope and point you toward suitable providers. Running this checker does not send anything automatically.
+          <details
+            className="sc-card mt-6 bg-white p-5 sm:p-6"
+            onToggle={(event) => {
+              if (event.currentTarget.open) track("funding_result_details_opened", { funding_result: strong.length ? "investigate" : possible.length ? "check_first" : "no_clear_route" });
+            }}
+          >
+            <summary className="cursor-pointer text-base font-bold text-[var(--sc-blue-900)]">
+              See funding pathways and official sources
+            </summary>
+            <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">
+              The checker is a shortlist, not a grant eligibility decision. Review the programme owner&apos;s current rules before relying on any route.
             </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <ProjectHelpLauncher
-                mode="funding_help"
-                sourceTopic="funding_pathways"
-                buttonLabel="Ask SiteComms for help"
-                context={enquiryContext}
-                className="sc-btn-primary"
-              />
-              <Link href="/funding" className="sc-btn-secondary">View funding guides</Link>
+
+            <div className="mt-5 flex flex-wrap gap-2" aria-label="Selected communications features">
+              {selectedFeatureLabels.map(label => (
+                <span key={label} className="rounded-full border border-[var(--sc-border)] bg-[var(--sc-blue-50)] px-3 py-1 text-xs font-medium text-[var(--sc-blue-900)]">{label}</span>
+              ))}
             </div>
-          </section>
 
-          {(secondary.length > 0 || excluded.length > 0) && (
-            <details className="sc-card mt-6 bg-white p-5">
-              <summary className="cursor-pointer font-bold text-[var(--sc-blue-900)]">Other reviewed routes</summary>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">
-                These routes are closed, monitoring-only, repayable, or do not match the basic information you supplied. They are kept here for transparency, not as your main result.
+            {mainPathways.length > 0 ? (
+              <section className="mt-6">
+                <h3 className="text-lg font-bold text-[var(--sc-blue-900)]">Funding avenues to check</h3>
+                <div className="mt-4 space-y-5">
+                  {mainPathways.map(pathway => <FundingPathwayCard key={pathway.id} pathway={pathway} />)}
+                </div>
+              </section>
+            ) : (
+              <p className="mt-6 rounded-xl border border-[var(--sc-border)] bg-slate-50 p-4 text-sm leading-relaxed text-[var(--sc-slate)]">
+                No currently reviewed route clearly matches the answers supplied. That does not mean funding is impossible; it means the current catalogue did not produce a route strong enough to present as a match.
               </p>
-              <div className="mt-5 space-y-5">
-                {[...secondary, ...excluded].map(pathway => <FundingPathwayCard key={pathway.id} pathway={pathway} secondary />)}
-              </div>
-            </details>
-          )}
+            )}
 
-          <details className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5 text-sm leading-relaxed text-[var(--sc-slate)]">
-            <summary className="cursor-pointer font-semibold text-[var(--sc-blue-900)]">How to read this result</summary>
-            <p className="mt-3">{assessment.result.coverage_note}</p>
-            <ul className="mt-3 list-disc space-y-2 pl-5">{assessment.limitations.map(item => <li key={item}>{item}</li>)}</ul>
+            {(secondary.length > 0 || excluded.length > 0) && (
+              <details className="mt-6 rounded-xl border border-[var(--sc-border)] bg-slate-50 p-4">
+                <summary className="cursor-pointer text-sm font-semibold text-[var(--sc-blue-900)]">Other reviewed routes</summary>
+                <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">
+                  These routes are closed, monitoring-only, repayable, or do not match the basic information supplied. They are retained for transparency rather than presented as your main result.
+                </p>
+                <div className="mt-5 space-y-5">
+                  {[...secondary, ...excluded].map(pathway => <FundingPathwayCard key={pathway.id} pathway={pathway} secondary />)}
+                </div>
+              </details>
+            )}
+
+            <details className="mt-6 rounded-xl border border-[var(--sc-border)] bg-slate-50 p-4 text-sm leading-relaxed text-[var(--sc-slate)]">
+              <summary className="cursor-pointer font-semibold text-[var(--sc-blue-900)]">How to read this result</summary>
+              <p className="mt-3">{assessment.result.coverage_note}</p>
+              <ul className="mt-3 list-disc space-y-2 pl-5">{assessment.limitations.map(item => <li key={item}>{item}</li>)}</ul>
+            </details>
+
+            <div className="mt-5">
+              <Link href="/funding" className="text-sm font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">View the full funding guides</Link>
+            </div>
           </details>
+
+          <ToolCrossSell
+            variant="funding-to-pricing"
+            fundingResult={strong.length ? "investigate" : possible.length ? "check_first" : "no_clear_route"}
+            financePrimary={!strong.length && !possible.length}
+          />
         </section>
       )}
 

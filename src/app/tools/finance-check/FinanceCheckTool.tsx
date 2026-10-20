@@ -119,11 +119,9 @@ export function FinanceCheckTool() {
   // content can live above/below the tool.
   const toolTopRef = useRef<HTMLDivElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
-  // Scroll policy: every step/result/restart transition puts the scrollbar
-  // at absolute maximum height (scrollY 0), instantly. No element anchoring,
-  // no animation - anchoring to an element mid-page leaves dead content above.
-  function scrollToPageTop() {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  function scrollToActiveContent() {
+    const target = resultReady ? resultRef.current : toolTopRef.current;
+    target?.scrollIntoView({ block: "start", behavior: "auto" });
   }
 
   useEffect(() => {
@@ -184,12 +182,11 @@ export function FinanceCheckTool() {
     });
   }
 
-  // Scroll AFTER the new screen has rendered. Scrolling from inside the
-  // click handler races React: the target element may not exist yet, which
-  // silently cancelled the scroll and left the user at the bottom.
+  // Scroll after the new screen/result has rendered so the relevant content
+  // is immediately visible without forcing the server-rendered page intro away.
   useEffect(() => {
-    scrollToPageTop();
-  }, [resultReady, screen]);
+    requestAnimationFrame(scrollToActiveContent);
+  }, [resultReady, screen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const canContinue =
     (screen === 0 && Boolean(projectState)) ||
@@ -227,7 +224,6 @@ export function FinanceCheckTool() {
 
     return (
       <div ref={resultRef} className="scroll-mt-6">
-        {/* Result hero: the answer is the first thing on screen. */}
         <section className="rounded-2xl border-2 border-[var(--sc-teal)] bg-[var(--sc-blue-50)] p-6 sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sc-blue-700)]">Your finance-check result</p>
           <div className="mt-3">
@@ -245,63 +241,64 @@ export function FinanceCheckTool() {
               }}
               className="sc-btn-primary cursor-pointer"
             >
-              Discuss finance options
+              Send this result to SiteComms
             </button>
           </div>
-          <p className="mt-5 text-xs leading-relaxed text-[var(--sc-slate)]">Preliminary guidance only — not an approval, credit assessment or finance offer.</p>
+          <p className="mt-3 max-w-2xl text-xs leading-relaxed text-[var(--sc-slate)]">
+            Your finance result and answers are included automatically. The SiteComms team reviews them personally and replies with suggested next steps or suitable public provider contacts where useful. We do not send your information to installers, suppliers or finance providers; you decide whether to contact anyone we suggest.
+          </p>
+          <p className="mt-4 text-xs leading-relaxed text-[var(--sc-slate)]">Preliminary guidance only — not an approval, credit assessment or finance offer.</p>
         </section>
 
-        {/* Compact personalised answer summary */}
-        <div className="sc-card mt-6 p-6">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--sc-slate)]">Your answers</h3>
-          <dl className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
-            {answerSummary.map(([term, value]) => (
-              <div key={term} className="flex flex-col sm:flex-row sm:gap-2">
-                <dt className="text-sm font-medium text-[var(--sc-slate)]">{term}:</dt>
-                <dd className="text-sm font-semibold text-[var(--sc-blue-900)]">{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        <details
+          className="sc-card mt-6 bg-white p-5 sm:p-6"
+          onToggle={(event) => {
+            if (event.currentTarget.open) track("finance_result_details_opened", { result_level: result.level });
+          }}
+        >
+          <summary className="cursor-pointer text-base font-bold text-[var(--sc-blue-900)]">See why you got this result</summary>
 
-        <div className="sc-card mt-6 p-6">
-          <h3 className="font-semibold text-[var(--sc-blue-900)]">What your answers tell us</h3>
-          <ul className="mt-4 space-y-3">
-            {result.reasons.map((reason) => <CheckLine key={reason}>{reason}</CheckLine>)}
-          </ul>
-        </div>
-
-        {result.evidence.length > 0 && (
-          <div className="sc-card mt-6 p-6">
-            <h3 className="font-semibold text-[var(--sc-blue-900)]">Why this is a real Australian finance pathway</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
-              These current public sources show that relevant equipment-finance, technology-leasing or governance pathways exist. They are evidence, not SiteComms endorsements or approval promises.
-            </p>
-            <div className="mt-4 space-y-3">
-              {result.evidence.slice(0, 3).map((source) => (
-                <a key={source.id} href={source.url} target="_blank" rel="noreferrer" className="block rounded-xl border border-[var(--sc-border)] bg-white p-4 hover:border-[var(--sc-blue-400)]">
-                  <span className="block text-sm font-semibold text-[var(--sc-blue-900)]">{source.name} ↗</span>
-                  <span className="mt-1 block text-xs leading-relaxed text-[var(--sc-slate)]">{source.note}</span>
-                </a>
-              ))}
-            </div>
-            {result.evidence.length > 3 && (
-              <details className="mt-4 rounded-xl border border-[var(--sc-border)] bg-slate-50 p-4">
-                <summary className="cursor-pointer text-sm font-semibold text-[var(--sc-blue-900)]">More reviewed finance evidence</summary>
-                <div className="mt-3 space-y-3">
-                  {result.evidence.slice(3).map((source) => (
-                    <a key={source.id} href={source.url} target="_blank" rel="noreferrer" className="block text-sm font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">{source.name} ↗</a>
-                  ))}
+          <div className="mt-5">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-[var(--sc-slate)]">Your answers</h3>
+            <dl className="mt-3 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+              {answerSummary.map(([term, value]) => (
+                <div key={term} className="flex flex-col sm:flex-row sm:gap-2">
+                  <dt className="text-sm font-medium text-[var(--sc-slate)]">{term}:</dt>
+                  <dd className="text-sm font-semibold text-[var(--sc-blue-900)]">{value}</dd>
                 </div>
-              </details>
-            )}
+              ))}
+            </dl>
           </div>
-        )}
+
+          <div className="mt-6 border-t border-[var(--sc-border)] pt-5">
+            <h3 className="font-semibold text-[var(--sc-blue-900)]">What your answers tell us</h3>
+            <ul className="mt-4 space-y-3">
+              {result.reasons.map((reason) => <CheckLine key={reason}>{reason}</CheckLine>)}
+            </ul>
+          </div>
+
+          {result.evidence.length > 0 && (
+            <div className="mt-6 border-t border-[var(--sc-border)] pt-5">
+              <h3 className="font-semibold text-[var(--sc-blue-900)]">Why this is a real Australian finance pathway</h3>
+              <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
+                These public sources show that relevant equipment-finance, technology-leasing or governance pathways exist. They are evidence, not SiteComms endorsements or approval promises.
+              </p>
+              <div className="mt-4 space-y-3">
+                {result.evidence.map((source) => (
+                  <a key={source.id} href={source.url} target="_blank" rel="noreferrer" className="block rounded-xl border border-[var(--sc-border)] bg-slate-50 p-4 hover:border-[var(--sc-blue-400)]">
+                    <span className="block text-sm font-semibold text-[var(--sc-blue-900)]">{source.name} ↗</span>
+                    <span className="mt-1 block text-xs leading-relaxed text-[var(--sc-slate)]">{source.note}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </details>
 
         {isSchool && (
-          <div className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
-            <h3 className="font-semibold text-[var(--sc-blue-900)]">Also planning a school project?</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
+          <details className="mt-6 rounded-xl border border-[var(--sc-border)] bg-white p-5">
+            <summary className="cursor-pointer text-sm font-semibold text-[var(--sc-blue-900)]">School project? Check whether funding may be available first</summary>
+            <p className="mt-3 text-sm leading-relaxed text-[var(--sc-slate)]">
               Depending on the school sector, state or territory and project scope, a separate capital-funding pathway may also be worth checking. Finance and school funding are different questions.
             </p>
             <Link
@@ -311,7 +308,7 @@ export function FinanceCheckTool() {
             >
               Check school funding pathways
             </Link>
-          </div>
+          </details>
         )}
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -334,20 +331,7 @@ export function FinanceCheckTool() {
 
   return (
     <div ref={toolTopRef} className="scroll-mt-6">
-      {!resultReady && (
-        <div className="mb-9">
-          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sc-blue-700)]">Australia equipment finance</p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-[var(--sc-blue-900)] sm:text-4xl">
-            Is finance or leasing worth exploring for your communications project?
-          </h1>
-          <p className="mt-3 text-[var(--sc-slate)]">
-            Start with the project state, then answer three short questions about the organisation, rough project value and budget. We&apos;ll show whether a finance conversation looks worthwhile and the evidence behind that guidance.
-          </p>
-          <p className="mt-2 text-xs leading-relaxed text-[var(--sc-slate)]">
-            Preliminary guidance only — not a finance application, credit assessment or approval. <Link href="/financing" className="underline">Read how equipment finance and leasing can work</Link>.
-          </p>
-        </div>
-      )}
+
       <div className="mb-8">
         <div className="flex items-center justify-between text-xs font-medium text-[var(--sc-slate)]">
           <span>Step {screen + 1} of 4</span>
@@ -374,7 +358,7 @@ export function FinanceCheckTool() {
         <div>
           <h2 className="text-2xl font-bold text-[var(--sc-blue-900)]">What type of organisation is this for?</h2>
           <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
-            This helps us keep the result relevant and, if you enquire, point you towards the right type of finance specialist.
+            This keeps the result relevant to the organisation and the approval or governance context that may apply.
           </p>
           <div className="mt-6 space-y-6">
             {groupedOrganisations.map(([group, items]) => (
