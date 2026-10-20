@@ -76,7 +76,7 @@ function publicSectorResult(answers: FinanceAnswers): FinanceResult {
 
   return {
     level: "early",
-    eyebrow: isGovernmentSchool ? "Possible route — approval rules come first" : "Authority check before finance",
+    eyebrow: isGovernmentSchool ? "Possible route - approval rules come first" : "Authority check before finance",
     headline: isGovernmentSchool
       ? guidance?.title ?? "Confirm the approved finance or lease route first"
       : "Start with the organisation's finance and approval team",

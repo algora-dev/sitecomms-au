@@ -15,7 +15,7 @@ export interface FinanceEvidence {
 export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   nab_equipment: {
     id: "nab_equipment",
-    name: "NAB — business vehicle and equipment loan",
+    name: "NAB - business vehicle and equipment loan",
     url: "https://www.nab.com.au/business/loans-and-finance/vehicle-or-equipment/vehicle-and-equipment-loan",
     kind: "provider",
     note: "NAB publicly offers equipment finance for business equipment including computers and fit-outs, subject to lending criteria.",
@@ -23,7 +23,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   westpac_equipment: {
     id: "westpac_equipment",
-    name: "Westpac — vehicle and equipment finance",
+    name: "Westpac - vehicle and equipment finance",
     url: "https://www.westpac.com.au/business-banking/loans-finance/vehicle-equipment-finance/",
     kind: "provider",
     note: "Westpac publicly offers business equipment loans, finance leases and hire purchase in Australia, subject to eligibility and credit criteria.",
@@ -31,7 +31,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   commbank_technology: {
     id: "commbank_technology",
-    name: "CommBank — technology equipment finance",
+    name: "CommBank - technology equipment finance",
     url: "https://www.commbank.com.au/business/loans-and-finance/car-and-equipment-finance/technology-equipment-finance.html",
     kind: "provider",
     note: "CommBank publicly offers technology leasing with flexible terms and lists audio-visual and office technology among financeable equipment categories.",
@@ -39,7 +39,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   boq_equipment: {
     id: "boq_equipment",
-    name: "BOQ — equipment and vehicle finance",
+    name: "BOQ - equipment and vehicle finance",
     url: "https://www.boq.com.au/business/loan-and-finance/equipment-and-vehicle-finance/",
     kind: "provider",
     note: "BOQ publicly offers equipment loans, finance leases, commercial hire purchase and related business equipment-finance structures.",
@@ -47,7 +47,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   vestone_education: {
     id: "vestone_education",
-    name: "Vestone Capital — school equipment finance",
+    name: "Vestone Capital - school equipment finance",
     url: "https://vestonecapital.com/school-equipment-finance/",
     kind: "provider",
     note: "Vestone publicly describes education equipment finance for independent, Catholic and government schools and universities, including AV and technology equipment.",
@@ -55,7 +55,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   vestone_vic_public: {
     id: "vestone_vic_public",
-    name: "Vestone Capital — Victorian public-school operating leases",
+    name: "Vestone Capital - Victorian public-school operating leases",
     url: "https://vestonecapital.com/equipment-finance-for-victorian-public-schools/",
     kind: "provider",
     note: "Vestone states it is a preferred supplier for operating-lease facilities for ICT products to Victorian government schools under contract CW48447.",
@@ -63,7 +63,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   finlease_education: {
     id: "finlease_education",
-    name: "Finlease — technology finance for education",
+    name: "Finlease - technology finance for education",
     url: "https://finlease.com.au/finance/technology-equipment-finance/technology-finance-education/",
     kind: "provider",
     note: "Finlease publicly markets technology-finance and rental solutions for schools and education organisations and describes nationwide operations.",
@@ -71,7 +71,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   anz_health: {
     id: "anz_health",
-    name: "ANZ — health business banking",
+    name: "ANZ - health business banking",
     url: "https://www.anz.com.au/business/industries/health/",
     kind: "provider",
     note: "ANZ publicly describes equipment loans and tailored finance for healthcare sectors including aged care, retirement living and childcare.",
@@ -79,7 +79,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   commbank_health: {
     id: "commbank_health",
-    name: "CommBank — medical equipment finance",
+    name: "CommBank - medical equipment finance",
     url: "https://www.commbank.com.au/business/loans-and-finance/car-and-equipment-finance/medical-equipment-finance.html",
     kind: "provider",
     note: "CommBank publicly offers healthcare equipment finance for technology, fit-outs and other equipment, subject to credit approval and asset suitability.",
@@ -87,7 +87,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   act_procurement: {
     id: "act_procurement",
-    name: "Procurement ACT — ACT Government procurement framework",
+    name: "Procurement ACT - ACT Government procurement framework",
     url: "https://www.procurement.act.gov.au/policy-and-resources/legislation",
     kind: "governance",
     note: "ACT procurement law expressly includes acquisition by purchase, lease or rent, but the public source reviewed does not establish school-level authority to borrow or enter a particular finance arrangement.",
@@ -95,7 +95,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   qld_school: {
     id: "qld_school",
-    name: "Queensland Department of Education — state-school device financing models",
+    name: "Queensland Department of Education - state-school device financing models",
     url: "https://education.qld.gov.au/parents-and-carers/school-information/student-device-programs/one-to-one-models",
     kind: "governance",
     note: "Queensland public guidance shows school-provided financing and lease/hire arrangements can exist in a state-school context, but it does not establish general authority for a school to borrow for communications equipment.",
@@ -103,7 +103,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   nsw_school: {
     id: "nsw_school",
-    name: "NSW Department of Education — financial management policy",
+    name: "NSW Department of Education - financial management policy",
     url: "https://education.nsw.gov.au/policy-library/policies/pd-2020-0472",
     kind: "governance",
     note: "NSW publishes a current school financial-management policy and identifies separate lease-accounting procedures; detailed school procedures are staff-only, so an external checker cannot establish school-level authority.",
@@ -111,7 +111,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   vic_school: {
     id: "vic_school",
-    name: "Victoria Department of Education — school asset and lease policy",
+    name: "Victoria Department of Education - school asset and lease policy",
     url: "https://www2.education.vic.gov.au/pal/asset-and-inventory-management-finance-manual-section-13/policy",
     kind: "governance",
     note: "Victorian government schools may enter operating leases, while school councils do not have authority to borrow and cannot enter finance leases.",
@@ -119,7 +119,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   wa_school: {
     id: "wa_school",
-    name: "WA Department of Education — councils and boards procedures",
+    name: "WA Department of Education - councils and boards procedures",
     url: "https://www.education.wa.edu.au/web/policies/-/councils-and-boards-in-public-schools-procedures",
     kind: "governance",
     note: "WA public-school council/board governance requires a statement that the council or board will not borrow money or obtain credit; procurement and department approval routes therefore matter.",
@@ -127,7 +127,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   sa_school: {
     id: "sa_school",
-    name: "SA Department for Education — School Governance Administrative Instruction",
+    name: "SA Department for Education - School Governance Administrative Instruction",
     url: "https://www.education.sa.gov.au/docs/psp/governing-council/governing-council/school-governance-administrative-instruction.pdf",
     kind: "governance",
     note: "South Australian governing councils can borrow only with the Minister's written consent, so an ordinary commercial finance application is not automatically a school-level option.",
@@ -135,7 +135,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   nt_school: {
     id: "nt_school",
-    name: "NT Department of Education and Training — FARMS manual",
+    name: "NT Department of Education and Training - FARMS manual",
     url: "https://education.nt.gov.au/media/docs/policies/resource-management/farms-manual/financial-and-resource-management-for-schools-farms-manual-updated.pdf",
     kind: "governance",
     note: "NT public-school guidance treats finance leases as borrowing requiring CE approval unless an approved exception applies; operating leases are not treated as borrowing.",
@@ -143,7 +143,7 @@ export const FINANCE_EVIDENCE: Record<string, FinanceEvidence> = {
   },
   tas_school: {
     id: "tas_school",
-    name: "Tasmania DECYP — Ministerial Instruction No 12 for School Associations",
+    name: "Tasmania DECYP - Ministerial Instruction No 12 for School Associations",
     url: "https://publicdocumentcentre.education.tas.gov.au/library/Document%20Centre/School-Associations-Ministerial-Instruction-No-12.pdf",
     kind: "governance",
     note: "Tasmanian school associations need Secretary approval before borrowing money and before entering contracts over specified thresholds.",
@@ -171,7 +171,7 @@ export interface PublicSchoolFinanceGuidance {
 export function publicSchoolFinanceGuidance(state?: ProjectState): PublicSchoolFinanceGuidance {
   if (state === "VIC") {
     return {
-      title: "Operating lease may be a real route — finance lease is not",
+      title: "Operating lease may be a real route - finance lease is not",
       summary: "Victorian government schools can enter operating leases under the Department's finance policy, but school councils cannot borrow money or enter finance leases. Confirm the approved operating-lease/procurement route for the proposed communications equipment.",
       sourceIds: ["vic_school", "vestone_vic_public"],
     };

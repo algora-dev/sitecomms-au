@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* SiteComms Australia design tokens — SCAU brand package (2026-09-17) */
+/* SiteComms Australia design tokens - SCAU brand package (2026-09-17) */
 :root {
   --sc-navy: #263238;        /* trust / primary (charcoal) */
   --sc-slate: #4f5b62;        /* muted body text */

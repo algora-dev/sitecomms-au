@@ -32,7 +32,7 @@ const SIMPLE_SITE_OPTIONS = [
 
 const SIMPLE_STAGE_OPTIONS = [
   ["planning", "Planning / early stage"],
-  ["quotes", "Getting quotes — nothing committed yet"],
+  ["quotes", "Getting quotes - nothing committed yet"],
   ["committed", "Order, deposit or contract already committed"],
   ["started", "Work already started"],
   ["completed", "Work completed / equipment purchased"],
@@ -197,7 +197,7 @@ export default function FundingCheckTool() {
   const mainPathways = [...strong, ...possible];
 
   const resultHeadline = strong.length
-    ? "Yes — there are funding avenues worth checking."
+    ? "Yes - there are funding avenues worth checking."
     : possible.length
       ? "There may be a funding avenue for this project."
       : "No clear current funding avenue was identified.";
@@ -210,7 +210,7 @@ export default function FundingCheckTool() {
 
   const selectedFeatureLabels = (answers.features ?? []).map(featureLabel);
   const enquiryContext: Record<string, string> | undefined = assessment ? {
-    funding_assessment: "Funding pathway shortlist only — no grant eligibility, award or approval determined.",
+    funding_assessment: "Funding pathway shortlist only - no grant eligibility, award or approval determined.",
     project_state: projectStateName(state),
     catalogue: assessment.result.catalogue_version,
     assessed_at: assessment.generated_at,

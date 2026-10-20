@@ -51,7 +51,7 @@ export default function SchoolComparePage() {
     <article>
       <AuthorityHero
         eyebrow="Australian school systems comparison"
-        title="The right school system starts with the job—not the logo."
+        title="The right school system starts with the job-not the logo."
         description="Compare the systems behind everyday bells, clear announcements, room-to-office calls and urgent messages. Start with your school's priorities, then compare the complete installed and supported solution."
         tags={["Eight practical approaches", "Features and value", "Australian evidence"]}
         primaryCta={{ label: "Find your shortlist", href: "#shortlist" }}
@@ -107,7 +107,7 @@ export default function SchoolComparePage() {
       </Section>
 
       <div className="border-y border-[var(--sc-border)] bg-[var(--sc-blue-50)]">
-        <Section id="capabilities" title="Compare the functions—not just a list of ticks">
+        <Section id="capabilities" title="Compare the functions-not just a list of ticks">
           <p className={`mt-4 max-w-4xl ${bodyClass}`}>
             A feature may need a particular endpoint, controller or integration. This table says what to ask for in a complete design.
             Read across a row, then open the profile for cost, expansion and Australian support questions.
@@ -212,7 +212,7 @@ export default function SchoolComparePage() {
       <div className="border-y border-[var(--sc-border)] bg-[var(--sc-blue-50)]">
         <Section id="costs" title="Best value means the complete school job">
           <p className={`mt-4 max-w-4xl ${bodyClass}`}>
-            A lower endpoint price does not necessarily mean a lower project cost. Compare the installed scope, recurring costs, staff workflow and expansion—not a full campus platform against a basic bell controller.
+            A lower endpoint price does not necessarily mean a lower project cost. Compare the installed scope, recurring costs, staff workflow and expansion-not a full campus platform against a basic bell controller.
           </p>
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {[
@@ -233,7 +233,7 @@ export default function SchoolComparePage() {
             </div>
           </details>
           <p className={`mt-5 max-w-4xl text-sm ${bodyClass}`}>
-            SiteComms has not established like-for-like Australian installed prices for these brands. Our AUD calculator is a provisional planning model for its stated scope—not a SPON quote, a brand price comparison or a guaranteed saving.
+            SiteComms has not established like-for-like Australian installed prices for these brands. Our AUD calculator is a provisional planning model for its stated scope-not a SPON quote, a brand price comparison or a guaranteed saving.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <StateAwareLink href="/pricing-tool" className="sc-btn-primary">Get an indicative project range</StateAwareLink>
@@ -246,7 +246,7 @@ export default function SchoolComparePage() {
         <p className={`mt-4 max-w-4xl ${bodyClass}`}>
           Imagine an existing school with 30 teaching areas, an administration office, two playground areas and a hall.
           It wants reliable bells, live announcements, calls from selected rooms and future expansion.
-          This is an illustrative brief—not a real installation, an acoustic design or a count of speakers to buy.
+          This is an illustrative brief-not a real installation, an acoustic design or a count of speakers to buy.
         </p>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {[
@@ -275,7 +275,7 @@ export default function SchoolComparePage() {
               <p className={`mt-3 text-sm ${bodyClass}`}>{reference.text}</p>
               <Sources ids={reference.sources} />
               <details className="mt-3 text-sm">
-                <summary className={`cursor-pointer ${linkClass}`}>What this does—and does not—prove</summary>
+                <summary className={`cursor-pointer ${linkClass}`}>What this does-and does not-prove</summary>
                 <p className={`mt-2 ${bodyClass}`}>{reference.limit}</p>
               </details>
             </section>
@@ -283,7 +283,7 @@ export default function SchoolComparePage() {
           <section className="sc-card bg-[var(--sc-blue-50)] p-6">
             <p className="text-xs font-semibold uppercase tracking-wide text-[var(--sc-blue-700)]">A different school audio job</p>
             <h3 className="mt-2 text-lg font-semibold text-[var(--sc-blue-900)]">Brisbane South State College hall</h3>
-            <p className={`mt-3 text-sm ${bodyClass}`}>SCP Audio Australia publishes a multipurpose-hall sound system example. It is useful context for assembly/performance audio—not evidence of SPON supply or a whole-campus paging installation.</p>
+            <p className={`mt-3 text-sm ${bodyClass}`}>SCP Audio Australia publishes a multipurpose-hall sound system example. It is useful context for assembly/performance audio-not evidence of SPON supply or a whole-campus paging installation.</p>
             <Sources ids={["scp-australia"]} />
           </section>
         </div>

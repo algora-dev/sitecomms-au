@@ -50,7 +50,7 @@ export const FUNDING_FIELDS = {
     ["operating_costs", "Subscriptions, staffing or other ongoing costs"],
   ] as const },
   stage: { label: "What stage is the project at?", options: [
-    ["unknown", "Not sure"], ["planning", "Planning / early stage"], ["quotes", "Getting quotes — nothing committed yet"],
+    ["unknown", "Not sure"], ["planning", "Planning / early stage"], ["quotes", "Getting quotes - nothing committed yet"],
     ["committed", "Order, deposit or contract already committed"], ["started", "Work already started"], ["completed", "Work completed / equipment purchased"],
   ] as const },
   tenure: { label: "Who controls the property?", options: [

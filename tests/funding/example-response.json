@@ -38,12 +38,12 @@
     "pathways": [
       {
         "id": "qld-gcbf-127",
-        "title": "Queensland Gambling Community Benefit Fund — Round 127",
+        "title": "Queensland Gambling Community Benefit Fund - Round 127",
         "route_type": "grant",
         "route_label": "Grant programme",
         "match": "potential_pathway",
         "availability": "open_at_review",
-        "availability_label": "Within published application dates — recheck with funder",
+        "availability_label": "Within published application dates - recheck with funder",
         "freshness": "within_review_period",
         "section": "investigate",
         "facts": "The fund supports eligible not-for-profit community equipment and facility projects. Schools themselves cannot apply; eligible P&C/P&F associations may apply in their own capacity.",
@@ -130,7 +130,7 @@
     },
     {
       "type": "review_enquiry_form",
-      "label": "Review a project enquiry to SiteComms — no automatic submission",
+      "label": "Review a project enquiry to SiteComms - no automatic submission",
       "path": "/tools/funding-check#project-enquiry"
     }
   ]

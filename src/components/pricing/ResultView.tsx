@@ -360,7 +360,7 @@ export function ResultView({
         estimateLink={safeEstimateLink}
         sourceTopic="pricing_tool"
         context={{
-          "Assessment classification": "Provisional budget estimate — not a formal quote",
+          "Assessment classification": "Provisional budget estimate - not a formal quote",
           "Pricing model": assessment.result.versions.pricing_source,
           "Pricing rules": assessment.result.versions.pricing_rules,
           "Quantity basis": assessment.result.quantity_basis,

@@ -150,7 +150,7 @@ export default function NetworkReadinessPage() {
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">
-        Last reviewed {reviewedLabel("/guides/ip-paging-network-readiness")}. General guidance — always confirm specifics with your network
+        Last reviewed {reviewedLabel("/guides/ip-paging-network-readiness")}. General guidance - always confirm specifics with your network
         administrator and installer.
       </p>
       <script

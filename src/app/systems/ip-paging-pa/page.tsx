@@ -76,7 +76,7 @@ export default function IpPagingPaPage() {
         </li>
       </ul>
       <p>
-        For schools, these capabilities map directly onto bell and announcement requirements — see
+        For schools, these capabilities map directly onto bell and announcement requirements - see
         our <Link href="/systems/school-bell-announcements">school bells and announcements guide</Link>.
       </p>
       <h2 id="emergency">Emergency and lockdown capability</h2>
@@ -145,7 +145,7 @@ export default function IpPagingPaPage() {
         ]}
       />
       <p className="mt-8 text-xs text-[var(--sc-slate)]">
-        Last reviewed {reviewedLabel("/systems/ip-paging-pa")}. General information only — not design or compliance advice for any
+        Last reviewed {reviewedLabel("/systems/ip-paging-pa")}. General information only - not design or compliance advice for any
         specific site.
       </p>
       <script

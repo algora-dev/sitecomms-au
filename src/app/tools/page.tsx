@@ -50,7 +50,7 @@ export default function ToolsPage() {
       <div className="mt-8 rounded-2xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-6">
         <h2 className="text-xl font-semibold text-[var(--sc-blue-900)]">The tools work together</h2>
         <p className="mt-2 max-w-3xl text-sm leading-relaxed text-[var(--sc-slate)]">
-          Start wherever the project is clearest: estimate the likely cost, prepare the applicant and funding questions, or explore finance and leasing. Pricing and finance tools are indicative; funding guidance is a dated, sourced pathway review — not an award or eligibility decision.
+          Start wherever the project is clearest: estimate the likely cost, prepare the applicant and funding questions, or explore finance and leasing. Pricing and finance tools are indicative; funding guidance is a dated, sourced pathway review - not an award or eligibility decision.
         </p>
       </div>
     </div>

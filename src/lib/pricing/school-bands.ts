@@ -88,7 +88,7 @@ export function schoolBandSummaries() {
     const high = planningEstimate(band.highState);
     return {
       ...band,
-      displayRange: low && high ? `${formatAUD(low.low)} – ${formatAUD(high.high)}${high.overThreshold ? "+" : ""} ex GST` : "Estimate unavailable — pricing assumptions need review",
+      displayRange: low && high ? `${formatAUD(low.low)} – ${formatAUD(high.high)}${high.overThreshold ? "+" : ""} ex GST` : "Estimate unavailable - pricing assumptions need review",
       lowValue: low?.low ?? null,
       highValue: high?.high ?? null,
       largeSystem: high?.overThreshold ?? false,

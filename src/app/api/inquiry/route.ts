@@ -242,7 +242,7 @@ export async function POST(req: Request) {
       attribution.length ? attribution.map(([k, v]) => `- ${k}: ${v}`).join("\n") : "(none captured)",
       "",
       "=== SiteComms ROUTING ===",
-      "SiteComms review required — do not forward this enquiry.",
+      "SiteComms review required - do not forward this enquiry.",
       "",
       "Recommend the provider or providers that appear most suitable based on the information supplied.",
       "Reply to the customer with:",

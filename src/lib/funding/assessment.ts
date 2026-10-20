@@ -19,12 +19,12 @@ const LIMITATIONS = [
   "No enquiry is sent and no information is forwarded to providers by running this assessment.",
 ];
 const STATUSES: Record<Availability, string> = {
-  open_at_review: "Within published application dates — recheck with funder",
-  ongoing: "Ongoing route — authority confirmation required",
+  open_at_review: "Within published application dates - recheck with funder",
+  ongoing: "Ongoing route - authority confirmation required",
   closed: "Published round closed",
-  invitation_only: "Invitation only — not open to unsolicited applications",
-  confirm_status: "Conflicting or unclear status — confirm with authority",
-  monitor: "Programme watchlist — no general open round established",
+  invitation_only: "Invitation only - not open to unsolicited applications",
+  confirm_status: "Conflicting or unclear status - confirm with authority",
+  monitor: "Programme watchlist - no general open round established",
 };
 export function dateInZone(date: Date, zone: string): string {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: zone, year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(date);
@@ -35,10 +35,10 @@ export function dateInZone(date: Date, zone: string): string {
 export function pathwayAvailability(pathway: FundingPathway, now: Date): { availability: PathwayAssessment["availability"]; label: string } {
   const today = dateInZone(now, pathway.timezone);
   if ((pathway.closes && now.getTime() >= Date.parse(pathway.closes)) || (pathway.close_date && today > pathway.close_date)) {
-    return { availability: "closed", label: "Published deadline passed — no later round assumed" };
+    return { availability: "closed", label: "Published deadline passed - no later round assumed" };
   }
   if ((pathway.opens && now.getTime() < Date.parse(pathway.opens)) || (pathway.open_date && today < pathway.open_date)) return { availability: "not_yet_open", label: "Before published opening date" };
-  if (pathway.close_date === today && pathway.availability === "open_at_review") return { availability: "closing_today", label: "Published closing day — confirm exact cut-off before applying" };
+  if (pathway.close_date === today && pathway.availability === "open_at_review") return { availability: "closing_today", label: "Published closing day - confirm exact cut-off before applying" };
   return { availability: pathway.availability, label: STATUSES[pathway.availability] };
 }
 function validDateOnly(value: string): boolean {
@@ -168,7 +168,7 @@ function assessPathway(pathway: FundingPathway, inputs: FundingInput, now: Date,
     if (["closed", "not_yet_open", "monitor"].includes(availability.availability) || pathway.route_type === "concessional_loan") section = "watchlist";
   }
   const label = freshness === "stale" && availability.availability === "open_at_review"
-    ? "Published dates only — source review overdue; current status unconfirmed" : availability.label;
+    ? "Published dates only - source review overdue; current status unconfirmed" : availability.label;
   return {
     id: pathway.id, title: pathway.title, route_type: pathway.route_type, route_label: ROUTE_LABELS[pathway.route_type],
     match, availability: availability.availability, availability_label: label, freshness, section,
@@ -219,7 +219,7 @@ export function assessFundingPathways(raw: unknown, context: FundingAssessmentCo
     sources, limitations: LIMITATIONS,
     next_actions: [
       { type: "view_page", label: "Read the research, scope and state guides", path: "/funding" },
-      { type: "review_enquiry_form", label: "Review a project enquiry to SiteComms — no automatic submission", path: "/tools/funding-check#project-enquiry" },
+      { type: "review_enquiry_form", label: "Review a project enquiry to SiteComms - no automatic submission", path: "/tools/funding-check#project-enquiry" },
     ],
   });
   assertFundingResult(result);

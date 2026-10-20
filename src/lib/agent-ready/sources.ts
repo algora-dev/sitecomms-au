@@ -33,8 +33,8 @@ export const SOURCE_RECORDS: Record<SourceId, SourceRecord> = {
   },
   content_directory: editorial("content_directory", "SiteComms public planning guide directory", "/guides"),
   school_comparison: editorial("school_comparison", "Australian school comparison and cited evidence", "/compare/schools"),
-  funding_preparation: editorial("funding_preparation", "Funding pathway checker — not eligibility or approval", "/tools/funding-check"),
-  finance_preparation: editorial("finance_preparation", "Finance preparation — not lender or borrowing approval", "/tools/finance-check"),
+  funding_preparation: editorial("funding_preparation", "Funding pathway checker - not eligibility or approval", "/tools/funding-check"),
+  finance_preparation: editorial("finance_preparation", "Finance preparation - not lender or borrowing approval", "/tools/finance-check"),
   enquiry_policy: editorial("enquiry_policy", "SiteComms reviewed enquiry and recommendation process", "/contact"),
 };
 

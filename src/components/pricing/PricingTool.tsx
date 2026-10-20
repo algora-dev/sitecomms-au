@@ -179,7 +179,7 @@ export function PricingTool() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }
   /** Central navigation helper: the scroll itself happens in a post-render
-   *  effect on [step] — scrolling from inside the click handler races React
+   *  effect on [step] - scrolling from inside the click handler races React
    *  (the next screen's ref may not exist yet), which silently cancels it. */
   function goToStep(next: number) {
     setStep(next);
@@ -286,7 +286,7 @@ export function PricingTool() {
         ))}
       </div>
 
-      {/* STEP 1 — installation */}
+      {/* STEP 1 - installation */}
       {step === 0 && (
         <div>
           <h2 className="text-2xl font-bold text-[var(--sc-navy)]">What best describes the site?</h2>
@@ -310,7 +310,7 @@ export function PricingTool() {
         </div>
       )}
 
-      {/* STEP 2 — areas */}
+      {/* STEP 2 - areas */}
       {step === 1 && (
         <div>
           <h2 className="text-2xl font-bold text-[var(--sc-navy)]">Roughly how many areas need coverage?</h2>
@@ -364,7 +364,7 @@ export function PricingTool() {
         </div>
       )}
 
-      {/* STEP 3 — feature level + optional fine-tune */}
+      {/* STEP 3 - feature level + optional fine-tune */}
       {step === 2 && (
         <div>
           <h2 className="text-2xl font-bold text-[var(--sc-navy)]">How capable do you want the system to be?</h2>
@@ -545,7 +545,7 @@ export function PricingTool() {
             </h2>
             <p className="mt-3 text-sm leading-6 text-[var(--sc-slate)]">
               This will clear your current ballpark price. If you want to keep it,
-              download the PDF estimate first — you will not be able to recover it after
+              download the PDF estimate first - you will not be able to recover it after
               starting again.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">

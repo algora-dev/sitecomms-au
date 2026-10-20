@@ -1,5 +1,5 @@
 // Representative example configurations for the crawlable pricing section.
-// Numbers are COMPUTED from the same config as the calculator — never duplicated as literals.
+// Numbers are COMPUTED from the same config as the calculator - never duplicated as literals.
 
 import type { CalculatorState } from "./types";
 import { planningEstimate } from "../agent-ready/assessment";
@@ -99,7 +99,7 @@ export function presetSummaries(): PresetSummary[] {
       title: p.title,
       blurb: p.blurb,
       available: r !== null,
-      range: r ? `${formatAUD(r.low)} – ${formatAUD(r.high)}${r.overThreshold ? "+" : ""} ex GST` : "Estimate unavailable — pricing assumptions need review",
+      range: r ? `${formatAUD(r.low)} – ${formatAUD(r.high)}${r.overThreshold ? "+" : ""} ex GST` : "Estimate unavailable - pricing assumptions need review",
       detailLines: detail,
     };
   });

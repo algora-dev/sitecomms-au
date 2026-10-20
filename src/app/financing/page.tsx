@@ -161,7 +161,7 @@ export default function FinancingPage() {
           </div>
           <div className="sc-card bg-white p-5">
             <h3 className="font-semibold text-[var(--sc-blue-900)]">Funding</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Relevant mainly where a genuine funding or capital pathway applies — particularly the <Link href="/tools/funding-check">school property pathways</Link> covered elsewhere on SiteComms.</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">Relevant mainly where a genuine funding or capital pathway applies - particularly the <Link href="/tools/funding-check">school property pathways</Link> covered elsewhere on SiteComms.</p>
           </div>
           <div className="sc-card bg-white p-5">
             <h3 className="font-semibold text-[var(--sc-blue-900)]">Finance / leasing</h3>
@@ -205,7 +205,7 @@ export default function FinancingPage() {
         <div className="not-prose mt-10 rounded-2xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-6">
           <h2 className="text-xl font-semibold text-[var(--sc-blue-900)]">Check in about a minute</h2>
           <p className="mt-2 text-sm leading-relaxed text-[var(--sc-slate)]">
-            Tell us who the project is for, roughly how much finance may be needed and what sort of regular payment feels manageable. The result is designed to show whether a specialist conversation looks useful — not to decide whether finance will be approved.
+            Tell us who the project is for, roughly how much finance may be needed and what sort of regular payment feels manageable. The result is designed to show whether a specialist conversation looks useful - not to decide whether finance will be approved.
           </p>
           <Link href="/tools/finance-check" className="sc-btn-primary mt-4 inline-flex">Run the finance check</Link>
         </div>
@@ -216,22 +216,22 @@ export default function FinancingPage() {
         </p>
         <h3>Examples of current Australian finance pathways</h3>
         <ul>
-          <li><a href="https://www.nab.com.au/business/loans-and-finance/vehicle-or-equipment/vehicle-and-equipment-loan">NAB — business vehicle and equipment finance</a></li>
-          <li><a href="https://www.westpac.com.au/business-banking/loans-finance/vehicle-equipment-finance/">Westpac — business equipment loans, finance leases and hire purchase</a></li>
-          <li><a href="https://www.commbank.com.au/business/loans-and-finance/car-and-equipment-finance/technology-equipment-finance.html">CommBank — technology equipment finance</a></li>
-          <li><a href="https://vestonecapital.com/school-equipment-finance/">Vestone Capital — school and education equipment finance</a></li>
-          <li><a href="https://finlease.com.au/finance/technology-equipment-finance/technology-finance-education/">Finlease — technology finance for education</a></li>
-          <li><a href="https://www.anz.com.au/business/industries/health/">ANZ — health, aged-care, retirement-living and childcare finance context</a></li>
+          <li><a href="https://www.nab.com.au/business/loans-and-finance/vehicle-or-equipment/vehicle-and-equipment-loan">NAB - business vehicle and equipment finance</a></li>
+          <li><a href="https://www.westpac.com.au/business-banking/loans-finance/vehicle-equipment-finance/">Westpac - business equipment loans, finance leases and hire purchase</a></li>
+          <li><a href="https://www.commbank.com.au/business/loans-and-finance/car-and-equipment-finance/technology-equipment-finance.html">CommBank - technology equipment finance</a></li>
+          <li><a href="https://vestonecapital.com/school-equipment-finance/">Vestone Capital - school and education equipment finance</a></li>
+          <li><a href="https://finlease.com.au/finance/technology-equipment-finance/technology-finance-education/">Finlease - technology finance for education</a></li>
+          <li><a href="https://www.anz.com.au/business/industries/health/">ANZ - health, aged-care, retirement-living and childcare finance context</a></li>
         </ul>
         <h3>Government-school governance examples</h3>
         <ul>
-          <li><a href="https://education.qld.gov.au/parents-and-carers/school-information/student-device-programs/one-to-one-models">Queensland Department of Education — school device financing models</a></li>
-          <li><a href="https://education.nsw.gov.au/policy-library/policies/pd-2020-0472">NSW Department of Education — financial management policy</a></li>
-          <li><a href="https://www2.education.vic.gov.au/pal/asset-and-inventory-management-finance-manual-section-13/policy">Victoria — school asset and lease policy</a></li>
-          <li><a href="https://www.education.wa.edu.au/web/policies/-/councils-and-boards-in-public-schools-procedures">Western Australia — school councils and boards procedures</a></li>
-          <li><a href="https://www.education.sa.gov.au/docs/psp/governing-council/governing-council/school-governance-administrative-instruction.pdf">South Australia — School Governance Administrative Instruction</a></li>
-          <li><a href="https://education.nt.gov.au/media/docs/policies/resource-management/farms-manual/financial-and-resource-management-for-schools-farms-manual-updated.pdf">Northern Territory — FARMS school finance manual</a></li>
-          <li><a href="https://publicdocumentcentre.education.tas.gov.au/library/Document%20Centre/School-Associations-Ministerial-Instruction-No-12.pdf">Tasmania — School Associations Ministerial Instruction No 12</a></li>
+          <li><a href="https://education.qld.gov.au/parents-and-carers/school-information/student-device-programs/one-to-one-models">Queensland Department of Education - school device financing models</a></li>
+          <li><a href="https://education.nsw.gov.au/policy-library/policies/pd-2020-0472">NSW Department of Education - financial management policy</a></li>
+          <li><a href="https://www2.education.vic.gov.au/pal/asset-and-inventory-management-finance-manual-section-13/policy">Victoria - school asset and lease policy</a></li>
+          <li><a href="https://www.education.wa.edu.au/web/policies/-/councils-and-boards-in-public-schools-procedures">Western Australia - school councils and boards procedures</a></li>
+          <li><a href="https://www.education.sa.gov.au/docs/psp/governing-council/governing-council/school-governance-administrative-instruction.pdf">South Australia - School Governance Administrative Instruction</a></li>
+          <li><a href="https://education.nt.gov.au/media/docs/policies/resource-management/farms-manual/financial-and-resource-management-for-schools-farms-manual-updated.pdf">Northern Territory - FARMS school finance manual</a></li>
+          <li><a href="https://publicdocumentcentre.education.tas.gov.au/library/Document%20Centre/School-Associations-Ministerial-Instruction-No-12.pdf">Tasmania - School Associations Ministerial Instruction No 12</a></li>
         </ul>
 
         <div className="not-prose mt-8 rounded-xl border border-[var(--sc-border)] bg-white p-5 text-sm leading-relaxed text-[var(--sc-slate)]">

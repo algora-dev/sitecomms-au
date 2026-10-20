@@ -7,102 +7,102 @@ export const AGED_CARE_HEADLINE = "PA, paging and intercom systems for aged care
 export const AGED_CARE_DESCRIPTION = "Compare PA, IP paging, announcement and intercom systems for Australian aged care homes and retirement villages, including visitor video, existing-PA reuse, indicative pricing and finance options.";
 export const careSources = {
   "axis-edge": {
-    "label": "Axis Australia — Audio Manager Edge",
+    "label": "Axis Australia - Audio Manager Edge",
     "href": "https://www.axis.com/en-au/products/axis-audio-manager-edge",
     "kind": "Technical documentation"
   },
   "axis-console": {
-    "label": "AXIS C6110 — paging console and two-way communication",
+    "label": "AXIS C6110 - paging console and two-way communication",
     "href": "https://www.axis.com/en-au/products/axis-c6110",
     "kind": "Manufacturer"
   },
   "axis-bridge": {
-    "label": "AXIS C8110 — analogue audio bridge",
+    "label": "AXIS C8110 - analogue audio bridge",
     "href": "https://www.axis.com/en-au/products/axis-c8110",
     "kind": "Manufacturer"
   },
   "axis-entry": {
-    "label": "AXIS I8116-E — network video intercom",
+    "label": "AXIS I8116-E - network video intercom",
     "href": "https://www.axis.com/en-au/products/axis-i8116-e",
     "kind": "Manufacturer"
   },
   "axis-Australian": {
-    "label": "Axis Australia — Audio Manager Edge",
+    "label": "Axis Australia - Audio Manager Edge",
     "href": "https://www.axis.com/en-au/products/axis-audio-manager-edge",
     "kind": "Manufacturer Australian site"
   },
   "2n-entry": {
-    "label": "2N IP Verso 2.0 — modular entrance intercom",
+    "label": "2N IP Verso 2.0 - modular entrance intercom",
     "href": "https://www.2n.com/en-GB/products/intercoms/2n-ip-verso-2/",
     "kind": "Manufacturer"
   },
   "2n-Australian": {
-    "label": "advanceNET Australia — 2N product category",
+    "label": "advanceNET Australia - 2N product category",
     "href": "https://www.advance-net.com.au/product-category/2n/",
     "kind": "Australian wholesaler category; confirm exact revision"
   },
   "algo-adapter": {
-    "label": "Algo — 8301 user guide",
+    "label": "Algo - 8301 user guide",
     "href": "https://docs.algosolutions.com/docs/8301-user-guide",
     "kind": "Manufacturer technical documentation"
   },
   "algo-speaker": {
-    "label": "Algo 8188 — IP ceiling speaker",
+    "label": "Algo 8188 - IP ceiling speaker",
     "href": "https://www.algosolutions.com/product/8188-ip-ceiling-speaker/",
     "kind": "Manufacturer"
   },
   "algo-Australian": {
-    "label": "advanceNET Australia — Algo 8301",
+    "label": "advanceNET Australia - Algo 8301",
     "href": "https://www.advance-net.com.au/product/algo-8301-sip-paging-adapter-bell-scheduler/",
     "kind": "Australian product listing"
   },
   "toa-intercom": {
-    "label": "TOA N-8000 — dedicated IP intercom family",
+    "label": "TOA N-8000 - dedicated IP intercom family",
     "href": "https://www.toa.co.uk/products/intercom-systems/n-8000-series/",
     "kind": "Manufacturer"
   },
   "toa-gateway": {
-    "label": "TOA IP-A1PG — paging gateway and web scheduler",
+    "label": "TOA IP-A1PG - paging gateway and web scheduler",
     "href": "https://www.toa.co.uk/products/ip-a1pg/",
     "kind": "Manufacturer"
   },
   "toa-interface": {
-    "label": "TOA IP-A1AF — audio interface",
+    "label": "TOA IP-A1AF - audio interface",
     "href": "https://www.toa.co.uk/products/ip-a1af/",
     "kind": "Manufacturer"
   },
   "toa-Australian": {
-    "label": "TOA — Australia authorised dealers",
+    "label": "TOA - Australia authorised dealers",
     "href": "https://toa.com.sg/dealers/29",
     "kind": "Manufacturer dealer listing"
   },
   "frontrow-system": {
-    "label": "FrontRow Conductor — campus communications",
+    "label": "FrontRow Conductor - campus communications",
     "href": "https://www.gofrontrow.com.au/products/conductor/",
     "kind": "Official Australian product information"
   },
   "frontrow-Australian": {
-    "label": "FrontRow Australia — Conductor",
+    "label": "FrontRow Australia - Conductor",
     "href": "https://www.gofrontrow.com.au/products/conductor/",
     "kind": "Australian-facing manufacturer information; not care-sector deployment evidence"
   },
   "prospero-system": {
-    "label": "Keenfinity Australia — Bosch PROSPERO IP PA",
+    "label": "Keenfinity Australia - Bosch PROSPERO IP PA",
     "href": "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/",
     "kind": "Manufacturer"
   },
   "prospero-Australian": {
-    "label": "Keenfinity Australia — Bosch PROSPERO",
+    "label": "Keenfinity Australia - Bosch PROSPERO",
     "href": "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/",
     "kind": "Manufacturer Australian site"
   },
   "care-scope": {
-    "label": "Australian Government — types of aged care services",
+    "label": "Australian Government - types of aged care services",
     "href": "https://www.health.gov.au/topics/aged-care/providing-aged-care-services/types-of-services",
     "kind": "Sector context, not product or clinical certification"
   },
   "spon-system": {
-    "label": "SPON — school PA solution; care application and Australian support unverified",
+    "label": "SPON - school PA solution; care application and Australian support unverified",
     "href": "https://sponcomm.com/solution-detail/smart-pa-solution-for-schools",
     "kind": "Manufacturer capability description, not Australian care-sector evidence"
   }

@@ -187,7 +187,7 @@ export default function SchoolBellPage() {
             NSW projects should also be checked against the applicable current <a href="https://education.nsw.gov.au/about-us/efsg-home/efsg-2026" target="_blank" rel="noreferrer">Educational Facilities Standards and Guidelines (EFSG)</a> rather than relying on an older version. The SiteComms <Link href="/guides/school-pa-paging-requirements">Australian school PA and paging requirements guide</Link> provides the broader jurisdiction and project-planning starting points.
           </p>
           <p className="not-prose mt-4 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-4 text-sm leading-relaxed text-[var(--sc-slate)]">
-            Official Victorian reference: <a href="https://www.schoolbuildings.vic.gov.au/building-quality-standards-handbook/technical-specifications" target="_blank" rel="noreferrer" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">Victorian School Building Authority — technical specifications ↗</a>
+            Official Victorian reference: <a href="https://www.schoolbuildings.vic.gov.au/building-quality-standards-handbook/technical-specifications" target="_blank" rel="noreferrer" className="font-semibold text-[var(--sc-blue-700)] underline underline-offset-2">Victorian School Building Authority - technical specifications ↗</a>
           </p>
         </section>
 
@@ -277,7 +277,7 @@ export default function SchoolBellPage() {
         />
 
         <p className="mt-8 text-xs text-[var(--sc-slate)]">
-          Last reviewed {reviewedLabel("/systems/school-bell-announcements")}. General information for Australian schools — not education-authority, engineering, safety-system or funding advice.
+          Last reviewed {reviewedLabel("/systems/school-bell-announcements")}. General information for Australian schools - not education-authority, engineering, safety-system or funding advice.
         </p>
 
         <script

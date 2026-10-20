@@ -25,7 +25,7 @@ export function FundingPathwayCard({ pathway, secondary = false }: { pathway: Pa
   const badge = pathway.section === "investigate"
     ? "Possible funding avenue"
     : pathway.section === "check_first"
-      ? "May be relevant — check first"
+      ? "May be relevant - check first"
       : pathway.section === "watchlist"
         ? "Not currently actionable"
         : "Not a current match";

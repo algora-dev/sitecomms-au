@@ -1,4 +1,4 @@
-// Pricing types — SiteComms Australia ballpark pricing tool
+// Pricing types - SiteComms Australia ballpark pricing tool
 // Single source of truth shapes; all values live in config.ts
 
 export type Tier = "A" | "B" | "C";

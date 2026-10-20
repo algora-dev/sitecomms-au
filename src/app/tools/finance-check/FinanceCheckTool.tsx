@@ -247,7 +247,7 @@ export function FinanceCheckTool() {
           <p className="mt-3 max-w-2xl text-xs leading-relaxed text-[var(--sc-slate)]">
             Your finance result and answers are included automatically. The SiteComms team reviews them personally and replies with suggested next steps or suitable public provider contacts where useful. We do not send your information to installers, suppliers or finance providers; you decide whether to contact anyone we suggest.
           </p>
-          <p className="mt-4 text-xs leading-relaxed text-[var(--sc-slate)]">Preliminary guidance only — not an approval, credit assessment or finance offer.</p>
+          <p className="mt-4 text-xs leading-relaxed text-[var(--sc-slate)]">Preliminary guidance only - not an approval, credit assessment or finance offer.</p>
         </section>
 
         <details
@@ -411,7 +411,7 @@ export function FinanceCheckTool() {
 
           {projectValueUnknown && (
             <div className="mt-6 rounded-xl border border-[var(--sc-border)] bg-[var(--sc-blue-50)] p-5">
-              <h3 className="font-semibold text-[var(--sc-blue-900)]">No problem — roughly how many areas?</h3>
+              <h3 className="font-semibold text-[var(--sc-blue-900)]">No problem - roughly how many areas?</h3>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
                 {SITE_SIZE_BANDS.map((item) => (
                   <OptionCard

@@ -11,7 +11,7 @@ export type ComparisonSource = {
 };
 export const comparisonSources = {
   "spon": {
-    "label": "SPON — school communications design",
+    "label": "SPON - school communications design",
     "href": "https://sponcomm.com/solution-detail/smart-pa-solution-for-schools",
     "kind": "Manufacturer solution",
     "scope": "School workflows and example SPON components.",
@@ -19,7 +19,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "spon-software": {
-    "label": "SPON — XC-9000 audio management software",
+    "label": "SPON - XC-9000 audio management software",
     "href": "https://sponcomm.com/products/audio-management-software",
     "kind": "Manufacturer technical page",
     "scope": "Scheduling, zones, SIP, two-way communication and stated platform capacity.",
@@ -27,7 +27,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "frontrow": {
-    "label": "FrontRow Australia — Conductor",
+    "label": "FrontRow Australia - Conductor",
     "href": "https://www.gofrontrow.com.au/products/conductor/",
     "kind": "Australian-facing manufacturer",
     "scope": "Conductor campus communication and compatible classroom/display integration.",
@@ -35,7 +35,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "clearasound": {
-    "label": "ClearaSound — Conductor and school services",
+    "label": "ClearaSound - Conductor and school services",
     "href": "https://clearasound.com.au/audio-visual-systems-for-education/frontrow-conductor/",
     "kind": "Australian provider",
     "scope": "Conductor services; provider describes NSW and Queensland education coverage.",
@@ -43,7 +43,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "algo": {
-    "label": "advanceNET — Algo 8301 adapter and scheduler",
+    "label": "advanceNET - Algo 8301 adapter and scheduler",
     "href": "https://www.advance-net.com.au/product/algo-8301-sip-paging-adapter-bell-scheduler/",
     "kind": "Australian distributor listing",
     "scope": "An Australian Algo enquiry route and 8301 product description.",
@@ -51,7 +51,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "algo-manual": {
-    "label": "Algo — 8301 user guide",
+    "label": "Algo - 8301 user guide",
     "href": "https://docs.algosolutions.com/docs/8301-user-guide",
     "kind": "Manufacturer technical documentation",
     "scope": "8301 scheduling, SIP/multicast and line-level integration.",
@@ -59,7 +59,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "algo-speaker": {
-    "label": "Algo — 8188 IP ceiling speaker",
+    "label": "Algo - 8188 IP ceiling speaker",
     "href": "https://www.algosolutions.com/product/8188-ip-ceiling-speaker/",
     "kind": "Manufacturer technical page",
     "scope": "Specified 8188 talkback, call inputs and multicast endpoint behaviour.",
@@ -67,7 +67,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "axis": {
-    "label": "Axis Australia — Audio Manager Edge",
+    "label": "Axis Australia - Audio Manager Edge",
     "href": "https://www.axis.com/en-au/products/axis-audio-manager-edge",
     "kind": "Australian-facing manufacturer",
     "scope": "Edge management, scheduling and stated site/zone limits.",
@@ -75,7 +75,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "axis-manual": {
-    "label": "Axis — Audio Manager Edge manual",
+    "label": "Axis - Audio Manager Edge manual",
     "href": "https://help.axis.com/en-us/axis-audio-manager-edge",
     "kind": "Manufacturer technical documentation",
     "scope": "Configuration, schedules, priorities and supported workflows.",
@@ -83,7 +83,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "axis-display": {
-    "label": "Axis Australia — C1710 display speaker",
+    "label": "Axis Australia - C1710 display speaker",
     "href": "https://www.axis.com/en-au/products/axis-c1710",
     "kind": "Australian-facing manufacturer",
     "scope": "C1710 speaker, text display, strobe and two-way audio.",
@@ -91,7 +91,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "prospero": {
-    "label": "Keenfinity Australia — Bosch PROSPERO",
+    "label": "Keenfinity Australia - Bosch PROSPERO",
     "href": "https://www.keenfinity-group.com/au/en/solutions/public-address-solutions/public-address-and-voice-alarm-systems/prospero/",
     "kind": "Australian-facing manufacturer",
     "scope": "IP PA, scheduling, controllers, stations and interfaces.",
@@ -99,7 +99,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "bodet": {
-    "label": "advanceNET — Bodet Harmonys Trio",
+    "label": "advanceNET - Bodet Harmonys Trio",
     "href": "https://www.advance-net.com.au/product/bodet-harmonys-trio-speaker-led-display-strobe/",
     "kind": "Australian distributor listing",
     "scope": "Harmonys Trio audio, display and flash; an Australian enquiry route.",
@@ -107,7 +107,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "bodet-range": {
-    "label": "Bodet — Harmonys IP audio range",
+    "label": "Bodet - Harmonys IP audio range",
     "href": "https://www.bodet-time.com/products/audio-alert-systems/ip-audio-system.html",
     "kind": "Manufacturer solution",
     "scope": "IP bells, live/recorded audio, clocks, alerts and system components.",
@@ -115,7 +115,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "toa": {
-    "label": "TOA — IP-A1PG gateway",
+    "label": "TOA - IP-A1PG gateway",
     "href": "https://www.toa.co.uk/products/ip-a1pg/",
     "kind": "Manufacturer technical page",
     "scope": "Gateway scheduling and SIP/ONVIF-to-multicast functions.",
@@ -123,7 +123,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "toa-au": {
-    "label": "TOA — Australian authorised dealer directory",
+    "label": "TOA - Australian authorised dealer directory",
     "href": "https://toa.com.sg/dealers/29",
     "kind": "Manufacturer dealer directory",
     "scope": "Identifies Australis Music Group as an Australian route.",
@@ -131,7 +131,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "monitor": {
-    "label": "Australian Monitor — school paging design",
+    "label": "Australian Monitor - school paging design",
     "href": "https://www.australianmonitor.com.au/pages/school-with-paging-and-custom-tones",
     "kind": "Manufacturer design example",
     "scope": "Illustrates a traditional school PA and triggered-tone design.",
@@ -139,7 +139,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "2n": {
-    "label": "2N — IP Verso 2.0",
+    "label": "2N - IP Verso 2.0",
     "href": "https://www.2n.com/en-GB/products/intercoms/2n-ip-verso-2/",
     "kind": "Manufacturer technical page",
     "scope": "Entrance intercom and access use case.",
@@ -147,7 +147,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "2n-au": {
-    "label": "advanceNET — 2N range",
+    "label": "advanceNET - 2N range",
     "href": "https://www.advance-net.com.au/product-category/2n/",
     "kind": "Australian distributor listing",
     "scope": "An Australian 2N enquiry route.",
@@ -155,7 +155,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "atlas": {
-    "label": "AtlasIED — IPX endpoints",
+    "label": "AtlasIED - IPX endpoints",
     "href": "https://www.atlasied.com/ipx",
     "kind": "Manufacturer solution",
     "scope": "IP endpoints and notification ecosystem.",
@@ -163,7 +163,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "atlas-au": {
-    "label": "AtlasIED — Australian distribution announcement",
+    "label": "AtlasIED - Australian distribution announcement",
     "href": "https://www.atlasied.com/news/national-audio-systems-named-distributor-for-atlasied-in-australia",
     "kind": "Historical manufacturer announcement",
     "scope": "Names National Audio Systems as Australian distributor.",
@@ -171,7 +171,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "qsys": {
-    "label": "Q-SYS — audio, video and control platform",
+    "label": "Q-SYS - audio, video and control platform",
     "href": "https://www.qsys.com/",
     "kind": "Manufacturer platform",
     "scope": "Broader programmable audio/video/control architecture.",
@@ -179,7 +179,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "macrosphere": {
-    "label": "Macrosphere — school bells",
+    "label": "Macrosphere - school bells",
     "href": "https://www.macrosphere.com.au/school-bells/",
     "kind": "Australian provider",
     "scope": "Provider-published school bell/PA services and Queensland locations.",
@@ -187,7 +187,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "visionone": {
-    "label": "Vision One — St Carlo Borromeo Primary School",
+    "label": "Vision One - St Carlo Borromeo Primary School",
     "href": "https://visionone.com.au/portfolio/st-carlo-borromeo/",
     "kind": "Named integrator project",
     "scope": "Published Victorian assembly/performance audio project.",
@@ -195,7 +195,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "advancenet": {
-    "label": "advanceNET — contact and office information",
+    "label": "advanceNET - contact and office information",
     "href": "https://www.advance-net.com.au/contact-us/",
     "kind": "Australian distributor",
     "scope": "Published Sydney and Perth office/contact routes.",
@@ -203,7 +203,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "teachtek": {
-    "label": "Teach TEK — school audio, lighting and bells",
+    "label": "Teach TEK - school audio, lighting and bells",
     "href": "https://www.teachtek.education/audio-and-lighting",
     "kind": "Australian provider",
     "scope": "School bell/PA services and an Adelaide office/showroom.",
@@ -211,7 +211,7 @@ export const comparisonSources = {
     "reviewed_at": "2026-09-25"
   },
   "scp-australia": {
-    "label": "SCP Audio Australia — school audio examples",
+    "label": "SCP Audio Australia - school audio examples",
     "href": "https://www.scpaudio.com/Schools",
     "kind": "Named supplier project",
     "scope": "Brisbane South State College multipurpose hall audio example.",
@@ -252,7 +252,7 @@ export const schoolPlatforms: readonly SchoolPlatform[] = [
     "legacy": "An IP amplifier/interface design can retain suitable conventional speaker circuits.",
     "visual": "GEN-3102A03 clock/notice display in the school design; specify any additional strobe requirements.",
     "operations": "Central browser/server management, permissions and priority workflows.",
-    "cost": "A useful value candidate when one configured platform replaces several separate jobs. Compare the complete licensed, installed and supported system—not an endpoint price.",
+    "cost": "A useful value candidate when one configured platform replaces several separate jobs. Compare the complete licensed, installed and supported system-not an endpoint price.",
     "auEvidence": "Manufacturer evidence is substantial. This review has not verified an Australian distributor/support route or a named Australian school installation. Obtain those details before committing.",
     "status": "Australian supply/support needs confirmation",
     "sources": [
@@ -313,7 +313,7 @@ export const schoolPlatforms: readonly SchoolPlatform[] = [
     "summary": "Algo is a flexible option for SIP-based paging and phased upgrades. The 8301 combines scheduling with a bridge to existing amplification, while selected IP endpoints add room-level audio and calls. It is more than a one-way speaker range: the specified 8188 supports talkback.",
     "bells": "8301 scheduling; SIP and multicast paging to configured endpoints.",
     "intercom": "8188 talkback and call-button workflows; specify the endpoint and call destination.",
-    "legacy": "8301 line-level output feeds suitable amplification—not passive speakers directly.",
+    "legacy": "8301 line-level output feeds suitable amplification-not passive speakers directly.",
     "visual": "The range includes visual alerters and display endpoints; quote the specific devices.",
     "operations": "Endpoint configuration and management; identify the central supervision arrangement.",
     "cost": "Potential value in retaining sound cabling/amplifiers and adding IP only where needed. Include SIP, endpoint-management and any third-party notification costs.",
@@ -425,7 +425,7 @@ export const schoolPlatforms: readonly SchoolPlatform[] = [
       "Integrated visible-alert options rather than audio alone.",
       "Australian product-listing evidence."
     ],
-    "scale": "Ask for zone, schedule, endpoint and building-link limits for the proposed controller—not a generic range-wide maximum.",
+    "scale": "Ask for zone, schedule, endpoint and building-link limits for the proposed controller-not a generic range-wide maximum.",
     "components": "Controller/scheduling equipment, speakers or Trio devices, microphones/trigger controls and network infrastructure.",
     "tradeoff": "A visual alert can support a design, but selecting a strobe does not establish hearing-access eligibility or compliance.",
     "verify": [
@@ -474,7 +474,7 @@ export const schoolPlatforms: readonly SchoolPlatform[] = [
     "summary": "A conventional amplifier-and-speaker system, or a hybrid with an IP control layer, can be a sensible alternative to replacing every endpoint. Australian Monitor's school design illustrates paging and triggered tones, but includes discontinued equipment: use it to understand the architecture, not as a current shopping list.",
     "bells": "A specified timer, scheduler or IP control layer triggers the required tones.",
     "intercom": "Requires a separate call system or suitable IP endpoints.",
-    "legacy": "Reuse is central—but only after wiring, loading, condition and coverage checks.",
+    "legacy": "Reuse is central-but only after wiring, loading, condition and coverage checks.",
     "visual": "A separately designed alert/display system may be needed.",
     "operations": "Physical amplifier zones and the chosen control system determine operation.",
     "cost": "Potential value comes from avoiding unnecessary replacement, not from the label '100V'. Extra zoning, cabling or intercom can change the total.",
@@ -559,7 +559,7 @@ export const schoolUseCases: readonly SchoolUseCase[] = [
       "axis",
       "algo"
     ],
-    "reason": "Compare dedicated combined devices and their controls—not a tick against a whole brand. Confirm the display/alert model and its management requirements.",
+    "reason": "Compare dedicated combined devices and their controls-not a tick against a whole brand. Confirm the display/alert model and its management requirements.",
     "sources": [
       "bodet",
       "bodet-range",

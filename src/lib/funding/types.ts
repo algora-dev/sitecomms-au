@@ -4,8 +4,8 @@ import type { FundingField, FundingInput, FundingInputKey } from "./questions";
 export type RouteType = "grant" | "internal_allocation" | "project_approval" | "procurement" | "concessional_loan";
 export const ROUTE_LABELS: Record<RouteType, string> = {
   grant: "Grant programme", internal_allocation: "Internal allocation / department assistance",
-  project_approval: "Budget / project-approval route — not a grant", procurement: "School-funded procurement — not new funding",
-  concessional_loan: "Repayable loan — finance phase signpost",
+  project_approval: "Budget / project-approval route - not a grant", procurement: "School-funded procurement - not new funding",
+  concessional_loan: "Repayable loan - finance phase signpost",
 };
 export type Availability = "open_at_review" | "ongoing" | "closed" | "invitation_only" | "confirm_status" | "monitor";
 export interface FundingSource {

@@ -176,7 +176,7 @@ export const FUNDING_SOURCES: readonly FundingSource[] = [
   },
   {
     "id": "vic-catholic",
-    "title": "Building Fund for Non-Government Schools — Catholic",
+    "title": "Building Fund for Non-Government Schools - Catholic",
     "publisher": "Victorian School Building Authority",
     "url": "https://www.schoolbuildings.vic.gov.au/building-fund-non-government-schools-catholic",
     "section": "Published programme and round status",
@@ -185,7 +185,7 @@ export const FUNDING_SOURCES: readonly FundingSource[] = [
   },
   {
     "id": "vic-independent",
-    "title": "Building Fund for Non-Government Schools — Independent",
+    "title": "Building Fund for Non-Government Schools - Independent",
     "publisher": "Victorian School Building Authority",
     "url": "https://www.schoolbuildings.vic.gov.au/building-fund-non-government-schools-independent",
     "section": "Round 4 closure and eligible low-fee-school stream",
@@ -295,7 +295,7 @@ export const FUNDING_SOURCES: readonly FundingSource[] = [
   },
   {
     "id": "sa-jfdi",
-    "title": "Julia Farr Disability Inclusion Grants — Round 1 2026–27",
+    "title": "Julia Farr Disability Inclusion Grants - Round 1 2026–27",
     "publisher": "SA Department of Human Services",
     "url": "https://dhs.sa.gov.au/how-we-help/grants/available-grants/julia-farr-disability-inclusion-grants-round-1-2026-2027",
     "section": "Round dates, inclusive-community purposes and application route",
@@ -410,7 +410,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "national-accap-critical",
-    "title": "ACCAP Critical Infrastructure Projects — invitation only",
+    "title": "ACCAP Critical Infrastructure Projects - invitation only",
     "jurisdictions": [
       "national"
     ],
@@ -548,7 +548,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "qld-gcbf-127",
-    "title": "Queensland Gambling Community Benefit Fund — Round 127",
+    "title": "Queensland Gambling Community Benefit Fund - Round 127",
     "jurisdictions": [
       "QLD"
     ],
@@ -775,7 +775,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "nsw-belp",
-    "title": "NSW Building Early Learning Places — published 2025 round",
+    "title": "NSW Building Early Learning Places - published 2025 round",
     "jurisdictions": [
       "NSW"
     ],
@@ -830,7 +830,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "nsw-ie-child-2026",
-    "title": "NSW Inclusive Environments — 2026 child-based funding",
+    "title": "NSW Inclusive Environments - 2026 child-based funding",
     "jurisdictions": [
       "NSW"
     ],
@@ -987,7 +987,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "vic-hearing-access",
-    "title": "Victorian Accessible Buildings Program — hearing technology",
+    "title": "Victorian Accessible Buildings Program - hearing technology",
     "jurisdictions": [
       "VIC"
     ],
@@ -1050,7 +1050,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "vic-building-catholic",
-    "title": "Victorian Non-Government Schools Building Fund — Catholic",
+    "title": "Victorian Non-Government Schools Building Fund - Catholic",
     "jurisdictions": [
       "VIC"
     ],
@@ -1095,7 +1095,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "vic-building-independent",
-    "title": "Victorian Non-Government Schools Building Fund — Independent",
+    "title": "Victorian Non-Government Schools Building Fund - Independent",
     "jurisdictions": [
       "VIC"
     ],
@@ -1205,7 +1205,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "vic-blocks-inclusion",
-    "title": "Victorian Building Blocks Inclusion — buildings scope",
+    "title": "Victorian Building Blocks Inclusion - buildings scope",
     "jurisdictions": [
       "VIC"
     ],
@@ -1549,7 +1549,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "sa-school-loans",
-    "title": "SA School and Preschool Loans — Round 4",
+    "title": "SA School and Preschool Loans - Round 4",
     "jurisdictions": [
       "SA"
     ],
@@ -1597,7 +1597,7 @@ export const FUNDING_PATHWAYS: readonly FundingPathway[] = [
   },
   {
     "id": "sa-julia-farr",
-    "title": "SA Julia Farr Disability Inclusion Grants — Round 1 2026–27",
+    "title": "SA Julia Farr Disability Inclusion Grants - Round 1 2026–27",
     "jurisdictions": [
       "SA"
     ],

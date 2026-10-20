@@ -1,4 +1,4 @@
-// Packs PNG frames into a .ico (Vista+ PNG-compressed entries) — browsers accept these.
+// Packs PNG frames into a .ico (Vista+ PNG-compressed entries) - browsers accept these.
 import sharp from "sharp";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
