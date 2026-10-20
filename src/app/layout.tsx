@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: site.locale,
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SiteComms Australia - IP paging, PA, bell and intercom planning for Australia" }],
+    images: [{ url: "/og-image.png?v=2", width: 1200, height: 630, alt: "SiteComms Australia - IP paging, PA, bell and intercom planning for Australia" }],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/og-image.png"],
+    images: ["/og-image.png?v=2"],
   },
 };
 
